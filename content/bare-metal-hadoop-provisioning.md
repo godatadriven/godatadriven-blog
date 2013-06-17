@@ -4,6 +4,7 @@ Slug: bare-metal-hadoop-provisioning-ansible-cobbler
 Author: Kris Geusebroek
 Excerpt: When setting up a Hadoop cluster you don't want to setup every machine doing manual installation of all required software. The idea is to start automating as soon as possible. While there are lots of tools able to help you with that, I recently came across Cobbler and Ansible which make a good combo in helping you easily define the tasks at hand.<br /><br />In this blog I would like to share the way we installed the operating system and configured the software to run a Hadoop cluster on bare metal machines.
 Template: article
+Status: draft
 
 What we've done here is nothing new and certainly no magic. It's just another possibility. Also there's nothing tool specific in there. For the demo setup of the Hadoop cluster we use Cloudera Manager, but it will work also with for example the Hortonworks Data Platform. The most important part of it is that we automate everything.
 
@@ -21,7 +22,7 @@ So on our installhost the cobbler deamon is running and waiting for a machine wi
 #### Ansible
 After that's finished our next tool [Ansible][] is coming in to the picture. Ansible is used to ty the rest together. Here we define the different roles the machines have and for each role we can define which specific software needs to be installed. Defining this is done with an easy to read DSL.
 For example this is our role definition:
-	
+
 	[cluster]
 	node01
 	node02
@@ -63,7 +64,7 @@ You can create several of these kind of files to specify all the tasks you want 
 	- include: cloudera-manager.yml
 
 #### Cloudera Manager
-Last tool we use is [Cloudera Manager][] which is installed by the ansible scripts and can be used to install the cluster specific tools like Impala, HBase etc. 
+Last tool we use is [Cloudera Manager][] which is installed by the ansible scripts and can be used to install the cluster specific tools like Impala, HBase etc.
 
 ### Finishing up
 -	Remember it's no magic: Vendor specific hardware can screw things up (strange names for disk mounts for example)
