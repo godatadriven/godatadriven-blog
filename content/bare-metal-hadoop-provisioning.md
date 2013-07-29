@@ -15,12 +15,12 @@ Since we don't want to install everything we need manually and the normal stack 
 
 ### The tools
 #### Cobbler
-First tool we use is [Cobbler][] which manages the operating system install iso's and we use it for handing out the static IP adresses to the nodes of the 'cluster to be build'. We mainly use it as our Content Management System where we configure which operating system to install and which IP a machine gets given a specific MAC address.
+First tool we use is [Cobbler][] which manages the operating system install iso's and we use it for handing out the static IP adresses to the nodes of the 'cluster to be built'. We mainly use it as our Content Management System where we configure which operating system to install and which IP a machine gets given a specific MAC address.
 
 So on our installhost the cobbler deamon is running and waiting for a machine with a specific MAC address to announce itself on boot (using the network boot option). Cobbler then responds with handing over a kickstart script to the machine to do the operating system install. This script contains all instructions about the mounting and formatting of the disks and makes sure the operating system is installed properly.
 
 #### Ansible
-After that's finished our next tool [Ansible][] is coming in to the picture. Ansible is used to ty the rest together. Here we define the different roles the machines have and for each role we can define which specific software needs to be installed. Defining this is done with an easy to read DSL.
+After that's finished our next tool [Ansible][] is coming in to the picture. Ansible is used to tie the rest together. Here we define the different roles the machines have and for each role we can define which specific software needs to be installed. Defining this is done with an easy to read DSL.
 For example this is our role definition:
 
 	[cluster]
@@ -56,7 +56,7 @@ And here is a file defining to copy a yum repo file form the installhost to all 
 	  - jdk
 	  - cloudera-manager-daemons
 
-You can create several of these kind of files to specify all the tasks you want to be executed. By combining multiple of these files together you can define a total set of requirements like this:
+You can create several of this kind of files to specify all the tasks you want to be executed. By combining multiple of these files together you can define a total set of requirements like this:
 
 	- include: bootstrap.yml
 	- include: repo.yml
