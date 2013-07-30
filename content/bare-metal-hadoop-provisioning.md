@@ -4,7 +4,8 @@ Slug: bare-metal-hadoop-provisioning-ansible-cobbler
 Author: Kris Geusebroek
 Excerpt: When setting up a Hadoop cluster you don't want to setup every machine doing manual installation of all required software. The idea is to start automating as soon as possible. While there are lots of tools able to help you with that, I recently came across Cobbler and Ansible which make a good combo in helping you easily define the tasks at hand.<br /><br />In this blog I would like to share the way we installed the operating system and configured the software to run a Hadoop cluster on bare metal machines.
 Template: article
-Status: draft
+
+When setting up a Hadoop cluster you don't want to setup every machine doing manual installation of all required software. The idea is to start automating as soon as possible. While there are lots of tools able to help you with that, I recently came across Cobbler and Ansible which make a good combo in helping you easily define the tasks at hand.<br /><br />In this blog I would like to share the way we installed the operating system and configured the software to run a Hadoop cluster on bare metal machines.
 
 What we've done here is nothing new and certainly no magic. It's just another possibility. Also there's nothing tool specific in there. For the demo setup of the Hadoop cluster we use Cloudera Manager, but it will work also with for example the Hortonworks Data Platform. The most important part of it is that we automate everything.
 
