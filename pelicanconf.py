@@ -55,3 +55,6 @@ DELETE_OUTPUT_DIRECTORY = True
 OFFICE_ADDRESS = "Utrechtseweg 49, Hilversum, The Netherlands"
 OFFICE_PHONE = "+31 (0)35 672 9069"
 OFFICE_EMAIL = "signal@godatadriven.com"
+
+GA_UA = 'UA-40578233-4'
+GA_DOMAIN = 'blog.godatadriven.com'
