@@ -29,7 +29,7 @@ RELATIVE_URLS = True
 
 THEME = 'godatadriven-template'
 
-STATIC_PATHS = ["images"]
+STATIC_PATHS = ["images", "resources"]
 OUTPUT_PATH = 'output'
 FILES_TO_COPY = []
 
