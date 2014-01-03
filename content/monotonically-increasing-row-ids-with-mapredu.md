@@ -10,7 +10,7 @@ Let’s say you have a tab separated file in HDFS, that contains only unique ent
 	:::bash
 	hadoop fs -cat /some-file.tsv | cat -n | hadoop fs -put - /some-file-with-ids.tsv
 
-(if it’s comma seperated or someting else, you’ll probably throw in some awk to fix that)
+(if it’s comma seperated or something else, you’ll probably throw in some awk to fix that)
 
 And we’re done! However, for big files, this is problematic, because all data has to go through one single process on one single machine. Due to the lack of parallelism in this case, the disk or network will be a bottleneck. In this post we’ll show a distributed way of doing this, implemented in Hadoop MapReduce.
 
