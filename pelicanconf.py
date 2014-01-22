@@ -58,3 +58,7 @@ OFFICE_EMAIL = "signal@godatadriven.com"
 
 GA_UA = 'UA-40578233-4'
 GA_DOMAIN = 'blog.godatadriven.com'
+
+PLUGIN_PATH = "plugins"
+PLUGINS = ["latex"]
+LATEX = 'article'
