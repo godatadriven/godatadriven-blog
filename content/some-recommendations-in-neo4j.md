@@ -1,5 +1,5 @@
 Title: Some recommendations in Neo4j
-Date: 2014-01-30 10:00
+Date: 2014-02-14 16:00
 Slug: some-recommendations-in-neo4j
 Author: Friso van Vollenhoven
 Excerpt: Graphs are nice. You can model almost anything with them and they are easy to reason about and allow for great exploratory analysis. <a href="http://www.neo4j.org/">Neo4j</a> is a developer and user friendly graph database, which offers a declarative query language called <a href="http://www.neo4j.org/learn/cypher">Cypher</a>. In this post we'll explore how far we can get to a working recommendation engine using only Neo4j and Cypher. We implement a naïve Bayes classifier and collaborative filtering based on item-item cosine similarity purely in Cypher.
