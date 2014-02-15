@@ -93,7 +93,7 @@ The query returns the number of members that were chosen as training data per gr
 
 The result shows us how many people went into the training data set for each group. We need to remember those number for later reference, as they will be the denominators in some of the calculations we'll do.
 
-### Introducing Bayes
+### Learning by counting
 Let's look at how liking different topics adds to the chance of someone being a graph database person. For this, we also need to know the total number of people in the training data. Of course we can add up the numbers above, but where's the fun in that. Let's query for it.
 
     :::cypher
