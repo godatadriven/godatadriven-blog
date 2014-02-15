@@ -91,10 +91,10 @@ The query returns the number of members that were chosen as training data per gr
      Graph Database - Amsterdam | 106                    
     (2 rows)
 
-The result shows us how many people went into the training data set for each group.
+The result shows us how many people went into the training data set for each group. We need to remember those number for later reference, as they will be the denominators in some of the calculations we'll do.
 
-### Independence for all features!
-Next up we need to know the total number of people in the training data. Of course we can add up the numbers above, but where's the fun in that. Let's query for it.
+### Introducing Bayes
+Let's look at how liking different topics adds to the chance of someone being a graph database person. For this, we also need to know the total number of people in the training data. Of course we can add up the numbers above, but where's the fun in that. Let's query for it.
 
     :::cypher
     match
@@ -108,22 +108,6 @@ We need to keep this number for later reference.
      total_members 
     ---------------
      295           
-    (1 row)
-
-Also, we need to know the number of members in the graph database group's training part.
-
-    :::cypher
-    match
-      (grp:Group :Training { name: 'Graph Database - Amsterdam'})<-[:HAS_MEMBERSHIP]-(member:Member :Training)
-    return
-      count(distinct member) as graphdb_members
-
-Also memorize this number:
-
-    :::text
-     graphdb_members 
-    -----------------
-     106             
     (1 row)
 
 The nice thing about naïve Bayes is that for binary features, it's mostly just counting and multiplying. The problem is that we need a way to remember these counts. Cypher is stateless and declarative, so we have no way to kind of keep things around in memory in between queries (AFAIK). To work around this, we are just going to store the count in the graph itself. First, we set the likes from all members on each topic. Notice how we add 1 to the actual like count. We will later see why this is.
@@ -194,45 +178,48 @@ Which updates another 816.
 
 Cool. Now we have all ingredients to see if we can classify a member as a graph database person. Let's give it a try with my friend Rik. You can see in the query that we use [coalesce](http://docs.neo4j.org/chunked/milestone/query-functions-scalar.html#functions-coalesce) to account for topics that we have not seen in our training data. We give these topics a default value of 1. However, this would not be fair to the topics that are actually present once. As a solution we could add 1 to those topics, but then it wouldn't again be fair to the topics that were actually present twice, which is why we add 1 to all the topic counts. Which is the +1 that we saw in the earlier queries where we set the counts on the topics. This is a form of smoothing the data based on the assumption that really rare properties occur less than the ones in the training data.
 
-Now, let's look at how the different topics that Rik likes add to the fact the he may or may not be a graph database person. We can look at the per-topic conditional probabilities of him being a graph database person or not with this query.
+Now, let's look at how the different topics that Rik likes add to the fact the he may or may not be a graph database person. We take a look at all topics that Rik likes and return the probabilities of a graph database person liking these versus the probability of a non-graph database person liking these. We can use these to determine the conditional probabilities of someone being a graph database person based on the presence of a topic using [Bayes' theorem](http://en.wikipedia.org/wiki/Bayes'_theorem).
 
     :::cypher
     match
       (member:Member { name : 'Rik Van Bruggen' })-[:LIKES]->(topic:Topic)
     return
       topic.name,
-      coalesce(topic.graphdb_like_count, 1.0) / 106.0 as P_graphdb,
-      coalesce(topic.non_graphdb_like_count, 1.0) / 295.0 as P_non_graphdb
+      ( (coalesce(topic.graphdb_like_count, 1.0) / 106.0) * (106.0 / 295.0) ) / 
+      (coalesce(topic.like_count, 1.0) / 295.0) as P_graphdb,
+      ( (coalesce(topic.non_graphdb_like_count, 1.0) / 189.0) * (189.0 / 295.0) ) / 
+      (coalesce(topic.like_count, 1.0) / 295.0) as P_non_graphdb
 
-Liking *Neo4j* and *Graph Databases* really increases the likelihood of being a graph database person. What a surprise!
+Liking *Neo4j* and *Graph Databases* really increases the likelihood of being a graph database person. What a surprise! Topics exclusively present in the graph databse training group, will have a 1.0 probability, which sometimes results in > 1.0 because of rounding errors.
 
     :::text
-     topic.name                           | P_graphdb            | P_non_graphdb        
-    --------------------------------------+----------------------+----------------------
-     Data Science                         | 0.29245283018867924  | 0.003389830508474576 
-     Data Mining                          | 0.19811320754716982  | 0.003389830508474576 
-     Data Analytics                       | 0.5094339622641509   | 0.006779661016949152 
-     Game Development                     | 0.009433962264150943 | 0.003389830508474576 
-     Video Game Design                    | 0.009433962264150943 | 0.003389830508474576 
-     Mobile and Handheld game development | 0.009433962264150943 | 0.003389830508474576 
-     Mobile Game Development              | 0.009433962264150943 | 0.003389830508474576 
-     Video Game Development               | 0.009433962264150943 | 0.003389830508474576 
-     Indie Games                          | 0.009433962264150943 | 0.003389830508474576 
-     Independent Game Development         | 0.009433962264150943 | 0.003389830508474576 
-     Game Design                          | 0.009433962264150943 | 0.003389830508474576 
-     Game Programming                     | 0.009433962264150943 | 0.003389830508474576 
-     Data Visualization                   | 0.19811320754716982  | 0.003389830508474576 
-     Software Developers                  | 0.4716981132075472   | 0.020338983050847456 
-     Open Source                          | 0.5660377358490566   | 0.030508474576271188 
-     Java                                 | 0.22641509433962265  | 0.006779661016949152 
-     Java Programming                     | 0.009433962264150943 | 0.003389830508474576 
-     mongoDB                              | 0.2358490566037736   | 0.006779661016949152 
-     Big Data                             | 0.7075471698113207   | 0.003389830508474576 
-     NoSQL                                | 0.5660377358490566   | 0.006779661016949152 
-     Graph Databases                      | 0.49056603773584906  | 0.003389830508474576 
-     Neo4j                                | 0.4528301886792453   | 0.003389830508474576 
+     topic.name                           | P_graphdb           | P_non_graphdb        
+    --------------------------------------+---------------------+----------------------
+     Data Science                         | 1.0                 | 0.03225806451612903  
+     Data Mining                          | 1.0                 | 0.047619047619047616 
+     Data Analytics                       | 0.9818181818181818  | 0.03636363636363636  
+     Game Development                     | 0.0625              | 0.0625               
+     Video Game Design                    | 0.33333333333333337 | 0.33333333333333337  
+     Mobile and Handheld game development | 0.5                 | 0.5                  
+     Mobile Game Development              | 0.33333333333333337 | 0.33333333333333337  
+     Video Game Development               | 0.5                 | 0.5                  
+     Indie Games                          | 0.5                 | 0.5                  
+     Independent Game Development         | 0.25                | 0.25                 
+     Game Design                          | 0.08333333333333334 | 0.08333333333333334  
+     Game Programming                     | 0.16666666666666669 | 0.16666666666666669  
+     Data Visualization                   | 1.0                 | 0.047619047619047616 
+     Software Developers                  | 0.9090909090909091  | 0.10909090909090909  
+     Open Source                          | 0.8823529411764706  | 0.1323529411764706   
+     Java                                 | 0.9600000000000002  | 0.08                 
+     Java Programming                     | 0.07142857142857142 | 0.07142857142857142  
+     mongoDB                              | 0.9615384615384616  | 0.07692307692307693  
+     Big Data                             | 1.0                 | 0.013333333333333334 
+     NoSQL                                | 0.9836065573770492  | 0.03278688524590164  
+     Graph Databases                      | 1.0                 | 0.019230769230769232 
+     Neo4j                                | 1.0000000000000002  | 0.020833333333333336 
     (22 rows)
 
+### Independence for all features!
 Now let's use those probabilities and combine them into a classification under the naïve assumption that liking topics is completely independent.
 
     :::cypher
@@ -245,11 +232,11 @@ Now let's use those probabilities and combine them into a classification under t
     with
       member,
       reduce(prod = 1.0, cnt in graphdb_likes | prod * (cnt / 106.0)) as P_graphdb,
-      reduce(prod = 1.0, cnt in non_graphdb_likes | prod * (cnt / 295.0)) as P_non_graphdb
+      reduce(prod = 1.0, cnt in non_graphdb_likes | prod * (cnt / 189.0)) as P_non_graphdb
     return
       member.name, P_graphdb > P_non_graphdb
 
-Once more, what a surprise. Rik is likely to be a graph database person!
+Once more, what a surprise. Rik is likely to be a graph database person! Note that we are not using the denominator as above. We can do this, because it's the same for both classes and we only care about which of the two results is larger.
 
     :::text
      member.name     | P_graphdb > P_non_graphdb 
@@ -272,19 +259,19 @@ Now for the big question! In the entire dataset, how many graph database people 
     with
       member,
       reduce(prod = 1.0, cnt in graphdb_likes | prod * (cnt / 106.0)) as P_graphdb,
-      reduce(prod = 1.0, cnt in non_graphdb_likes | prod * (cnt / 295.0)) as P_non_graphdb
+      reduce(prod = 1.0, cnt in non_graphdb_likes | prod * (cnt / 189.0)) as P_non_graphdb
     with
       P_graphdb > P_non_graphdb as graphdb_person
     return
       graphdb_person, count(*)
 
-Well, it turns out that our classifier *believes* there are 1108 people potentially addicted to graph databases, without having joined the group already.
+Well, it turns out that our classifier *believes* there are 891 people potentially addicted to graph databases, without having joined the group already.
 
     :::text
      graphdb_person | count(*) 
     ----------------+----------
-     False          | 1407     
-     True           | 1180     
+     False          | 1696     
+     True           | 891      
     (2 rows)
 
 The next obvious question now is: how accurate are those results? Because we kept half of the data in our labeled data set apart as a test set, we can now use that to figure out how accurate our classifier is by creating a [confusion matrix](http://en.wikipedia.org/wiki/Confusion_matrix) (although it doesn't look like a matrix in our output, but you get the point). Let's have a look.
@@ -303,7 +290,7 @@ The next obvious question now is: how accurate are those results? Because we kep
       group,
       member,
       reduce(prod = 1.0, cnt in graphdb_likes | prod * (cnt / 106.0)) as P_graphdb,
-      reduce(prod = 1.0, cnt in non_graphdb_likes | prod * (cnt / 295.0)) as P_non_graphdb
+      reduce(prod = 1.0, cnt in non_graphdb_likes | prod * (cnt / 189.0)) as P_non_graphdb
     with
       group,
       P_graphdb > P_non_graphdb as graphdb_person
@@ -316,13 +303,13 @@ The results:
     :::text
      group.name                 | graphdb_person | count(*) 
     ----------------------------+----------------+----------
-     Graph Database - Amsterdam | False          | 1        
-     Graph Database - Amsterdam | True           | 119      
-     Amsterdam Photo Club       | False          | 145      
-     Amsterdam Photo Club       | True           | 22       
+     Graph Database - Amsterdam | False          | 2        
+     Graph Database - Amsterdam | True           | 118      
+     Amsterdam Photo Club       | False          | 155      
+     Amsterdam Photo Club       | True           | 12       
     (4 rows)
 
-As it turns out, we have 22 false positives, so we wrongly classify about 13% of non-graph database people as graph database people. If we wish to improve on this, there are several options. One is to investigate the details of the false positives by doing manual exploratory analysis and as a result of that come up with potentially better features. The other, obvious one is: MORE DATA! Go for the latter if you can; it's cheaper than spending numerous hours improving your model.
+As it turns out, we have 22 false positives, so we wrongly classify about 7% of non-graph database people as graph database people. If we wish to improve on this, there are several options. One is to investigate the details of the false positives by doing manual exploratory analysis and as a result of that come up with potentially better features. The other, obvious one is: MORE DATA! Go for the latter if you can; it's cheaper than spending numerous hours improving your model.
 
 ### Production ready?
 The above solution works. However, there is one thing: we need to store the like counts for topics in the graph itself for things to work. The good thing is that this actually creates a denormalized (does that exist in a graph database?), pre-aggregated view of some required data for the classification. This makes the classification process faster. On the downside, setting and updating the counts is a graph global operation which also writes back to the graph.
