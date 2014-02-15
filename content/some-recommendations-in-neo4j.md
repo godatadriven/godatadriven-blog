@@ -185,38 +185,39 @@ Now, let's look at how the different topics that Rik likes add to the fact the h
       (member:Member { name : 'Rik Van Bruggen' })-[:LIKES]->(topic:Topic)
     return
       topic.name,
+      has(topic.like_count) as in_training,
       ( (coalesce(topic.graphdb_like_count, 1.0) / 106.0) * (106.0 / 295.0) ) / 
       (coalesce(topic.like_count, 1.0) / 295.0) as P_graphdb,
       ( (coalesce(topic.non_graphdb_like_count, 1.0) / 189.0) * (189.0 / 295.0) ) / 
       (coalesce(topic.like_count, 1.0) / 295.0) as P_non_graphdb
 
-Liking *Neo4j* and *Graph Databases* really increases the likelihood of being a graph database person. What a surprise! Topics exclusively present in the graph databse training group, will have a 1.0 probability, which sometimes results in > 1.0 because of rounding errors.
+Liking *Neo4j* and *Graph Databases* really increases the likelihood of being a graph database person. What a surprise! Topics exclusively present in the graph databse training group, will have a 1.0 probability, which sometimes results in > 1.0 because of rounding errors. We also return a boolean flag that tells us whether the topic was present in the training data. You can see that topics not present in any of the classes in the training data, return a 1.0 probability on both sides, which is counterintuitive (and wrong), but for the classification it doesn't matter.
 
     :::text
-     topic.name                           | P_graphdb           | P_non_graphdb        
-    --------------------------------------+---------------------+----------------------
-     Data Science                         | 1.0                 | 0.03225806451612903  
-     Data Mining                          | 1.0                 | 0.047619047619047616 
-     Data Analytics                       | 0.9818181818181818  | 0.03636363636363636  
-     Game Development                     | 0.0625              | 0.0625               
-     Video Game Design                    | 0.33333333333333337 | 0.33333333333333337  
-     Mobile and Handheld game development | 0.5                 | 0.5                  
-     Mobile Game Development              | 0.33333333333333337 | 0.33333333333333337  
-     Video Game Development               | 0.5                 | 0.5                  
-     Indie Games                          | 0.5                 | 0.5                  
-     Independent Game Development         | 0.25                | 0.25                 
-     Game Design                          | 0.08333333333333334 | 0.08333333333333334  
-     Game Programming                     | 0.16666666666666669 | 0.16666666666666669  
-     Data Visualization                   | 1.0                 | 0.047619047619047616 
-     Software Developers                  | 0.9090909090909091  | 0.10909090909090909  
-     Open Source                          | 0.8823529411764706  | 0.1323529411764706   
-     Java                                 | 0.9600000000000002  | 0.08                 
-     Java Programming                     | 0.07142857142857142 | 0.07142857142857142  
-     mongoDB                              | 0.9615384615384616  | 0.07692307692307693  
-     Big Data                             | 1.0                 | 0.013333333333333334 
-     NoSQL                                | 0.9836065573770492  | 0.03278688524590164  
-     Graph Databases                      | 1.0                 | 0.019230769230769232 
-     Neo4j                                | 1.0000000000000002  | 0.020833333333333336 
+     topic.name                           | in_training | P_graphdb          | P_non_graphdb        
+    --------------------------------------+-------------+--------------------+----------------------
+     Data Science                         | True        | 1.0                | 0.03225806451612903  
+     Data Mining                          | True        | 1.0                | 0.047619047619047616 
+     Data Analytics                       | True        | 0.9818181818181818 | 0.03636363636363636  
+     Game Development                     | False       | 1.0                | 1.0                  
+     Video Game Design                    | False       | 1.0                | 1.0                  
+     Mobile and Handheld game development | False       | 1.0                | 1.0                  
+     Mobile Game Development              | False       | 1.0                | 1.0                  
+     Video Game Development               | False       | 1.0                | 1.0                  
+     Indie Games                          | False       | 1.0                | 1.0                  
+     Independent Game Development         | False       | 1.0                | 1.0                  
+     Game Design                          | False       | 1.0                | 1.0                  
+     Game Programming                     | False       | 1.0                | 1.0                  
+     Data Visualization                   | True        | 1.0                | 0.047619047619047616 
+     Software Developers                  | True        | 0.9090909090909091 | 0.10909090909090909  
+     Open Source                          | True        | 0.8823529411764706 | 0.1323529411764706   
+     Java                                 | True        | 0.9600000000000002 | 0.08                 
+     Java Programming                     | False       | 1.0                | 1.0                  
+     mongoDB                              | True        | 0.9615384615384616 | 0.07692307692307693  
+     Big Data                             | True        | 1.0                | 0.013333333333333334 
+     NoSQL                                | True        | 0.9836065573770492 | 0.03278688524590164  
+     Graph Databases                      | True        | 1.0                | 0.019230769230769232 
+     Neo4j                                | True        | 1.0000000000000002 | 0.020833333333333336 
     (22 rows)
 
 ### Independence for all features!
