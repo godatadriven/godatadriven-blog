@@ -322,7 +322,7 @@ On the other hand, if you need to run the classifier all the time, it would be n
 ### Targeting entire groups
 Classifying each person individually is a lot of work. It can be problematic scaling such an approach. Can't we just target entire meetup groups that somehow resemble our graph database meetup group? Of course we can. We can use collaborative filtering to figure out which groups are most similar to ours.
 
-The absolute simplest (stupidest) thing you can do is just assume that groups that have the most members in common with our group are most simmilar and hence will also like graph databases (as a group). The issue with this is that it tends to favor larger groups over smaller ones (because they will have more members in common). Because of that, we will normalize the count of members in common to the target groups size.
+The absolute simplest (stupidest) thing you can do is just assume that groups that have the most members in common with our group are most similar and hence will also like graph databases (as a group). The issue with this is that it tends to favor larger groups over smaller ones (because they will have more members in common). Because of that, we will normalize the count of members in common to the target groups size.
 
     :::cypher
     match
@@ -394,7 +394,7 @@ Another issue with this result is that is only looks at group membership as inpu
         as cosine_similarity
     order by cosine_similarity desc
 
-And in the results you can see that: a) when you don't just look at membership, but at actual meetup attendance, there are only three other groups that have actual co-occurrence with the graph database group and b) [The Amsterdam Applied Machine Learning Meetup Group](http://www.meetup.com/The-Amsterdam-Applied-Machine-Learning-Meetup-Group/) now scores better than the Cassandra group.
+And in the results you can see that: a) when you don't just look at membership, but at meetup attendance, there are only three other groups that have actual co-occurrence with the graph database group and b) [The Amsterdam Applied Machine Learning Meetup Group](http://www.meetup.com/The-Amsterdam-Applied-Machine-Learning-Meetup-Group/) now scores better than the Cassandra group.
 
     :::text
      us.name                    | other.name                                          | coo | cosine_similarity  
