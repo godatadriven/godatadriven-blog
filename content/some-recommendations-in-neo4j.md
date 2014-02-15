@@ -232,8 +232,8 @@ Now let's use those probabilities and combine them into a classification under t
       collect(coalesce(topic.non_graphdb_like_count, 1.0)) as non_graphdb_likes
     with
       member,
-      reduce(prod = 1.0, cnt in graphdb_likes | prod * (cnt / 106.0)) as P_graphdb,
-      reduce(prod = 1.0, cnt in non_graphdb_likes | prod * (cnt / 189.0)) as P_non_graphdb
+      (106.0 / 295.0) * reduce(prod = 1.0, cnt in graphdb_likes | prod * (cnt / 106.0)) as P_graphdb,
+      (189.0 / 295.0) * reduce(prod = 1.0, cnt in non_graphdb_likes | prod * (cnt / 189.0)) as P_non_graphdb
     return
       member.name, P_graphdb > P_non_graphdb
 
@@ -259,20 +259,20 @@ Now for the big question! In the entire dataset, how many graph database people 
       collect(coalesce(topic.non_graphdb_like_count, 1.0)) as non_graphdb_likes
     with
       member,
-      reduce(prod = 1.0, cnt in graphdb_likes | prod * (cnt / 106.0)) as P_graphdb,
-      reduce(prod = 1.0, cnt in non_graphdb_likes | prod * (cnt / 189.0)) as P_non_graphdb
+      (106.0 / 295.0) * reduce(prod = 1.0, cnt in graphdb_likes | prod * (cnt / 106.0)) as P_graphdb,
+      (189.0 / 295.0) * reduce(prod = 1.0, cnt in non_graphdb_likes | prod * (cnt / 189.0)) as P_non_graphdb
     with
       P_graphdb > P_non_graphdb as graphdb_person
     return
       graphdb_person, count(*)
 
-Well, it turns out that our classifier *believes* there are 891 people potentially addicted to graph databases, without having joined the group already.
+Well, it turns out that our classifier *believes* there are 863 people potentially addicted to graph databases, without having joined the group already.
 
     :::text
      graphdb_person | count(*) 
     ----------------+----------
-     False          | 1696     
-     True           | 891      
+     False          | 1724     
+     True           | 863      
     (2 rows)
 
 The next obvious question now is: how accurate are those results? Because we kept half of the data in our labeled data set apart as a test set, we can now use that to figure out how accurate our classifier is by creating a [confusion matrix](http://en.wikipedia.org/wiki/Confusion_matrix) (although it doesn't look like a matrix in our output, but you get the point). Let's have a look.
@@ -290,8 +290,8 @@ The next obvious question now is: how accurate are those results? Because we kep
     with
       group,
       member,
-      reduce(prod = 1.0, cnt in graphdb_likes | prod * (cnt / 106.0)) as P_graphdb,
-      reduce(prod = 1.0, cnt in non_graphdb_likes | prod * (cnt / 189.0)) as P_non_graphdb
+      (106.0 / 295.0) * reduce(prod = 1.0, cnt in graphdb_likes | prod * (cnt / 106.0)) as P_graphdb,
+      (189.0 / 295.0) * reduce(prod = 1.0, cnt in non_graphdb_likes | prod * (cnt / 189.0)) as P_non_graphdb
     with
       group,
       P_graphdb > P_non_graphdb as graphdb_person
@@ -304,13 +304,13 @@ The results:
     :::text
      group.name                 | graphdb_person | count(*) 
     ----------------------------+----------------+----------
-     Graph Database - Amsterdam | False          | 2        
-     Graph Database - Amsterdam | True           | 118      
-     Amsterdam Photo Club       | False          | 155      
-     Amsterdam Photo Club       | True           | 12       
+     Graph Database - Amsterdam | False          | 3        
+     Graph Database - Amsterdam | True           | 117      
+     Amsterdam Photo Club       | False          | 157      
+     Amsterdam Photo Club       | True           | 10       
     (4 rows)
 
-As it turns out, we have 22 false positives, so we wrongly classify about 7% of non-graph database people as graph database people. If we wish to improve on this, there are several options. One is to investigate the details of the false positives by doing manual exploratory analysis and as a result of that come up with potentially better features. The other, obvious one is: MORE DATA! Go for the latter if you can; it's cheaper than spending numerous hours improving your model.
+As it turns out, we have 10 false positives, so we wrongly classify about 7% of non-graph database people as graph database people. If we wish to improve on this, there are several options. One is to investigate the details of the false positives by doing manual exploratory analysis and as a result of that come up with potentially better features. The other, obvious one is: MORE DATA! Go for the latter if you can; it's cheaper than spending numerous hours improving your model.
 
 ### Production ready?
 The above solution works. However, there is one thing: we need to store the like counts for topics in the graph itself for things to work. The good thing is that this actually creates a denormalized (does that exist in a graph database?), pre-aggregated view of some required data for the classification. This makes the classification process faster. On the downside, setting and updating the counts is a graph global operation which also writes back to the graph.
