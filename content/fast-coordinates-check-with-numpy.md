@@ -155,8 +155,8 @@ with `radius` on the previous chunck of code), the check is done in a matter of
 milliseconds, making it a good fit for real time web applications.
 
 Note: if you are so inclined, a IPython notebook with the performance test is
-online at [nbviewer]. The times reported there may vary slightly with the ones
-in this post.
+online at [nbviewer]. The times reported there may vary slightly compared with
+the ones in this post.
 
 
 
