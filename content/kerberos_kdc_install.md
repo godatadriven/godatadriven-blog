@@ -122,7 +122,7 @@ Short summary of the necessary steps:
 
 1. Create your first principal
 
-	**NOTE:** First you should create a principal which has administrator priviledges (the pricipal has to match the expression that you specified in /var/kerberos/krb5kdc/kadm5.acl). The kadmin utility communicates with the kadmind server over the network, and uses Kerberos to handle authentication. The first principal must already exist before connecting to the server over the network. We can create this principal with kadmin.local.
+	**NOTE:** First you should create a principal which has administrator privileges (the pricipal has to match the expression that you specified in /var/kerberos/krb5kdc/kadm5.acl). The kadmin utility communicates with the kadmind server over the network, and uses Kerberos to handle authentication. The first principal must already exist before connecting to the server over the network. We can create this principal with kadmin.local.
 
 		$ kadmin.local -q "addprinc tunde/admin"
 			Authenticating as principal root/admin@GDD.NL with password.
@@ -199,7 +199,7 @@ Short summary of the necessary steps:
 
 	To see what else you can do with the kadmin commnand, look at the <a href="http://web.mit.edu/kerberos/krb5-devel/doc/admin/admin_commands/kadmin_local.html" target="_blank">MIT Kerberos Documentation - kadmin</a>.
 
-1. Now we should test if our KDC is issue tickets correctly. 
+1. Now we should test if our KDC is issuing tickets correctly. 
 	
 		[root]$ kinit user1
 			Password for user1@GDD.NL: 
