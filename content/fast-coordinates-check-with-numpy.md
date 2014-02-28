@@ -154,6 +154,10 @@ Thanks to the vectorized nature of NumPy operations (including the comparison
 with `radius` on the previous chunck of code), the check is done in a matter of
 milliseconds, making it a good fit for real time web applications.
 
+Note: if you are so inclined, a IPython notebook with the performance test is
+online at [nbviewer]. The times reported there may vary slightly with the ones
+in this post.
+
 
 
 [haversine]: http://en.wikipedia.org/wiki/Haversine_formula
@@ -163,3 +167,4 @@ milliseconds, making it a good fit for real time web applications.
 [ipython]: http://www.ipython.org
 [list-comprehension]: http://docs.python.org/2/tutorial/datastructures.html#list-comprehensions
 [pandas]: http://pandas.pydata.org
+[nbviewer]: http://nbviewer.ipython.org/gist/gglanzani/9271842
