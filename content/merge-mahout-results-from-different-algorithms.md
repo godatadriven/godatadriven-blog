@@ -1,5 +1,5 @@
 Title: Merge Mahout item based recommendations results from different algorithms
-Date: 2014-03-04 10:00
+Date: 2014-02-28 18:00
 Slug: merge-mahout-recommendations-results-from-different-algorithms
 Author: Giovanni Lanzani
 Excerpt: Dealing with item-based recommendations does not always yield the expected results. When you combine that with an almost black-box nature of a tool like Apache Mahout, things could quickly go in a direction you don't want them to go.
