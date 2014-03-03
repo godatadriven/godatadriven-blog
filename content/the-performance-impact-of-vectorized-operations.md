@@ -1,5 +1,5 @@
 Title: The performance impact of vectorized operations
-Date: 2014-02-28 15:00
+Date: 2014-03-03 11:00
 Slug: the-performance-impact-of-vectorized-operations
 Author: Giovanni Lanzani
 Excerpt: Scripting language are often associated with being slow. As computers get faster, this may become less and less relevant, but as we get into the realm of big(ger) data, performance efficiency is always welcome. In this blog post we take a look at the impact of vectorized operations. As an example, we will create a Python script to check whether a postal code lies within a certain distance from a reference point and measure how what is the performance impact when we use vectorization.
