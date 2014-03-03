@@ -2,28 +2,29 @@ Title: The performance impact of vectorized operations
 Date: 2014-02-28 15:00
 Slug: the-performance-impact-of-vectorized-operations
 Author: Giovanni Lanzani
-Excerpt: Scripting language are often associated with being slow. As computers get faster, this may become less and less relevant, but as we get into the realm of big(ger) data performance efficiency is always welcome. In this blog post we take a look at the impact of vectorized operations. As an example, we will create a Python script to check whether a postal code lies within a certain distance of a reference point and measure what is the difference when we use vectorization.
+Excerpt: Scripting language are often associated with being slow. As computers get faster, this may become less and less relevant, but as we get into the realm of big(ger) data, performance efficiency is always welcome. In this blog post we take a look at the impact of vectorized operations. As an example, we will create a Python script to check whether a postal code lies within a certain distance from a reference point and measure how what is the performance impact when we use vectorization.
 Template: article
 Latex:
 
 Scripting language are often associated with being slow. As computers get
 faster, this may become less and less relevant, but as we get into the realm of
-big(ger) data performance efficiency is always welcome. In this blog post we
+big(ger) data, performance efficiency is always welcome. In this blog post we
 take a look at the impact of vectorized operations. As an example, we will
 create a Python script to check whether a postal code lies within a certain
-distance of a reference point and measure what is the difference when we use
-vectorization.
+distance from a reference point and measure how what is the performance impact
+when we use vectorization.
 
 Checking whether two points are within a certain distance, given their latitude
-and longitude, is usually very fast. You could ask yourself whether
-vectorization would help. The answer would be no, if you only do the check
-once. But what if you repeat that operation hundred of thousands of times?  In
-a C-world, that would also be very fast. In Python? Not so much!
+and longitude, is usually very fast. Vectorization wouldn't help much when
+doing the operation only once. But what if you repeat that operation hundred of
+thousands of times?  In a C-world, that would also be very fast. In Python? Not
+so much!
 
 ### First things first: distance between two points
 
-As it would not make sense to improve the performance of a formula without
-knowing the formula, let me introduce you with the [Haversine formula][haversine]:
+As it would not make sense to improve the performance of a script without
+knowing what the script should do, let me introduce you with the
+[Haversine formula][haversine] to compute the distance between two points:
 
 $$
 d = 2 r \arcsin\left(\sqrt{\sin^2\left(\frac{\phi_2 - \phi_1}{2}\right) + \cos(\phi_1) \cos(\phi_2)\sin^2\left(\frac{\lambda_2 - \lambda_1}{2}\right)}\right)
@@ -37,7 +38,7 @@ in $km$ if you used $km$, $m$ if you used $m$, and so forth.).
 ### A pythonic haversine formula
 
 If you're scared by math but in love with Python fear not: we also present you
-with the ready to use Python code:
+with the ready to use Python code (WARNING: you need NumPy to get it working):
 
     :::python
     from numpy import sin, cos, pi, arcsin, sqrt
@@ -69,7 +70,7 @@ within a certain radius from a reference postal code.
 
 To measure the performance of the above code we create an array containing some
 random latitude and longitude pairs centered around `(52.3905927,4.8412508)`
-which is the coordinate pair of [our office][contact].
+(the coordinate pair of [our office][contact])
 
     :::python
     from numpy import random
@@ -81,27 +82,27 @@ which is the coordinate pair of [our office][contact].
 The `points[:, 0]` syntax is the
 [NumPy] way of saying: select all fields from the first column, which in
 our case would be the latitude of `points`. To measure how much time is needed to get
-the distances between `points` and `godatadriven`, we can use [ipython]
+the distances between `points` and `godatadriven`, we can use the [ipython]
 `%timeit` magic function, that measures how much time, averaged on multiple
-runs, a script takes to execute.
+runs, a script takes to execute:
 
     :::python
     def iterate_distance():
         d = []
         for p in points:
             d.append(get_distance(p[0], p[1], godatadriven[0], godatadriven[1]))
-    %timeit iterate_distance()  # result is 3.53 seconds
+    %timeit iterate_distance()  # runs in 3.53 seconds
 
 If you're familiar with Python, the code above will give you the shivers, as it
 does not use [list comprehension][list-comprehension]. Changing the code, alas,
-only marginally affects performance:
+has only a marginal impact on performance:
 
     :::python
     %timeit [get_distance(p[0], p[1], godatadriven[0], godatadriven[1]) for p in points]
-    # result is 3.46 seconds
+    # runs in 3.46 seconds
 
 If you're building a real-time application, where a postal code check could be an
-intermediate computation, $3$.54s is an eternity. Luckily, we can do some magic
+intermediate computation, $3.46s$ is an eternity. Luckily, we can do some magic
 with NumPy.
 
 ### Vectorization to the rescue
@@ -109,7 +110,7 @@ with NumPy.
 In our code, `points` is a NumPy array. NumPy arrays can be easily manipulated
 because, under the hood, they have been coded to be a really convenient way to
 describe blocks of computer memory. The particular structure chosen by NumPy
-allows its arrays to be straightforwardly modified by C code. This is
+allows its arrays to be straightforwardly modified by C or Fortran code. This is
 fundamental here because, as we saw above, computing a similar operation 400000
 times in Python is not exactly the most clever idea.
 
@@ -145,7 +146,7 @@ codes
 
 and that, given a postal code and a given radius, you want a list of postal
 codes that fall within the given radius. That can be accomplished with the
-following code
+following code:
 
     :::python
     def get_zips(postal_code, radius):
@@ -158,7 +159,9 @@ following code
 
 Thanks to the vectorized nature of NumPy operations (including the comparison
 with `radius` on the previous chunck of code), the check is done in a matter of
-milliseconds, making it a good fit for real time web applications.
+milliseconds, making it a good fit for real time web applications. Not only
+that: the resulting code is very clean and pythonic, requiring even less typing
+than what a list comprehension would.
 
 Note: if you are so inclined, a IPython notebook with the performance test is
 online at [nbviewer]. The times reported there may vary slightly compared with
