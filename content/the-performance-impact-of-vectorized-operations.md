@@ -1,18 +1,24 @@
-Title: Fast distance checks using numpy
+Title: The performance impact of vectorized operations
 Date: 2014-02-28 15:00
-Slug: fast-coordinates-check-with-numpy
+Slug: the-performance-impact-of-vectorized-operations
 Author: Giovanni Lanzani
-Excerpt: Checking whether two points are within a certain distance, given their latitude and longitude, is a task that can be accomplished quite quickly by all modern computers. But what if you repeat that operation hundred of thousands of times?  In a C-world, that would also be very fast. In the scripting languages so common nowadays to develop everything from quick shells scripts to web applications, that does not come for free. In this blog post I present how to make it fast with Python.
+Excerpt: Scripting language are often associated with being slow. As computers get faster, this may become less and less relevant, but as we get into the realm of big(ger) data performance efficiency is always welcome. In this blog post we take a look at the impact of vectorized operations. As an example, we will create a Python script to check whether a postal code lies within a certain distance of a reference point and measure what is the difference when we use vectorization.
 Template: article
 Latex:
 
+Scripting language are often associated with being slow. As computers get
+faster, this may become less and less relevant, but as we get into the realm of
+big(ger) data performance efficiency is always welcome. In this blog post we
+take a look at the impact of vectorized operations. As an example, we will
+create a Python script to check whether a postal code lies within a certain
+distance of a reference point and measure what is the difference when we use
+vectorization.
+
 Checking whether two points are within a certain distance, given their latitude
-and longitude, is a task that can be accomplished quite quickly by all modern
-computers. But what if you repeat that operation hundred of thousands of times?
-In a C-world, that would also be very fast. In the scripting languages so
-common nowadays to develop everything from quick shells scripts to web
-applications, that does not come for free. In this blog post I present how to
-make it fast with Python.
+and longitude, is usually very fast. You could ask yourself whether
+vectorization would help. The answer would be no, if you only do the check
+once. But what if you repeat that operation hundred of thousands of times?  In
+a C-world, that would also be very fast. In Python? Not so much!
 
 ### First things first: distance between two points
 
@@ -40,7 +46,7 @@ with the ready to use Python code:
         Find the distance between `(lat,lon)` and the reference point
         `(pcode_lat,pcode_lon)`.
         """
-        RAD_FACTOR = math.pi / 180.0  # degrees to radians for trig functions
+        RAD_FACTOR = pi / 180.0  # degrees to radians for trig functions
         lat_in_rad = lat * RAD_FACTOR
         lon_in_rad = lon * RAD_FACTOR
         pcode_lat_in_rad = pcode_lat * RAD_FACTOR
@@ -83,7 +89,7 @@ runs, a script takes to execute.
     def iterate_distance():
         d = []
         for p in points:
-            d.append(get_distance(p[0], p[1], reference[0], reference[1]))
+            d.append(get_distance(p[0], p[1], godatadriven[0], godatadriven[1]))
     %timeit iterate_distance()  # result is 3.53 seconds
 
 If you're familiar with Python, the code above will give you the shivers, as it
@@ -91,7 +97,7 @@ does not use [list comprehension][list-comprehension]. Changing the code, alas,
 only marginally affects performance:
 
     :::python
-    %timeit [get_distance(p[0], p[1], reference[0], reference[1]) for p in points]
+    %timeit [get_distance(p[0], p[1], godatadriven[0], godatadriven[1]) for p in points]
     # result is 3.46 seconds
 
 If you're building a real-time application, where a postal code check could be an
@@ -123,7 +129,7 @@ a for-loop for each element because once again NumPy took care of it.
 That said, here's the vectorized operation of getting the distance in NumPy:
 
     :::python
-    %timeit get_distance(points[:, 0], points[:, 1], reference[0], reference[1])
+    %timeit get_distance(points[:, 0], points[:, 1], godatadriven[0], godatadriven[1])
     # runs in 21.5 ms!
 
 which is some 165 times faster!
