@@ -8,7 +8,7 @@ Latex:
 
 This blog is part of the blog series Kerberos and Hadoop and it explains what Kerberos is and how you can set up a Kerberos server. This is the first part of the blog series and it is just a 'helper' blog, which explains what Kerberos is and how it can be installed. The rest of the series will contain:
 
-- how to set up cross-realm trust between an Active Directory and the KDC server you set up in this blog
+- how to set up cross-realm trust between an Active Directory and the KDC server you set up in this blog (<a href="cross-realm-trust-kerberos.html" target="_blank">Setting up cross realm trust between Active Directory and Kerberos KDC</a>)
 - how to use Kerberos with Cloudera Manager and Hadoop
 
 For these blogs, please check back later....
