@@ -10,7 +10,7 @@ This is the second part of the blog series and it is just a 'helper' blog, which
 
 - what is Kerberos and how to set up a Kerberos server:  <a href="kerberos_kdc_install.html" target="_blank">Kerberos basics and installing a KDC</a>
 - how to set up cross-realm trust between an Active Directory and the KDC server -- this blog
-- how to use Kerberos with Cloudera Manager and Hadoop -- work in progress...please check back later...
+- how to use Kerberos with Cloudera Manager and Hadoop:(<a href="kerberos-cloudera-setup.html" target="_blank">Setting up Kerberos authentication for Hadoop with Cloudera Manager</a>)
 
 **Cross-realm trust** describes situations when clients (typically users) of one realm use Kerberos to authenticate to services (e.g. server processes) which belong to another realm. Let's say that clients in realm A want to use the services in realm B. In this case, the administrator needs to configure that realm B *trusts* the realm A by sharing a key between the two involved KDCs (of the two different realms). In the above example the key would have the krbtgt/B@A form and should be added to both KDCs with the same key. By default cross-realm trust is unidirectional, meaning that if you also want the users from realm B to access services in realm A, you need to add another key (krbtgt@A/B). More about cross-realm trust: <a href="http://www.zeroshell.org/kerberos/Kerberos-cross-authentication/" target="_blank"> Cross Authentication </a>.
 
