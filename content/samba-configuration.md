@@ -570,18 +570,19 @@ We used a CentOS 6.5 machine to install the Samba AD DC and SSSD. On this machin
 
 1.	To start the SSSD daemon, just start the sssd service:
 
-	service sssd start
+		service sssd start
+		chkconfig sssd on
 
-For debugging, it may be more comfortable to run the daemon in foreground:
+	For debugging, it may be more comfortable to run the daemon in foreground:
 
-	/usr/sbin/sssd -i
+		/usr/sbin/sssd -i
 
 1. Test that we can see the users added to the Samba AD:
 
- 	getent passwd 
-		...
-		test1:*:1000:100:test1:/home/test1:/bin/bash
-		...
+		getent passwd 
+			...
+			test1:*:1000:100:test1:/home/test1:/bin/bash
+			...
 		
 If you check the output carefully you will see that the user Administrator and 'tunde' (in our case) does not appear in this list. This is because we did not specify the UID, GID property when we used samba-tool to create the tunde user.
 
@@ -596,65 +597,64 @@ When we set up a Hadoop cluster, all the machines which run Hadoop services shou
 
 1. Get sernet.repo ( you will need to create a Sernet acount for this on the <a href="https://portal.enterprisesamba.com/"> SerNet User Manager</a> site)
 
-	cd /etc/yum.repos.d/
-	wget https://<username>:<password>@download.sernet.de/packages/samba/4.1/centos/6/sernet-samba-4.1.repo
+		cd /etc/yum.repos.d/
+		wget https://<username>:<password>@download.sernet.de/packages/samba/4.1/centos/6/sernet-samba-4.1.repo
 
 1. Edit repo file with user and password provided by Sernet
 
 
-	cat /etc/yum.repos.d/sernet-samba-4.1.repo 
-
-	[sernet-samba-4.1]
-	name=SerNet Samba 4.1 Packages (centos-6)
-	type=rpm-md
-	baseurl=https://USERNAME:ACCESSKEY@download.sernet.de/packages/samba/4.1/centos/6/
-	gpgcheck=1
-	gpgkey=https://USERNAME:ACCESSKEY@download.sernet.de/packages/samba/4.1/centos/6/repodata/repomd.xml.key
-	enabled=1
+		cat /etc/yum.repos.d/sernet-samba-4.1.repo 
+	
+		[sernet-samba-4.1]
+		name=SerNet Samba 4.1 Packages (centos-6)
+		type=rpm-md
+		baseurl=https://USERNAME:ACCESSKEY@download.sernet.de/packages/samba/4.1/centos/6/
+		gpgcheck=1
+		gpgkey=https://USERNAME:ACCESSKEY@download.sernet.de/packages/samba/4.1/centos/6/repodata/repomd.xml.key
+		enabled=1
 
 1. Install repo key
 
-	yum install http://ftp.sernet.de/pub/sernet-build-key-1.1-4.noarch.rpm
+		yum install http://ftp.sernet.de/pub/sernet-build-key-1.1-4.noarch.rpm
 	
-
 1. Install Sernet packages
 
-**NOTE:** If you have the krb5-server package installed, you will need to uninstall it, as it conflicts with the sernet-samba-ad package.
+	**NOTE:** If you have the krb5-server package installed, you will need to uninstall it, as it conflicts with the sernet-samba-ad package.
 
-	yum install -y sernet-samba sernet-samba-ad  sernet-samba-client
+		yum install -y sernet-samba sernet-samba-ad  sernet-samba-client
 	
 1. Set up Samba. Create the smb.conf file in /etc/samba
 
-	vi /etc/samba/smb.conf
-
-	[global]
-	   workgroup = GDD
-	   realm = GDD.NL
-	   security = ADS
-	   idmap config * : range = 16777216-33554431
-	   template shell = /bin/false
-	   winbind use default domain = true
-	   winbind offline logon = false
-	   winbind separator = +
+		vi /etc/samba/smb.conf
 	
-	   encrypt passwords = yes
-	   kerberos method = system keytab
-	
-	   idmap config *:backend = tdb
-	   idmap config {{ domain }}:backend = rid
-	   idmap config {{ domain }}:range = 5000-40000
-	   idmap config {{ domain }}:base_rid = 0
-	
-	   winbind nss info = rfc2307
-	   winbind trusted domains only = no
-	   winbind enum users  = yes
-	   winbind enum groups = yes
-	
-	   log level = 1	
+		[global]
+		   workgroup = GDD
+		   realm = GDD.NL
+		   security = ADS
+		   idmap config * : range = 16777216-33554431
+		   template shell = /bin/false
+		   winbind use default domain = true
+		   winbind offline logon = false
+		   winbind separator = +
+		
+		   encrypt passwords = yes
+		   kerberos method = system keytab
+		
+		   idmap config *:backend = tdb
+		   idmap config {{ domain }}:backend = rid
+		   idmap config {{ domain }}:range = 5000-40000
+		   idmap config {{ domain }}:base_rid = 0
+		
+		   winbind nss info = rfc2307
+		   winbind trusted domains only = no
+		   winbind enum users  = yes
+		   winbind enum groups = yes
+		
+		   log level = 1	
 	  
-Set the permissions:
+	Set the permissions:
 
-	chmod 644 /etc/samba/smb.conf
+		chmod 644 /etc/samba/smb.conf
 	   	
 1. Install Kerberos client, which means we need to install the client packages and provide each client with a valid krb5.conf configuration file. 
 
@@ -662,37 +662,7 @@ Set the permissions:
 
 
 1. Configure Kerberos.
-
-	vi /etc/krb5.conf
-
-	[logging]
-	 default = FILE:/var/log/krb5libs.log
-	 kdc = FILE:/var/log/krb5kdc.log
-	 admin_server = FILE:/var/log/kadmind.log
-
-	[libdefaults]
-	 default_realm = GDD.NL
-	 dns_lookup_realm = true
-	 dns_lookup_kdc = true
-	 ticket_lifetime = 24h
-	 renew_lifetime = 7d
-	 forwardable = true
-
-	[realms]
-	 GDD.NL = {
-	        kdc = host1.gdd.nl:88
-	        admin_server = host1.gdd.nl:749
-	 }
-
-	[appdefaults]
-	     pam = {
-	          debug = false
-	          ticket_lifetime = 36000
-	          renew_lifetime = 36000
-	          forwardable = true
-	          krb4_convert = false
-	     }
-
+john.muller@ing.nl
 Set the permissions:
 
 	chmod 644 /etc/krb5.conf
@@ -703,65 +673,65 @@ Set the permissions:
 
 1. Configure SSSD
 
-	vi /etc/sssd/sssd.conf
-
-	[sssd]
-	config_file_version = 2
-	services = nss, pam
-	domains = default
-	debug_level = 10
-
-	[nss]
-	nss_filter_groups = root
-	nss_filter_users = root
-	nss_entry_cache_timeout = 30
-	nss_enum_cache_timeout = 30
-
-	[domain/GDD.NL]
-	id_provider = ad
-	ad_server= host1.gdd.nl
-	ad_domain= gdd.nl
-	ldap_schema = ad
-	ldap_id_mapping = False
-	enumerate=true
-	override_homedir=/home/%u
-
-Change the permissions on the /etc/sssd/sssd.conf
-
-	chmod 600 /etc/sssd/sssd.conf
+		vi /etc/sssd/sssd.conf
+	
+		[sssd]
+		config_file_version = 2
+		services = nss, pam
+		domains = default
+		debug_level = 10
+	
+		[nss]
+		nss_filter_groups = root
+		nss_filter_users = root
+		nss_entry_cache_timeout = 30
+		nss_enum_cache_timeout = 30
+	
+		[domain/GDD.NL]
+		id_provider = ad
+		ad_server= host1.gdd.nl
+		ad_domain= gdd.nl
+		ldap_schema = ad
+		ldap_id_mapping = False
+		enumerate=true
+		override_homedir=/home/%u
+	
+	Change the permissions on the /etc/sssd/sssd.conf
+	
+		chmod 600 /etc/sssd/sssd.conf
 	
 1. Check domain join
 
-	net ads testjoin -P
+		net ads testjoin -P
 
-This will probably fail, but it is a command which you should be aware of. 
+	This will probably fail, but it is a command which you should be aware of. 
 
 1.  Join the domain:
 
-	shell net ads join -Uadministrator%password
+		shell net ads join -Uadministrator%password
 
-Note: Here you need to change the password and if needed, you can also change 'administrator' to the username you are using.
+	Note: Here you need to change the password and if needed, you can also change 'administrator' to the username you are using.
 	
 1.	Set forward DNS
 
-	samba-tool dns add <domain_dc> <dns_domain> <hostname> A <ip> -U administrator%password
+		samba-tool dns add <domain_dc> <dns_domain> <hostname> A <ip> -U administrator%password
 	
-So if our domain dc is running on host1.gdd.nl, our dnd_domain is GDD.NL and we try to add a new host named host2.gdd.nl with IP 172.16.115.5 then this command would look like:
+	So if our domain dc is running on host1.gdd.nl, our dnd_domain is GDD.NL and we try to add a new host named host2.gdd.nl with IP 172.16.115.5 then this command would look like:
 	
-	samba-tool dns add host1.gdd.nl gdd.nl host2 A 172.16.115.5 -U administator%password
+		samba-tool dns add host1.gdd.nl gdd.nl host2 A 172.16.115.5 -U administator%password
 	
-Of course you still need to write the correct password in the previous line.
+	Of course you still need to write the correct password in the previous line.
 
 
 1. 	Set reverse DNS
 
-	samba-tool dns add <domain_dc> <reverse_zone> <host_part> PTR <fully qualified host name> -U administrator%password
+		samba-tool dns add <domain_dc> <reverse_zone> <host_part> PTR <fully qualified host name> -U administrator%password
 	
-So if our domain dc is running on host1.gdd.nl, our dnd_domain is GDD.NL and we try to add a new host named host2.gdd.nl with IP 172.16.115.5 then this command would look like:
+	So if our domain dc is running on host1.gdd.nl, our dnd_domain is GDD.NL and we try to add a new host named host2.gdd.nl with IP 172.16.115.5 then this command would look like:
 	
-	samba-tool dns add host1.gdd.nl 115.16.172.in-addr.arpa 5 PTR host2.gdd.nl -U administator%password
+		samba-tool dns add host1.gdd.nl 115.16.172.in-addr.arpa 5 PTR host2.gdd.nl -U administator%password
 	
-Of course you still need to write the correct password in the previous line.
+	Of course you still need to write the correct password in the previous line.
 
 
 1.  Check that reverse and forward lookup work correctly.
@@ -770,11 +740,12 @@ Of course you still need to write the correct password in the previous line.
 
 1.	Update system user configurations
 
-	authconfig --enablesssd --enablemkhomedir --enablesssdauth --update
+		authconfig --enablesssd --enablemkhomedir --enablesssdauth --update
 
 1.	Start sssd service
-
-	service sssd start
+	
+		service sssd start
+		chkconfig sssd on
 
 
 ### Setting up Hadoop security with Cloudera Manager
