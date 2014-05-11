@@ -1,29 +1,28 @@
-Title: Configuring Samba and Cloudera Manager
+Title: Configuring Samba4 and Cloudera Manager
 Date: 2014-05-9 15:00
 Slug: samba-configuration
 Author: Tünde Bálint; Bolke de Bruin
-Excerpt: We will use Samba to create a compatible Active Directory Domain Controller that runs on the Linux platform. Afterwards we will configure PAM (Pluggable Authentication Modules) to use SSSD (System Security Services Daemon) which will communicate with the Active Directory (or in our case Samba). With this setup the idea is that we do not need to set up a Kerberos server with cross-realm trust, but we will use SSSD and PAM. Afterward we will explain how this setup can be used with Cloudera Manager.
+Excerpt: The standard way of using Cloudera in an enterprise environment is to either create a cross realm trust with kerberos domain or to buy the enterprise add-ons. The down side of this that user administration is a hassle as you need to maintain the list of users that is able to access the system on every node by hand or replication (or you need to spend money). Samba 4 can serve as an Active Directory Domain Controller, provide DNS services, handle Kerberos-based authentication, and administer group policy. In this article we use Samba4 to setup an active directory domain and a domain controller. Next, we will configure SSSD and PAM to provide the necessary glue between active directory and the unix name service switch so users from active directory are available in linux. Finally, we will explain how to use this setup with Cloudera Manager. 
 Template: article
 Latex:
-
-In this blog we will describe how we can configure Samba to mimic an Actice Directory server to replace the Kerberos KDC server. We will also discuss SSSD and PAM. Our goal is to obtain renewable certificates which can be then used by Cloudera Manager, the hadoop daemons and users.
-You might wonder why we actually bothered to implement this solution. We chose to implement this solution so we can assure that each user can log in to each machine using SSSD. 
+In this blog we will describe how we can configure Samba4 as an Active Directory domain controller to replace the Kerberos Domain Controller. We will also discuss SSSD and PAM. Our goal is to obtain renewable certificates which can be then used by Cloudera Manager, the hadoop daemons and users.
+You might wonder why we actually bothered to implement this solution. We chose to implement this solution so we can have centralized administration of users.
 
 
 ### Background
 
 **<em>Samba</em> **
 
-Samba consists of multiple daemons:
+Samba4 consists of multiple daemons:
 
-- nmbd -- takes care of all the names and naming. It registers and resolves names, and handles browsing
-- smbd -- manages file transfers and authentication
-- winbindd -- handles Microsoft Windows domain membership
-- ad - setup Samba as a simple Domain Controller (DC) that is compatible with Microsoft's Active Directory
+- nmbd -- old style name resolution from the NT4 era
+- smbd -- manages file transfers 
+- winbindd -- manages the connections to domain controllers - replaced by sssd in this scenario (seems also deprecated in favor of sssd)
+- ad - manages authentication
 
 Our goal is to set up Samba as a domain controller. To see how this can be done, you can read the <a href="https://wiki.samba.org/index.php/Samba_AD_DC_HOWTO"> Samba AD DC Howto</a>. The required steps are also listed in this blog. 
 
-**NOTE:** To learn more about Samba you can start on the <a href="https://www.samba.org/samba/docs/SambaIntro.html" target="_blank"> Samba site </a> or you can read the  following site about <a href="http://www.samba.org/samba/docs/using_samba/ch09.html" target="_blank">Users and Security in Samba</a>.
+**NOTE:** Samba4 is quite new and much of the documentation still targets Samba3. 
 
 **<em>PAM (Pluggable Authentication Modules)</em>**
 
@@ -40,20 +39,22 @@ We used a CentOS 6.5 machine to install the Samba AD DC and SSSD. On this machin
 
 **<em> Prerequisites </em> **
 
-1. Disable SElinux. In /etc/selinux/config make sure that you have a line saying "SELINUX=disabled". If you need to change this, reboot.
+1. Disable SElinux. In /etc/selinux/config make sure that you have a line saying "SELINUX=disabled" or use <a href="http://wiki.samba.org/index.php/Samba_AD_DC_access_control_settings">this</a> as a guideline. If you need to change this, reboot.
 
 1. Set a FQDN for your server
 
-1. Install NTPD, as accurate time is neccessary
+1. Install NTPD (>= 4.2.6 if you have Windows clients and would like use signed ntp support), as accurate time synchronization is neccessary
 
 1. Disable IP tables. 
 
 		service iptables stop
 		chkconfig iptables off
 
-** NOTE:** Samba uses the following ports: 137/tcp, 137/udp, 138/tcp, 138/udp, 139/udp, 139/udp, 445/tcp, 445/udp. So if you do not want to disable IP tables, make sure that these ports are open. We got these ports from the Samba documentation. We did not test if all ports are used in out setup. We were in a protected environment, so we it was no problem to disable IP tables.
+** NOTE:** Samba uses the following ports: 88/tcp, 88/udp, 137/tcp, 137/udp, 138/tcp, 138/udp, 139/udp, 139/udp, 445/tcp, 445/udp. So if you do not want to disable IP tables, make sure that these ports are open. We got these ports from the Samba documentation. We did not test if all ports are used in out setup. We were in a protected environment, so it was no problem to disable IP tables.
 
 ### Install & Configure & Test Samba and the Kerberos client
+
+** NOTE:** We are using the sernet distribution of Samba4 as it packaged Samba4 4.1 and Samba4 4.0 had some issues for us. You can of course build from source if required.
 
 1. Get sernet.repo ( you will need to create a Sernet acount for this on the <a href="https://portal.enterprisesamba.com/"> SerNet User Manager</a> site)
 
@@ -134,7 +135,7 @@ We used a CentOS 6.5 machine to install the Samba AD DC and SSSD. On this machin
 			workgroup = GDD
 			realm = GDD.NL
 			server role = active directory domain controller
-		# dns forwarder = < IP of the server that DNS requests will be forwarded to if they can not be handled by Samba itself \>
+		 # dns forwarder = < IP of the server that DNS requests will be forwarded to if they can not be handled by Samba itself \>
 			idmap_ldb:use rfc2307 = yes
 			kerberos method = system keytab
 			log level = 1
@@ -156,9 +157,9 @@ We used a CentOS 6.5 machine to install the Samba AD DC and SSSD. On this machin
 
 	We specify tls enabled property to allow Samba to use autogenerated self-signed certificate.  On its first startup, Samba creates a private key, a self signed certificate and a CA certificate:
 			
-			/usr/local/samba/private/tls/ca.pem
-			/usr/local/samba/private/tls/cert.pem
-			/usr/local/samba/private/tls/key.pem
+		/usr/local/samba/private/tls/ca.pem
+		/usr/local/samba/private/tls/cert.pem
+		/usr/local/samba/private/tls/key.pem
 	
 	These certificates are valid for 700 days after creation (the lifetime, that is used when auto-creating the certificates, is hardcoded in „source4/lib/tls/tlscert.c“).
 	As per default TLS is enabled („tls enabled = yes“), the above files are used, what corresponds to the following smb.conf parameters:
@@ -176,6 +177,7 @@ We used a CentOS 6.5 machine to install the Samba AD DC and SSSD. On this machin
 1.	Provision a domain
 
 	**Note:** When asked for a password, provide a strong password, otherwise the domain provisioning will fail.
+	**Note:** rfc2307 is required if you do not want your unix systems littered with Windows user names like $SYSTEM$. It does require you to add the unix attributes for users that need to have access to your hadoop environment.
 
 		samba-tool domain provision --use-rfc2307 --interactive --function-level=2008_R2
 
@@ -342,7 +344,7 @@ We used a CentOS 6.5 machine to install the Samba AD DC and SSSD. On this machin
 
 1. Configure Kerberos. Here we changed the following parameters: dns_lookup_realm, dns_lookup_kdc, default_realm, kdc and admin_server. 
 
-	**NOTE:** To understand the Kerberos parameters in the libdefaults section better, check out the <a href="http://web.mit.edu/kerberos/krb5-1.5/krb5-1.5.1/doc/krb5-admin/libdefaults.html#libdefaults" target="_blank"> Kerberos documentation for libdefaults</a>. 
+	**NOTE:** To understand the Kerberos parameters in the libdefaults section better, check out the <a href="http://web.mit.edu/kerberos/krb5-1.5/krb5-1.5.1/doc/krb5-admin/libdefaults.html#libdefaults" target="_blank"> Kerberos documentation for libdefaults</a>. However, bear in mind that the internal KDC of Samba4 is based on the Heimdal implementation so there are some differences.
 
 	We also added the appdefaults section, (see defaults at <a href="http://web.mit.edu/kerberos/krb5-1.5/krb5-1.5.1/doc/krb5-admin/appdefaults.html#appdefaults" target="_blank">Kerberos appdefaults</a>) because pam_krb5 module expects a pam subsection in the appdefaults section from where it reads its configuration information.
 
@@ -459,7 +461,7 @@ We used a CentOS 6.5 machine to install the Samba AD DC and SSSD. On this machin
 		authconfig --enablesssd --enablesssdauth --enablemkhomedir --update
 		error reading information on service winbind: No such file or directory
 
-	But when we checked the nsswitch.conf and in pam.d/system-auth everything was set up properly. 
+	But when we checked the nsswitch.conf and in pam.d/system-auth everything was set up properly. We are not using winbind anyway.
 
 1.  Alternatively to the previous step configure NSS and PAM manually (or use the steps described here to check that NSS and PAM were configured correctly)
 
@@ -529,66 +531,67 @@ We used a CentOS 6.5 machine to install the Samba AD DC and SSSD. On this machin
 				automount:  files
 				aliases:    files nisplus
 
-- Configure PAM 
-	** NOTE: A mistake in the PAM configuration file can lock you out of the system completely. Always back up your configuration files before performing any changes, and keep a session open so that you can revert any changes you make should the need arise.**
+	- Configure PAM
+	
+		** NOTE: A mistake in the PAM configuration file can lock you out of the system completely. Always back up your configuration files before performing any changes, and keep a session open so that you can revert any changes you make should the need arise.**
 
-	To enable your system to use SSSD for PAM, you need to edit the default PAM configuration file. Back up the PAM configuration file.
+		To enable your system to use SSSD for PAM, you need to edit the default PAM configuration file. Back up the PAM configuration file.
 
-		cd /etc/pam.d/
-		cp system-auth system-auth.bck
-
-	Edit this file to reflect the following example:
-
-		vi /etc/pam.d/system.auth
-
-			#%PAM-1.0
-			# This file is auto-generated.
-			# User changes will be destroyed the next time authconfig is run.
-			auth        required      pam_env.so
-			auth        sufficient    pam_unix.so nullok try_first_pass
-			auth        requisite     pam_succeed_if.so uid >= 500 quiet
-			auth        sufficient    pam_sss.so use_first_pass
-			auth        required      pam_deny.so
-
-			account     required      pam_unix.so
-			account     sufficient    pam_localuser.so
-			account     sufficient    pam_succeed_if.so uid < 500 quiet
-			account     [default=bad success=ok user_unknown=ignore] pam_sss.so
-			account     required      pam_permit.so
-
-			password    requisite     pam_cracklib.so try_first_pass retry=3 type=
-			password    sufficient    pam_unix.so sha512 shadow nullok try_first_pass use_authtok
-			password    sufficient    pam_sss.so use_authtok
-			password    required      pam_deny.so
-
-			session     optional      pam_keyinit.so revoke
-			session     required      pam_limits.so
-			session     optional      pam_mkhomedir.so
-			session     [success=1 default=ignore] pam_succeed_if.so service in crond quiet use_uid
-			session     required      pam_unix.so
-			session     optional      pam_sss.so
-
+			cd /etc/pam.d/
+			cp system-auth system-auth.bck
+	
+		Edit this file to reflect the following example:
+	
+			vi /etc/pam.d/system.auth
+	
+				#%PAM-1.0
+				# This file is auto-generated.
+				# User changes will be destroyed the next time authconfig is run.
+				auth        required      pam_env.so
+				auth        sufficient    pam_unix.so nullok try_first_pass
+				auth        requisite     pam_succeed_if.so uid >= 500 quiet
+				auth        sufficient    pam_sss.so use_first_pass
+				auth        required      pam_deny.so
+	
+				account     required      pam_unix.so
+				account     sufficient    pam_localuser.so
+				account     sufficient    pam_succeed_if.so uid < 500 quiet
+				account     [default=bad success=ok user_unknown=ignore] pam_sss.so
+				account     required      pam_permit.so
+	
+				password    requisite     pam_cracklib.so try_first_pass retry=3 type=
+				password    sufficient    pam_unix.so sha512 shadow nullok try_first_pass use_authtok
+				password    sufficient    pam_sss.so use_authtok
+				password    required      pam_deny.so
+	
+				session     optional      pam_keyinit.so revoke
+				session     required      pam_limits.so
+				session     optional      pam_mkhomedir.so
+				session     [success=1 default=ignore] pam_succeed_if.so service in crond quiet use_uid
+				session     required      pam_unix.so
+				session     optional      pam_sss.so
+	
 1.	To start the SSSD daemon, just start the sssd service:
 
 		service sssd start
 		chkconfig sssd on
 
 	For debugging, it may be more comfortable to run the daemon in foreground:
-
+	
 		/usr/sbin/sssd -i
 
 1. Test that we can see the users added to the Samba AD:
-
-		getent passwd 
+	
+	 	getent passwd 
 			...
 			test1:*:1000:100:test1:/home/test1:/bin/bash
 			...
-		
-If you check the output carefully you will see that the user Administrator and 'tunde' (in our case) does not appear in this list. This is because we did not specify the UID, GID property when we used samba-tool to create the tunde user.
-
-**NOTE:** It might take some time to actually see the test1 user in the output of the 'getent passwd' command. This is because it needs to synchronize. If you do not want to wait you can just use:
+			
+	If you check the output carefully you will see that the user Administrator and 'tunde' (in our case) does not appear in this list. This is because we did not specify the UID, GID property when we used samba-tool to create the tunde user.
 	
-	getent passwd test1 
+	**NOTE:** It might take some time to actually see the test1 user in the output of the 'getent passwd' command. This is because it needs a bit of time to synchronize. If you do not want to wait you can just use:
+		
+		getent passwd test1 
 
 
 ### Joining other machines to the domain 
@@ -601,8 +604,8 @@ When we set up a Hadoop cluster, all the machines which run Hadoop services shou
 		wget https://<username>:<password>@download.sernet.de/packages/samba/4.1/centos/6/sernet-samba-4.1.repo
 
 1. Edit repo file with user and password provided by Sernet
-
-
+	
+	
 		cat /etc/yum.repos.d/sernet-samba-4.1.repo 
 	
 		[sernet-samba-4.1]
@@ -617,6 +620,7 @@ When we set up a Hadoop cluster, all the machines which run Hadoop services shou
 
 		yum install http://ftp.sernet.de/pub/sernet-build-key-1.1-4.noarch.rpm
 	
+
 1. Install Sernet packages
 
 	**NOTE:** If you have the krb5-server package installed, you will need to uninstall it, as it conflicts with the sernet-samba-ad package.
@@ -651,9 +655,9 @@ When we set up a Hadoop cluster, all the machines which run Hadoop services shou
 		   winbind enum groups = yes
 		
 		   log level = 1	
-	  
+		  
 	Set the permissions:
-
+	
 		chmod 644 /etc/samba/smb.conf
 	   	
 1. Install Kerberos client, which means we need to install the client packages and provide each client with a valid krb5.conf configuration file. 
@@ -662,10 +666,40 @@ When we set up a Hadoop cluster, all the machines which run Hadoop services shou
 
 
 1. Configure Kerberos.
-john.muller@ing.nl
-Set the permissions:
 
-	chmod 644 /etc/krb5.conf
+		vi /etc/krb5.conf
+	
+		[logging]
+		 default = FILE:/var/log/krb5libs.log
+		 kdc = FILE:/var/log/krb5kdc.log
+		 admin_server = FILE:/var/log/kadmind.log
+	
+		[libdefaults]
+		 default_realm = GDD.NL
+		 dns_lookup_realm = true
+		 dns_lookup_kdc = true
+		 ticket_lifetime = 24h
+		 renew_lifetime = 7d
+		 forwardable = true
+	
+		[realms]
+		 GDD.NL = {
+		        kdc = host1.gdd.nl:88
+		        admin_server = host1.gdd.nl:749
+		 }
+	
+		[appdefaults]
+		     pam = {
+		          debug = false
+		          ticket_lifetime = 36000
+		          renew_lifetime = 36000
+		          forwardable = true
+		          krb4_convert = false
+		     }
+
+	Set the permissions:
+
+		chmod 644 /etc/krb5.conf
 
 1. Install SSSD 
 
@@ -708,9 +742,11 @@ Set the permissions:
 
 1.  Join the domain:
 
-		shell net ads join -Uadministrator%password
+		net ads join -Uadministrator%password
 
 	Note: Here you need to change the password and if needed, you can also change 'administrator' to the username you are using.
+
+	**NOTE:** The following should not be required, but we couldn't get samba to add our hosts automatically. This is probably a misconfiguration on our side.
 	
 1.	Set forward DNS
 
@@ -743,7 +779,7 @@ Set the permissions:
 		authconfig --enablesssd --enablemkhomedir --enablesssdauth --update
 
 1.	Start sssd service
-	
+
 		service sssd start
 		chkconfig sssd on
 
@@ -754,13 +790,15 @@ The steps we need to follow to set up Hadoop Security with Cloudera Manager are 
 
 To summarize the steps:
 
+1.	Allow the CDH install user to sudo samba-tool. This is required for operations on the principal names.
+
 1.	Install a CDH version with Cloudera Manager without configuring security. Make sure that the cluster works.
 
 1.	Install the Java Cryptography Extension (JCE) 
 
 1.	Create a Kerberos principal and keytab file for Cloudera Manager Server and copy them to the correct directory
 
-1. 	Because the default script distributed with Cloudera generates the certificates using a Kerberos KDC, we had to write a script which can generate these certificates by talking to our Samba AD. This script is the following:
+1. 	Because the default script distributed with Cloudera generates the certificates using a MIT Kerberos KDC, we had to write a script which can generate these certificates by talking to our Samba AD KDC which is Heimdal based. This script is the following:
 
 
 		#!/usr/bin/env bash
