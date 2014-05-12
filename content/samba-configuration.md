@@ -18,7 +18,7 @@ Samba4 consists of multiple daemons:
 - nmbd -- old style name resolution from the NT4 era
 - smbd -- manages file transfers 
 - winbindd -- manages the connections to domain controllers - replaced by sssd in this scenario (seems also deprecated in favor of sssd)
-- ad - manages authentication
+- ad - manages authentication. The Samba Active Directory domain controller functionality is implemented as an integrated Kerberos DC, LDAP server, DNS server, and SMB/CIFS server. Samba 4 AD DC functionality relies heavily on Heimdal Kerberos implementation. Samba 4 includes the embedded Heimdal. When compiled with MIT Kerberos, Samba 4 currently does not provide Active Directory Domain Controller functionality at all, only client side libraries and tools to the extent that does not involve AD DC operations.
 
 Our goal is to set up Samba as a domain controller. To see how this can be done, you can read the <a href="https://wiki.samba.org/index.php/Samba_AD_DC_HOWTO"> Samba AD DC Howto</a>. The required steps are also listed in this blog. 
 
@@ -35,7 +35,7 @@ Integration with a Domain Controller (like an Active Directory server or in our 
 
 ### Our setup
 
-We used a CentOS 6.5 machine to install the Samba AD DC and SSSD. On this machine also the Cloudera Manager 4.8 is running . Cloudera Manager 4.8 is managing a CDH 4.5 cluster consisting of 2 nodes. 
+We used a CentOS 6.5 machine to install the Samba AD DC and SSSD. On this machine also the Cloudera Manager 4.8 is running . Cloudera Manager 4.8 is managing a CDH 4.5 cluster consisting of 2 nodes. For all machines we are using static IPs. 
 
 **<em> Prerequisites </em> **
 
@@ -126,7 +126,7 @@ We used a CentOS 6.5 machine to install the Samba AD DC and SSSD. On this machin
 		# problems without a proper workaround!
 		SAMBA_IGNORE_NSUPDATE_G="no"                             
 
-1. Now we need to create our smb.conf file in /etc/samba
+1. Now we need to create our smb.conf file in /etc/samba.
 
 		vi /etc/samba/smb.conf
 
@@ -135,7 +135,7 @@ We used a CentOS 6.5 machine to install the Samba AD DC and SSSD. On this machin
 			workgroup = GDD
 			realm = GDD.NL
 			server role = active directory domain controller
-		 # dns forwarder = < IP of the server that DNS requests will be forwarded to if they can not be handled by Samba itself \>
+		    dns forwarder = 8.8.8.8
 			idmap_ldb:use rfc2307 = yes
 			kerberos method = system keytab
 			log level = 1
@@ -169,15 +169,17 @@ We used a CentOS 6.5 machine to install the Samba AD DC and SSSD. On this machin
 		tls certfile = tls/cert.pem
 		tls cafile   = tls/ca.pem
 	    
-	If you have a DNS server to which the requests can be forwarded if they can not be handled by Samba itself, set the "dns forwarder" parameter.
+	We configure the internal DNS server to use the Google DNS to forward request to in case our Samba server cannot handle requests. You need to set the "dns forwarder" parameter to the DNS server to which the requests can be forwarded if they can not be handled by Samba itself. 
 	
 	The winbind separator option allows you to specify how NT domain names and user names are combined into unix user names when presented to users. By default, winbindd will use the traditional '\' separator so that the unix user names look like DOMAIN\username. We had problems with Cloudera Manager and the postgreSQL used by cloudera manager because of this, so we changed the separator to '+'.
 
 
 1.	Provision a domain
 
+	If this is the first domain controller in a new domain (as this blog assumes), this involves setting up the internal LDAP, Kerberos, and DNS servers and performing all of the basic configuration needed for the directory. 
+
 	**Note:** When asked for a password, provide a strong password, otherwise the domain provisioning will fail.
-	**Note:** rfc2307 is required if you do not want your unix systems littered with Windows user names like $SYSTEM$. It does require you to add the unix attributes for users that need to have access to your hadoop environment.
+	**Note:** rfc2307 argument adds POSIX attributes (UID/GID) to the AD Schema. This will be necessary if you intend to authenticate Linux, BSD, or OS X clients (including the local machine) in addition to Microsoft Windows. It is required if you do not want your unix systems littered with Windows user names like $SYSTEM$. It does require you to add the unix attributes for users that need to have access to your hadoop environment.
 
 		samba-tool domain provision --use-rfc2307 --interactive --function-level=2008_R2
 
@@ -230,6 +232,56 @@ We used a CentOS 6.5 machine to install the Samba AD DC and SSSD. On this machin
 			DNS Domain:            gdd.nl
 			DOMAIN SID:            S-1-5-21-4088664197-506966525-840056760
 
+
+1. Add a reverse zone -- we will need this when we add the new hosts. It is important for Hadoop that we can properly do forward and reverse lookup.
+
+		samba-tool dns zonecreate <server> <zone> [options]
+
+	In our case this would be:
+
+		samba-tool dns zonecreate host1.gdd.nl 115.16.172.in-addr.arpa -Uadministrator%password
+
+
+1. Install Kerberos client, which means we need to install the client packages and provide each client with a valid krb5.conf configuration file. 
+ 
+ 		yum install -y krb5-workstation
+
+
+1. Configure Kerberos. Here we changed the following parameters: dns_lookup_realm, dns_lookup_kdc, default_realm, kdc and admin_server. 
+
+	**NOTE:** To understand the Kerberos parameters in the libdefaults section better, check out the <a href="http://web.mit.edu/kerberos/krb5-1.5/krb5-1.5.1/doc/krb5-admin/libdefaults.html#libdefaults" target="_blank"> Kerberos documentation for libdefaults</a>. However, bear in mind that the internal KDC of Samba4 is based on the Heimdal implementation so there are some differences.
+
+	We also added the appdefaults section, (see defaults at <a href="http://web.mit.edu/kerberos/krb5-1.5/krb5-1.5.1/doc/krb5-admin/appdefaults.html#appdefaults" target="_blank">Kerberos appdefaults</a>) because pam_krb5 module expects a pam subsection in the appdefaults section from where it reads its configuration information.
+
+		vi /etc/krb5.conf
+
+		[logging]
+		 default = FILE:/var/log/krb5libs.log
+		 kdc = FILE:/var/log/krb5kdc.log
+		 admin_server = FILE:/var/log/kadmind.log
+
+		[libdefaults]
+		 default_realm = GDD.NL
+		 dns_lookup_realm = true
+		 dns_lookup_kdc = true
+		 ticket_lifetime = 24h
+		 renew_lifetime = 7d
+		 forwardable = true
+
+		[realms]
+		 GDD.NL = {
+		        kdc = host1.gdd.nl:88
+		        admin_server = host1.gdd.nl:749
+		 }
+
+		[appdefaults]
+		     pam = {
+		          debug = false
+		          ticket_lifetime = 36000
+		          renew_lifetime = 36000
+		          forwardable = true
+		          krb4_convert = false
+		     }
 
 1. Test connectivity
 
@@ -336,56 +388,6 @@ We used a CentOS 6.5 machine to install the Samba AD DC and SSSD. On this machin
 			Last bad password   : 0
 			Bad password count  : 0
 			Logon hours         : FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-
-1. Add a reverse zone -- we will need this when we add the new hosts. It is important for Hadoop that we can properly do forward and reverse lookup.
-
-		samba-tool dns zonecreate <server> <zone> [options]
-
-	In our case this would be:
-
-		samba-tool dns zonecreate host1.gdd.nl 115.16.172.in-addr.arpa -Uadministrator%password
-
-
-1. Install Kerberos client, which means we need to install the client packages and provide each client with a valid krb5.conf configuration file. 
- 
- 		yum install -y krb5-workstation
-
-
-1. Configure Kerberos. Here we changed the following parameters: dns_lookup_realm, dns_lookup_kdc, default_realm, kdc and admin_server. 
-
-	**NOTE:** To understand the Kerberos parameters in the libdefaults section better, check out the <a href="http://web.mit.edu/kerberos/krb5-1.5/krb5-1.5.1/doc/krb5-admin/libdefaults.html#libdefaults" target="_blank"> Kerberos documentation for libdefaults</a>. However, bear in mind that the internal KDC of Samba4 is based on the Heimdal implementation so there are some differences.
-
-	We also added the appdefaults section, (see defaults at <a href="http://web.mit.edu/kerberos/krb5-1.5/krb5-1.5.1/doc/krb5-admin/appdefaults.html#appdefaults" target="_blank">Kerberos appdefaults</a>) because pam_krb5 module expects a pam subsection in the appdefaults section from where it reads its configuration information.
-
-		vi /etc/krb5.conf
-
-		[logging]
-		 default = FILE:/var/log/krb5libs.log
-		 kdc = FILE:/var/log/krb5kdc.log
-		 admin_server = FILE:/var/log/kadmind.log
-
-		[libdefaults]
-		 default_realm = GDD.NL
-		 dns_lookup_realm = true
-		 dns_lookup_kdc = true
-		 ticket_lifetime = 24h
-		 renew_lifetime = 7d
-		 forwardable = true
-
-		[realms]
-		 GDD.NL = {
-		        kdc = host1.gdd.nl:88
-		        admin_server = host1.gdd.nl:749
-		 }
-
-		[appdefaults]
-		     pam = {
-		          debug = false
-		          ticket_lifetime = 36000
-		          renew_lifetime = 36000
-		          forwardable = true
-		          krb4_convert = false
-		     }
 
 1. Test that you can obtain a certificate 
 
