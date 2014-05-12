@@ -337,6 +337,15 @@ We used a CentOS 6.5 machine to install the Samba AD DC and SSSD. On this machin
 			Bad password count  : 0
 			Logon hours         : FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
 
+1. Add a reverse zone -- we will need this when we add the new hosts. It is important for Hadoop that we can properly do forward and reverse lookup.
+
+		samba-tool dns zonecreate <server> <zone> [options]
+
+	In our case this would be:
+
+		samba-tool dns zonecreate host1.gdd.nl 115.16.172.in-addr.arpa -Uadministrator%password
+
+
 1. Install Kerberos client, which means we need to install the client packages and provide each client with a valid krb5.conf configuration file. 
  
  		yum install -y krb5-workstation
