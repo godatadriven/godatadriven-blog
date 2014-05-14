@@ -609,6 +609,8 @@ We used a CentOS 6.5 machine to install the Samba AD DC and SSSD. On this machin
 
 When we set up a Hadoop cluster, all the machines which run Hadoop services should be joined to the AD which we created in the previous step. In our case these are the extra 2 machines which are managed by Cloudera Manager and which act as Namenode, Datanode, Jobtracker and Tasktracker. The steps which we need to do on these machines are fairly similar to what we did on the machine which runs Cloudera Manager, Samba and SSSD...but you still need to watch out, there are a few changes...
 
+1. 	Check that your /etc/resolv.conf points to the correct server. The resolv.conf should point to the server where the Samba AD is running. Make sure that the /etc/resolv.conf is not overwritten after restart.
+
 1. Get sernet.repo ( you will need to create a Sernet acount for this on the <a href="https://portal.enterprisesamba.com/"> SerNet User Manager</a> site)
 
 		cd /etc/yum.repos.d/
@@ -759,7 +761,9 @@ When we set up a Hadoop cluster, all the machines which run Hadoop services shou
 
 	**NOTE:** The following should not be required, but we couldn't get samba to add our hosts automatically. This is probably a misconfiguration on our side.
 	
-1.	Set forward DNS
+	With this command a forward (A) DNS record should be added to the DNS server. Check if forward lookup work correctly.
+
+	**NOTE:** In case the /etc/resolv.conf was not pointing to the correct server (i.e. the Samba server), it can happen that the forwards DNS record was not added. You can add this manually with the following command:
 
 		samba-tool dns add <domain_dc> <dns_domain> <hostname> A <ip> -U administrator%password
 	
@@ -783,7 +787,6 @@ When we set up a Hadoop cluster, all the machines which run Hadoop services shou
 
 1.  Check that reverse and forward lookup work correctly.
 
-1. 	Check that your /etc/resolv.conf points to the correct server. The resolv.conf should point to the server where the Samba AD is running. Make sure that the /etc/resolv.conf is not overwritten after restart.
 
 1.	Update system user configurations
 
@@ -803,11 +806,20 @@ To summarize the steps:
 
 1.	Allow the CDH install user to sudo samba-tool. This is required for operations on the principal names.
 
+1. Cloudera Manager creates users like: cloudera-scm, flume, zookeeper, httfs, hue, mapred, yarn, sqoop, hive, sqoop2, oozie, hbase and impala. If you do not want Cloudera Manager to pollute all machines with the above users, then you should create these users in the Samba AD before installing Cloudera Manager.
+
+
 1.	Install a CDH version with Cloudera Manager without configuring security. Make sure that the cluster works.
 
 1.	Install the Java Cryptography Extension (JCE) 
 
-1.	Create a Kerberos principal and keytab file for Cloudera Manager Server and copy them to the correct directory
+1.	One of the main differences between setting up security with the MIT KDC server and with Samba is that with Samba we do not have a kadmin comand. So to create a Kerberos principal and keytab file for Cloudera Manager Server we have to create the keytabl file in a different way. We will cheat a bit and just use the administrator principal to allow Cloudera Manager access, so we just need to generate the keytab:
+
+		samba-tool domain exportkeytab cmf.keytab --principal=administrator -k yes 
+		echo "administrator@GDD.NL" > cmf.principal
+		cp cmf.* /etc/cloudera-scm-server/
+
+	*NOTE:* In our case the Cloudera Manager and the Samba server are on the same server, so we do not have to transfer the keytab file to a different machine.
 
 1. 	Because the default script distributed with Cloudera generates the certificates using a MIT Kerberos KDC, we had to write a script which can generate these certificates by talking to our Samba AD KDC which is Heimdal based. This script is the following:
 
