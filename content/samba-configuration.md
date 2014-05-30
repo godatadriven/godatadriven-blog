@@ -802,6 +802,27 @@ When we set up a Hadoop cluster, all the machines which run Hadoop services shou
 
 The steps we need to follow to set up Hadoop Security with Cloudera Manager are similar to the steps described in the <a href="kerberos-cloudera-setup.html" target="_blank">Setting up Kerberos authentication for Hadoop with Cloudera Manager</a> blog. We already installed the krb5-workstation package on all machines, so that doesn't need to happen.
 
+First we will make a few changes on the machine where our Cloudera Manager is:
+
+1. We need to install the openldap-client package. Our script which will be used by Cloudera Manager to generate the certificates will use the ldapsearch command:
+
+		yum install openldap-clients
+
+1. We need to adjust the sudoers files so the cloudera-scm use can run a sudo command without tty. Also, the Cmd_Alas DELEGATING should be uncommented.
+
+		cat /etc/sudoers
+		## Delegating permissions
+		Cmnd_Alias DELEGATING = /usr/sbin/visudo, /bin/chown, /bin/chmod, /bin/chgrp
+		...
+		# Defaults specification
+		Cmnd_Alias SAMBATOOL = /usr/bin/samba-tool
+		...	
+		## Allow root to run any commands anywhere
+		root    ALL=(ALL)       NOPASSWD: ALL
+		Defaults:cloudera-scm !requiretty
+		cloudera-scm    ALL=NOPASSWD: SAMBATOOL
+		cloudera-scm    ALL=NOPASSWD: DELEGATING
+	
 To summarize the steps:
 
 1.	Allow the CDH install user to sudo samba-tool. This is required for operations on the principal names.
