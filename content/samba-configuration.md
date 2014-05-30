@@ -1,5 +1,5 @@
 Title: Configuring Samba4 and Cloudera Manager
-Date: 2014-05-9 15:00
+Date: 2014-05-30 15:00
 Slug: samba-configuration
 Author: Tünde Bálint; Bolke de Bruin
 Excerpt: The standard way of using Cloudera in an enterprise environment is to either create a cross realm trust with kerberos domain or to buy the enterprise add-ons. The down side of this that user administration is a hassle as you need to maintain the list of users that is able to access the system on every node by hand or replication (or you need to spend money). Samba 4 can serve as an Active Directory Domain Controller, provide DNS services, handle Kerberos-based authentication, and administer group policy. In this article we use Samba4 to setup an active directory domain and a domain controller. Next, we will configure SSSD and PAM to provide the necessary glue between active directory and the unix name service switch so users from active directory are available in linux. Finally, we will explain how to use this setup with Cloudera Manager. 
