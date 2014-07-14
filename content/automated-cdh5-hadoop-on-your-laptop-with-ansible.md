@@ -14,11 +14,11 @@ All steps that need to be automated are described in my previous blog: <a href="
 
 All I needed to do was write some Ansible configuration scripts to perform these steps. For now I automated the steps to download and install CDH5, Spark, Hive, Pig and Mahout. Any extra packages are left as an exercise to the reader. I welcome your pull requests.
 
-### configuration
+### Configuration
 
 Ansible needs some information from the user about the directory to install the software into. I first tried to use ansible's vars_prompt module. this kind of works, but the scope of the variable is within the same yml file only. And I need it to be a global variable. After testing several of ansibles ways to provide variables I decided upon using a bash script to get the user's input and provide ansible with that information throught the ```--extra-vars``` commandline option.
 
-Next to that we want to use ansible to run a playbook. This means that we need to have the ```${ANSIBLE_HOME}``` environment variable to be set. I asume ansible is installed and the environment will be setup correctly in the .bash_profile of the user, so we use the command ```source $HOME/.bash_profile``` to make sure the script is able to run ansible.
+Next to that we want to use ansible to run a playbook. This means that we need to have the ansible-playbook command available. We asume ansible-playbook is on the PATH and will work.
 
 ### Getting the install scripts
 
