@@ -16,13 +16,13 @@ Here you'll get a long list of Hadoop components, each with its own package. I d
 
 ### Unpacking
 
-1. I created a new directory on my local file system called `cdh5.0.0`. I refer to that directory as `/cdh5.0.0` from now on and unpacked the two downloaded packages:
+I created a new directory on my local file system called `cdh5.0.0`. I refer to that directory as `/cdh5.0.0` from now on and unpacked the two downloaded packages:
 
-        :::shell
-        $ mkdir /cdh5.0.0
-        $ cd /cdh5.0.0
-        $ tar -xvzf hadoop-2.3.0-cdh5.0.0.tar.gz
-        $ mkdir spark-0.9.0-cdh5.0.0 && cd spark-0.9.0-cdh5.0.0 && tar -xvzf ../spark-0.9.0-cdh5.0.0.tar.gz && cd ../
+    :::shell
+    $ mkdir /cdh5.0.0
+    $ cd /cdh5.0.0
+    $ tar -xvzf hadoop-2.3.0-cdh5.0.0.tar.gz
+    $ mkdir spark-0.9.0-cdh5.0.0 && cd spark-0.9.0-cdh5.0.0 && tar -xvzf ../spark-0.9.0-cdh5.0.0.tar.gz && cd ../
 
 This unpacks the tarballs; see how I created the Spark directory myself as its tarball is packed differently than the Hadoop one.
 
