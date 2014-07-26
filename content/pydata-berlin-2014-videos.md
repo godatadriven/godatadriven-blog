@@ -6,7 +6,7 @@ Excerpt: As promised yesterday, video's and slides for the Pydata talks of Vince
 Template: article
 Latex:
 
-The [Berlin congress center](http://bcc.berlin/en), mere hours after the end of the talk, put the
+The [CCC Video Operation Center](http://c3voc.de), mere hours after the end of the talk, put the
 video's of the talks given by Vincent and Giovanni online. You can find them at the [PyData
 Youtube channel](https://www.youtube.com/user/PyDataTV) or, if you prefer the direct links,
 [here](https://www.youtube.com/watch?v=ZW8Aei2wlsM) for Vincent and
