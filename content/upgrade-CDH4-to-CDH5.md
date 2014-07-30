@@ -15,7 +15,7 @@ The reason to upgrade the cluster has multiple advantages:
 
 - Ability to use YARN instead of MapReduce1 (a more generic and efficient scheduler) to allow Spark
 - New version of Hive 0.10 -> 0.12 (Lots of bug fixes and improvements, DECIMAL datatype)
-- New version of Impala 1.2.4 -> 1.3.1 (Run on YARN, new functions)
+- New version of Impala 1.2.4 -> 1.3.1 (Run on YARN [yarn-impala](http://www.cloudera.com/content/cloudera-content/cloudera-docs/CDH5/5.0/Impala/Installing-and-Using-Impala/ciiu_resource_management.html), new functions)
 - New version of Hue 2.5.0 -> 3.5.0 (Way better UI to work with hive, impala and viewing results)
 - Don't live in the past, keep up to date! 
 
@@ -114,7 +114,7 @@ Following the upgrade cluster wizard. _(the screenshots are taken from other upg
 1. Agent Install config
 
     How Cloudera Manager connect to the agents is defined here. The number of simultaneous installations is a number to think about.
-    Try to pick a 'smart' number, we have 12 nodes that are being upgraded. We used the default 10 and and it took a long time for them to complete and start the upgrade on the last 2 agents. The network IO is very high, that's why we would recommend a lower number to not be network bound during the upgrade.
+    Try to pick a 'smart' number, we have 12 nodes that are being upgraded. We used the default 10 and and it took a long time for them to complete and start the upgrade on the last 2 agents. The network IO is very high, that's why we would recommend a lower so the upgrade wouldn't be network bound.
     Picking 6 was better in our case. In two rounds all nodes are installed with limited network io.
 
     ![upgrade-step3](static/images/upgrade-cdh5-cluster/step3.png)
@@ -127,19 +127,19 @@ In our case the update failed after distributing the packages with the message:
 
 > cannot copy parcel.json to data node
 
-The bars of all nodes were green, but the wizard cannot continue or retry, we need to fix problems ourselfs...
+The bars of all nodes were green, but the wizard could not continue or retry, we had to fix some issues...
 
 ### Situation after the interrupted upgrade:
 
 The wizard shows that all CDH.5.0.3 parcels have been distributed to all the nodes.
-We could not rerun the upgrade wizard, trying it again results in a cannot rerun upgrade wizard error.
+We could not rerun the upgrade wizard, trying it again resulted in a cannot rerun upgrade wizard error.
 Through the Cloudera Manager interface we could check the nodes:
 
 - All hosts are online
 - All host services are stopped.
 - Running the host inspector shows no problems.
 
-The error suggested that the files are not present on the datanodes. We checked and the files *are* present on the datanodes mentioned in the error and the md5sum is the same as on the other nodes.
+The error suggested that the files are not present on the datanodes. We checked and the files *were* present on the datanodes mentioned in the error and the md5sum was the same as on the other nodes.
 
 Try to start the service 1-by-1 from the Cloudera Manager.
 
@@ -154,7 +154,7 @@ Try to start the service 1-by-1 from the Cloudera Manager.
 > ...
 
 After some research:
-CDH5 is shipped with Hive 0.12 an upgrade from Hive 0.10 (CDH4). For this update the database-schema should be updated. We expect that the update script did not run, because the wizard did not complete. We had to run scripts manually on the database used by the HiveMetastore.
+CDH5 is shipped with Hive 0.12 an upgrade from Hive 0.10 (CDH4). For this update the database-schema should be updated. We suspected that the update script did not run, because the wizard did not complete. But where should we run what?
 
 Where is the MetaStore database?
 
@@ -168,7 +168,7 @@ The settings contains the location and credentials to access the database used b
 
 **Solution:**
 
-Run the database upgrade scripts ourselves. There are upgrade scripts for the suppoerted databases: derby, mysql, oracle and postgres. In each folder is a README which explains what needs to be done.
+Run the database upgrade scripts ourselves. There are upgrade scripts for the supported databases: derby, mysql, oracle and postgres. In each folder is a README which explains what needs to be done.
 
     :::shell
     updatedb
@@ -186,13 +186,11 @@ In Cloudera Manager we try to start the servies again:
 - start hue1 -> oke
 - start impala1 -> oke
 
-Great, no errors, lets try to run some queries!
-Hue was started and accessible, but we could not login anymore.
-
+Great, no errors!
 
 **Alternative Solution**
 
-After manually upgrading the cluster in the way stated above, we discovered that is also possible to use Cloudera Manager to run the upgrade on the inidividual services.
+After manually upgrading the cluster in the way stated above, we discovered that it is also possible to use Cloudera Manager to run the upgrade on the inidividual services.
 
 For HDFS:
 
@@ -211,6 +209,7 @@ For HIVE:
 
 These steps should run the upgrade scripts that the upgrade wizard didn't run. Hopefully you now have a working cluster again!
 
+Let's try to run our queries! Wait...Hue was started and accessible, but we could not login anymore.
 
 **Problem:**
 
@@ -231,8 +230,8 @@ In Cloudera Manager we checked the Hue config:
 
 The Authentication Backend settings was LdapBackend, which did work in CDH 4.5.0 before the upgrade.
 
-We noticed that the hue.ini from the HUE_SERVER does not have kerberos settings. The KT_RENEWER service hue.ini does have the correct kerberos settings. We are not sure if this is the rootcause of the problem.
-For this issue we have created an ticket at cloudera:
+We noticed that the hue.ini from the HUE_SERVER does not have kerberos settings. The KT_RENEWER service hue.ini does have the correct kerberos settings. We are not sure if this is the root cause of the problem.
+For this issue we have created a ticket:
 [HUE-2226](https://issues.cloudera.org/browse/HUE-2226), to be continued...
 
 **Solution:**
@@ -270,7 +269,7 @@ in the /hue/error.log:
 
 **Solution:**
 
-It turns out that a we had configured Hue Savety Valve for impala. Before the upgrade we followed a tutorial to use impala: [Installing and using Impala](http://www.cloudera.com/content/cloudera-content/cloudera-docs/CDH5/latest/Impala/Installing-and-Using-Impala/ciiu_impala_odbc.html) with Hue.
+It turns out that we had configured Hue Savety Valve for impala. Before the upgrade we followed a tutorial to use impala: [Installing and using Impala](http://www.cloudera.com/content/cloudera-content/cloudera-docs/CDH5/latest/Impala/Installing-and-Using-Impala/ciiu_impala_odbc.html) with Hue.
 Properties are pointing to port 21000 which is the port for the HiveServer1 protocol, but the newer verion is using HiveServer2 protocol which is running on port 21050.
 In the current version of the Cloudera Manager you can choose the impala service and you don't need to specify the impala properties yourself.
 
@@ -290,5 +289,5 @@ By removing this extra safety-valve config and choosing the Impala Service: impa
 # Conclusion
 
 The documentation of Cloudera is complete and adjusted for the different versions of the components. Most of the settings and configuration-files can be found there. The upgrade process is explained in detail.
-Although upgrading sounds like a piece of cake, it was done without a fight. It was definitely worth upgrading even with all the the bug-fixes, the user experience is greatly improved and we're using the latest and greatest again. All users of the cluster are happy with the new version.
+Although upgrading sounds like a piece of cake, it wasn't done without a fight. It was definitely worth upgrading even with all the bug-fixes, the user experience is greatly improved and we're using the latest and greatest again. All users of the cluster are happy with the new version.
 The main take away is that if the upgrade wizard fails, which sadly has been the case on both this production cluster and a VM test cluster, it can not be rerun. The idea is to manually perform all the steps that the wizard failed to do.
