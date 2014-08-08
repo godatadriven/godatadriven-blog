@@ -6,13 +6,13 @@ Excerpt: Limit the permissions on the MetaStore-tables can be achieved with Sent
 Template: article
 Latex:
 
-# Use beeline on a secured cluster
+# Fine grained authorization
 
-In this blog I will explain how to use beeline in a secured cluster. The CDH 5.1.0 cluster is secured with Kerberos (authentication) and Sentry (authorization). Cloudera is using [Sentry](http://sentry.incubator.apache.org/) for fine grained authorization of data and metadata stored on a Hadoop cluster. Hortonworks is using [Knox](http://knox.apache.org/) for achieving the same goal. 
+In this blog I will explain how to use beeline in a secured cluster. The CDH 5.1.0 cluster is secured with Kerberos (authentication) and Sentry (authorization). If you want to setup a secured cluster checkout the related blog <a href="kerberos-cloudera-setup.html" target="_blank">kerberos-cloudera-setup</a>. Cloudera is using [Sentry](http://sentry.incubator.apache.org/) for fine grained authorization of data and metadata stored on a Hadoop cluster. Hortonworks is using [Knox](http://knox.apache.org/) for achieving the same goal. 
 
 > This blog is related to the **hive command-line tool**, using Hive through webinterface is fine!
 
-## Why change from Hive to Beeline?
+## Why change from Hive CLI to Beeline?
 
 The primary difference between the two involves how the clients connect to Hive. The Hive CLI connects directly to the Hive Driver and requires that Hive be installed on the same machine as the client. However, Beeline connects to HiveServer2 and does not require the installation of Hive libraries on the same machine as the client. Beeline is a thin client that also uses the Hive JDBC driver but instead executes queries through HiveServer2, which allows multiple concurrent client connections and supports authentication.
 
@@ -40,8 +40,7 @@ For a non secured cluster it is easy to connect. You can use beeline as describe
 	# to exit beeline shell
     !quit
 
-
-checkout the [beeline-command-options](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-BeelineCommandOptions)
+Checkout the [beeline-command-options](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-BeelineCommandOptions)
 
 
 When using a kerberized cluster you can connect using your principle:
@@ -61,7 +60,7 @@ You can find the full principle name in Cloudera Manager
 - Credentials -> search hive
 - Use the principle where HiveServer2 is running
 
-## Troubleshoot
+### Troubleshoot
 
 All the errors look the same. **Error: Invalid URL ... (state=08S01,code=0)**. The --verbose=true options does not help much unfortunately. When you run into problems, check the hiveserver2 logs for hints.
 
@@ -77,7 +76,8 @@ All the errors look the same. **Error: Invalid URL ... (state=08S01,code=0)**. T
 
 **Solution:**
 
-Use "quotes around the url", otherwise the hive principle argument is not used
+Note that the _Invalid URL_ message does not contain the principle part!
+Use **"quotes around the url"**, otherwise the hive principle argument is not used
 
 **Problem:**
 
