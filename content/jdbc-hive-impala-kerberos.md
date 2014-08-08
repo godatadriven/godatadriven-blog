@@ -2,7 +2,7 @@ Title: Hive, Impala, JDBC and Kerberos
 Date: 2014-08-08 15:32
 Slug: jdbc-hive-impala-kerberos
 Author: Renald Buter
-Excerpt: Connect to Hive or Impala via JDBC with a Hadoop cluster that uses Kerberos.
+Excerpt: How to connect your laptop via JDBC to data repositories that are managed by Hive or Impala on a Hadoop cluster that is secured using Kerberos.
 Template: article
 Latex:
 
