@@ -1,8 +1,8 @@
-Title: Use beeline on a secured cluster
-Date: 2014-08-08 16:00
+Title: Replace Hive CLI with Beeline on a cluster with Sentry
+Date: 2014-08-11 16:00
 Slug: beeline-client-secured-cluster
 Author: Alexander Bij
-Excerpt: Limit the permissions on the MetaStore-tables can be achieved with Sentry (CDH 5.1), hive CLI must be replaced with beeline. This blog explains why and how to connect using beeline.
+Excerpt: The Hive commandline client does not cooperate with Sentry. When using a kerberized cluster with Sentry, the Hive commandline client must be replaced with Beeline. Beeline is a thin client communicating with HiveServer2 and thereby using the Sentry policies. This blog explains why and how to connect using beeline.
 Template: article
 Latex:
 
@@ -10,7 +10,7 @@ Latex:
 
 In this blog I will explain how to use beeline in a secured cluster. The CDH 5.1.0 cluster is secured with Kerberos (authentication) and Sentry (authorization). If you want to setup a secured cluster checkout the related blog <a href="kerberos-cloudera-setup.html" target="_blank">kerberos-cloudera-setup</a>. Cloudera is using [Sentry](http://sentry.incubator.apache.org/) for fine grained authorization of data and metadata stored on a Hadoop cluster. Hortonworks is using [Knox](http://knox.apache.org/) for achieving the same goal. 
 
-> This blog is related to the **hive command-line tool**, using Hive through webinterface is fine!
+> This blog is related to the **hive command-line tool**, using Hive through HUE is fine!
 
 ## Why change from Hive CLI to Beeline?
 
@@ -36,11 +36,6 @@ For a non secured cluster it is easy to connect. You can use beeline as describe
     # or use the !connect action
     beeline
     beeline> !connect jdbc:hive2://HiveServer2Host:Port
-	
-	# to exit beeline shell
-    !quit
-
-Checkout the [beeline-command-options](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-BeelineCommandOptions)
 
 
 When using a kerberized cluster you can connect using your principle:
@@ -59,6 +54,20 @@ You can find the full principle name in Cloudera Manager
 - Administration -> Kerberos
 - Credentials -> search hive
 - Use the principle where HiveServer2 is running
+
+Export a query to file with beeline:
+
+    :::shell
+    HIVESERVER2_URL = "jdbc:hive2://master01:10000/default;principal=hive/master01@MYREALM.COM"
+    # Just simple export (as a table).
+    beeline -u $HIVESERVER2_URL -f quey.sql > result.txt
+    # Result firstline: query, then: pretty table, lastline: '0: jdbc:hive2://master02:10000/default>'
+
+    # Remove first and last line of result for a proper csv-file with a header:
+    beeline -u $HIVESERVER2_URL -f quey.sql --outputformat=csv --showHeader=true | tail -n +2 -f | head -n -1 > result.csv
+
+
+More info on the [beeline-command-options](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-BeelineCommandOptions) and [hive-command-options](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli) on the apache wiki.
 
 ### Troubleshoot
 
@@ -92,4 +101,4 @@ Use **"quotes around the url"**, otherwise the hive principle argument is not us
 
 **Solution:**
 
-There is a keytab-file on the HiveServer2-node initialized with the principle. The connection string is using wrong the Kerberos principle for the keytab-file. Make sure you provide the correct hive prinicple in the connection url. 
+There is a keytab-file on the HiveServer2-node initialized with the principle. The connection string is using the wrong Kerberos principle for the keytab-file. Make sure you provide the correct hive principle in the connection url. 
