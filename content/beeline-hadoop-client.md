@@ -8,7 +8,7 @@ Latex:
 
 # Fine grained authorization
 
-In this blog I will explain how to use beeline in a secured cluster. The CDH 5.1.0 cluster is secured with Kerberos (authentication) and Sentry (authorization). If you want to setup a secured cluster checkout the related blog <a href="kerberos-cloudera-setup.html" target="_blank">kerberos-cloudera-setup</a>. Cloudera is using [Sentry](http://sentry.incubator.apache.org/) for fine grained authorization of data and metadata stored on a Hadoop cluster. Hortonworks is using [Knox](http://knox.apache.org/) for achieving the same goal. 
+In this blog I will explain how to use beeline in a secured cluster. The CDH 5.1.0 cluster is secured with Kerberos (authentication) and Sentry (authorization). If you want to setup a secured cluster checkout the related blog <a href="kerberos-cloudera-setup.html" target="_blank">kerberos-cloudera-setup</a>. Cloudera is using [Sentry](http://sentry.incubator.apache.org/) for fine grained authorization of data and metadata stored on a Hadoop cluster.
 
 > This blog is related to the **hive command-line tool**, using Hive through HUE is fine!
 
@@ -19,8 +19,6 @@ The primary difference between the two involves how the clients connect to Hive.
 Cloudera's Sentry security is working through HiveServer2 and not HiveServer1 which is used by Hive CLI. So hive though the command-line will not follow the policy from Setry. According to the [cloudera docs](http://www.cloudera.com/content/cloudera-content/cloudera-docs/CM5/latest/Cloudera-Manager-Managing-Clusters/cm5mc_sentry_config.html) you should not use Hive CLI and WebHCat. Use beeline or impala-sell instead.
 
 > hive command-line will bypass sentry security!
-
-I cannot confirm that the same situation applies for Hortonworks HDP 2.1 distribution with Knox. In the [hortonworks-security-tutorial](https://github.com/hortonworks/hadoop-tutorials/blob/master/Sandbox/T17_HDPSecurity.md) beeline is used instead of Hive CLI.
 
 
 ## Connect with Beeline
