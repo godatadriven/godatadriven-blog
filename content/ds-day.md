@@ -1,4 +1,4 @@
-Title: A day in the life of the data scientist
+Title: Data SaaS
 Date: 2014-09-28 15:00
 Slug: ds-day
 Author: Giovanni Lanzani
