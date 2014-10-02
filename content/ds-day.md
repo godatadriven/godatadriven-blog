@@ -2,11 +2,11 @@ Title: Data SaaS
 Date: 2014-09-28 15:00
 Slug: ds-day
 Author: Giovanni Lanzani
-Excerpt: With the recent explosion of hype around data science, there has been an explosion of courses and offers that promise to transform anybody into a data scientist. Is it possible, or, differently put, is it science or science fiction?
+Excerpt: With the recent explosion of hype around data science, there has been an explosion of courses and offers that promise to transform anybody into a data scientist. Is that possible, or, differently put, is it science or science fiction?
 Template: article
 Latex:
 
-> With the recent explosion of hype around data science, there has been an explosion of courses and offers that promise to transform anybody into a data scientist. Is it possible, or, differently put, is it science or science fiction?
+> With the recent explosion of hype around data science, there has been an explosion of courses and offers that promise to transform anybody into a data scientist. Is that possible, or, differently put, is it science or science fiction?
 
 If you ever landed on the page where Facebook lists its Software Engineering
 [openings](https://www.facebook.com/careers/department?dept=engineering) you can see a
@@ -93,7 +93,7 @@ make data science even more dark magic than what it seems. Then the client asks 
 
 > **Consultancy firm**: 
 
-> Of course we can, but a real-time recommender system is so old-school [Translation: we don't know how to build one]. Let me tell you what you really want, and we can do it for the very modest fee of 3 grands a day. If it seems like a lot of money, you can't imagine what it will mean for the revenues of your company. You'll earn it back in a week.
+> Of course, but a real-time recommender system is so old-school [Translation: we don't know how to build one]. Let me tell you what you really want, and we can do it for the very modest fee of 3 grands a day. If it seems like a lot of money, you can't imagine what it will mean for the revenues of your company. You'll earn it back in a week.
 
 > **Client** : 
 
