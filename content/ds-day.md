@@ -6,7 +6,7 @@ Excerpt: With the recent explosion of hype around data science, there has been a
 Template: article
 Latex:
 
-## With the recent explosion of hype around data science, there has been an explosion of courses and offers that promise to transform anybody into a data scientist. Is it possible, or, differently put, is it science or science fiction?
+> With the recent explosion of hype around data science, there has been an explosion of courses and offers that promise to transform anybody into a data scientist. Is it possible, or, differently put, is it science or science fiction?
 
 If you ever landed on the page where Facebook lists its Software Engineering
 [openings](https://www.facebook.com/careers/department?dept=engineering) you can see a
@@ -46,45 +46,62 @@ So what is going on here?
 
 # Science as a scam (not your ordinary SaaS)
 
-These miraculous courses seems to be very often offered by consultancy firms. These firms also
-sells data science services so I imagine interactions such as:
+These miraculous courses seems to be very often offered by consultancy firms. These firms also sells data science services so I imagine interactions such as:
 
-> Client: Hey, we would love if one of our analyst would be able to do some machine learning magic,
-> do you have anything for that?
->
-> Consultancy firm: Of course! He should follow our "Become a Data Science ninja in 4 days" course.
-> It just costs a couple of grands. See, you can sign up here in our badly customized Wordpress
-> website [Sorry, I couldn't resist the Wordpress joke, mainly because it's true]
->
-> Client: Ok fine, there your go.
+> **Client** : 
+
+> Hey, we would love if one of our analyst would be able to do some machine learning magic, do you have anything for that?
+
+> **Consultancy firm:**
+
+> Of course! He should follow our "Become a Data Science ninja in 4 days" course. It just costs a couple of grands. See, you can sign up here in our badly customized Wordpress website [Sorry, I couldn't resist the Wordpress joke, mainly because it's true]
+
+> **Client** : 
+
+> Ok fine, there your go.
 
 Analyst takes the course, get shown how Google/Facebook/Amazon are doing, with enough theory to
 make data science even more dark magic than what it seems. Then the client asks the analyst:
 
-> Client: Hey, how was the course?
+> **Client** : 
 
-> Analyst: Good, really nice, I learned a tons of exciting things.
+> Hey, how was the course?
 
-> Client: Great. Can you build a real-time recommender for our website?
+> **Analyst:**
 
-> Analyst: Ehr, no, I barely know what a recommender is, let alone building a real-time one.
+> Good, really nice, I learned a tons of exciting things.
 
-> Client: WTF?
+> **Client** : 
 
-> Analyst: Well, but the consultancy firm should be able to help us, those guys are rock solid.
+> Great. Can you build a real-time recommender for our website?
 
-> Client: Ok, let me call them.
+> **Analyst:**
+
+> Ehr, no, I barely know what a recommender is, let alone building a real-time one.
+
+> **Client** : 
+
+> WTF?
+
+> **Analyst:**
+
+> Well, but the consultancy firm should be able to help us, those guys are rock solid.
+
+> **Client** : Ok, let me call them.
 
 ---
 
-> Client: Hi there, I was wondering if you could build us a real-time recommender system for our
-> website. Is it possible?
+> **Client** : 
 
-> Consultancy firm: of course we can, but a real-time recommender system is so old-school
-> [Translation: we don't know how to build one]. Let me tell you what you really want, and we can
-> do it for the very modest fee of 3 grands a day. If it seems like a lot of money, you can't
-> imagine what it will mean for the revenues of your company. You'll earn it back in a week.
-> Client: Cool, let's do that.
+> Hi there, I was wondering if you could build us a real-time recommender system for our website. Is it possible?
+
+> **Consultancy firm**: 
+
+> Of course we can, but a real-time recommender system is so old-school [Translation: we don't know how to build one]. Let me tell you what you really want, and we can do it for the very modest fee of 3 grands a day. If it seems like a lot of money, you can't imagine what it will mean for the revenues of your company. You'll earn it back in a week.
+
+> **Client** : 
+
+> Cool, let's do that.
 
 We all know how these things ends. The client usually gets lock into a service provider and the
 analyst does not really learn anything. Because if you are in this business model, your interests
