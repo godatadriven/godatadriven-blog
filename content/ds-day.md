@@ -26,25 +26,19 @@ What about Amazon? Hmm, preferred qualification is kind of high there as well!
 * PhD degree in a quantitative field.
 
 You may think that I'm cheating by only mentioning the A-player in the market, but try finding a
-good job where you don't need either a MS in a relevant field or some years of field experience and
-then you'll let me know.
+good job in any other field where you don't need either a MS in a relevant field or some years of field experience.
 
-But then why do we find courses (I promise I won't reveal who's offering them) that promises that,
-after finishing them you'll
+But then why do we find so many courses (I won't reveal who's offering them) that promises that, after finishing them you'll
 
-> Speak the language of a Data Scientist in terms of statistics, data transformation, tricks (!),
-> algorithms and theory!
+> "Speak the language of a Data Scientist in terms of statistics, data transformation, tricks (!), algorithms and theory!"
 
-all only after 4 days of course? I have another theory, corroborated when I look at the
-description of data science courses from more prestigious institutions:
-Coursera, for example, after 12 hours/week for eight weeks (equivalent to 12 full days)
-[only promises][promise] that the course will
+all only after 4 days of taking the course? I have another theory, corroborated when I look at the description of data science courses from more prestigious institutions: Coursera, for example, after 12 hours/week for eight weeks (equivalent to 12 full days) [only promises][promise] that the course will only
 
-> Introduce yourself to the basics of data science
+> "Introduce yourself to the basics of data science"
 
 So what is going on here?
 
-# Science as a scam (not your ordinary SaaS)
+# Science as a Scam (not your ordinary SaaS)
 
 These miraculous courses seems to be very often offered by consultancy firms. These firms also sells data science services so I imagine interactions such as:
 
@@ -87,7 +81,9 @@ make data science even more dark magic than what it seems. Then the client asks 
 
 > Well, but the consultancy firm should be able to help us, those guys are rock solid.
 
-> **Client** : Ok, let me call them.
+> **Client** : 
+
+> Ok, let me call them.
 
 ---
 
