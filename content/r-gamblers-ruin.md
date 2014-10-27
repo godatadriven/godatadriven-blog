@@ -1,4 +1,4 @@
-Title: Lazy Plotting Gamblers Ruin
+Title: Casino Gambling Simulations in R
 Date: 2014-10-20 14:00
 Slug: lazy plot
 Author: Vincent D. Warmerdam
@@ -286,4 +286,4 @@ The tactic simply isn't leading to a lead positive result, we are definately mak
 
 # Conclusion 
 
-These infinite betting strategies are known as *martingales*, you can find more information about them on wikipedia. Mathematics is a nice tool and should not be ignored when tackling these strategies but to confirm their flaws with something maybe a little more tangible R can be a great tool. Creating and running simulations in R is easier if you split your simulation into smaller functional bits. The lazy evaluation of ggplot can also be of help to keep the code you need clean. 
+These infinite betting strategies where the outcome seems riskless are known as *martingales*, you can find more information about them on wikipedia. Mathematics is a nice tool and should not be ignored when tackling these strategies but to confirm their flaws with something maybe a little more tangible R can be a great tool. Creating and running simulations in R is easier if you split your simulation into smaller functional bits. The lazy evaluation of ggplot can also be of help to keep the code you need clean. 
