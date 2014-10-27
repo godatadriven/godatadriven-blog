@@ -4,6 +4,7 @@ Slug: lazy plot
 Author: Vincent D. Warmerdam
 Excerpt: In this document I will explain why this martingale casino tactics are flawed via probability theory as well as simulations. As a seperate goal, this document will also help explain simulation and lazy plotting patterns in R with ggplot2.
 Template: article
+Latex:
 
 A friend of mine once told me a 'flawless' tactic for beating the roulette game.
 
@@ -21,7 +22,7 @@ A friend of mine once told me a 'flawless' tactic for beating the roulette game.
 2. repeat 
 ```
 
-The idea is that the probability of always getting red is zero and as of such you will always be able to win lost money back.
+The idea is that the probability of always getting red converges to zero and as of such you should always be able to win lost money back.
 
 In this document I will explain why this tactic is flawed via probability theory as well as simulations. As a seperate goal, this document will also help explain simulation and lazy plotting patterns in R.
 
@@ -40,7 +41,7 @@ ggplot() + geom_line(data = df1, aes(t, cs), alpha = 0.8)
 
 ![gr1](static/images/r-gamblers-ruin/gr1.png)
 
-Simulating another such line and adding that to the plot is relatively straightforward.
+Simulating another such line and adding that to the plot is straightforward.
 
 
 ```
@@ -162,25 +163,22 @@ Ouch, on the long term it does seem like you are making a net profit but you are
 
 So the simulations are giving us reasons to be pessimistic about the tactic, but the long term end result does seem to be positive. What does mathematics tell us? 
 
-I will be a bit formal here, but thats a given when dealing with math. Suppose that we play the game such we only play the roulette game until we have made a profit of 1. Let's consider this outcome to be a stochastic variable $G$. Note that a single game $G$ can have multiple bets. 
+I will be a bit formal here, but thats a given when dealing with math. Suppose that we play the roulette game until we have made a profit of 0 or 1. Let's consider this outcome to be a stochastic variable $G$. Note that a single game $G$ can have multiple bets. 
 
 Then also let $p_B$ be the probability for getting black, $p_R$ the probability for getting red, $s_B$ the payout for getting the state of black and $s_R$ the payout for getting the state of red. 
 
 $$\begin{aligned}
-\mathbb{E}(G) & = p_Bs_B + p_Rs_R \\
- & = \frac{1}{2} + \sum_{k=1}^\infty p_R^{k-1} p_B \times 0 = \frac{1}{2} \\ 
+\mathbb{E}(G) & = p_Bs_B + p_Rs_R = \frac{1}{2} + \sum_{k=1}^\infty p_R^{k-1} p_B \times 0 = \frac{1}{2} \\ 
 \end{aligned}$$
 
 $$\begin{aligned}
-\mathbb{E}(G^2) & = p_Bs_B^2 +  p_Rs_R^2 \\
- & = \frac{1}{2} + \sum_{k=1}^\infty p_R^{k-1} p_B \times 0 = \frac{1}{2}\\ 
+\mathbb{E}(G^2) & = p_Bs_B^2 +  p_Rs_R^2 = \frac{1}{2} + \sum_{k=1}^\infty p_R^{k-1} p_B \times 0 = \frac{1}{2}\\ 
 \end{aligned}$$
 
 The variance of the game is then defined via the definition.
 
 $$\begin{aligned}
- Var(G) & = \mathbb{E}(G^2) - [\mathbb{E}(G)]^2 \\
- & = \frac{1}{2} - [\frac{1}{2}]^2 = \frac{1}{4}\\ 
+ Var(G) & = \mathbb{E}(G^2) - \left(\mathbb{E}(G)\right)^2 = \frac{1}{2} - [\frac{1}{2}]^2 = \frac{1}{4}\\ 
 \end{aligned}$$
 
 So what happens when we play this game an infinite amount of time? 
@@ -188,11 +186,11 @@ So what happens when we play this game an infinite amount of time?
 $$  \lim_{n\to\infty} \mathbb{E}(nG) = \lim_{n\to\infty} \frac{n}{2} = \infty $$ 
 $$  \lim_{n\to\infty} Var(nG) = \lim_{n\to\infty} \sum_{i=1}^n Var(G) = \infty $$ 
 
-The game has infinite variance. You will definately need an infinite bank account if you want to make an infinite amount of money.
+This could feel very curious but should come with no suprise. If we play the game an infinite amount of time we will have an infinite amount of risk. In laymans terms, if you want to earn an infinite amount of money you will need an infite amount of money. 
 
 ### Gamblers Fail
 
-Even if we assume that you have an infinite amount of better money, the tactic will still fail in real life. Casinos are aware of this phenomenon and that is why casinos apply a maximum bet. You can never bet above a certain amount in the casino which means that you cannot apply the tactic infinetely.
+Even if we assume that you have an infinite amount of betting money, the tactic will still fail in real life. The main reasons is that casinos tend to apply a maximum bet in all their gambling games. You can never bet above a certain amount in the casino which means that you cannot apply the 'doubling' tactic infinetely.
 
 How likely is it to hit a casino limit during a game? Let $k$ be the number of sequential losses in a game and let $n$ be the number of bets played. Then the probability of having no losses in one game is defined by the following. 
 
@@ -223,7 +221,7 @@ p + ggtitle("probability of hitting budget limit after 'n' gambles")
 
 ![gr9](static/images/r-gamblers-ruin/gr9.png)
 
-Also notice that if we consider the casino bounds then the expected value of the gamble suddenly becomes zero. 
+Also notice that if we consider the casino bounds then the expected value of the game $G$ we defined earlier suddenly becomes zero. 
 
 $$ \mathbb{E}(G) = p_B \times 1 - p_B{p_R}^{k-1} {2}^{k-1} = \frac{1}{2} - \frac{1}{2} = 0 $$
 
@@ -278,11 +276,12 @@ p + ggtitle("histogram of casino outcomes after 2500 bets")
 
 ![gr11](static/images/r-gamblers-ruin/gr11.png)
 
-The tactic simply isn't leading to a lead positive result, we can confirm via the summary of the dataframe. 
+The tactic simply isn't leading to a lead positive result, we are definately making an average loss with this tactic.
 
 
 ```
-summary(select(ends,money))
+> mean(ends$money)
+[1] -336.2
 ```
 
 # Conclusion 
