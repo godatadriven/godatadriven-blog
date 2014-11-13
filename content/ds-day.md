@@ -1,5 +1,5 @@
 Title: Data SaaS
-Date: 2014-09-28 15:00
+Date: 2014-11-13 15:00
 Slug: ds-day
 Author: Giovanni Lanzani
 Excerpt: With the recent explosion of hype around data science, there has been an explosion of courses and offers that promise to transform anybody into a data scientist. Is it possible, or, differently put, is it science or science fiction?
