@@ -34,7 +34,7 @@ advance, simply don't hire them: if they haven't thought about value now, they a
 going to start to think about it in the future.
 
 Such reciprocity won't be found within technology. Being inanimate, a box will not suddenly decide
-that it is only costing money on support and electricity. Instaed it will remain in its server rack
+that it is only costing money on support and electricity. Instead it will remain in its server rack
 and do what it was designed to do. And if nobody in your organisation knows how to create value from
 it, then it's going to be a very expensive dust bowl.
 
