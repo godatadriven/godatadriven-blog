@@ -1,6 +1,12 @@
-# variable selection in machine learning
+Title: Variable Selection in Machine Learning
+Date: 2014-12-05 17:00
+Slug: variable-selection
+Author: Vincent D. Warmerdam
+Excerpt: In this document I will describe a proof that shows that it is better to start with a lot of variables in machine learning and then reduce the number of variables than the other way around.
+Template: article
+Latex:
 
-I've had a discussion with a colleague on the selection of variables in a model. 
+I've had a discussion with a colleague on the selection of variables in a model. The discussion boils down to the following question:
 
 > Is it better to supply all the variables that you have into the model and risk overfitting or should you start out small and add values to make the model more and more complex?
 
@@ -8,14 +14,14 @@ I've had a discussion with a colleague on the selection of variables in a model.
 
 ## Linear Algrebra/Regression Primer 
 
-Warning, this document is heavy on math. In this document I've assumed that you have some basic linear algebra knowledge. The following equations should feel readable to you:
+Warning, this document is heavy on math. In this document I've assumed that you have some remembrance of college level linear algebra. The following equations should feel readable to you:
 
-\\[\begin{aligned}
+\begin{aligned}
 M_x & = I_n - X(X'X)^{-1}X' \\\
 M_x X & = I_nX - X(X'X)^{-1}X'X \\\
 & = X - XI_n\\\
 & = 0 
-\end{aligned}\\]
+\end{aligned}
 
 From statistics you should hopyfully feel familiar with the following:
  
