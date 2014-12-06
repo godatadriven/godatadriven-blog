@@ -54,7 +54,7 @@ If we start out with a smaller model, say by only looking at $\beta_1$ we would 
 & \ne \beta_1
 \end{aligned}
 
-So our estimate of $\beta_1$ is biased. This holds for every subset of variables $\{\beta_1, \beta_2\} that make up $/beta$. 
+So our estimate of $\beta_1$ is biased. This holds for every subset of variables $\{\beta_1, \beta_2\}$ that make up $\beta$. 
 
 ### Large to Small Solution
 
@@ -93,14 +93,12 @@ With this definition of $\beta_2$ we can analyse it to confirm that it should no
 & = 0
 \end{aligned}
 
-Notice that $ ( X_2'M_{X_1}X_2)^{-1}X_2'M_{X_1}X_1\beta_1 = 0 $ because $ M_{X_1}X_1 = 0 $.
+Notice that $ ( X_2'M_{X_1}X_2)^{-1}X_2'M_{X_1}X_1\beta_1 = 0 $ because $ M_{X_1}X_1 = 0 $. So we see that $\beta_2$ is correctly estimated, what about $\beta_1$? 
 
 \begin{aligned}
 \mathbb{E}(\beta_1) & = \mathbb{E}\big((X_1'X_1)^{-1} X_1'Y)\big)\\\
-& = \mathbb{E}\Big((X_1'X_1)^{-1} X_1'\big(X_1\beta_1 + X_2\beta_2 + \epsilon\big)\Big)\\\
-& = \mathbb{E}\Big((X_1'X_1)^{-1} X_1'X_1\beta_1 + (X_1'X_1)^{-1} X_1'X_2\beta_2 + (X_1'X_1)^{-1} X_1'\epsilon\big)\Big)\\\
-& = \mathbb{E}\Big(\beta_1 + (X_1'X_1)^{-1} X_1'X_2\beta_2 + (X_1'X_1)^{-1} X_1'\epsilon\big)\Big)  \\\
-& = \beta_1 + (X_1'X_1)^{-1} X_1'X_2\mathbb{E}(\beta_2) + (X_1'X_1)^{-1} X_1'\mathbb{E}(\epsilon) \\\
+& = \mathbb{E}\Big((X_1'X_1)^{-1} X_1'\big(X_1\beta_1 + \epsilon\big)\Big)\\\
+& = \mathbb{E}\Big(\beta_1 + (X_1'X_1)^{-1} X_1'\epsilon\Big)\\\
 & = \beta_1
 \end{aligned}
 
@@ -109,4 +107,4 @@ So in this case we would remove the variables $\beta_2$ that are not of influenc
 
 # Conclusion 
 
-I've shown that by starting only a few variables and then adding them to the model has a bias risk in linear models. For other models you might expect the similar problem. A model will try to use any correlation that it can find in the data to find a pattern. To prevent this it might be a good tactic to start with all variables and to use less and less variables until overfitting is no longer an issue and all variables in the model are significant. This way you might prevent assigning too much predictive power to a variable that might need to be reallocated to a variable that isn't included.
+I've shown that by starting only a few variables and then adding them to the model has a bias risk in linear models. For other models you might expect the similar problem. A model will try to use any correlation that it can find in the data to find a pattern. To prevent this it might be a good tactic to start with all variables and to use less and less variables until overfitting is no longer an issue and all variables in the model are significant. This way you might prevent assigning too much predictive power to a variable that might need to be reallocated to a variable that isn't included in the model.
