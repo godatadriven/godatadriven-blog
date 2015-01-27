@@ -50,9 +50,9 @@ Every now and then, the internet quips something about that phenomenon:
 <small>With or without two year subscription. It wouldn't exactly have been pocket size either.</small>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-While this number might not be accurate to the dollar, the order of magnitude is likely correct. The amount of processing power in your pocket used to be a multi-million dollar computer at some point in time; probably during you lifetime.
+While this number might not be accurate to the dollar, the order of magnitude is likely correct. The amount of processing power in your pocket used to be a multi-million dollar computer at some point in time; probably during your lifetime.
 
-Below is a chart for which the data was collected initially by [John C. McCallum](http://jcmit.com/) and later amended by [Blok](http://hblok.net/blog/storage/), who also created this chart.
+Below is a chart for which the data was collected initially by [John C. McCallum](http://jcmit.com/) and later amended by [Blok](http://hblok.net/blog/storage/), who also created this chart. *Note that the vertical axis has a log scale!*
 
 ![memory-prices](static/images/about-big-data/storage_memory_prices.png)
 <br/><small>Source and image credit: [http://hblok.net/blog/storage/](http://hblok.net/blog/storage/).</small>
@@ -68,7 +68,7 @@ While it is true that for early Hadoop MapReduce it didn't matter whether your c
 
 If it is the case that these new abstractions make better use of memory and have lowered the overhead of paralellism, it should be realistic to use very small clusters or even single machine setups, but with a scalable abstraction that can potentially scale to large clusters. This would put us in the position where we can again focus on the data processing code without being concerned with the scalability, but as additional benefit, would allow us to start small (with a single machine, not a cluster). Let's put this to a test.
 
-Below is a table of the wall clock time it takes to run simple code snippets against a data set of 600 million records, accumulating some 40GB of raw data. These number are in no way meant to be representative for the used framework and can be optimised a lot further given relatively simple efforts (such as using a binary file format and compression). These tasks were run on a single machine with 2x 10 CPU cores, 128GB RAM and 2x 1.6TB SSD drive in RAID0 configuration. Such a machine can for example be rented from Rackspace as part of their [OnMetal offering](http://www.rackspace.com/cloud/servers/onmetal). At the time of this writing, this setup costs USD 1,750.- per month or about USD 2.5 per hour, which puts it at USD 21,000.- per year. With no license costs, this is price is not far from a typical heavy weight database machine including licenses as often used for datawarehousing purposes. Other cloud providers or on-premise hosting shouldn't be far from this price point.
+Below is a table of the wall clock time it takes to run simple code snippets against a data set of 600 million records, accumulating some 40GB of raw data. These numbers are in no way meant to be representative for the used framework and can be optimised a lot further given relatively simple efforts (such as using a binary file format and compression). These tasks were run on a single machine with 2x 10 CPU cores, 128GB RAM and 2x 1.6TB SSD drive in RAID0 configuration. Such a machine can for example be rented from Rackspace as part of their [OnMetal offering](http://www.rackspace.com/cloud/servers/onmetal). At the time of this writing, this setup costs USD 1,750.- per month or about USD 2.5 per hour, which puts it at USD 21,000.- per year. With no license costs, this is price is not far from a typical heavy weight database machine including licenses as often used for datawarehousing purposes. Other cloud providers or on-premise hosting shouldn't be far from this price point.
 
 <table class="table table-condensed table-bordered">
   <thead>
@@ -143,7 +143,7 @@ val clusters = KMeans.train(clusterData, 4, 10)
     </tr>
   </tbody>
 </table>
-<small>Time is wall clock time. Data was generated using [this code](static/images/about-big-data/generate-data.html). Spark was configured to run 12 executors with 2 cores each, using a maximum of 8GB heap per executor.</small>
+<small>Time is wall clock time. Data was generated using [this code](static/images/about-big-data/generate-data.html). Spark was configured to run 12 workers with 2 cores each, using a maximum of 8GB heap per worker.</small>
 
 These results mean that complex data analysis jobs against 600 million records are likely to run in minutes, not hours. When volumes grow or complexity grows, it is possible to run the same code on a cluster of computers with the ability to dynamically expand capacity. This can allow for a lot of flexibility.
 
