@@ -1,5 +1,5 @@
 Title: About Big Data
-Date: 2015-01-18 20:00
+Date: 2015-01-27 17:05
 Slug: about-big-data
 Author: Friso van Vollenhoven
 Excerpt: What is Big Data? Does size matter? Is it worth it? A reflrection on the Big Data hype and the technology that it brought us.
