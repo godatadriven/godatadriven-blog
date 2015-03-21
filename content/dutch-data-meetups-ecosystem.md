@@ -1,5 +1,5 @@
 Title: The Dutch Data Meetup Ecosystem
-Date: 2015-03-20 17:05
+Date: 2015-03-21 17:05
 Slug: dutch-data-meetup-ecosystem
 Author: Friso van Vollenhoven
 Excerpt: There are more than a dozen big data and data science meetups in The Netherlands, yet there are only five distinct sub-communities within this ecosystem. In a little visual exploratory analysis of these meetup groups and their members, this post will provide guidance for deciding which meetup is for you and what kind of people you might run into at the different events.
