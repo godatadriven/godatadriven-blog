@@ -1,5 +1,5 @@
 Title: Rapid Prototyping of Online Machine Learning with Divolte Collector
-Date: 2015-04-06 13:00
+Date: 2015-04-07 13:00
 Slug: rapid-prototyping-online-machine-learning-divolte-collector
 Author: Friso van Vollenhoven
 Excerpt: Divolte Collector is our open source solution for getting high volume clickstream data into Hadoop anf Kafka. When properly setup, we can use this to rapidly prototype online and offline machine learning applications in minimal amounts of Python code. This is an example of a online multi-armed bandit optimization using Divolte Collector and Redis as a back-end.
