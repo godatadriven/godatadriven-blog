@@ -1,13 +1,13 @@
 from tornado import web,httpserver,ioloop,gen
-
 import argparse
 import os
-import numpy as np
+import numpy
 import tornadoredis as redis
 
-EXPERIMENT_COUNT_KEY = 'experiments'
-ITEM_SET_KEY = 'items'
+ITEM_HASH_KEY = 'items'
 
+CLICK_KEY_PREFIX = 'c|'
+IMPRESSION_KEY_PREFIX = 'i|'
 
 class BanditHandler(web.RequestHandler):
     redis_client = None
@@ -17,17 +17,17 @@ class BanditHandler(web.RequestHandler):
 
     @gen.coroutine
     def get(self):
-        p = self.redis_client.pipeline()
-        p.get(EXPERIMENT_COUNT_KEY)
-        p.lrange(ITEM_SET_KEY, 0, -1)
-        num_experiments, items = yield gen.Task(p.execute)
+        # Fetch model state.
+        item_dict = yield gen.Task(self.redis_client.hgetall, ITEM_HASH_KEY)
+        items = numpy.unique([k[2:] for k in item_dict.keys()])
 
-        p = self.redis_client.pipeline()
-        for item in items: p.get(item)
-        win_counts = yield gen.Task(p.execute)
+        # Draw random samples.
+        samples = [
+            numpy.random.beta(int(item_dict[CLICK_KEY_PREFIX + item]), int(item_dict[IMPRESSION_KEY_PREFIX + item]))
+            for item in items]
 
-        samples = [np.random.beta(int(win_count or 1), int(num_experiments or 1)) for win_count in win_counts]
-        winner = items[np.argmax(samples)]
+        # Select item with largest sample value.
+        winner = items[numpy.argmax(samples)]
 
         self.write(winner)
 
