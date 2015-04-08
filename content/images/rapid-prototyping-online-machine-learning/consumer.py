@@ -8,8 +8,8 @@ import requests
 import json
 import numpy
 
-NUM_ITEMS = 4
-REFRESH_INTERVAL = 10
+NUM_ITEMS = 10
+REFRESH_INTERVAL = 1000
 
 EXPERIMENT_COUNT_KEY = b'experiments'
 ITEM_HASH_KEY = b'items'
