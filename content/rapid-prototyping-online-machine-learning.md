@@ -331,7 +331,7 @@ Obviously, I will leave the above as an exercise to the reader&hellip;
 #### Q: It's a nice prototype, but would you actually run this in prodcution?
 With some minor additions, yes. The code doesn't do any error handling. We would typically wrap these things in some kind of process monitoring tool (e.g. [supervisord](http://supervisord.org) or [monit](http://mmonit.com/monit/)), to both alert us and to restart it when it breaks.
 
-Additionally, we would need to make sure that when the bandit API is not available for whatever reason, the fron-end would be able to cope with this, preferably rendering a different page without the top pick.
+Additionally, we would need to make sure that when the bandit API is not available for whatever reason, the front-end would be able to cope with this, preferably rendering a different page without the top pick.
 
 That said, we very often have short stints of Python code like this in production deployments for some amount of time to see if something works. You want to get to the prototype stage as soon as possible, so you can test things on actual users. We put a lot of effort into building infrastructure and data pipelines that allow us to build these prototypes very quickly and reliably, so it would be a waste not to use that opportunity.
 
