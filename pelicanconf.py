@@ -66,3 +66,5 @@ GA_DOMAIN = 'blog.godatadriven.com'
 PLUGIN_PATH = "plugins"
 PLUGINS = ["latex"]
 LATEX = 'article'
+
+INCLUDE_DIVOLTE = True
