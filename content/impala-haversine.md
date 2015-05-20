@@ -33,7 +33,7 @@ The query I put together:
           cos(radians(lat2)) *
           pow(sin(radians((lon1 - lon2)/2)), 2)
               +
-          pow(radians(sin((lat1 - lat2)/2)), 2)
+          pow(sin(radians((lat1 - lat2)/2)), 2)
     
         )
       ) * 6371 distance_km
@@ -62,7 +62,7 @@ Let's use these variables in the query:
           cos(radians(52.3773759354)) *
           pow(sin(radians((4.700868765513 - 4.896747677825)/2)), 2)
               +
-          pow(radians(sin((52.2909264998 - 52.3773759354)/2)), 2)
+          pow(sin(radians((52.2909264998 - 52.3773759354)/2)), 2)
         )
       ) * 6371 distance_km;
     
