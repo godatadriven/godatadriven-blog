@@ -6,7 +6,7 @@ Excerpt: GoDataDriven provides the annual Belgium-Netherlands machine learning c
 Template: article
 Latex:
 
-[<img src="/static/images/benelearn_intro.jpg" width="250" align=right>](https://twitter.com/GoDataDriven/status/611896969297035265/photo/1){:target="_blank"}</a> At this year's BElgium-NEtherlands machine learning conference ([benelearn 2015](http://www.benelearn2015.nl){:target="_blank"}, Delft Netherlands), GoDataDriven contributed by sponsoring the event and providing content: our Ivo Everts presented some of his [recent work](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6940256&matchBoolean=true&searchWithin%5B%5D=%22First+Name%22%3Aivo&searchWithin%5B%5D=%22Last+Name%22%3Aeverts&newsearch=true){:target="_blank"} on machine learning for object recognition in images. It was a very interesting day with a couple of good speakers, and a mixed crowd from science and industry.
+[<img src="/static/images/benelearn_intro.jpg" width="250" align=right>](https://twitter.com/GoDataDriven/status/611896969297035265/photo/1){:target="_blank"}</a> At this year's BElgium-NEtherlands machine learning conference ([benelearn 2015](http://www.benelearn2015.nl){:target="_blank"}, Delft Netherlands), GoDataDriven contributed by sponsoring the event and providing content: our Ivo Everts presented some of his [recent work](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6940256&matchBoolean=true&searchWithin%5B%5D=%22First+Name%22%3Aivo&searchWithin%5B%5D=%22Last+Name%22%3Aeverts&newsearch=true){:target="_blank"} on machine learning for object recognition in images. It was a very interesting day with a couple of good speakers, and a mixed crowd from science and industry. Some highlights:
 
 ## Parking demand optimization
 
