@@ -55,7 +55,7 @@ This `ddf` dataframe is no ordinary dataframe object. It is a distributed datafr
 
 ### Spark UI 
 
-At this moment you could immediately go to `./spark/bin/sparkR ` to run R code that will execute on spark. This R command you have just run launches a spark job. Spark has a webui so you can keep track of the cluster. To visit the web-ui, first confirm on what IP-adres the master node is via this command: 
+This R command you have just run launches a spark job. Spark has a webui so you can keep track of the cluster. To visit the web-ui, first confirm on what IP-adres the master node is via this command: 
 
 ```
 curl icanhazip.com
