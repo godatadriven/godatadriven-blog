@@ -1,8 +1,8 @@
 Title: Spark 1.4 on Rstudio
-Date: 2015-06-27 11:00
+Date: 2015-07-10 11:00
 Slug: spark-rstudio
-Author: Alexander Bij
-Excerpt: This tutorial explains how to provision a spark cluster and then link it up to Rstudio for Spark 1.4. 
+Author: Vincent D. Warmerdam
+Excerpt: This tutorial explains how to provision a spark cluster and then link it up to RStudio for Spark 1.4. 
 Template: article
 Latex:
 
