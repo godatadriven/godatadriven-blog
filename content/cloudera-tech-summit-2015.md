@@ -30,3 +30,4 @@ Cloudera gives a lot of thought to its product and the strategic roadmap, which 
 [Spark](http://spark.apache.org/ 'Spark') future is bright but [Impala](http://impala.io/ 'Impala') future (mostly thanks to projects such as [Ibis](http://www.ibis-project.org/ 'Ibis')) is just as bright if not brighter.
 
 On top of that, the conference venue and all Clouderans were a blast: they not only are incredibly smart and talented, but also incredibly accessible and helpful. Hopefully until next year. In the mean time I am looking forward to the [Cloudera Sessions](http://go.cloudera.com/Sessions_2015_amsterdam_reg 'Cloudera sessions Amsterdam) that will take place in Amsterdam on October 15th. This will be the place to get up to speed with the latest developments and hook up with like-minded data scientists. Of course, GoDataDriven will be present there again as well.
+
