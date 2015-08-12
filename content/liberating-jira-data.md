@@ -1,5 +1,5 @@
 Title: Liberating your JIRA data
-Date: 2013-07-01 12:00
+Date: 2015-07-01 12:00
 Slug: liberating-your-jira-data
 Author: Friso van Vollenhoven
 Excerpt: JIRA is great when it comes to creating and editing issues. However, support for working with the raw data behind the issues is limited. As a solution, I created [jiraview](https://github.com/godatadriven/jiraview "The jiraview project."): a set of Python scripts that can extract JIRA data from the REST interface and transform it into several useful formats. Read this post to learn how to easily visualize your JIRA data in R, use process mining tools to get a closer look at your workflows and create scheduled exports.
