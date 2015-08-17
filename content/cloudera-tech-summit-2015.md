@@ -1,7 +1,7 @@
 Title: Cloudera Tech Summit 2015 Report
 Date: 2015-08-06 12:00
 Slug: cloudera-tech-summit-2015-report
-Author: Giovanni Lanzanni
+Author: Giovanni Lanzani
 Excerpt: Bigger, better, faster, more scalable. Report of the annual Cloudera Tech Summit, held in Las Vegas from July 27-30.
 Template: article
 Latex:
