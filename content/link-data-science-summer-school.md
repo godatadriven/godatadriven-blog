@@ -25,11 +25,11 @@ The third and last case came from NS Stations and focused on the question: What 
 
 ## The winners
 
-All teams did very well and did their best to put the theory into practice. They found out that preparing the data is very time-consuming and that the right interpretation of data is important. For example a train that is in service suddenly had hardly any sensor reading, which was caused by the train standing still. Or solar panels that use inverters with a low efficiency and a maximum capacitiy, caused discrepancies in data because they were not able to transmit all generated power. And what to do with sensor readings from a shop in an NS Station in the middle of the night when all shops are closed?
+All teams did very well and did their best to put the theory into practice. They found out that preparing the data is very time-consuming and that the right interpretation of data is important. For example a train that is in service suddenly had hardly any sensor readings, which was caused by the train standing still. Or solar panels that use inverters with a low efficiency and a maximum capacitiy, caused discrepancies in data because they were not able to transmit all generated power. And what to do with sensor readings from a shop in an NS Station in the middle of the night when all shops are closed?
 
 *' My main objective was to spark the enthusiasm of the participants for data science’,* Vincent Warmerdam (GoDataDriven) said,*’ and if I have been able to share my passion for open source as well, that would be a great extra!’.* 
 
-All groups made a lot of progress with their projects and were able to provide recommendations, but were not able to create a predictive model yet. More research, interpretation and experimentation needs to be done to convert the models into predictive models. Based on the presentations the jury decided that team Nedtrain was the winner of this year's Data Science Summer Schoo. 
+All groups made a lot of progress with their projects and were able to provide recommendations, but were not able to create a predictive model yet. More research, interpretation and experimentation needs to be done to convert the insights into predictive models. Based on the presentations the jury decided that team NedTrain was the winner of this year's Data Science Summer School. 
 
 We are pretty sure that the story of all participating students and the business cases will be continued!
 
