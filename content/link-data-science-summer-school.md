@@ -13,7 +13,7 @@ Fifteen students with a keen interest in Data Science were selected to participa
 
 In the second week, the participants got to apply their new found insights to work ‘for social good’ on three cases, submitted by NedTrain, Eneco and NS. Providing concrete solutions for these business cases would mean valuable improvements for the participating companies.
 
-## Presentation of business cases Nedtrain, Eneco, NS
+## Presentation of business cases NedTrain, Eneco, NS
 On August 14th, in a Dragon’s Den setting, the Summer School concluded with the highly anticpated presentation of the three business cases. The Dragon’s to judge the presentations came from Eneco, Nedtrain and the board of the National Think Tank self.
 
 The three business cases had different scopes. The first presentation of the NedTrain case aimed at predicting service requests based on sensor data for the Dutch Sprinter Light Train. Of all trains that are not available for service, 70% has corrective maintenance (instead of scheduled maintenance). Besides the damage to the public image, total cost of this unscheduled maintenance is millions of Euros a year.
