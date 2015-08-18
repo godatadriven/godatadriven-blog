@@ -9,20 +9,18 @@ Latex:
 Back in 2014, one of the striking findings of the [Dutch National Think Tank](http://www.nationale-denktank.nl/) was the growing demand for data scientists. In order to work towards a solution, together with a number of commercial companies, [LINK Data Science](http://www.LINK-datascience.com) introduced the Data Science Summer School, a two-week programme focussing on the introduction of high-performing students to the fascinating world of data science. From the start, GoDataDriven has been one of the companies to support this initiative. 
 
 ## The Data Science Summer School
-
 Fifteen students with a keen interest in Data Science were selected to participate in the two-week program of the Summer School. During the first week, various data science experts, including GoDataDriven’s Vincent Warmerdam, coached and trained the students by sharing their experiences and know-how from the data science field.
 
 In the second week, the participants got to apply their new found insights to work ‘for social good’ on three cases, submitted by NedTrain, Eneco and NS. Providing concrete solutions for these business cases would mean valuable improvements for the participating companies.
 
 ## Presentation of business cases Nedtrain, Eneco, NS
-
 On August 14th, in a Dragon’s Den setting, the Summer School concluded with the highly anticpated presentation of the three business cases. The Dragon’s to judge the presentations came from Eneco, Nedtrain and the board of the National Think Tank self.
 
-The three business cases had different scopes. The first presentation of the NedTrain case, titled’ Controlling the uncontrolled: predicting service requests based on sensor data for the Dutch Sprinter Light Train’ aimed at solving the issue that of all trains that are not available for service, 70% had corrective maintenance (instead of scheduled maintenance). Besides the damage to the public image, total cost of this unscheduled maintenance is millions of Euros a year.
+The three business cases had different scopes. The first presentation of the NedTrain case aimed at predicting service requests based on sensor data for the Dutch Sprinter Light Train. Of all trains that are not available for service, 70% has corrective maintenance (instead of scheduled maintenance). Besides the damage to the public image, total cost of this unscheduled maintenance is millions of Euros a year.
 
-The second group got assigned to the Eneco case and focused on predicting the output of a solar power panel on any given day. By combining satellite data of the weather, static data and production data the team tried to predict the power production of solar panels.
+The second group went to work with the Eneco case and focused on predicting the output of a solar power panel on any given day. By combining satellite data of the weather, static data and production data the team tried to predict the power production of solar panels.
 
-The third and last case of NS Stations and focused on the question: What is the best way to arrange a shop plan to optimise transactions and shopping experience in a train station. Based on sensor data from various places in the station, the group looked at the type of traveller to visit shops, visitor flow, duration and time of day.
+The third and last case came from NS Stations and focused on the question: What is the best way to arrange a shop plan to optimise transactions and shopping experience in a train station. Based on sensor data from various places in the station, the group looked at the type of traveller to visit shops, visitor flow, duration and time of day.
 
 ## The winners
 
