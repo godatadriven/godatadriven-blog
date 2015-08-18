@@ -8,7 +8,7 @@ Latex:
 
 Back in 2014, one of the striking findings of the [Dutch National Think Tank](http://www.nationale-denktank.nl/) was the growing demand for data scientists. In order to work towards a solution, together with a number of commercial companies, [LINK Data Science](http://www.LINK-datascience.com) introduced the Data Science Summer School, a two-week programme focussing on the introduction of high-performing students to the fascinating world of data science. From the start, GoDataDriven has been one of the companies to support this initiative.
 
-![Data Science Summer School](http://blog.godatadriven.com/static/images/summer-school/images/summer-school/datascience-summer-school.png "Data Science Summer School")
+![Data Science Summer School](http://blogbranches.godatadriven.com/static/images/summer-school/images/summer-school/datascience-summer school.png "Data Science Summer School")
 
 ## The Data Science Summer School
 Fifteen students with a keen interest in Data Science were selected to participate in the two-week program of the Summer School. During the first week, various data science experts, including GoDataDriven’s Vincent Warmerdam, coached and trained the students by sharing their experiences and know-how from the data science field.
