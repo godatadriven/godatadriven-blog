@@ -2,7 +2,7 @@ Title: Inside the Dragon’s Den; Link Data Science Summer School
 Date: 2015-08-17 18:00
 Slug: link-data-science-summer-school
 Author: Walter van der Scheer
-Excerpt: Fifteen students with a keen interest in Data Science were selected to participate in the two-week program of the Summer School. During the first week, various data science experts, one of them being GoDataDriven’s Vincent Warmerdam, coached and trained the students.
+Excerpt: Fifteen students with a keen interest in Data Science were selected to participate in the two-week program of the LINK Summer School. Data Science experts, including GoDataDriven’s Vincent Warmerdam, coached and trained the students by sharing their experiences and know-how from the data science field.
 Template: article
 Latex:
 
