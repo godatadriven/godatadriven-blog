@@ -6,7 +6,7 @@ Excerpt: Fifteen students with a keen interest in Data Science were selected to 
 Template: article
 Latex:
 
-Back in 2014, one of the striking findings of the [Dutch National Think Tank](http://www denktank.nl) was the growing demand for data scientists. In order to work towards a solution, together with a number of commercial companies, LINK introduced the Data Science Summer School, a two-week programme focussing on the introduction of high-performing students to the fascinating world of data science. From the start, GoDataDriven has been one of the companies to support this initiative. 
+Back in 2014, one of the striking findings of the [Dutch National Think Tank](http://www.nationale-denktank.nl/) was the growing demand for data scientists. In order to work towards a solution, together with a number of commercial companies, [LINK Data Science](http://www.LINK-datascience.com) introduced the Data Science Summer School, a two-week programme focussing on the introduction of high-performing students to the fascinating world of data science. From the start, GoDataDriven has been one of the companies to support this initiative. 
 
 ## The Data Science Summer School
 
