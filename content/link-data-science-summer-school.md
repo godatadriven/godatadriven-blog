@@ -29,7 +29,7 @@ All teams did very well and did their best to put the theory into practice. They
 
 *' My main objective was to spark the enthusiasm of the participants for data science’,* Vincent Warmerdam (GoDataDriven) said,*’ and if I have been able to share my passion for open source as well, that would be a great extra!’.* 
 
-All groups made a lot of progress with their projects and were able to provide recommendations, but were not able to create a predictive model yet. More research, interpretation and experimentation needs to be done to convert the insights into predictive models. Based on the presentations the jury decided that team NedTrain was the winner of this year's Data Science Summer School. 
+All groups made a lot of progress with their projects and were able to provide recommendations, but were not able to create a predictive model yet. More research, interpretation and experimentation needs to be done to convert the insights into predictive models. Based on the presentations the jury decided that team NS Stations was the winner of this year's Data Science Summer School. 
 
 We are pretty sure that the story of all participating students and the business cases will be continued!
 
