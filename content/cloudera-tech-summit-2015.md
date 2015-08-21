@@ -1,7 +1,7 @@
 Title: Cloudera Tech Summit 2015 Report
 Date: 2015-08-06 12:00
 Slug: cloudera-tech-summit-2015-report
-Author: Giovanni Lanzanni
+Author: Giovanni Lanzani
 Excerpt: Bigger, better, faster, more scalable. Report of the annual Cloudera Tech Summit, held in Las Vegas from July 27-30.
 Template: article
 Latex:
@@ -29,4 +29,7 @@ Cloudera gives a lot of thought to its product and the strategic roadmap, which 
 #### Scaling up
 [Spark](http://spark.apache.org/ 'Spark') future is bright but [Impala](http://impala.io/ 'Impala') future (mostly thanks to projects such as [Ibis](http://www.ibis-project.org/ 'Ibis')) is just as bright if not brighter.
 
-On top of that, the conference venue and all Clouderans were a blast: they not only are incredibly smart and talented, but also incredibly accessible and helpful. Hopefully until next year. In the mean time I am looking forward to the [Cloudera Sessions](http://go.cloudera.com/Sessions_2015_amsterdam_reg 'Cloudera sessions Amsterdam) that will take place in Amsterdam on October 15th. This will be the place to get up to speed with the latest developments and hook up with like-minded data scientists. Of course, GoDataDriven will be present there again as well.
+On top of that, the conference venue and all Clouderans were a blast: they not only are incredibly smart and talented, but also incredibly accessible and helpful. Hopefully until next year. 
+
+Can't wait until next year? GoDataDriven will join Cloudera on the first-ever [Cloudera Sessions](http://go.cloudera.com/Sessions_2015_amsterdam_reg 'Cloudera sessions Amsterdam) in Dutch capital Amsterdam on October 15th. Cloudera Sessions are the place to get up to speed with the latest developments and to hook up with like-minded data scientists.
+
