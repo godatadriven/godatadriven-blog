@@ -6,7 +6,9 @@ Excerpt: Fifteen students with a keen interest in Data Science were selected to 
 Template: article
 Latex:
 
-Back in 2014, one of the striking findings of the [Dutch National Think Tank](http://www.nationale-denktank.nl/) was the growing demand for data scientists. In order to work towards a solution, together with a number of commercial companies, [LINK Data Science](http://www.LINK-datascience.com) introduced the Data Science Summer School, a two-week programme focussing on the introduction of high-performing students to the fascinating world of data science. Youssef El Bouhassani, one of the the founders of the LINK-Summer School, explains: "Data Science is learnt by working on real challenges faced by organisations. And that's what the LINK-Summer School is all about. The organisations provided a real business cases which they started working on recently and that is exciting both for the participants and for the partners".
+Back in 2014, one of the striking findings of the [Dutch National Think Tank](http://www.nationale-denktank.nl/) was the growing demand for data scientists. In order to work towards a solution, together with a number of commercial companies, [LINK Data Science](http://www.LINK-datascience.com) introduced the Data Science Summer School, a two-week programme focussing on the introduction of high-performing students to the fascinating world of data science. 
+
+Youssef El Bouhassani, one of the the founders of the LINK-Summer School, explains: *"Data Science is learnt by working on real challenges faced by organisations. And that's what the LINK-Summer School is all about. The organisations provided a real business cases which they started working on recently and that is exciting both for the participants and for the partners"*.
 
 From the start, GoDataDriven has been one of the companies to support this initiative. 
 
