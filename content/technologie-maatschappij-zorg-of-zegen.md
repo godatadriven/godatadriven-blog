@@ -1,5 +1,5 @@
 Title: Technologie & Maatschappij: Discuss tech developments with Uber and Tripadvisor
-Date: 2015-06-29 22:00
+Date: 2015-08-24 18:00
 Slug: technologie-maatschappij-zorg-of-zegen.md
 Author: Walter van der Scheer
 Excerpt: Join us on September 16th for the event Technologie & Maatschappij, and discuss tech developmentments with Uber and Tripadvisor
