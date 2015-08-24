@@ -23,14 +23,14 @@ Markets are being disrupted by companies with transparent and new business model
 
 During the afternoon of September 16th, three speakers from different backgrounds and experiences, will share their clear opinion about technology in modern-day society, both opportunities as well as threats.
 
-![Uber logo](/content/images/uber-logo.jpg)
+![Uber logo](static/images/uber-logo.jpg)
 ### Uber
 Uber delivers a better, safer and cheaper means of transportation per car and aims at making care-ownership in the city a thing of the past. Niek van Leeuwen will share his vision on the market developments for the near future. 
 
 ### Brenno de Winter
 Next, Brenno de Winter will address companies and government on their digital missteps.
 
-![Tripadvisor logo](/content/images/tripadvisor-logo.jpg)
+![Tripadvisor logo](static/images/tripadvisor-logo.jpg)
 ### TripAdvisor
 Finally, Christine Petersen, former CMO of TripAdvisor, shares her experiences as a pioneer of online reviews en de influence on consumer'emancipation.
 
