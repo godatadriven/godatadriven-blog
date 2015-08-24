@@ -1,6 +1,14 @@
+Title: Silver Sponsor of Big Data Expo
+Date: 2015-08-24 15:00
+Slug: big-data-expo.md
+Author: Walter van der Scheer
+Excerpt: GoDataDriven is proud to announce its Silver Sponsorship of the Big Data Expo (30/9 and 1/10)
+Template: article
+Latex:
+
 # Silver Sponsor of Big Data Expo
 
-GoDataDriven is proud to announce it's [Silver Sponsorship](http://www.bigdata-expo.nl/nl/partners/silver/godatadriven) of the first edition of [Big Data Expo](http://www.bigdata-expo.nl), being held this upcoming September 30th and October 1st in Jaarbeurs, Utrecht, The Netherlands.
+GoDataDriven is proud to announce its [Silver Sponsorship](http://www.bigdata-expo.nl/nl/partners/silver/godatadriven) of the first edition of [Big Data Expo](http://www.bigdata-expo.nl), being held this upcoming September 30th and October 1st in Jaarbeurs, Utrecht, The Netherlands.
 
 ## About Big Data Expo
 ![Big Data Expo](static/images/bigdataexpo.jpg)
