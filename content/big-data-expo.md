@@ -1,4 +1,4 @@
-Title: Silver Sponsor of Big Data Expo
+Title: GoDataDriven added as Silver Sponsor of Big Data Expo
 Date: 2015-08-24 15:00
 Slug: big-data-expo.md
 Author: Walter van der Scheer
