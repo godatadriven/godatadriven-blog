@@ -1,3 +1,11 @@
+Title: Technologie & Maatschappij: Discuss tech developments with Uber and Tripadvisor
+Date: 2015-06-29 22:00
+Slug: technologie-maatschappij-zorg-of-zegen.md
+Author: Walter van der Scheer
+Excerpt: Join us on September 16th for the event Technologie & Maatschappij, and discuss tech developmentments with Uber and Tripadvisor
+Template: article
+Latex:
+
 # Event: Technologie & Maatschappij: Zorg of Zegen? 
 
 On Wednesday September 16th, GoDataDriven, Cloud Management Professionals, in cooperation with Druva, Nutanix and GoDataDriven, organizes the event: Technology & Maatschappij: Zorg of Zegen? Thought leaders, like Niek van Leeuwen (Country manager Uber) and Christine Petersen (former CMO TripAdvisor), share their vision on the (near) future of technology in our society. You are more than welcome to join us for an afternoon of knowledge sharing and networking in De Waag in Amsterdam.
