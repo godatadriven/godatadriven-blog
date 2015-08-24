@@ -2,7 +2,7 @@ Title: GoDataDriven added as Silver Sponsor of Big Data Expo
 Date: 2015-08-24 15:00
 Slug: big-data-expo.md
 Author: Walter van der Scheer
-Excerpt: GoDataDriven is proud to announce its Silver Sponsorship of the Big Data Expo (30/9 and 1/10). Register for free to grow your understanding of Big Data best-practices from amongst others Wehkamp, Bol.com and Schiphol Group.
+Excerpt: GoDataDriven is proud to announce its Silver Sponsorship of the [Big Data Expo](http://www.bigdata-expo.nl) (30/9 and 1/10). Register for free to grow your understanding of Big Data best-practices from thought leaders including GoDataDriven customers Wehkamp, Bol.com and Schiphol Group.
 Template: article
 Latex:
 
@@ -20,7 +20,7 @@ The event is a must-visit for every professional who has a role in Big Data, be 
 During the event you will discover new perspectives on how to structurally apply Big Data to create competitive advantage.
 
 ## GoDataDriven's presentations and presence
-Being at the forefront of Big Data innovation in The Netherlands, GoDataDriven supports the Big Data Expo. Besides being present with a booth (Stand number 56, right next to the catering square), GoDataDriven will be focussing on sharing knowledge and best-practices too.
+Being at the forefront of Big Data innovation in The Netherlands, GoDataDriven supports the Big Data Expo. Besides being present with a booth (Stand number 56, right next to the catering square), GoDataDriven will be focussing on sharing knowledge and best-practices as well.
 
 In Speaker Room 1, GoDataDriven's Managing Director Rob Dielemans will be the host during both days of the event. In-depth presentations can be expected from both the experts at GoDataDriven as well as clients.
 
