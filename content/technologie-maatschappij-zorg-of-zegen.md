@@ -1,6 +1,6 @@
 Title: Join us on 16/9: Technologie & Maatschappij: Zorg of Zegen
 Date: 2015-08-24 18:00
-Slug: technologie-maatschappij-zorg-of-zegen.md
+Slug: technologie-maatschappij-zorg-of-zegen
 Author: Walter van der Scheer
 Excerpt: Thought leaders, like Niek van Leeuwen (Country manager Uber) and Christine Petersen (former CMO TripAdvisor), share their vision on the (near) future of technology in our society. You are more than welcome to join us for an afternoon of knowledge sharing and networking in De Waag in Amsterdam.
 Template: article
