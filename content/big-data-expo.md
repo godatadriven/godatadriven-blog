@@ -6,36 +6,47 @@ Excerpt: GoDataDriven is proud to announce its Silver Sponsorship of the [Big Da
 Template: article
 Latex:
 
-# Silver Sponsor of Big Data Expo
+## Silver Sponsor of Big Data Expo
 
-GoDataDriven is proud to announce its [Silver Sponsorship](http://www.bigdata-expo.nl/nl/partners/silver/godatadriven) of the first edition of [Big Data Expo](http://www.bigdata-expo.nl), being held this upcoming September 30th and October 1st in Jaarbeurs, Utrecht, The Netherlands.
+<span class="lead">GoDataDriven is proud to announce its
+[Silver Sponsorship](http://www.bigdata-expo.nl/nl/partners/silver/godatadriven) of the first
+edition of [Big Data Expo](http://www.bigdata-expo.nl)! The event will be held upcoming September
+30th and October 1st in the Jaarbeurs, Utrecht, The Netherlands.</span>
 
-## About Big Data Expo
+### About Big Data Expo
 ![Big Data Expo](static/images/bigdatasurvey/bigdata-expo.jpg)
 
-The Big Data Expo is a genuine knowledge event, bringing together a great line-up of speakers in the field of Big Data. This is a great opportunity to share experiences and learn from your peers and thought leaders.
+The Big Data Expo will bring together a great line-up of speakers from the field of Big Data. This
+is a great opportunity to share experiences and learn from your peers and thought leaders. The event
+is a must-visit for data professionals interested in the opportunities in Big Data and who are
+currently involved in Big Data projects, or in related fields such as Data Warehousing, Business
+Analysis or Business Intelligence. During the event you will discover new perspectives on how turn
+Big Data into a competitive advantage.
 
-The event is a must-visit for every professional who has a role in Big Data, be it Business Intelligence or Data Science and Deep Learning.
+### GoDataDriven's presentations and presence
 
-During the event you will discover new perspectives on how to structurally apply Big Data to create competitive advantage.
+As the leading Big Data boutique of The Netherlands, GoDataDriven supports the Big Data Expo. We
+will be present with a booth (Stand number 56, right next to the catering square) and we will focus
+on sharing knowledge and current industry best-practices.
 
-## GoDataDriven's presentations and presence
-Being at the forefront of Big Data innovation in The Netherlands, GoDataDriven supports the Big Data Expo. Besides being present with a booth (Stand number 56, right next to the catering square), GoDataDriven will be focussing on sharing knowledge and best-practices as well.
+In Speaker Room 1, our Managing Director Rob Dielemans will be the host during both days of the
+event. In-depth presentations can be expected from both our own experts at and our clients.
 
-In Speaker Room 1, GoDataDriven's Managing Director Rob Dielemans will be the host during both days of the event. In-depth presentations can be expected from both the experts at GoDataDriven as well as clients.
+### Programme
 
-The programme is as follows:
-### Wednesday, September 30th
+#### Wednesday, September 30th
+
 **14:15 - 14:30** Bol.com, Yory Wollerich: Iedere klant winkelt in zijn persoonlijke winkel - *Keynote Room B*
 
-### Thursday, October 1st
+#### Thursday, October 1st
+
 **14:00 - 14:30** Wehkamp, Remco Wilting: Data Science bij Wehkamp - *Keynote Room A*
 
 **14:45 - 15:15** GoDataDriven, Friso van Vollenhoven: Vier Big Data Trends: Behavior Tracking, Real Time, Open Source en Data Science - *Room 1*
 
 **15:30 - 16:00** Amsterdam Airport Schiphol: Diederik Meijerink, Big data @ Schiphol: Ready for take-off! - *Keynote Room A*
 
-## Registration
+### Registration
 
 Attending [Big Data Expo](http://www.bigdata-expo.nl) is free of charge, if you make sure to register beforehand.
 
