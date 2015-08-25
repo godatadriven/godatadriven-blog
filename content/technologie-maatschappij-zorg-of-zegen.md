@@ -11,8 +11,11 @@ Latex:
 On Wednesday September 16th, Cloud Management Professionals, in cooperation with Druva, Nutanix and GoDataDriven, organizes the event: Technology & Maatschappij: Zorg of Zegen? Thought leaders, like Niek van Leeuwen (Country manager Uber) and Christine Petersen (former CMO TripAdvisor), share their vision on the (near) future of technology in our society. You are more than welcome to join us for an afternoon of knowledge sharing and networking in De Waag in Amsterdam.
 
 Start: 13:30
+
 End: network drinks at 17:00 
+
 Location: De Waag, Amsterdam
+
 Cost: The event is free to attend, but seats are limited. 
 
 Registration: [Sign up here](https://www.eventbrite.nl/e/tickets-technologie-maatschappij-zorg-of-zegen-17635190329?utm_campaign=order_confirm&utm_medium=email&ref=GoDataDriven&utm_source=GDDblog&utm_term=eventname)
