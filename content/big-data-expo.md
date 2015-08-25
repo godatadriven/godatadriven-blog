@@ -20,7 +20,7 @@ The Big Data Expo will bring together a great line-up of speakers from the field
 is a great opportunity to share experiences and learn from your peers and thought leaders. The event
 is a must-visit for data professionals interested in the opportunities in Big Data and who are
 currently involved in Big Data projects, or in related fields such as Data Warehousing, Business
-Analysis or Business Intelligence. During the event you will discover new perspectives on how turn
+Analysis or Business Intelligence. During the event you will discover new perspectives on how to turn
 Big Data into a competitive advantage.
 
 ### GoDataDriven's presentations and presence
