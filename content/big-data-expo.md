@@ -11,7 +11,7 @@ Latex:
 GoDataDriven is proud to announce its [Silver Sponsorship](http://www.bigdata-expo.nl/nl/partners/silver/godatadriven) of the first edition of [Big Data Expo](http://www.bigdata-expo.nl), being held this upcoming September 30th and October 1st in Jaarbeurs, Utrecht, The Netherlands.
 
 ## About Big Data Expo
-![Big Data Expo](static/images/bigdataexpo.jpg)
+![Big Data Expo](static/images/bigdatasurvey/bigdata-expo.jpg)
 
 The Big Data Expo is a genuine knowledge event, bringing together a great line-up of speakers in the field of Big Data. This is a great opportunity to share experiences and learn from your peers and thought leaders.
 
