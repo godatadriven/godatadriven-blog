@@ -23,7 +23,7 @@ networking in De Waag in Amsterdam.</span>
 </td></tr>
  </table>
  
-[Sign up here.](https://www.eventbrite.nl/e/tickets-technologie-maatschappij-zorg-of-zegen-17635190329?utm_campaign=order_confirm&utm_medium=email&ref=GoDataDriven&utm_source=GDDblog&utm_term=eventname)
+[Sign up here](https://www.eventbrite.nl/e/tickets-technologie-maatschappij-zorg-of-zegen-17635190329?utm_campaign=order_confirm&utm_medium=email&ref=GoDataDriven&utm_source=GDDblog&utm_term=eventname)
 
 ### Programme *Technology and Society: Burden or blessing?*
 
@@ -58,4 +58,5 @@ missteps of companies and governments.
 Christine Petersen is a former CMO of TripAdvisor. She will share her experiences as a pioneer of
 online reviews and the influence on consumer emancipation.
 
-[Sign up for free.](https://www.eventbrite.nl/e/tickets-technologie-maatschappij-zorg-of-zegen-17635190329?utm_campaign=order_confirm&utm_medium=email&ref=GoDataDriven&utm_source=GDDblog&utm_term=eventname)
+[Sign up for free](https://www.eventbrite.nl/e/tickets-technologie-maatschappij-zorg-of-zegen-17635190329?utm_campaign=order_confirm&utm_medium=email&ref=GoDataDriven&utm_source=GDDblog&utm_term=eventname)
+
