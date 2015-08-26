@@ -65,8 +65,8 @@ def main(location=os.path.curdir, distributionId=None):
 
     print "Invalidating distribution:", distributionId
     invalidation = cf.invalidate(distributionId)
-    print "Waiting for invalidation %s to complete. (This can take quite some time.)" % invalidation.id
-    invalidation.wait()
+    # print "Waiting for invalidation %s to complete. (This can take quite some time.)" % invalidation.id
+    # invalidation.wait()
 
 if __name__ == '__main__':
     import sys
