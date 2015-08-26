@@ -35,40 +35,19 @@ class CloudFront(object):
         response = self._client.list_distributions()
         return {distribution['Id'] for distribution in response['DistributionList']['Items']}
 
-    def invalidate(self, distributionId, objects):
-        objects = list(objects)
+    def invalidate(self, distributionId):
         response = self._client.create_invalidation(DistributionId=distributionId,
                                                     InvalidationBatch=
             {
                 "Paths": {
-                    "Items": objects,
-                    "Quantity": len(objects)
+                    "Items": [
+                        "*"
+                    ],
+                    "Quantity": 1
                 },
                 "CallerReference": str(uuid.uuid4())
             })
         return Invalidation(self._client,distributionId, response['Invalidation']['Id'])
-
-def filetree(path):
-    """
-    Retrieve the set of files at a path. Directories are not included.
-    :param path: the path to search for files.
-    :return:     a generator that enumerates the relative names of files
-                 at the given location.
-    """
-    if path[-1] != os.path.sep:
-        path += os.path.sep
-
-    def isHidden(file):
-        return file.startswith('.')
-
-    for dirpath, dirs, filenames in os.walk(path, topdown=True):
-        for dir in set(dirs):
-            if isHidden(dir): dirs.remove(dir)
-        if filenames:
-            dirpath = dirpath[len(path):]
-            for filename in (f for f in filenames if not isHidden(f)):
-                if not filename.startswith('.'):
-                    yield os.path.join(dirpath, filename)
 
 def main(location=os.path.curdir, distributionId=None):
     cf = CloudFront()
@@ -85,8 +64,7 @@ def main(location=os.path.curdir, distributionId=None):
         return
 
     print "Invalidating distribution:", distributionId
-    objects = itertools.chain(["/"], ("/" + path for path in filetree(location)))
-    invalidation = cf.invalidate(distributionId, objects)
+    invalidation = cf.invalidate(distributionId)
     print "Waiting for invalidation %s to complete. (This can take quite some time.)" % invalidation.id
     invalidation.wait()
 
