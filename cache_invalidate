@@ -41,7 +41,7 @@ class CloudFront(object):
             {
                 "Paths": {
                     "Items": [
-                        "*"
+                        "/*"
                     ],
                     "Quantity": 1
                 },
