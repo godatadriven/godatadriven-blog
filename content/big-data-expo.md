@@ -52,4 +52,7 @@ Attending [Big Data Expo](http://www.bigdata-expo.nl) is free of charge, if you 
 
 [Register now](https://registration.n200.com/survey/0dc1blnl1tpxk/register?actioncode=NTWO000012FGR)
 
+### Big Data Survey
+Together with OGZ GoDataDriven is doing a survey about the status of Big Data in The Netherlands. [Participate in the survey](www.bigdatasurvey.nl), receive the survey report and be eligible for prizes.
+
 We look forward to seeing you in Utrecht!
