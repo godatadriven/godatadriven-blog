@@ -17,10 +17,11 @@ Various studies point out that there is a direct cause between applying Big Data
 
 ## Understanding the role of Big Data for businesses
 Big Data Survey provides an insight in the
-•	current role of Big Data in the board room
-•	general opinion about consumer privacy
-•	ethics of data collection
-•	value of data as the currency of the future
+
+*	current role of Big Data in the board room
+*	general opinion about consumer privacy
+*	ethics of data collection
+*	value of data as the currency of the future
 
 We also take a look at the more practical side of Big Data: what is the general level of knowledge and what are the biggest challenges when becoming a data-driven enterprise? And finally, the research provides an insight in business processes and purposes of Big Data as well.
 
