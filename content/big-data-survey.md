@@ -1,8 +1,8 @@
-Title: Trailing or leading in Big Data? Participate in Big Data Survey!
+Title: Following or leading in Big Data? Participate in Big Data Survey!
 Date: 2015-09-08 15:00
 Slug: big-data-survey
 Author: Walter van der Scheer
-Excerpt: Interested in how your Big Data activities compare to your peers? Is your business trailing or leading? Participate in Big Data Survey and find out.
+Excerpt: Interested in how your Big Data activities compare to your peers? Is your business following or leading? Participate in Big Data Survey and find out.
 Template: article
 Latex:
 
