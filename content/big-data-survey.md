@@ -1,4 +1,4 @@
-Title: Participate in Big Data Survey
+Title: Trailing or leading in Big Data? Participate in Big Data Survey!
 Date: 2015-09-08 15:00
 Slug: big-data-survey
 Author: Walter van der Scheer
