@@ -26,7 +26,7 @@ Big Data Survey provides an insight in the
 We also take a look at the more practical side of Big Data: what is the general level of knowledge and what are the biggest challenges when becoming a data-driven enterprise? And finally, the research provides an insight in business processes and purposes of Big Data as well.
 
 ## Participate?
-You can participate (anonimously) via [http://www.bigdatasurvey.nl](http://www.bigdatasurvey.nl). Participants that leave their email address will receive the survey report in their mailbox and are eligible to win interesting prizes, including an iPad Mini, Bol.com gift vouchers and VIP treatments during [Big Data Expo](http://www.bigdata-expo.nl).
+You can participate (anonymously) via [http://www.bigdatasurvey.nl](http://www.bigdatasurvey.nl). Participants that leave their email address will receive the survey report in their mailbox and are eligible to win interesting prizes, including an iPad Mini, Bol.com gift vouchers and VIP treatments during [Big Data Expo](http://www.bigdata-expo.nl).
 
 The results of the research will be presented during the Big Data Expo on September 30th and October 1st 2015.
 
