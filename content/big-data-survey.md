@@ -8,7 +8,7 @@ Latex:
 
 <span class="lead">Professionals are invited to participate in [Big Data Survey](http://www.bigdatasurvey.nl), the first national research about the current state of Big Data in The Netherlands, performed by trade show [Big Data Expo](www.bigdata-expo.nl) and Big Data specialist [GoDataDriven](http://www.godatadriven.com).</span>
 
-[![Big Data Survey](/static/images/bigdatasurvey/bigdatasurvey-header-en.png)](http://www.bigdatasurvey.nl)
+[![Big Data Survey](/static/images/bigdatasurvey/bigdatasurvey-header-english.png)](http://www.bigdatasurvey.nl)
 
 The objective of the research is to create an overall view of Big Data adoption, plans and potential pitfalls. Participants do not only receive the survey results, but are also eligible to win great prizes.
 
