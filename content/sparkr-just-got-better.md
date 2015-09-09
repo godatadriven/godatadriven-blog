@@ -1,6 +1,6 @@
 Title: SparkR just got better
 Date: 2015-09-09 17:05
-Slug: about-big-data
+Slug: sparkr-just-got-better
 Author: Vincent D. Warmerdam
 Excerpt: This document discusses some new features for SparkR that arrived as part of the 1.5 release of Spark. 
 Template: article
