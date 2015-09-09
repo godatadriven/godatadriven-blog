@@ -10,7 +10,7 @@ In this document I'll give a quick review of some exiting new features for Spark
 
 ## Rstudio provisioned 
 
-![](https://www.rstudio.com/wp-content/uploads/2014/06/RStudio-Ball.png)
+![](https://www.rstudio.com/wp-content/uploads/2014/07/RStudio-Logo-Blue-Gradient.png)
 
 Starting a full start SparkR service on aws just got a whole lot easier. It takes about 15 minutes and only requires you to do three simple things.
 
