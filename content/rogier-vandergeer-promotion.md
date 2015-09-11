@@ -23,7 +23,7 @@ the speed of light.
 
 Since the discovery of the Higgs boson in 2012, the Standard Model of particle physics, which
 describes all elementary particles and their interactions, is complete. Nevertheless it still has
-some shortcomings: it fails to explain the existence of dark matter and the matter/antimatter
+some shortcomings: it fails to explain the existence of dark matter and the matter/anti-matter
 asymmetry in the universe. Therefore there has to be more: "new physics" or physics beyond the
 Standard Model.
 
@@ -31,11 +31,11 @@ Standard Model.
 
 In the roughly 1 billion collisions created by the LHC each second Rogier searched for the rare
 collisions in which only a top quark is produced. In these processes, Rogier searched for deviations
-from the Standard Model which could provide hints on why our universe contains primarly matter and
+from the Standard Model which could provide hints on why our universe contains primarily matter and
 hardly any anti-matter. In his thesis he searched for
-[CP-violating](http://en.wikipedia.org/wiki/CP_violation) processes involving an excited bottom
+[CP-violating](http://en.wikipedia.org/wiki/CP_violation) processes involving a bottom
 quark: both directly and indirectly through the creation of a single top quark (usually processes
-generate a pair of top/anti top quarks).
+generate a pair of top/anti-top quarks).
 
 If you're interested in reading more about Rogier van der Geer's research, feel free to [read the
 thesis 'Searches for new physics through single top'](http://dare.uva.nl/record/1/484986
@@ -50,9 +50,9 @@ his academic background to the business-related problems of GoDataDriven's clien
 include the optimization of a popularity prediction model for mobile apps and a predictive supply
 chain management model for a large, fresh food production company.
 
-Rob Dielemans, Managing Director of GoDataDriven says; "The nature of our projects, requires our
-data scientists to make sense out of enormous amounts of data. A PhD contributes a lot to being
-successful as a data scientist. Besides intelligence, obtaining a Phd requires a lot of perseverance
+Rob Dielemans, Managing Director of GoDataDriven says; "The nature of our projects requires our
+Data Scientists to make sense out of enormous amounts of data. A PhD contributes a lot to being
+successful as a Data Scientist. Besides intelligence, obtaining a Phd requires a lot of perseverance
 and hard work. Rogier has truly earned this title and we are convinced of the bright future that
 lies ahead of him."
 
