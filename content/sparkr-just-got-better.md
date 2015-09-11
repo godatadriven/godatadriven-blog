@@ -6,17 +6,17 @@ Excerpt: This document discusses some new features for SparkR that arrived as pa
 Template: article
 Latex:
 
-In this document I'll give a quick review of some exiting new features for SparkR from the new 1.5 version that had it's official release today. 
+In this document I'll give a quick review of some exiting new features for SparkR from the new 1.5 version that had it's official release on September 9th 2015. 
 
 ## Rstudio provisioned 
 
 ![](https://www.rstudio.com/wp-content/uploads/2014/07/RStudio-Logo-Blue-Gradient.png)
 
-Starting a full start SparkR service on aws just got a whole lot easier. It takes about 15 minutes and only requires you to do three simple things.
+Starting a full start SparkR service on AWS just got a whole lot easier. It takes about 15 minutes and only requires you to do three simple things.
 
 #### Step 1: Command line 
 
-If you have your amazon `.pem` files in order on your machine as well as your aws credentials in your `.bash_profile` you can use the command line app in the `spark-ec2` folder to start up a cluster on amazon. 
+If you have your Amazon `.pem` files in order on your machine as well as your AWS credentials in your `.bash_profile` you can use the command line app in the `spark-ec2` folder to start up a cluster on Amazon. 
 
 From this folder, run this command;
 
@@ -41,7 +41,7 @@ The same command line app allows you to ssh into the master machine of the spark
 ./spark-ec2 -k pems-df -i /path/pems.pem --region=eu-west-1 login my-spark-cluster
 ```
 
-Once you are logged in, you'll be logged in as the root user. For security reasons it is more preferable to have a seperate user for rstudio. This user has already been added to the system, the only thing you need to do is assign a password to it. 
+Once you are logged in, you'll be logged in as the root user. For security reasons it is more preferable to have a seperate user for Rstudio. This user has already been added to the system, the only thing you need to do is assign a password to it. 
 
 ```
 passwd rstudio
@@ -55,7 +55,7 @@ First, just check where the master server is located.
 > curl icanhazip.com
 ```
 
-Then fill in the link in your favorite browser and log in with the 'rstudio' user and the password that you've set. 
+Then fill in the link in your favorite browser and log in with the 'Rstudio' user and the password that you've set. 
 
 ![](http://i.imgur.com/G6AbvPw.png)
 
@@ -108,7 +108,7 @@ Help on topic ‘glm’ was found in the following packages:
   stats                 /Library/Frameworks/R.framework/Versions/3.2/Resources/library
 ```
 
-You can run the model and save it's parameters in a variable, just like in normal R. 
+You can run the model and save its parameters in a variable, just like in normal R. 
 
 ```
 dist_mod <- glm(weight ~ Time + Diet, data = ddf, family = "gaussian")
@@ -191,11 +191,11 @@ Diet3        36.4994     4.0858   8.933  < 2e-16 ***
 Diet4        30.2335     4.1075   7.361 6.39e-13 ***
 ```
 
-Compare this output with the distributed glm output. You might be frightned slightly at this point. The two models give very different output! 
+Compare this output with the distributed glm output. You might be frightened slightly at this point. The two models give very different output! 
 
-Don't be scared just yet. The way that Spark has implemented machine learning is different it is still doing proper regression. 
+Don't be scared just yet. The way that Spark has implemented machine learning is different, however it is still doing proper regression. 
 
-The main difference is that R-glm translates the `Diet1` variable to be the constant intercept whereas the SparkR-glm translates `Diet4`. The only different therefore is a linear transformation of the model and the prediction outcomes shoulds still be the same. Another way to confirm this is to notice that the different between `Diet2` and `Diet3` is the same in both models and the parameter for `Time` is also the same. 
+The main difference is that R-glm translates the `Diet1` variable to be the constant intercept whereas the SparkR-glm translates `Diet4`. The only difference therefore is a linear transformation of the model, the prediction outcomes should still be the same. Another way to confirm this is to notice that the difference between `Diet2` and `Diet3` is the same in both models and the parameter for `Time` is also the same. 
 
 ```
 loc_mod %>% predict(df) %>% head(20)
@@ -213,7 +213,7 @@ loc_mod %>% predict(df) %>% head(20)
 ```
 #### Classification Example 
 
-By turning the family parameter from "gaussian" to "binomial" we turn the linear regression into a logistic regression. 
+By turning the family parameter from "gaussian" to "binomial", we turn the linear regression into a logistic regression. 
 
 ```
 df <- data.frame(a = c(1,1,1,0,0,0), b = c(6,7,8,1,2,3))
@@ -290,7 +290,7 @@ A few nice features were added in Spark 1.5 in regards to types and operations i
 
 #### The %in% operator 
 
-This was definately missing in Spark 1.4 but now you can do more complex queries via the `%in%` operator. 
+This was definitely missing in Spark 1.4 but now you can do more complex queries via the `%in%` operator. 
 
 ```
 ddf <- createDataFrame(sqlContext, ChickWeight)
@@ -421,7 +421,7 @@ ddf %>%
 6 2015-01-01 01:06:16 0.6781178    1      6 1420070776
 ```
 
-For most dataframe operations, this is nice to start playing with, but don't expect the full flexibility of base R just yet. As of right now dates and dateimes cannot be summerized and they cannot be used in models. This is a current known issue in [Jira](https://issues.apache.org/jira/browse/SPARK-10520) that peolpe are working on. 
+For most dataframe operations, this is nice to start playing with, but don't expect the full flexibility of base R just yet. Right now dates and datetimes cannot be summarized and they cannot be used in models. This is a current known issue in [Jira](https://issues.apache.org/jira/browse/SPARK-10520) that people are working on. 
 
 #### Levenshtein 
 
@@ -449,7 +449,7 @@ ddf %>% head
 
 #### Regex 
 
-Again, regexes are a bit of a special use case to a lot of R users but they are invaluable when analysing log files. 
+Again, regexes are a bit of a special use case to a lot of R users but they are invaluable when analyzing log files. 
 
 ```
 df <- data.frame(
@@ -478,6 +478,8 @@ ddf %>%
 
 ## The future 
 
-Spark could use some more features, but the recent additions already grant many usecases. Spark is a project with enourmous traction and has a new release every 3 months, so you can expect more to come.
+Spark could use some more features, but the recent additions already grant many usecases. Spark is a project with enormous traction and has a new release every 3 months, so you can expect more to come.
 
-Being able to work with a distributed dataframe in a dplyr-like syntax really opens up doors for R users who want to handle larger datasets. The fact that all of this can run on amazon cheaply adds to the benefit. 
+Being able to work with a distributed dataframe in a dplyr-like syntax really opens up doors for R users who want to handle larger datasets. The fact that all of this can run on Amazon cheaply adds to the benefit.
+
+[Back to Blog overview](/index.html)
