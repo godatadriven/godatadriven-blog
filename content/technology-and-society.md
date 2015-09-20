@@ -9,7 +9,7 @@ Latex:
 <span class="lead">On Wednesday September 16th, GoDataDriven co-organised a knowledge event focusing on the impact of technology on our society. Over 60 people signed up, not only to listen to three great speakers, but also to participate in a debate about data.</span>
 
 The three speakers, Christine Petersen, former CMO of Tripadvisor, Brenno de Winter, research journalist, and Niek van Leeuwen, country manager of Uber the Netherlands,
-set the tone for llively debates. Key take-aways from the debates? Anonimity makes honest, consumers should be aware that data shared will be stored forever, and innovation is crucial, but should not break the law.
+set the tone for lively debates. Key take-aways from the debates? Anonimity makes honest, consumers should be aware that data shared will be stored forever, and innovation is crucial, but should not break the law.
 
 ![Intro image](static/images/zorgofzegen/zorgofzegen.png)
 
@@ -21,7 +21,7 @@ Christine Petersen kicked off the afternoon by sharing her observations from a d
 
 When Tripadvisor moved from an industry orientation to a consumer orientation, they generated heaps of content by crawling the web and by allowing consumers to add their own reviews. To create traction, initially, Tripadvisor published lists about negative reviews, like the Top-10 Dirtiest Hotels. Interestingly enough, most of the reviews on Tripadvisor are very positive.
 
-![Debate](static/images/zorgofzegen/zorgofzegendebat.png]
+![Debate](static/images/zorgofzegen/zorgofzegendebat.png)
 
 In the debate after Christine Petersen’s presentation, the motion was; all anonymous content should be banned from internet. In the debate the two teams had an animated discussion. Despite the arguments of the team that agreed with the motion (safety, better quality content), the team that disagreed had the better arguments. One of them was the example of people at a psychiatrist, who speak freely, because they are anonymous. Somehow, anonimity makes honest.
 
