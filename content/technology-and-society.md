@@ -17,9 +17,9 @@ set the tone for lively debates. Key take-aways from the debates? Anonimity make
 
 Christine Petersen kicked off the afternoon by sharing her observations from a decade at Tripadvisor, a period in which the review site grew from 1 mio to 1 billion market share. 
 
-“ Things change. Period”, Christine Petersen said. “When a company wants to survive, it should become huge fast or it will disappear”.
+“Things change. Period”, Christine Petersen said. “When a company wants to survive, it should become huge fast or it will disappear”.
 
-When Tripadvisor moved from an industry orientation to a consumer orientation, they generated heaps of content by crawling the web and by allowing consumers to add their own reviews. To create traction, initially, Tripadvisor published lists about negative reviews, like the Top-10 Dirtiest Hotels. Interestingly enough, most of the reviews on Tripadvisor are very positive.
+When Tripadvisor shifted the focus from travel companies to consumers, the site generated heaps of content by crawling the web and by allowing consumers to add their own reviews. To create traction, initially, Tripadvisor published lists about negative reviews, like the Top-10 Dirtiest Hotels. Interestingly enough, most of the reviews on Tripadvisor are very positive.
 
 ![Debate](static/images/zorgofzegen/zorgofzegendebat.png)
 
@@ -40,9 +40,9 @@ In the debate that followed, the motion was discussed whether companies should a
 
 The last speaker, Niek van Leeuwen, country manger Uber The Netherlands, emphasized that Uber is a technology company, not a transportation company. 
 
-Niek van Leeuwen glued the take-aways from the previous presentations together: Become huge, evolve your basic idea into something you never imagined, enable innovation with data and overcome limitations of regulation. 
+Niek van Leeuwen glued the take-aways from the previous presentations together: Become huge, evolve your basic idea into something you never imagined, enable innovation with data and overcome limitations of regulation. "Scale gains lead to more differentation which leads to a better service proposition", Niek van Leeuwen remarks in his presentation.
 
-Just like Tripadvisor, Uber started out with a fundamental idea, which evolved over time. The original business idea of making good use of stalled cars has grown into a disruptive approach to urban transportation. Although Uber’s innovations are often slowed down because of law and regulations, they find ways to innovate around it.
+Just like Tripadvisor, Uber started out with a fundamental idea, which evolved over time. The original business idea of making good use of stalled cars has grown into a disruptive approach to urban transportation. Although Uber’s innovations are often slowed down because of law and regulations, they find ways to innovate around it. 
 
 ![Niek van Leeuwen - Uber](static/content/zorgofzegen/zorgofzegen-uber.png)
 
