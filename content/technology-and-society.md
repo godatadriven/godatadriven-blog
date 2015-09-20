@@ -2,12 +2,11 @@ Title: Technology and society: blessing or burden?
 Date: 2015-09-18 12:00
 Slug: technology-and-society
 Author: Walter van der Scheer
-Excerpt: GoDataDriven is proud to announce its Silver Sponsorship of the [Big Data Expo](http://www.bigdata-expo.nl) (30/9 and 1/10). Register for free to grow your understanding of Big Data best-practices from thought leaders including GoDataDriven customers Wehkamp, Bol.com and Schiphol Group.
+Excerpt: On Wednesday September 16th, GoDataDriven co-organised a knowledge event about the impact of technology on our society. Speakers from Tripadvisor, Uber and research journalism sparked lively debates amongst the attendees.
 Template: article
 Latex:
 
-<span class="lead">On Wednesday September 16th, GoDataDriven co-organised a knowledge event focusing on the impact of technology on our society. Over 60 people signed up, not only to listen to three great speakers, but also to join in a true debate about data.</span>
-
+<span class="lead">On Wednesday September 16th, GoDataDriven co-organised a knowledge event focusing on the impact of technology on our society. Over 60 people signed up, not only to listen to three great speakers, but also to participate in a debate about data.</span>
 
 The three speakers, Christine Petersen, former CMO of Tripadvisor, Brenno de Winter, research journalist, and Niek van Leeuwen, country manager of Uber the Netherlands,
 set the tone for llively debates. Key take-aways from the debates? Anonimity makes honest, consumers should be aware that data shared will be stored forever, and innovation is crucial, but should not break the law.
