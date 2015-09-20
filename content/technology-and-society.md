@@ -12,13 +12,17 @@ Latex:
 The three speakers, Christine Petersen, former CMO of Tripadvisor, Brenno de Winter, research journalist, and Niek van Leeuwen, country manager of Uber the Netherlands,
 set the tone for llively debates. Key take-aways from the debates? Anonimity makes honest, consumers should be aware that data shared will be stored forever, and innovation is crucial, but should not break the law.
 
+![Intro image](static/images/zorgofzegen/zorgofzegen.png)
+
 ## Tripadvisor: Individual opinions can change entire industries
 
 Christine Petersen kicked off the afternoon by sharing her observations from a decade at Tripadvisor, a period in which the review site grew from 1 mio to 1 billion market share. 
 
 “ Things change. Period”, Christine Petersen said. “When a company wants to survive, it should become huge fast or it will disappear”.
 
-When Tripadvisor moved from an industry orientation to a consumer orientation, they generated heaps of content by crawling the web and by allowing consumers to add their own reviews. To create traction, initially, Tripadvisor published lists about negative reviews, like the Top-10 Dirtiest Hotels. Interestingly enough, most of the reviews on Tripadvisor are very positive. 
+When Tripadvisor moved from an industry orientation to a consumer orientation, they generated heaps of content by crawling the web and by allowing consumers to add their own reviews. To create traction, initially, Tripadvisor published lists about negative reviews, like the Top-10 Dirtiest Hotels. Interestingly enough, most of the reviews on Tripadvisor are very positive.
+
+![Debate](static/images/zorgofzegen/zorgofzegendebat.png]
 
 In the debate after Christine Petersen’s presentation, the motion was; all anonymous content should be banned from internet. In the debate the two teams had an animated discussion. Despite the arguments of the team that agreed with the motion (safety, better quality content), the team that disagreed had the better arguments. One of them was the example of people at a psychiatrist, who speak freely, because they are anonymous. Somehow, anonimity makes honest.
 
@@ -26,6 +30,8 @@ In the debate after Christine Petersen’s presentation, the motion was; all ano
 ## Brenno de Winter: What will come from our data?
 
 Brenno de Winter, as the second speaker, warned us that companies are aware of the potential of data, and therefore they collect, often without knowing what they will do with it in the future. Consumers should be aware of this when sharing information with companies. As a consumer, it is important to be aware of the trail that you leave behind. 
+
+![Brenno de Winter](static/content/zorgofzegen/zorgofzegen-brenno.png)
 
 Furthermore, Brenno talked about restrictions like law and regulation, and whether they should slow innovation or should stimulate it. Perhaps, restrictions, like law and regulation, should be addressed in the same way as one of the biggest restrictions we know: gravity. But despite the force of gravity, airplanes got invented and people are able to defy gravity. 
 
@@ -38,6 +44,8 @@ The last speaker, Niek van Leeuwen, country manger Uber The Netherlands, emphasi
 Niek van Leeuwen glued the take-aways from the previous presentations together: Become huge, evolve your basic idea into something you never imagined, enable innovation with data and overcome limitations of regulation. 
 
 Just like Tripadvisor, Uber started out with a fundamental idea, which evolved over time. The original business idea of making good use of stalled cars has grown into a disruptive approach to urban transportation. Although Uber’s innovations are often slowed down because of law and regulations, they find ways to innovate around it.
+
+![Niek van Leeuwen - Uber](static/content/zorgofzegen/zorgofzegen-uber.png)
 
 In order to change urban transportation for good, Uber is currently deploying several innovative offerings. Besides new proposition, like Uber Pool (shared car pooling), this also involves deep software integrations, like with Outlook Calendar or dating sites. 
 
