@@ -30,7 +30,7 @@ In the debate after Christine Petersen’s presentation, the motion was; all ano
 
 Brenno de Winter, as the second speaker, warned us that companies are aware of the potential of data, and therefore they collect, often without knowing what they will do with it in the future. Consumers should be aware of this when sharing information with companies. As a consumer, it is important to be aware of the trail that you leave behind. 
 
-![Brenno de Winter](static/content/zorgofzegen/zorgofzegen-brenno.png)
+![Brenno de Winter](static/images/zorgofzegen/zorgofzegen-brenno.png)
 
 Furthermore, Brenno talked about restrictions like law and regulation, and whether they should slow innovation or should stimulate it. Perhaps, restrictions, like law and regulation, should be addressed in the same way as one of the biggest restrictions we know: gravity. But despite the force of gravity, airplanes got invented and people are able to defy gravity. 
 
@@ -44,7 +44,7 @@ Niek van Leeuwen glued the take-aways from the previous presentations together: 
 
 Just like Tripadvisor, Uber started out with a fundamental idea, which evolved over time. The original business idea of making good use of stalled cars has grown into a disruptive approach to urban transportation. Although Uber’s innovations are often slowed down because of law and regulations, they find ways to innovate around it. 
 
-![Niek van Leeuwen - Uber](static/content/zorgofzegen/zorgofzegen-uber.png)
+![Niek van Leeuwen - Uber](static/images/zorgofzegen/zorgofzegen-uber.png)
 
 In order to change urban transportation for good, Uber is currently deploying several innovative offerings. Besides new proposition, like Uber Pool (shared car pooling), this also involves deep software integrations, like with Outlook Calendar or dating sites. 
 
