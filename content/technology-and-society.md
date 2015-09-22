@@ -9,7 +9,7 @@ Latex:
 <span class="lead">On Wednesday September 16th, GoDataDriven co-organised a knowledge event focusing on the impact of technology on our society. Over 60 people signed up, not only to listen to three great speakers, but also to participate in a debate about data.</span>
 
 The three speakers, Christine Petersen, former CMO of Tripadvisor, Brenno de Winter, research journalist, and Niek van Leeuwen, country manager of Uber the Netherlands,
-set the tone for lively debates. Key take-aways from the debates? Anonimity makes honest, consumers should be aware that data shared will be stored forever, and innovation is crucial, but should not break the law.
+set the tone for lively debates. Key take-aways from the debates? Anonymity makes honest, consumers should be aware that data shared will be stored forever, and innovation is crucial, but should not break the law.
 
 ![Intro image](static/images/zorgofzegen/zorgofzegen.png)
 
