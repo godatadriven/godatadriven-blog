@@ -6,13 +6,12 @@ Excerpt: Explain some Kerberos terms and shows how to configure a Kerberos Key D
 Template: article
 Latex:
 
-This blog is part of the blog series Kerberos and Hadoop and it explains what Kerberos is and how you can set up a Kerberos server. This is the first part of the blog series and it is just a 'helper' blog, which explains what Kerberos is and how it can be installed. The rest of the series will contain:
+This blog is part of the blog series Kerberos and Hadoop and it explains what Kerberos is and how you can set up a Kerberos server. This is the first part of the blog series and it is just a 'helper' blog, which explains what Kerberos is and how it can be installed. The rest of the series contain:
 
 - how to set up cross-realm trust between an Active Directory and the KDC server you set up in this blog (<a href="cross-realm-trust-kerberos.html" target="_blank">Setting up cross realm trust between Active Directory and Kerberos KDC</a>)
-- how to usb Kerberos with Cloudera Manager and Hadoop
+- how to use Kerberos with Cloudera Manager and Hadoop
 (<a href="kerberos-cloudera-setup.html" target="_blank">Setting up Kerberos authentication for Hadoop with Cloudera Manager</a>)
 
-For these blogs, please check back later....
 
 ### Background Kerberos
 
@@ -25,7 +24,7 @@ Kerberos has its own terminology which we need to shortly explain before we go f
 - **Tickets** are issued by the authentication server. Clients present tickets to the application server to demonstrate the authenticity of their identity. Each ticket has an expiration and a renewal time. The Kerberos server has no control over the issued tickets, so even if we prevent a user from obtaining a ticket, if the user has already a valid ticket, he/she can use this to contact the service (until the ticket expires).
 - **Keytabs** stores long-term keys for one or more principals.
  
-To undestand the Kerberos terminology better, you can read the <a href="http://www.zeroshell.org/kerberos/Kerberos-definitions/" target="_blank">Kerberos Authentication Protocol</a> site.
+To understand the Kerberos terminology better, you can read the <a href="http://www.zeroshell.org/kerberos/Kerberos-definitions/" target="_blank">Kerberos Authentication Protocol</a> site.
 
 A Kerberos server, usually called **Key Distribution Center (KDC)** resides on one physical host, but logically has multiple components incorporated:
 
@@ -337,4 +336,4 @@ Short summary of the necessary steps:
 
 So we have a working KDC, which can issue tickets and we can create new principals.
 
-See you next time when we will discuss how to configure cross-realm trust.
+See you next time when we will discuss how to <a href="cross-realm-trust-kerberos.html">configure cross-realm trust</a>.
