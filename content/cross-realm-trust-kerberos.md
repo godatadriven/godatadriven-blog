@@ -6,6 +6,8 @@ Excerpt: Explains what you need to configure to set up cross-realm trust between
 Template: article
 Latex:
 
+<span class="lead">What do you need to configure when you set up cross-realm trust between Kerberos KDC and Active Directory.</span>
+
 This is the second part of the blog series and it is just a 'helper' blog, which explains how to set up cross-realm trust between an Active Directory and a Kerberos KDC. The rest of the series contains:
 
 - what is Kerberos and how to set up a Kerberos server:  <a href="kerberos_kdc_install.html" target="_blank">Kerberos basics and installing a KDC</a>
