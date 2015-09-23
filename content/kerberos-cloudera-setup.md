@@ -6,7 +6,7 @@ Excerpt: Some of our clients were interested in how we could enable security in 
 Template: article
 Latex:
 
-Lately I was busy trying to figure out how I could integrate Active Directory authentication with Hadoop, more specifically with the CDH stack. I used a couple of CentOS 6.5 machines, Cloudera Manager 4.8.0 and CDH 4.5.0 to test the proposed solutions. But let's start at the beginning...
+<span class="lead">Lately I was busy trying to figure out how I could integrate Active Directory authentication with Hadoop, more specifically with the CDH stack. I used a couple of CentOS 6.5 machines, Cloudera Manager 4.8.0 and CDH 4.5.0 to test the proposed solutions. But let's start at the beginning...</span>
 
 Authentication is used to determine who is allowed to connect to a service, in our case to Hadoop. Authentication does not solve the problem of identifying which user has specific access rights to resources. Read more about this subject at <a href="http://blog.cloudera.com/blog/2012/03/authorization-and-authentication-in-hadoop/" target="_blank">Authorization and Authentication in Hadoop</a>.
 
@@ -407,12 +407,12 @@ Here is a summary of the steps which you need to follow when using Cloudera Mana
 
 		kadmin: addprinc -e "aes256-cts:normal aes128-cts:normal des3-hmac-sha1:normal arcfour-hmac:normal des-hmac-sha1:normal des-cbc-md5:normal des-cbc-crc:normal" krbtgt/GDD.NL@WIN_GDD.NL
 
-	### Conclusion
+### Conclusion
 
 It's possible to integrate Kerberos and AD with Cloudera Manager. First it might seem scary and complicated but after you figured it out once, you'll realize it's not that hard.
 
 I would strongly advice you to use an automatic provisioning tool, like Ansible, Chef or Puppet. I showed you the steps which you need to follow using bash commands. Doing this on one machine is acceptable, but when you have a cluster with 6 node you already want to be able to do the provisioning from one central machine and deploy it to the rest. It also makes sure that you will make less mistakes...or at least you will have the same error on all machines :).
 
-In the next blog I will describe how we configure Samba and SSSD to create a domain controller and to replace the Kerberos KDC server. Of course this solution will also involve some configuration to enable Cloudera Manager to generate the certificates correctly.
+In the next blog I will describe how we <a href="samba-configuration.html" target="_blank">configure Samba and SSSD to create a domain controller</a> and to replace the Kerberos KDC server. Of course this solution will also involve some configuration to enable Cloudera Manager to generate the certificates correctly.
 
 
