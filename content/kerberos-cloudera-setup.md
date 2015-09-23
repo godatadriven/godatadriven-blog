@@ -8,7 +8,10 @@ Latex:
 
 <span class="lead">Lately I was busy trying to figure out how I could integrate Active Directory authentication with Hadoop, more specifically with the CDH stack. I used a couple of CentOS 6.5 machines, Cloudera Manager 4.8.0 and CDH 4.5.0 to test the proposed solutions. But let's start at the beginning...</span>
 
-Authentication is used to determine who is allowed to connect to a service, in our case to Hadoop. Authentication does not solve the problem of identifying which user has specific access rights to resources. Read more about this subject at <a href="http://blog.cloudera.com/blog/2012/03/authorization-and-authentication-in-hadoop/" target="_blank">Authorization and Authentication in Hadoop</a>.
+This blog is part of the blog series Kerberos and Hadoop and it explains what Kerberos is and how you can set up a Kerberos server. The rest of the series contain:
+
+- <a href="kerberos_kdc_install.html" target="_blank">Kerberos basics and installing a KDC</a>
+- <a href="cross-realm-trust-kerberos.html" target="_blank">Setting up cross realm trust between Active Directory and Kerberos KDC</a>
 
 Hadoop has two authentication methods:
 
