@@ -5,9 +5,8 @@ Author: Tünde Bálint; Bolke de Bruin
 Excerpt: The standard way of using Cloudera in an enterprise environment is to either create a cross realm trust with kerberos domain or to buy the enterprise add-ons. The down side of this that user administration is a hassle as you need to maintain the list of users that is able to access the system on every node by hand or replication (or you need to spend money). Samba 4 can serve as an Active Directory Domain Controller, provide DNS services, handle Kerberos-based authentication, and administer group policy. In this article we use Samba4 to setup an active directory domain and a domain controller. Next, we will configure SSSD and PAM to provide the necessary glue between active directory and the unix name service switch so users from active directory are available in linux. Finally, we will explain how to use this setup with Cloudera Manager. 
 Template: article
 Latex:
-In this blog we will describe how we can configure Samba4 as an Active Directory domain controller to replace the Kerberos Domain Controller. We will also discuss SSSD and PAM. Our goal is to obtain renewable certificates which can be then used by Cloudera Manager, the hadoop daemons and users.
-You might wonder why we actually bothered to implement this solution. We chose to implement this solution so we can have centralized administration of users.
-
+<span class="lead">In this blog we will describe how we can configure Samba4 as an Active Directory domain controller to replace the Kerberos Domain Controller. We will also discuss SSSD and PAM. Our goal is to obtain renewable certificates which can be then used by Cloudera Manager, the hadoop daemons and users.
+You might wonder why we actually bothered to implement this solution. We chose to implement this solution so we can have centralized administration of users.</span>
 
 ### Background
 
