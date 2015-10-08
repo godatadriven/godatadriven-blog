@@ -10,7 +10,7 @@ Latex:
 
 The room was packed during the presentation of Friso van Vollenhoven.
 
-![Full room during presentation of Friso](/static/images/bigdataexpobigdata/expo-presentatie-friso.jpg)
+![Full room during presentation of Friso](/static/images/bigdataexpo/bigdataexpo-presentatie-friso.jpg)
 
 You can view the slides of Friso van Vollenhoven's presentation below. If you are interested in the live demonstration of the product recommender, please let us know by [sending us an email](mailto:response@godatadriven.com?subject=productrecommender&nbdsp;demo).
 
