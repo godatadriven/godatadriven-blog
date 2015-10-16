@@ -37,9 +37,9 @@ Everybody experienced in Data Science (machine learning, data mining, text minin
 </p>
 <p>
 You will especially enjoy the afternoon if: <br />
-* You like machine learning, to think about and apply models to data; <br />
-* You like to program to reach your goal and still be able to collaborate in a team; <br />
-* You like to use visualization to communicate the results. <br />
+- You like machine learning, to think about and apply models to data; <br />
+- You like to program to reach your goal and still be able to collaborate in a team; <br />
+- You like to use visualization to communicate the results. <br />
 </p>
 
 [Sign up](http://www.eventbrite.nl/e/tickets-data-science-hackathon-at-umc-utrecht-18974359821)
@@ -47,7 +47,7 @@ You will especially enjoy the afternoon if: <br />
 ## Agenda 
 
 <p>
-After a brief opening by Ms. F. Scheepers (psychiatrist, head of UMC Utrecht psychiatry unit and initiator of this project)  you'll quickly get to work. Finally, the results will be presented to the management team of the psychiatry unit and everyone else that is interested. 
+After a brief opening by Ms. F. Scheepers (psychiatrist, head of UMC Utrecht psychiatry unit and initiator of this project) you'll quickly get to work. Finally, the results will be presented to the management team of the psychiatry unit and everyone else that is interested. 
 </p>
 <p> 
 12:00 (Facultative) tour of the Psychiatry department <br />
