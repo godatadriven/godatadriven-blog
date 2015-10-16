@@ -36,9 +36,9 @@ Everybody experienced in Data Science (machine learning, data mining, text minin
 </p>
 <p>
 You will especially enjoy the afternoon if: <br />
-You like machine learning, to think about and apply models to data; <br />
-You like to program to reach your goal and still be able to collaborate in a team; <br />
-You like to use visualization to communicate the results. <br />
+* You like machine learning, to think about and apply models to data; <br />
+* You like to program to reach your goal and still be able to collaborate in a team; <br />
+* You like to use visualization to communicate the results. <br />
 </p>
 
 [Sign up](http://www.eventbrite.nl/e/tickets-data-science-hackathon-at-umc-utrecht-18974359821)
@@ -65,15 +65,15 @@ Thanks to the multi-disciplines nature of health care data, a diverse team worki
 
 ## F.A.Q.
 <p> 
-What are the transport / parking for the event? <br />
+*What are the transport / parking for the event?* <br />
 Cars can be parked in the car park of the University Medical Center Utrecht. <br />
 </p>
 <p>
-What can I do / not bring to the event? <br />
+*What can I do / not bring to the event?* <br />
 Power and Internet connections are regulated sufficiently. A personal laptop with proprietary software could help to solve interesting problems using big data-applications. <br />
 </p>
 <p>
-Where can I reach the organizer if I have questions? <br />
+*Where can I reach the organizer if I have questions?* <br />
 Contact Walter van der Scheer at waltervanderscheer@godatadriven.com <br />
 </p>
 
