@@ -17,6 +17,7 @@ At the end of the day you have the unique opportunity to present your findings t
 Contribute to the way that Data Science can improve health care and [sign up today](http://www.eventbrite.nl/e/tickets-data-science-hackathon-at-umc-utrecht-18974359821).
 </p>
 </span>
+[![Hackathon at UMC Utrecht](/static/content/images/hackathon-umcu/hackathon-umcu.png)](http://www.eventbrite.nl/e/tickets-data-science-hackathon-at-umc-utrecht-18974359821)
 
 ## Background 
 
