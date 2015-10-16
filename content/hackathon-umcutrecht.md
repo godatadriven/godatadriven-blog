@@ -8,13 +8,13 @@ Latex:
 
 <span class="lead">
 <p>
-On November 12th, UMC Utrecht and GoDataDriven once again organize a hackathon at UMC Utrecht. This Data Science hackathon offers a unique opportunity to work on real healthcare data sets and to have impact in finding ways to improve health care. This event is open to anyone active in Data Science and machine learning, text mining, visualization, data intensive programming and general hacking. 
+On November 12th, UMC Utrecht and GoDataDriven once again organize a [hackathon at UMC Utrecht](http://www.eventbrite.nl/e/tickets-data-science-hackathon-at-umc-utrecht-18974359821). This Data Science hackathon offers a unique opportunity to work on real healthcare data sets and to have impact in finding ways to improve health care. [This event](http://www.eventbrite.nl/e/tickets-data-science-hackathon-at-umc-utrecht-18974359821) is open to anyone active in Data Science and machine learning, text mining, visualization, data intensive programming and general hacking. 
 </p>
 <p>
 At the end of the day you have the unique opportunity to present your findings to the management of the Psychiatry department.
 </p>
 <p>
-Contribute to the way that Data Science can improve health care and sign up today.
+Contribute to the way that Data Science can improve health care and [sign up today](http://www.eventbrite.nl/e/tickets-data-science-hackathon-at-umc-utrecht-18974359821).
 </p>
 </span>
 
@@ -40,6 +40,8 @@ You like machine learning, to think about and apply models to data; <br />
 You like to program to reach your goal and still be able to collaborate in a team; <br />
 You like to use visualization to communicate the results. <br />
 </p>
+
+[Sign up](http://www.eventbrite.nl/e/tickets-data-science-hackathon-at-umc-utrecht-18974359821)
 
 ## Agenda 
 
