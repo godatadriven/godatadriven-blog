@@ -1,3 +1,12 @@
+Title: Hackathon with unique data sets at UMC Utrecht
+Date: 2015-10-16 12:00
+Slug: hackathon-umcutrecht
+Author: Walter van der Scheer
+Excerpt: On November 12th, UMC Utrecht and GoDataDriven once again organize a hackathon at UMC Utrecht.
+Template: article
+Latex:
+
+<span class="lead">
 <p>
 On November 12th, UMC Utrecht and GoDataDriven once again organize a hackathon at UMC Utrecht. This Data Science hackathon offers a unique opportunity to work on real healthcare data sets and to have impact in finding ways to improve health care. This event is open to anyone active in Data Science and machine learning, text mining, visualization, data intensive programming and general hacking. 
 </p>
@@ -7,6 +16,7 @@ At the end of the day you have the unique opportunity to present your findings t
 <p>
 Contribute to the way that Data Science can improve health care and sign up today.
 </p>
+</span>
 
 ## Background 
 
