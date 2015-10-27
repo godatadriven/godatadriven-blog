@@ -10,7 +10,7 @@ Latex:
 
 After Baut and Baut Zuid, Restaurant C is the third operation of Michiel and Lucas van der Eerde. This time they decided to take the experience to a whole new level. Michiel, who is already well-known through his appearance on Dutch TV Show MasterChef, added sous-chef Arnout van der Kolk (Ciel Bleu **, Okura) to the kitchen squad.
 
-![Restaurant C](/static/images/crowdfunding/restaurant-c/jpg)
+![Restaurant C](/static/images/crowdfunding/restaurant-c.jpg)
 
 "Over the past years the Wibautstraat has developed into one of the most dynamic and happening streets of Amsterdam. We are proud that Restaurant C has received support from neighbouring businesses like GoDataDriven to kickstart our restaurant", says Lucas van der Eerde, adding: "Data Science makes hungry, so we made sure to add a mouth-watering burger to our menu as well."
 
