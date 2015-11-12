@@ -10,7 +10,7 @@ Latex:
 
 During the evening executives exchange ideas, best-practices and get a second opinion on their business ideas.
 
-[Data Science Dinner](/static/images/datasciencedinner/datasciencedinner1.png)]
+![Data Science Dinner](/static/images/datasciencedinner/datasciencedinner1.png)
 
 This time, Frank Derks, Head of Advanced Analytics at ING Commercial Banking, presented the 9 elements of a successful datadriven transition. 
 
@@ -20,7 +20,7 @@ Over dinner, several datadriven topics were discussed including Industry 4.0, th
 
 Rob Dielemans kicked of by discussing the fourth industrial revolution. Traditionally, the elements of an industry where material, means and people. From mechanical (steam, water), industries started dividing labor and introduced mass production. Then automation entered the industry with IT and electronics. Now, data and connectivity are once more changing our way of working. 
 
-[Data Science Dinner](/static/images/datasciencedinner/datasciencedinner2.png)]
+![Data Science Dinner](/static/images/datasciencedinner/datasciencedinner2.png)
 
 At the tables we discussed this, some of the outcomes where:
 -	We used to have standardization to keep prices low. This is moving towards differentiation and personalization, where data makes it possible to keep costs low.
@@ -45,7 +45,7 @@ When companies are able to attract the right people, they are able to create adv
 
 ## Corporates are not able to experiment. Or are they?
 
-[Data Science Dinner](/static/images/datasciencedinner/datasciencedinner3.png)]
+![Data Science Dinner](/static/images/datasciencedinner/datasciencedinner3.png)
 
 Finally, as a dessert, Friso van Vollenhoven discussed experimentation within a corporate context. Companies say that they need to experiment, but are companies capable of this or or does the nature of a business: the need to make money, limit the experimentation opportunities?
 
