@@ -55,4 +55,4 @@ A culture where failure is accepted leads to higher achieving businesses, but co
 
 The conclusion was that companies are very well capable of experimenting, perhaps the pressure from the business leads to an optimal experimentation culture: where many experiments can be done on a small scale, eliminating the unsuccessful ones and enabling the successful ones to blossom.
 
-Interested in joining the next Data Science Dinner, scheduled for Spring 2016? Contact us by pinging us an email signal@goda
+Interested in joining the next Data Science Dinner, scheduled for Spring 2016? Contact us by pinging us an email signal@godatadriven.com
