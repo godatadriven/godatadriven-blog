@@ -10,7 +10,7 @@ Latex:
 
 During the evening executives exchange ideas, best-practices and get a second opinion on their business ideas.
 
-![Data Science Dinner](/static/images/datasciencedinner/datasciencedinner2.png)
+![Data Science Dinner](/static/images/datasciencedinner/datasciencedinner1.png)
 
 This time, Frank Derks, Head of Advanced Analytics at ING Commercial Banking, presented the 9 elements of a successful datadriven transition. 
 
