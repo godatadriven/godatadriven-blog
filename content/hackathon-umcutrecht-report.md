@@ -26,7 +26,7 @@ Due to the sensitivity of the data sets, we are unable to share the specific res
 One of the most interesting insights came from the combination of data from UMC Utrecht with external geographical data. From the analysis of this combination the conclusion could be drawn that there is a correlation between the proximity to nature (trees, water) and the number of admissions (and duration). Significantly less people who live near nature are being admitted than people who live further away from nature.
 
 ### Classifying text to understand aggression
-![Hackathon UMC Utrecht](static/images/hackathon-ucmu/hackathon-umcu-gdd-1.png)
+![Hackathon UMC Utrecht](static/images/hackathon-umcu/hackathon-umcu-gdd-1.png)
 
 One of the groups classified texts to see what are the indicators of aggression, by looking at specific words that could be retrieved from files and observations. Furthermore, these data were plotted against the age of a patient. 
 
