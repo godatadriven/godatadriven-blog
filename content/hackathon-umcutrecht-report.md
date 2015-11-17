@@ -12,7 +12,7 @@ On November 12th, UMC Utrecht and GoDataDriven organized a hackathon at UMC Utre
 
 You can view the video report of the day below:
 
-<iframe width="560px" height="315px" src="https://www.youtube.com/embed/ZtQh-3Lkl6I" frameborder="0" allowfullscreen></iframe>
+<iframe width="560px" height="315px" src="https://www.youtube.com/embed/eG8EIPohoig" frameborder="0" allowfullscreen></iframe>
 
 After an interesting tour of the psychiatry department and an introduction by Karin Hagoort, project manager Psynet and Big Data Psychiatry, the participants formed three groups to work on three different data sets.
 
@@ -23,7 +23,7 @@ The data scientists applied their skills to classify texts, predict certain beha
 Due to the sensitivity of the data sets, we are unable to share the specific results, however, we do want to share some general insights from the hackathon.
 
 ### The impact of nature in the proximity
-One of the most interesting insights came from the combination of data from UMC Utrecht with external geographical data. From the analysis of this combination the conclusion could be drawn that there is a correlation between the proximity to nature (trees, water) and the number of admissions (and duration). Significantly less people who live near nature are being admitted than people who live further away from nature.
+One of the most interesting insights came from the combination of data from UMC Utrecht with external geographical data. From the analysis of this combination the conclusion could be drawn that there seems to be a correlation between the proximity to nature (trees, water) and the duration of a stay at the Psychiatry Unit. People who live near nature seems to stay shorter at the Psychiatry Unit than people who live further away from naturen.
 
 ### Classifying text to understand aggression
 ![Hackathon UMC Utrecht](static/images/hackathon-umcu/hackathon-umcu-gdd-1.png)
