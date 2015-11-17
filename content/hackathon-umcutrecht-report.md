@@ -37,4 +37,5 @@ Data from interviews with patients were used to develop understanding of words t
 
 ## Presentation of the results
 ![Hackathon UMC Utrecht](static/images/hackathon-umcu/hackathon-umcu-gdd-2.png)
+
 At the end of the day, the data scientists had the opportunity to present their findings to the management of the psychiatry department of UMC Utrecht. The management experienced the presentations as insightful and they will use the results from the hackathon to further research how they can improve the patient experience and treatments.
