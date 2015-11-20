@@ -15,7 +15,7 @@ Processing large amounts of unstructured data requires serious computing power a
 
 Earlier, on November 3rd 2015, GoDataDriven already presented a webinar about [running Cloudera on MS Azure](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html), which has been recorded and is available for viewing after [registration](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html).
 
-[Webinar: Running Cloudera on Azure](![Webinar: Running Cloudera on Azure](/static/images/cloudera-on-azure/webinar-cloudera-on-azure.png](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html))
+[Webinar: Running Cloudera on Azure](![Webinar: Running Cloudera on Azure](/static/images/cloudera-on-azure/webinar-cloudera-on-azure.png)(https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html))
 
 ## The use-case: Data Science infrastructure for large European airport 
 
@@ -30,7 +30,7 @@ Apache Hadoop is a framework that allows distributed processing of large data se
 
 [Cloudera](www.cloudera.com) is an active contributor to the Apache Hadoop project and provides an enterprise-ready distribution which bundles multiple open-source projects. The Cloudera enterprise data hub is a unified platform that can collect and store unlimited data cost-effectively and reliably, and enable diverse users to quickly gain value from that data through a collection of frameworks that span data processing, interactive analytics, and real-time serving applications. The Enterprise Data Hub makes it possible to deliver integrated analytic solutions for less cost and effort than ever before. 
 
-![Cloudera Enterprise Data Hub](/content/images/cloudera-on-azure/cloudera-enterprise-data-hub.png)
+![Cloudera Enterprise Data Hub](/static/images/cloudera-on-azure/cloudera-enterprise-data-hub.png)
 
 The enterprise data hub comprises proprietary elements as well as many open source components like HDFS, YARN, MapReduce, Zookeeper, HBase, Spark, Hive, Impala, Pig, Sqoop, Cloudera Search and Navigator. For a description of all these components please [visit the Cloudera Glossary](http://www.cloudera.com/content/www/en-us/documentation/enterprise/latest/topics/glossaries.html).  
 
