@@ -10,7 +10,7 @@ Recently, GoDataDriven pioneered with the Cloudera template to install a Clouder
 </span>
 
 ## Modifying the Cloudera template 
-Although the deployment templates offers quite a number of features, in our use case there were some specific requirements, so we had to decide whether to use the template and modify it, or start from scratch by installing some Linux machines on Azure and configure the rest using a provisioning tool like Ansible. First of all we had a close look at the requirements for the use case and the out-of-the-box features of the template. 
+Although the deployment template offers quite a number of features, in our use case there were some specific requirements, so we had to decide whether to use the template and modify it, or start from scratch by installing some Linux machines on Azure and configure the rest using a provisioning tool like Ansible. First of all we had a close look at the requirements for the use case and the out-of-the-box features of the template. 
 
 ## Requirements for the use case
 
@@ -33,7 +33,7 @@ And the following technical requirements were added:
 
 First of all we took a look at the features of the template: 
 <ol>
-<li>Creates a Resource Group for all the components</li> 
+<li>Create a Resource Group for all the components</li> 
 <li>Create VNet and subnets</li> 
 <li>Create availability sets. Place masters and workers in different availability sets</li>  
 <li>Create security groups</li> 
@@ -43,8 +43,8 @@ First of all we took a look at the features of the template:
 <li>Set up forward/reverse lookup between hosts using /etc/hosts file </li>
 <li>Tune Linux OS and network configurations like disable SELinux, disable IPtables, TCP tuning parameters, disable huge pages</li> 
 <li>Set up time synchronization to an external server (NTPD)</li>
-<li>Setup Cloudera Manager and the database used by the Cloudera Manager</li>
-<li>Setup Hadoop services using the Cloudera Python API</li> 
+<li>Set up Cloudera Manager and the database used by the Cloudera Manager</li>
+<li>Set up Hadoop services using the Cloudera Python API</li> 
 </ol>
 
 The template also has a disadvantage: it is meant to start up a cluster, but you cannot create extra data nodes and add them to the cluster. The template does not provision a gateway machine for you. 
@@ -79,7 +79,7 @@ Seting-up the DNS component of the Active Directory for the machines to do forwa
 <li>Decreasing the number of data disks per node</li>
 <li>Installing Hadoop components ourselves to increase control over what goes where. Also, the template does not support the integration of Hadoop with the Active Directory, so we did this manually</li>
 <li>Adding a new node type to the template to deploy a gateway node</li> 
-<ol>
+</ol>
 
 ## Changing the template
 
@@ -103,7 +103,8 @@ After deployment of these resources we can start creating the virtual machines, 
 <li>Based on the node type the disks scripts are called (prepare-datanode-disks.sh or prepare-masternode-disks.sh) </li>
 </ul>
 
-*So what do the disks scripts do?* These scripts prepare the machines with specific OS based tuning and calling prepare-datanode-disks.sh or prepare-masternode-disks.sh. They format and mount the different disks. For the data node the 10 data disks are mounted and  another disk is created for the parcels.
+*So what do the disks scripts do?*
+These scripts prepare the machines with specific OS based tuning and calling prepare-datanode-disks.sh or prepare-masternode-disks.sh. They format and mount the different disks. For the data node the 10 data disks are mounted and  another disk is created for the parcels.
 
 A disk is created for the parcels of the Master Node, for the external PostgreSQL DB, the Zookeeper process, and the Quorum Journal manager process.
 
@@ -185,7 +186,7 @@ azure group create -n "myResourceGroup" -l "West Europe"
 And then you can start deploying your cluster: 
 azure group deployment create  -g myResourceGroup  -n "MyClouderaDeployment"  -f azuredeploy.json  -e azuredeploy-parameters.json 
 
-Make sure that after you deploy you change the password of the user you just created to access the hosts and also the Cloudera Manager user password. Currently, passwords can be plainly seen in your deployment configuration on Azure. Also the parameters transferred to the shell scripts can be seen on the hosts in the /var/log/azure/..../extension.log. So here you would also see the password for Cloudera Manager. If you want to change this you should consider integrating Azure Key Vault into the scripts. (What is Azure Key Vault? https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/) This way you would be able to use SSH-keys to access your machines. 
+Make sure that after you deploy you change the password of the user you just created to access the hosts and also the Cloudera Manager user password. Currently, passwords can be plainly seen in your deployment configuration on Azure. Also the parameters transferred to the shell scripts can be seen on the hosts in the /var/log/azure/..../extension.log. So here you would also see the password for Cloudera Manager. If you want to change this you should consider integrating Azure Key Vault into the scripts. [What is Azure Key Vault?]( https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/). This way you would be able to use SSH-keys to access your machines. 
 
 We decided to run the template without using Key Vault, just making sure that the given user isn’t allowed to log in with a password. Because we did not install Cloudera Manager with the template, we did not have to worry about that password.  
 
