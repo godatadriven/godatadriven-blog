@@ -17,7 +17,7 @@ Earlier, on November 3rd 2015, GoDataDriven already presented a webinar about [r
 
 [![Webinar: Running Cloudera on Azure](/static/images/cloudera-on-azure/webinar-cloudera-on-azure.png)](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html)
 
-## The use-case: Data Science infrastructure for large European airport 
+# The use-case: Data Science infrastructure for large European airport 
 
 In order to explore and analyze data, one of the largest European airports approached GoDataDriven to set-up a pre-production environment with adequate security measures, robust enough for production load. Cloudera was selected as Hadoop distribution to be installed on MS Azure.
 
@@ -25,7 +25,7 @@ The first use-case to motivate the installation of Cloudera was to be able to le
 
 Being a long-standing Cloudera partner, GoDataDriven is one of the most experienced consultancy boutiques when it comes to setting up Cloudera clusters on all kinds of hosting platforms, but setting it up using the Azure cloud was a new challenge.
 
-## Hadoop & Cloudera: a short introduction 
+# Hadoop & Cloudera: a short introduction 
 Apache Hadoop is a framework that allows distributed processing of large data sets across clusters of computers. It is designed to scale up by simply adding servers, thus immediately adding local computing power and storage. Rather than relying on the hardware to deliver high-availability, the library itself is designed to detect and handle failures on the application layer.  
 
 [Cloudera](www.cloudera.com) is an active contributor to the Apache Hadoop project and provides an enterprise-ready distribution which bundles multiple open-source projects. The Cloudera enterprise data hub is a unified platform that can collect and store unlimited data cost-effectively and reliably, and enable diverse users to quickly gain value from that data through a collection of frameworks that span data processing, interactive analytics, and real-time serving applications. The Enterprise Data Hub makes it possible to deliver integrated analytic solutions for less cost and effort than ever before. 
@@ -36,10 +36,10 @@ The enterprise data hub comprises proprietary elements as well as many open sour
 
 With all these components integrated and managed by one interface an organization can load and store all types of data, transform the data in a usable format, create workflows to easily explore the data and then run data-driven experiments and analysis over unlimited data.  
 
-## Microsoft Azure: a short introduction 
+# Microsoft Azure: a short introduction 
 [Microsoft Azure](https://azure.microsoft.com/nl-nl/) is a cloud service for both infrastructure-as-a-service (IaaS) and platform-as-a-service (PaaS), with data centers spanning the globe. The offering consists of several services, including virtual machines, virtual networks, and storage services, as well as higher-level services such as web applications and databases.  
  
-## Relevant Azure services for Cloudera Enterprise deployments 
+# Relevant Azure services for Cloudera Enterprise deployments 
 For Cloudera Enterprise deployments on Azure, the following service offerings are relevant:
 <ul>
 <li>**Azure Virtual Network (VNet)**, a logical network overlay that can include services and VMs and can be connected to your on-premise network through a VPN.Azure Virtual Machines: Images are used in Azure to provide a new virtual machine with an operating system. From one VM image you can provision multiple VMs. These virtual machines will run on the Hypervisor.</li>
@@ -48,7 +48,7 @@ For Cloudera Enterprise deployments on Azure, the following service offerings ar
 <li>**Network Security Groups**: Network Security Groups provide segmentation within a Virtual Network (VNet) as well as full control over traffic that ingresses or egresses a virtual machine in a VNet. It also helps achieve scenarios such as DMZs (demilitarized zones) to allow users to tightly secure backend services such as databases and application servers.</li>
 </ul>
 
-## Deployment modes 
+# Deployment modes 
 At the moment Azure has two deployment modes available: 
 <ol>
 <li>ASM (Azure Service Management)</li>
@@ -67,7 +67,7 @@ When deciding which deployment model to use, you have to watch out, because reso
 
 Cloudera provides an ARM template which installs a Hadoop cluster, including OS and network tuning and Hadoop configuration tuning, decreasing deployment time and expertise needed. There is also an Azure VM image built and maintained by Cloudera which is used during deployment.  
 
-## Architectural design 
+# Architectural design 
 Users and administrator use the VPN tunnel to be able to access the Azure environment. 
 
 The GatewaySubnet is needed to be able to set up the Site2Site VPN between the client’s network and the Azure network where the Hadoop cluster resides. 
@@ -87,5 +87,5 @@ We also have a ClientSubnet for the machines which can access the cluster. Users
 
 By configuring single sign-on using the Active Directory and configuring SSO for the Hadoop services, users can use a single password everywhere.
 
-## Modifying the Cloudera template
+# Modifying the Cloudera template
 Now you have an overview of the relevant Azure services for Cloudera Enterprise deployments, deployment modes and the architectural design. In the next post we will motivate our choices on using the template or developing the implementation from scratch, and the actual modifications we made to the Cloudera template. 
