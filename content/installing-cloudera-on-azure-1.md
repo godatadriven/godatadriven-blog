@@ -88,4 +88,6 @@ We also have a ClientSubnet for the machines which can access the cluster. Users
 By configuring single sign-on using the Active Directory and configuring SSO for the Hadoop services, users can use a single password everywhere.
 
 # Modifying the Cloudera template
-Now you have an overview of the relevant Azure services for Cloudera Enterprise deployments, deployment modes and the architectural design. In the next post we will motivate our choices on using the template or developing the implementation from scratch, and the actual modifications we made to the Cloudera template. 
+Now you have an overview of the relevant Azure services for Cloudera Enterprise deployments, deployment modes and the architectural design. 
+
+In the next post we will motivate our choices on using the template or developing the implementation from scratch, and the actual modifications we made to the Cloudera template.
