@@ -1,4 +1,4 @@
-Title: Installing Cloudera on Azure (part 1)
+Title: Installing Cloudera on Azure (part 1 of 2)
 Date: 2015-11-20 15:00
 Slug: installing-cloudera-on-azure-1
 Author: Tunde Alkemade, Alexander Bij, Walter van der Scheer
@@ -10,6 +10,7 @@ Latex:
 Recently, GoDataDriven pioneered with the Cloudera template to install a Cloudera cluster on Microsoft Azure. In this series of 2 articles we share our insights and experiences with installing Cloudera and modifying the template that Cloudera provides for the installation on MS Azure.
 </span>
 
+## Introduction
 Processing large amounts of unstructured data requires serious computing power and also maintenance effort. As load on computing power typically fluctuates due to time and seasonal influences and/or processes running on certain times, a cloud solution like Microsoft Azure is a good option to be able to scale up easily and pay only for what is actually used. In this article we provide an introduction to our use-case, give some background on Cloudera as well as on Microsoft Azure, discuss the several deployment modes and the explain architectural design of the Cloudera cluster.
 
 Earlier, on November 3rd 2015, GoDataDriven already presented a webinar about [running Cloudera on MS Azure](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html), which has been recorded and is available for viewing after [registration](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html). 
