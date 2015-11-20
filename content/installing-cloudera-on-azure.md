@@ -1,30 +1,36 @@
-Title: Installing Cloudera on Azure 1 of 2
+Title: Installing Cloudera on Azure (part 1)
 Date: 2015-11-20 15:00
 Slug: installing-cloudera-on-azure-1
 Author: Tunde Alkemade, Alexander Bij, Walter van der Scheer
-Excerpt: In this article we provide an introduction to a use-case, Cloudera, Microsoft Azure, several deployment modes and the architectural design. 
+Excerpt: Recently, GoDataDriven pioneered with the Cloudera template to install a Cloudera cluster on Microsoft Azure. In this article we provide an introduction to a use-case, Cloudera, Microsoft Azure, several deployment modes and the architectural design. 
 Template: article
 Latex:
 
-<span class="lead">Companies realize more and more that data driven decisions lead to competitive advantage. Large amounts of unstructured data can be used to optimize nearly every business process, ranging from marketing to fraud detection to supply chain management. 
-While storing this data on-premises might not be a huge problem, actually processing it requires serious in-house computing power and also maintenance effort. As load on computing power typically fluctuates due to time and seasonal influences and/or processes running on certain times, a cloud solution like Microsoft Azure might be a good option to be able to scale up easily and pay only for what is actually used. 
-In this article we provide an introduction to a use-case, Cloudera, Microsoft Azure, several deployment modes and the architectural design.</span>
+<span class="lead">
+Recently, GoDataDriven pioneered with the Cloudera template to install a Cloudera cluster on Microsoft Azure. In this series of 2 articles we share our insights and experiences with installing Cloudera and modifying the template that Cloudera provides for the installation on MS Azure.
+</span>
 
-On November 3rd 2015, GoDataDriven presented a [webinar about running Cloudera on MS Azure](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html). In this series of 2 articles we share our insights and experiences with installing Cloudera and modifying the template that Cloudera provides for the installation on MS Azure.
+Processing large amounts of unstructured data requires serious computing power and also maintenance effort. As load on computing power typically fluctuates due to time and seasonal influences and/or processes running on certain times, a cloud solution like Microsoft Azure is a good option to be able to scale up easily and pay only for what is actually used. In this article we provide an introduction to a use-case, Cloudera, Microsoft Azure, several deployment modes and the architectural design
 
-## Future-proof Data Science infrastructure for large airport 
+On November 3rd 2015, GoDataDriven presented a webinar about [running Cloudera on MS Azure](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html), which is available after [registration](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html). 
 
-In order to explore and analyze data, one of the largest European airports approached GoDataDriven to set-up a pre-production environment that was ready for future production load as well, including adequate security measures. Cloudera was selected as Hadoop distribution and installed on MS Azure.  
-The first use-case to motivate the installation of Cloudera was to be able to leverage the computing mechanisms offered to do predictive maintenance. By collecting data from all the assets in the Cloudera cluster, the airport was able to develop predictive models for the maintenance based on power usage, visitor flow and sensor data.  
-Being a long-standing Cloudera partner, GoDataDriven is one of the most experienced consultancy boutiques when it comes to setting up Cloudera clusters on all kinds of hosting platforms, but setting it up using the Azure cloud was a new challenge. 
+## The use-case: Future-proof Data Science infrastructure for large European airport 
+
+In order to explore and analyze data, one of the largest European airports approached GoDataDriven to set-up a pre-production environment with adequate security measures and ready for future production load. Cloudera was selected as Hadoop distribution to be installed on MS Azure.
+
+The first use-case to motivate the installation of Cloudera was to be able to leverage the computing mechanisms offered to do predictive maintenance of the airpots'assets. By collecting data from all the assets in the Cloudera cluster, the airport was able to develop predictive models for the maintenance based on power usage, visitor flow and sensor data. 
+
+Being a long-standing Cloudera partner, GoDataDriven is one of the most experienced consultancy boutiques when it comes to setting up Cloudera clusters on all kinds of hosting platforms, but setting it up using the Azure cloud was a new challenge.
 
 ## Hadoop & Cloudera: a short introduction 
 Apache Hadoop is a framework that allows distributed processing of large data sets across clusters of computers. It is designed to scale up by simply adding servers, thus immediately adding local computing power and storage. Rather than relying on the hardware to deliver high-availability, the library itself is designed to detect and handle failures on the application layer.  
+
 Cloudera is an active contributor to the Apache Hadoop project and provides an enterprise-ready distribution which bundles multiple open-source projects. The Cloudera enterprise data hub is a unified platform that can collect and store unlimited data cost-effectively and reliably, and enable diverse users to quickly gain value from that data through a collection of frameworks that span data processing, interactive analytics, and real-time serving applications. With an enterprise data hub, it is possible to deliver integrated analytic solutions for less cost and effort than ever before. 
 
 Afbeelding 
 
-The enterprise data hub comprises proprietary elements as well as many open source components like HDFS, YARN, MapReduce, Zookeeper, HBase, Spark, Hive, Impala, Pig, Sqoop, Cloudera Search and Navigator. For a description of all these components please visit the Cloudera Glossary on http://www.cloudera.com/content/www/en-us/documentation/enterprise/latest/topics/glossaries.html.  
+The enterprise data hub comprises proprietary elements as well as many open source components like HDFS, YARN, MapReduce, Zookeeper, HBase, Spark, Hive, Impala, Pig, Sqoop, Cloudera Search and Navigator. For a description of all these components please [visit the Cloudera Glossary]( http://www.cloudera.com/content/www/en-us/documentation/enterprise/latest/topics/glossaries.html).  
+
 With all these components integrated and managed by one interface an organization can load and store all types of data, transform the data in a usable format, create workflows to easily explore the data and then run data-driven experiments and analysis over unlimited data.  
 
 ## Microsoft Azure: a short introduction 
@@ -32,11 +38,11 @@ With all these components integrated and managed by one interface an organizatio
 Microsoft Azure is a cloud service for both infrastructure-as-a-service (IaaS) and platform-as-a-service (PaaS), with data centers spanning the globe. The offering consists of several services, including virtual machines, virtual networks, and storage services, as well as higher-level services such as web applications and databases.  
  
 ## Relevant Azure services for Cloudera Enterprise deployments 
-For Cloudera Enterprise deployments on Azure, the following service offerings are relevant: 
-- Azure Virtual Network (VNet), a logical network overlay that can include services and VMs and can be connected to your on-premise network through a VPN.Azure Virtual Machines: Images are used in Azure to provide a new virtual machine with an operating system. From one VM image you can provision multiple VMs. These virtual machines will run on the Hypervisor.  
-- Azure Storage: Cloudera recommends Premium Storage, which stores data on the latest technology Solid State Drives (SSDs) instead of Hard Disk Drives. Cloudera recommends one storage account per node to be able to leverage higher IOPS. 
-- Availability Sets: Availability sets provide redundancy to your application, ensuring that during either a planned or unplanned maintenance event, at least one virtual machine will be available and meet the 99.95% Azure SLA.  
-- Network Security Groups: Network Security Groups provide segmentation within a Virtual Network (VNet) as well as full control over traffic that ingresses or egresses a virtual machine in a VNet. It also helps achieve scenarios such as DMZs (demilitarized zones) to allow users to tightly secure backend services such as databases and application servers. 
+For Cloudera Enterprise deployments on Azure, the following service offerings are relevant:
++ Azure Virtual Network (VNet), a logical network overlay that can include services and VMs and can be connected to your on-premise network through a VPN.Azure Virtual Machines: Images are used in Azure to provide a new virtual machine with an operating system. From one VM image you can provision multiple VMs. These virtual machines will run on the Hypervisor.  
++ Azure Storage: Cloudera recommends Premium Storage, which stores data on the latest technology Solid State Drives (SSDs) instead of Hard Disk Drives. Cloudera recommends one storage account per node to be able to leverage higher IOPS. 
++ Availability Sets: Availability sets provide redundancy to your application, ensuring that during either a planned or unplanned maintenance event, at least one virtual machine will be available and meet the 99.95% Azure SLA.  
++ Network Security Groups: Network Security Groups provide segmentation within a Virtual Network (VNet) as well as full control over traffic that ingresses or egresses a virtual machine in a VNet. It also helps achieve scenarios such as DMZs (demilitarized zones) to allow users to tightly secure backend services such as databases and application servers. 
  
 ## Deployment modes 
 
