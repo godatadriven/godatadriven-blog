@@ -15,7 +15,7 @@ Processing large amounts of unstructured data requires serious computing power a
 
 Earlier, on November 3rd 2015, GoDataDriven already presented a webinar about [running Cloudera on MS Azure](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html), which has been recorded and is available for viewing after [registration](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html).
 
-[Webinar: Running Cloudera on Azure](![Webinar: Running Cloudera on Azure](/content/images/cloudera-on-azure/webinar-cloudera-on-azure.png](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html))
+[Webinar: Running Cloudera on Azure](![Webinar: Running Cloudera on Azure](/static/images/cloudera-on-azure/webinar-cloudera-on-azure.png](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html))
 
 ## The use-case: Data Science infrastructure for large European airport 
 
@@ -81,7 +81,7 @@ So now you can see that there is a lot of traffic between the Namenode - Datanod
 
 The architectural design is presented in the picture below.
 
-![Cloudera Enterprise Data Hub](/content/images/cloudera-on-azure/cloudera-on-azure-architectural-design.png)
+![Cloudera Enterprise Data Hub](/static/images/cloudera-on-azure/cloudera-on-azure-architectural-design.png)
 
 We also have a ClientSubnet for the machines which can access the cluster. Users can connect to this machine, do their analysis, but are not able to SSH to the machines in the Hadoop subnet. 
 
