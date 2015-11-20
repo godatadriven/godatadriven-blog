@@ -114,7 +114,7 @@ After the database is installed, Cloudera Manager is started and as a last step 
 
 Now you should have a running cluster. If you run the template in ‘Production’ mode you would get a Cloudera CDH 5.4.x installation, where the different Hadoop daemons would be placed on nodes in the following way: 
 
-![The Hadoop daemons on the nodes](content/images/cloudera-on-azure/hadoop-daemons-on-nodes.png)
+![The Hadoop daemons on the nodes](/static/images/cloudera-on-azure/hadoop-daemons-on-nodes.png)
 
 The template also supports installing Sentry, HBase, Flume, Sqoop and KMS, but these are not enabled by default and they can’t be enabled by just setting a variable, so you would need to change the script to install these components too. 
 
@@ -122,15 +122,15 @@ The template also supports installing Sentry, HBase, Flume, Sqoop and KMS, but t
 We created the VNet separately, so we had to take out the part from the template which creates the VNet. This is in the shared-resouces.json file and it is the block which creates the  
 type": "Microsoft.Network/virtualNetworks", 
  
-![Shared resources](/content/images/cloudera-on-azure/cloudera-shared-resources.png)
+![Shared resources](/static/images/cloudera-on-azure/cloudera-shared-resources.png)
 
 Then we added a new variable called vNetResourceGroup in the azuredeploy.parameters.json 
 
-![Azure deploy parameters](/content/images/cloudera-on-azure/cloudera-azure-deploy.png)
+![Azure deploy parameters](/static/images/cloudera-on-azure/cloudera-azure-deploy.png)
 
 and we made sure that this can be read by the template file. To achieve this we defined it in the azuredeploy.json and we also made sure that now the VnetID references this parameter: 
 
-![Azure Deploy](/content/images/cloudera-on-azure/azuredeploy.png)
+![Azure Deploy](/static/images/cloudera-on-azure/azuredeploy.png)
 
 Next in the master-node.json and data-node.json we need to make sure that the subnet reference is actually made using the previously defined VnetID.  
 
@@ -141,26 +141,26 @@ If you look carefully you will notice that we actually do not have to send an ex
 ## Use DNS to resolve host names 
 To use the DNS server for forward and reverse lookup we had to set up /etc/resolv.conf on the Linux machines. For this we needed to set IP addresses and hostnames of the DNS servers. We also needed to set the hostname properly, so we had to know the domain suffix. As a first step we made sure that all these parameters are defined in azuredeploy.parameters.json and understood by the azuredeploy.json template file: 
 
-![Defining parameters](/content/images/cloudera-on-azure/defining-parameters.png)
+![Defining parameters](/static/images/cloudera-on-azure/defining-parameters.png)
 
-![Defining parameters](/content/images/cloudera-on-azure/defining-parameters-2.png)
+![Defining parameters](/static/images/cloudera-on-azure/defining-parameters-2.png)
 
 Next, we transferred the new parameters using the vmSpec complex variable in azuredeploy.json 
 
-![Transfering parameters](/content/images/cloudera-on-azure/transfering-parameters.png)
+![Transfering parameters](/static/images/cloudera-on-azure/transfering-parameters.png)
 
 Now these parameters can be accessed by the master-node.json and data-node.json template files. So in these files we need to make sure that the parameters are transferred to the initialize-node.sh script file. We just defined extra command line arguments for the script. If you compare this script with the initial script you will see that we also deleted quite a few command-line arguments which were used for the Cloudera installation, which we are not doing with the template file. 
 
-![Extra command lines](/content/images/cloudera-on-azure/extra-command-lines.png)
+![Extra command lines](/static/images/cloudera-on-azure/extra-command-lines.png)
 
 How does the initialize-node.sh script know if it is installing a data node or a master node? Well, if you look closely you see that the second argument transferred to this script is actually the node type. 
 In the initialize-node.sh script we then read the command line arguments: 
 
-![Initialize node](/content/images/cloudera-on-azure/initialize-node.png) 
+![Initialize node](/static/images/cloudera-on-azure/initialize-node.png) 
 
 So we can set up /etc/resolv.conf. To make sure that upon restart this won’t be overridden, we also created a dhclient-enter-hooks file. 
 
-![Initialize node](/content/images/cloudera-on-azure/dhclient-enter-hooks-file.png) 
+![Initialize node](/static/images/cloudera-on-azure/dhclient-enter-hooks-file.png) 
 
 In the code snippet above you can also see how NTPD can be set to a new host and how you can disable IPv6. 
 
@@ -171,14 +171,14 @@ First before you start deploying you should check if you can start the requested
 To install a Cloudera PoC environment with the template you would need at least 4 * 16 cores, if you only want 3 worker nodes. Each machine deployed by the Cloudera template is a DS14 machine which has 16 cores. 
 If you do not want to change anything in the template you can easily deploy this using the Azure Marketplace. In this case you can just provide the parameters requested by the UI and you would end up with a running cluster. 
 
-![Azure deployment](/content/images/cloudera-on-azure/azure-deployment.png) 
+![Azure deployment](/static/images/cloudera-on-azure/azure-deployment.png) 
 
 If you change something in the template, like we did, you need to make sure that the changes are in a public GitHub repository, otherwise the deployment process won’t be able to access it. You can use parameters defined in the azuredeploy.parameters.json. This file contains sensitive information, so it should not be in the public GitHub repo. 
 
 Alternatively, if you’re not comfortable in creating a public GitHub repository you could place the script files in Azure storage and provide storage account and key information. 
 To be able to use your own template in GitHub, you need to modify the scriptsUri variable in azuredeploy.json 
 
-![Modifying scripts URI](/content/images/cloudera-on-azure/modifying-scripts-uri.png) 
+![Modifying scripts URI](/static/images/cloudera-on-azure/modifying-scripts-uri.png) 
 
 Because we are not using the marketplace to deploy, we need to create a separate resource group where we place the created assets. This way it will be easier to modify and delete the resources inside this group. With the Azure CLI you can create a resource group the following way: 
 azure group create -n "myResourceGroup" -l "West Europe" 
