@@ -15,7 +15,7 @@ Processing large amounts of unstructured data requires serious computing power a
 
 Earlier, on November 3rd 2015, GoDataDriven already presented a webinar about [running Cloudera on MS Azure](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html), which has been recorded and is available for viewing after [registration](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html).
 
-[![Webinar: Running Cloudera on Azure}(/content/images/cloudera-on-azure/webinar-cloudera-on-azure.png)](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html)
+[Webinar: Running Cloudera on Azure](![Webinar: Running Cloudera on Azure](/content/images/cloudera-on-azure/webinar-cloudera-on-azure.png](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html))
 
 ## The use-case: Data Science infrastructure for large European airport 
 
