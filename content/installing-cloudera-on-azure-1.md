@@ -35,7 +35,6 @@ The enterprise data hub comprises proprietary elements as well as many open sour
 With all these components integrated and managed by one interface an organization can load and store all types of data, transform the data in a usable format, create workflows to easily explore the data and then run data-driven experiments and analysis over unlimited data.  
 
 ## Microsoft Azure: a short introduction 
-
 [Microsoft Azure](https://azure.microsoft.com/nl-nl/) is a cloud service for both infrastructure-as-a-service (IaaS) and platform-as-a-service (PaaS), with data centers spanning the globe. The offering consists of several services, including virtual machines, virtual networks, and storage services, as well as higher-level services such as web applications and databases.  
  
 ## Relevant Azure services for Cloudera Enterprise deployments 
@@ -48,7 +47,6 @@ For Cloudera Enterprise deployments on Azure, the following service offerings ar
 </ul>
 
 ## Deployment modes 
-
 At the moment Azure has two deployment modes available: 
 <ol>
 <li>ASM (Azure Service Management)</li>
@@ -68,7 +66,6 @@ When deciding which deployment model to use, you have to watch out, because reso
 Cloudera provides an ARM template which installs a Hadoop cluster, including OS and network tuning and Hadoop configuration tuning, decreasing deployment time and expertise needed. There is also an Azure VM image built and maintained by Cloudera which is used during deployment.  
 
 ## Architectural design 
-
 Users and administrator use the VPN tunnel to be able to access the Azure environment. 
 
 The GatewaySubnet is needed to be able to set up the Site2Site VPN between the client’s network and the Azure network where the Hadoop cluster resides. 
@@ -89,5 +86,4 @@ We also have a ClientSubnet for the machines which can access the cluster. Users
 By configuring single sign-on using the Active Directory and configuring SSO for the Hadoop services, users can use a single password everywhere.
 
 ## Modifying the Cloudera template
-
 Now you have an overview of the relevant Azure services for Cloudera Enterprise deployments, deployment modes and the architectural design. In the next post we will motivate our choices on using the template or developing the implementation from scratch, and the actual modifications we made to the Cloudera template. 
