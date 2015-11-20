@@ -9,6 +9,8 @@ Latex:
 Recently, GoDataDriven pioneered with the Cloudera template to install a Cloudera cluster on Microsoft Azure. In this series of 2 articles we share our insights and experiences with installing Cloudera and modifying the template that Cloudera provides for the installation on MS Azure.
 </span>
 
+[In the first article](/installing-cloudera-on-azure-1.html) we discussed the relevant Azure services for Cloudera Enterprise deployments, deployment modes and the architectural design. This is the second half of this series.
+
 # Modifying the Cloudera template 
 Although the deployment template offers quite a number of features, in our use case there were some specific requirements, so we had to decide whether to use the template and modify it, or start from scratch by installing some Linux machines on Azure and configure the rest using a provisioning tool like Ansible. First of all we had a close look at the requirements for the use case and the out-of-the-box features of the template. 
 
