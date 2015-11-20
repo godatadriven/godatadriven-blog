@@ -16,7 +16,7 @@ Earlier, on November 3rd 2015, GoDataDriven already presented a webinar about [r
 
 ## The use-case: Data Science infrastructure for large European airport 
 
-In order to explore and analyze data, one of the largest European airports approached GoDataDriven to set-up a pre-production environmentwith adequate security measures, robust enough for production load. Cloudera was selected as Hadoop distribution to be installed on MS Azure.
+In order to explore and analyze data, one of the largest European airports approached GoDataDriven to set-up a pre-production environment with adequate security measures, robust enough for production load. Cloudera was selected as Hadoop distribution to be installed on MS Azure.
 
 The first use-case to motivate the installation of Cloudera was to be able to leverage the computing mechanisms offered to do predictive maintenance of the airpots'assets. By collecting data from all the assets in the Cloudera cluster, the airport was able to develop predictive models for the maintenance based on power usage, visitor flow and sensor data. 
 
@@ -75,7 +75,6 @@ The GatewaySubnet is needed to be able to set up the Site2Site VPN between the c
 For user management we decided to set up two Active Directory servers, which are also Domain Name Server. These are placed in their own subnet.  
 
 Because of the high traffic between all nodes in the cluster, the Hadoop machines are in their own subnet. You might wonder why, but let us explain shortly how HDFS works: When you write a file into HDFS, this file is split into blocks (block size is usually 128 MB) and these blocks are placed on the worker nodes (called Data nodes). Each block has a replication factor of 3. Only the master node (Namenode) knows which block belongs to which file. The Namenode does not store blocks, but it does maintain the active replication factor. If a client wants to read a file from HDFS, it will first contact the Namenode, get the location of the blocks and then read the blocks form the Datanodes. 
-
 The Datanodes send heartbeats to the Namenodes and the when the active Namenode notices that a block hasn’t got the requested replication factor, it instructs another Datanode to copy that given block.  
 
 So now you can see that there is a lot of traffic between the Namenode - Datanode and also between the Datanode – Datanode.  And here we only mentioned the communication between one component, HDFS. 
@@ -87,5 +86,7 @@ Afbeelding
 We also have a ClientSubnet for the machines which can access the cluster. Users can connect to this machine, do their analysis, but are not able to SSH to the machines in the Hadoop subnet. 
 
 By configuring single sign-on using the Active Directory and configuring SSO for the Hadoop services, users can use a single password everywhere.
+
+## Modifying the Cloudera template
 
 Now you have an overview of the relevant Azure services for Cloudera Enterprise deployments, deployment modes and the architectural design. In the next post we will motivate our choices on using the template or developing the implementation from scratch, and the actual modifications we made to the Cloudera template. 
