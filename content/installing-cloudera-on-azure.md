@@ -25,7 +25,7 @@ Being a long-standing Cloudera partner, GoDataDriven is one of the most experien
 ## Hadoop & Cloudera: a short introduction 
 Apache Hadoop is a framework that allows distributed processing of large data sets across clusters of computers. It is designed to scale up by simply adding servers, thus immediately adding local computing power and storage. Rather than relying on the hardware to deliver high-availability, the library itself is designed to detect and handle failures on the application layer.  
 
-Cloudera is an active contributor to the Apache Hadoop project and provides an enterprise-ready distribution which bundles multiple open-source projects. The Cloudera enterprise data hub is a unified platform that can collect and store unlimited data cost-effectively and reliably, and enable diverse users to quickly gain value from that data through a collection of frameworks that span data processing, interactive analytics, and real-time serving applications. The Enterprise Data Hub makes it possible to deliver integrated analytic solutions for less cost and effort than ever before. 
+[Cloudera](www.cloudera.com) is an active contributor to the Apache Hadoop project and provides an enterprise-ready distribution which bundles multiple open-source projects. The Cloudera enterprise data hub is a unified platform that can collect and store unlimited data cost-effectively and reliably, and enable diverse users to quickly gain value from that data through a collection of frameworks that span data processing, interactive analytics, and real-time serving applications. The Enterprise Data Hub makes it possible to deliver integrated analytic solutions for less cost and effort than ever before. 
 
 Afbeelding 
 
@@ -35,21 +35,27 @@ With all these components integrated and managed by one interface an organizatio
 
 ## Microsoft Azure: a short introduction 
 
-Microsoft Azure is a cloud service for both infrastructure-as-a-service (IaaS) and platform-as-a-service (PaaS), with data centers spanning the globe. The offering consists of several services, including virtual machines, virtual networks, and storage services, as well as higher-level services such as web applications and databases.  
+[Microsoft Azure](https://azure.microsoft.com/nl-nl/) is a cloud service for both infrastructure-as-a-service (IaaS) and platform-as-a-service (PaaS), with data centers spanning the globe. The offering consists of several services, including virtual machines, virtual networks, and storage services, as well as higher-level services such as web applications and databases.  
  
 ## Relevant Azure services for Cloudera Enterprise deployments 
 For Cloudera Enterprise deployments on Azure, the following service offerings are relevant:
 <ul>
-<li>Azure Virtual Network (VNet), a logical network overlay that can include services and VMs and can be connected to your on-premise network through a VPN.Azure Virtual Machines: Images are used in Azure to provide a new virtual machine with an operating system. From one VM image you can provision multiple VMs. These virtual machines will run on the Hypervisor.</li>
-<li>Azure Storage: Cloudera recommends Premium Storage, which stores data on the latest technology Solid State Drives (SSDs) instead of Hard Disk Drives. Cloudera recommends one storage account per node to be able to leverage higher IOPS.</li> 
-<li>Availability Sets: Availability sets provide redundancy to your application, ensuring that during either a planned or unplanned maintenance event, at least one virtual machine will be available and meet the 99.95% Azure SLA.</li>
-<li>Network Security Groups: Network Security Groups provide segmentation within a Virtual Network (VNet) as well as full control over traffic that ingresses or egresses a virtual machine in a VNet. It also helps achieve scenarios such as DMZs (demilitarized zones) to allow users to tightly secure backend services such as databases and application servers.</li>
+<li>**Azure Virtual Network (VNet)**, a logical network overlay that can include services and VMs and can be connected to your on-premise network through a VPN.Azure Virtual Machines: Images are used in Azure to provide a new virtual machine with an operating system. From one VM image you can provision multiple VMs. These virtual machines will run on the Hypervisor.</li>
+<li>**Azure Storage**: Cloudera recommends Premium Storage, which stores data on the latest technology Solid State Drives (SSDs) instead of Hard Disk Drives. Cloudera recommends one storage account per node to be able to leverage higher IOPS.</li> 
+<li>**Availability Sets**: Availability sets provide redundancy to your application, ensuring that during either a planned or unplanned maintenance event, at least one virtual machine will be available and meet the 99.95% Azure SLA.</li>
+<li>**Network Security Groups**: Network Security Groups provide segmentation within a Virtual Network (VNet) as well as full control over traffic that ingresses or egresses a virtual machine in a VNet. It also helps achieve scenarios such as DMZs (demilitarized zones) to allow users to tightly secure backend services such as databases and application servers.</li>
 </ul>
 
 ## Deployment modes 
 
-At the moment Azure has two deployment modes available: ASM (Azure Service Management) and ARM (Azure Resource Manager). 
+At the moment Azure has two deployment modes available: 
+<ol>
+<li>ASM (Azure Service Management)</li>
+<li>ARM (Azure Resource Manager)</li>
+</ol>
+
 The ASM API is the “old” or “classic” API , and correlates to the [web portal](http://manage.windowsazure.com). Azure Service Management is an XML-driven REST API, which adds some overhead to API calls, compared to JSON.  
+
 The Azure Resource Manager (ARM) API is a JSON-driven REST API to interact with Azure cloud resources. Microsoft recommends deploying in ARM mode.  
  
 One of the benefits of using the ARM API is that you can declare cloud resources as part of what’s called an “ARM JSON template.” An ARM JSON template is a specially-crafted JSON file that contains cloud resource definitions. Once the resources have been declared in the JSON template, the template file is deployed into a container called a Resource Group. An ARM Resource Group is a logical set of correlated cloud resources that roughly share a life span. Using the ARM mode you are able to deploy resources in parallel, which was a limitation in ASM. 
@@ -57,6 +63,7 @@ One of the benefits of using the ARM API is that you can declare cloud resources
 The new [Azure Ibiza Preview Portal](http://portal.azure.com) is used to provision Azure cloud resources with ARM. If you provision cloud resources using the “old” Azure Portal, they are provisioned through the ASM API. You are not limited to the portal to deploy your templates. You can use the PowerShell or the Azure command-line interface to manage all Azure resources and deploy complete templates. The Azure CLI is based on NodeJs and thereby available on all environments. Both ARM and ASM are modes which can be configured in the tool, which you can check "azure config" and change "azure config mode arm". 
  
 When deciding which deployment model to use, you have to watch out, because resources deployed in the ASM mode cannot be seen by the resources deployed in the ARM mode by default. If you want to achieve this, you would need to [create a VPN tunnel between the two VNets](https://azure.microsoft.com/en-us/documentation/articles/virtual-networks-arm-asm-s2s/). 
+
 Cloudera provides an ARM template which installs a Hadoop cluster, including OS and network tuning and Hadoop configuration tuning, decreasing deployment time and expertise needed. There is also an Azure VM image built and maintained by Cloudera which is used during deployment.  
 
 ## Architectural design 
@@ -81,4 +88,4 @@ We also have a ClientSubnet for the machines which can access the cluster. Users
 
 By configuring single sign-on using the Active Directory and configuring SSO for the Hadoop services, users can use a single password everywhere.
 
-In the next post we will discuss our choices and the actual modifications we made to the Cloudera template. 
+Now you have an overview of the relevant Azure services for Cloudera Enterprise deployments, deployment modes and the architectural design. In the next post we will motivate our choices on using the template or developing the implementation from scratch, and the actual modifications we made to the Cloudera template. 
