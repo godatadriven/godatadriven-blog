@@ -13,7 +13,9 @@ Recently, GoDataDriven pioneered with the Cloudera template to install a Clouder
 ## Introduction
 Processing large amounts of unstructured data requires serious computing power and also maintenance effort. As load on computing power typically fluctuates due to time and seasonal influences and/or processes running on certain times, a cloud solution like Microsoft Azure is a good option to be able to scale up easily and pay only for what is actually used. In this article we provide an introduction to our use-case, give some background on Cloudera as well as on Microsoft Azure, discuss the several deployment modes and the explain architectural design of the Cloudera cluster.
 
-Earlier, on November 3rd 2015, GoDataDriven already presented a webinar about [running Cloudera on MS Azure](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html), which has been recorded and is available for viewing after [registration](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html). 
+Earlier, on November 3rd 2015, GoDataDriven already presented a webinar about [running Cloudera on MS Azure](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html), which has been recorded and is available for viewing after [registration](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html).
+
+[![Webinar: Running Cloudera on Azure}(/content/images/cloudera-on-azure/webinar-cloudera-on-azure.png)](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html)
 
 ## The use-case: Data Science infrastructure for large European airport 
 
