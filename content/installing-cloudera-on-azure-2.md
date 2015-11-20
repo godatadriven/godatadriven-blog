@@ -126,15 +126,15 @@ type": "Microsoft.Network/virtualNetworks",
 
 Then we added a new variable called vNetResourceGroup in the azuredeploy.parameters.json 
 
-![Azure deploy parameters](/static/images/cloudera-on-azure/cloudera-azure-deploy.png)
+![Azure deploy parameters](/static/images/cloudera-on-azure/cloudera-azuredeploy.png)
 
 and we made sure that this can be read by the template file. To achieve this we defined it in the azuredeploy.json and we also made sure that now the VnetID references this parameter: 
 
-![Azure Deploy](/static/images/cloudera-on-azure/azuredeploy.png)
+![Azure Deploy](/static/images/cloudera-on-azure/azure-deploy.png)
 
 Next in the master-node.json and data-node.json we need to make sure that the subnet reference is actually made using the previously defined VnetID.  
 
-![Master nodes and Data nodes](/content/images/cloudera-on-azure/master-data-nodes.png)
+![Master nodes and Data nodes](/content/images/cloudera-on-azure/master-data-node.png)
 
 If you look carefully you will notice that we actually do not have to send an extra parameter between the azuredeploy.json and the master-node.json/data-node.json even though we did add a new parameter. This is because we added VNetID to the parameter group called networkSpec and this group is transferred to the needed template files. 
 
@@ -156,7 +156,7 @@ Now these parameters can be accessed by the master-node.json and data-node.json 
 How does the initialize-node.sh script know if it is installing a data node or a master node? Well, if you look closely you see that the second argument transferred to this script is actually the node type. 
 In the initialize-node.sh script we then read the command line arguments: 
 
-![Initialize node](/static/images/cloudera-on-azure/initialize-node.png) 
+![Initialize node](/static/images/cloudera-on-azure/initialize-node.png width=50%) 
 
 So we can set up /etc/resolv.conf. To make sure that upon restart this won’t be overridden, we also created a dhclient-enter-hooks file. 
 
