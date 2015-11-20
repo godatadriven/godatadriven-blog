@@ -9,11 +9,10 @@ Latex:
 Recently, GoDataDriven pioneered with the Cloudera template to install a Cloudera cluster on Microsoft Azure. In this series of 2 articles we share our insights and experiences with installing Cloudera and modifying the template that Cloudera provides for the installation on MS Azure.
 </span>
 
-## Modifying the Cloudera template 
+# Modifying the Cloudera template 
 Although the deployment template offers quite a number of features, in our use case there were some specific requirements, so we had to decide whether to use the template and modify it, or start from scratch by installing some Linux machines on Azure and configure the rest using a provisioning tool like Ansible. First of all we had a close look at the requirements for the use case and the out-of-the-box features of the template. 
 
-## Requirements for the use case
-
+# Requirements for the use case
 The general requirements for our use case were: 
 <ul>
 <li>Install Cloudera Enterprise Hadoop on Azure</li> 
@@ -29,8 +28,7 @@ And the following technical requirements were added:
 <li>Install and configure Sentry to be able to assure access control. Set up one gateway machine from which the users would be able to work. On this gateway we would also have RStudio and IPython installed so these can be used for analysis</li>
 </ul>
 
-## Out-of-the-box features of the template 
-
+# Out-of-the-box features of the template 
 First of all we took a look at the features of the template: 
 <ol>
 <li>Create a Resource Group for all the components</li> 
@@ -49,7 +47,7 @@ First of all we took a look at the features of the template:
 
 The template also has a disadvantage: it is meant to start up a cluster, but you cannot create extra data nodes and add them to the cluster. The template does not provision a gateway machine for you. 
 
-## Best-practices for a manual implementation 
+# Best-practices for a manual implementation 
 We also identified a couple of best practices which we would need to keep in mind if we wouldn’t use the template:
 <ol>
 <li>
@@ -62,7 +60,7 @@ If you install Cloudera without moving these files to a different disk, you will
 </li>
 </ol>
 
-## Modifications to the template 
+# Modifications to the template 
 After analyzing the gaps, we decided to use the template but modify some parts, because in this way we can get the machines that we want and afterwards add them to the cluster. When additional nodes are required, we would be able to do this using the same template.
 
 The original template is [located in GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/cloudera-on-centos). We made the following modifications: 
@@ -81,8 +79,7 @@ Seting-up the DNS component of the Active Directory for the machines to do forwa
 <li>Adding a new node type to the template to deploy a gateway node</li> 
 </ol>
 
-## Changing the template
-
+# Changing the template
 In order to change the template, first we had to understand how the template works.  
 
 [How the Cloudera template works](/content/images/cloduera-on-azure/how-the-cloudera-template-works.png)
@@ -118,7 +115,7 @@ Now you should have a running cluster. If you run the template in ‘Production�
 
 The template also supports installing Sentry, HBase, Flume, Sqoop and KMS, but these are not enabled by default and they can’t be enabled by just setting a variable, so you would need to change the script to install these components too. 
 
-## Using an existing VNet/subnet 
+# Using an existing VNet/subnet 
 We created the VNet separately, so we had to take out the part from the template which creates the VNet. This is in the shared-resouces.json file and it is the block which creates the  
 type": "Microsoft.Network/virtualNetworks", 
  
@@ -138,7 +135,7 @@ Next in the master-node.json and data-node.json we need to make sure that the su
 
 If you look carefully you will notice that we actually do not have to send an extra parameter between the azuredeploy.json and the master-node.json/data-node.json even though we did add a new parameter. This is because we added VNetID to the parameter group called networkSpec and this group is transferred to the needed template files. 
 
-## Use DNS to resolve host names 
+# Use DNS to resolve host names 
 To use the DNS server for forward and reverse lookup we had to set up /etc/resolv.conf on the Linux machines. For this we needed to set IP addresses and hostnames of the DNS servers. We also needed to set the hostname properly, so we had to know the domain suffix. As a first step we made sure that all these parameters are defined in azuredeploy.parameters.json and understood by the azuredeploy.json template file: 
 
 ![Defining parameters](/static/images/cloudera-on-azure/defining-parameters.png)
@@ -190,18 +187,18 @@ Make sure that after you deploy you change the password of the user you just cre
 
 We decided to run the template without using Key Vault, just making sure that the given user isn’t allowed to log in with a password. Because we did not install Cloudera Manager with the template, we did not have to worry about that password.  
 
-## Summary 
+# Summary 
 The Cloudera Template is a great basis to provision a Hadoop cluster on Azure. If you do not have too many exotic requests you can use the template as is. You have the freedom and responsibility to maintain the machines and the cluster. The Cloudera distribution comes with all the tools you need to unlock value from your data in a secure way and with the Cloudera Manager you can manage the cluster. 
 Even if you have are special requirements, the template is a great starting point and its not hard to modify it to your needs. 
 
-## About GoDataDriven 
+# About GoDataDriven 
 GoDataDriven is a leading data science boutique from The Netherlands. Since 2009 GoDataDriven has been helping organizations becoming a data driven enterprise by offering custom services and standardized propositions, based on Open Source technology. The team consists of a unique combination of experienced Data Scientists, excellent Data Engineers, all with state-of-the-art know-how of technology. 
 
 GoDataDriven is partner of Cloudera, Hortonworks, Microsoft, Confluent, Elastic, and Databricks.  
 
 Clients of GoDataDriven include Wehkamp, Bol.com, KLM, ING, Rabobank, Bakkersland and NPO. 
 
-## Resources 
+# Resources 
 <ul>
 <li>[Azure Resource Manager overview](https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/) 
 <li>[About images for virtual machines](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-images/)
