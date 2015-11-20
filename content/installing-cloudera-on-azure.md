@@ -14,9 +14,9 @@ Processing large amounts of unstructured data requires serious computing power a
 
 On November 3rd 2015, GoDataDriven presented a webinar about [running Cloudera on MS Azure](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html), which is available after [registration](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html). 
 
-## The use-case: Future-proof Data Science infrastructure for large European airport 
+## The use-case: Data Science infrastructure for large European airport 
 
-In order to explore and analyze data, one of the largest European airports approached GoDataDriven to set-up a pre-production environment with adequate security measures and ready for future production load. Cloudera was selected as Hadoop distribution to be installed on MS Azure.
+In order to explore and analyze data, one of the largest European airports approached GoDataDriven to set-up a pre-production environmentwith adequate security measures, robust enough for production load. Cloudera was selected as Hadoop distribution to be installed on MS Azure.
 
 The first use-case to motivate the installation of Cloudera was to be able to leverage the computing mechanisms offered to do predictive maintenance of the airpots'assets. By collecting data from all the assets in the Cloudera cluster, the airport was able to develop predictive models for the maintenance based on power usage, visitor flow and sensor data. 
 
@@ -25,11 +25,11 @@ Being a long-standing Cloudera partner, GoDataDriven is one of the most experien
 ## Hadoop & Cloudera: a short introduction 
 Apache Hadoop is a framework that allows distributed processing of large data sets across clusters of computers. It is designed to scale up by simply adding servers, thus immediately adding local computing power and storage. Rather than relying on the hardware to deliver high-availability, the library itself is designed to detect and handle failures on the application layer.  
 
-Cloudera is an active contributor to the Apache Hadoop project and provides an enterprise-ready distribution which bundles multiple open-source projects. The Cloudera enterprise data hub is a unified platform that can collect and store unlimited data cost-effectively and reliably, and enable diverse users to quickly gain value from that data through a collection of frameworks that span data processing, interactive analytics, and real-time serving applications. With an enterprise data hub, it is possible to deliver integrated analytic solutions for less cost and effort than ever before. 
+Cloudera is an active contributor to the Apache Hadoop project and provides an enterprise-ready distribution which bundles multiple open-source projects. The Cloudera enterprise data hub is a unified platform that can collect and store unlimited data cost-effectively and reliably, and enable diverse users to quickly gain value from that data through a collection of frameworks that span data processing, interactive analytics, and real-time serving applications. The Enterprise Data Hub makes it possible to deliver integrated analytic solutions for less cost and effort than ever before. 
 
 Afbeelding 
 
-The enterprise data hub comprises proprietary elements as well as many open source components like HDFS, YARN, MapReduce, Zookeeper, HBase, Spark, Hive, Impala, Pig, Sqoop, Cloudera Search and Navigator. For a description of all these components please [visit the Cloudera Glossary]( http://www.cloudera.com/content/www/en-us/documentation/enterprise/latest/topics/glossaries.html).  
+The enterprise data hub comprises proprietary elements as well as many open source components like HDFS, YARN, MapReduce, Zookeeper, HBase, Spark, Hive, Impala, Pig, Sqoop, Cloudera Search and Navigator. For a description of all these components please [visit the Cloudera Glossary](http://www.cloudera.com/content/www/en-us/documentation/enterprise/latest/topics/glossaries.html).  
 
 With all these components integrated and managed by one interface an organization can load and store all types of data, transform the data in a usable format, create workflows to easily explore the data and then run data-driven experiments and analysis over unlimited data.  
 
@@ -39,11 +39,13 @@ Microsoft Azure is a cloud service for both infrastructure-as-a-service (IaaS) a
  
 ## Relevant Azure services for Cloudera Enterprise deployments 
 For Cloudera Enterprise deployments on Azure, the following service offerings are relevant:
-+ Azure Virtual Network (VNet), a logical network overlay that can include services and VMs and can be connected to your on-premise network through a VPN.Azure Virtual Machines: Images are used in Azure to provide a new virtual machine with an operating system. From one VM image you can provision multiple VMs. These virtual machines will run on the Hypervisor.  
-+ Azure Storage: Cloudera recommends Premium Storage, which stores data on the latest technology Solid State Drives (SSDs) instead of Hard Disk Drives. Cloudera recommends one storage account per node to be able to leverage higher IOPS. 
-+ Availability Sets: Availability sets provide redundancy to your application, ensuring that during either a planned or unplanned maintenance event, at least one virtual machine will be available and meet the 99.95% Azure SLA.  
-+ Network Security Groups: Network Security Groups provide segmentation within a Virtual Network (VNet) as well as full control over traffic that ingresses or egresses a virtual machine in a VNet. It also helps achieve scenarios such as DMZs (demilitarized zones) to allow users to tightly secure backend services such as databases and application servers. 
- 
+<ul>
+<li>Azure Virtual Network (VNet), a logical network overlay that can include services and VMs and can be connected to your on-premise network through a VPN.Azure Virtual Machines: Images are used in Azure to provide a new virtual machine with an operating system. From one VM image you can provision multiple VMs. These virtual machines will run on the Hypervisor.</li>
+<li>Azure Storage: Cloudera recommends Premium Storage, which stores data on the latest technology Solid State Drives (SSDs) instead of Hard Disk Drives. Cloudera recommends one storage account per node to be able to leverage higher IOPS.</li> 
+<li>Availability Sets: Availability sets provide redundancy to your application, ensuring that during either a planned or unplanned maintenance event, at least one virtual machine will be available and meet the 99.95% Azure SLA.</li>
+<li>Network Security Groups: Network Security Groups provide segmentation within a Virtual Network (VNet) as well as full control over traffic that ingresses or egresses a virtual machine in a VNet. It also helps achieve scenarios such as DMZs (demilitarized zones) to allow users to tightly secure backend services such as databases and application servers.</li>
+</ul>
+
 ## Deployment modes 
 
 At the moment Azure has two deployment modes available: ASM (Azure Service Management) and ARM (Azure Resource Manager). 
