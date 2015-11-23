@@ -12,7 +12,7 @@ Recently, GoDataDriven experienced with the Cloudera template to install a Cloud
 
 [In the first post](/installing-cloudera-on-azure-1.html) we discussed some information about the use case, the design and some basic information about Microsoft Azure. We showed some options how you can install Cloudera on Azure and what best practices we saw when installing a distributed system on Azure. This is the second half of this series.
 
-# Cloudera-Azure template intro
+### Cloudera-Azure template intro
 
 *Note: *If you read the first part of this post or you know what the Cloudera-Azure template can do, you can skip this part :)
 
@@ -33,7 +33,7 @@ Cloudera provides an [ARM](https://azure.microsoft.com/en-us/documentation/artic
 
 The template also has a disadvantage: it is meant to start up a cluster, but you cannot create extra data nodes and add them to the cluster. The template does not provision a gateway machine for you. 
 
-# What did we changed?
+### What did we change?
  
 After analyzing the gaps, we decided to use the template but modify some parts to be able to install everything that we need. 
 We decided to use the Cloudera-Azure template to provision the network, set up the machines, configure the OS and install Cloudera Manager. Then we used Cloudera Manager (so not the Cloudera-Azure template) to install the CDH cluster.
@@ -51,7 +51,7 @@ We made the following modifications to the original [template]
 - Installing Hadoop components ourselves to increase control over what goes where. Also, the template does not support the integration of Hadoop with the Active Directory, so we did this manually
 - Add a new node type to the template to deploy a gateway node
 
-# Changing the template
+### Changing the template
 In order to change the template, first we had to understand how the template works.  
 
 [How the Cloudera template works](/content/images/cloudera-on-azure/how-the-cloudera-template-works.png)
@@ -88,7 +88,7 @@ The template also supports installing Sentry, HBase, Flume, Sqoop and KMS, but t
 
 After understanding which file does what, we stared modifying things and this is what we will explain in the rest of this post. You can find our modified [template on GitHub](https://github.com/godatadriven/public_cloudera_on_azure).
 
-# Using an existing VNet/subnet 
+### Using an existing VNet/subnet 
 
 We created the VNet separately, using a template similar to the [101-create-site-to-site-vpn template on the Azure github](https://github.com/Azure/azure-quickstart-templates/tree/4e10d4244ac35cca59c7f7299a7efbca1205bf64/101-create-site-to-site-vpn). After creating the VNET we had to take out the part from the Cloudera template which also creates a VNet. In the shared-resources.son remove the following part:
 
@@ -145,7 +145,7 @@ Next in the master-node.json and data-node.json we need to make sure that the su
 
 If you look carefully you will notice that we actually do not have to send an extra parameter between the azuredeploy.json and the master-node.json/data-node.json even though we did add a new parameter. This is because we added VNetID to the parameter group called networkSpec and this group is transferred to the needed template files. 
 
-# Use DNS to resolve host names 
+### Use DNS to resolve host names 
 To use the DNS server for forward and reverse lookup we had to set up /etc/resolv.conf on the Linux machines. For this we needed to set IP addresses and hostnames of the DNS servers. We also needed to set the hostname properly, so we had to know the domain suffix. As a first step we made sure that all these parameters are defined in azuredeploy.parameters.json:
 	
 	"dns1IP": {
@@ -254,7 +254,7 @@ So we can set up /etc/resolv.conf. To make sure that upon restart this won’t b
 	
 	chmod a+x /etc/dhclient-enter-hooks
 
-# Disable Ipv6 
+### Disable Ipv6 
 
 In the initialize-node.sh script file we can just add the following lines:
 
@@ -269,7 +269,7 @@ In the initialize-node.sh script file we can just add the following lines:
 
 and IPv6 will be disabled.
 
-# Configure other NTPD server
+### Configure other NTPD server
 
 In the initialize-node.sh script file we add the following lines:
 
@@ -282,7 +282,7 @@ In the initialize-node.sh script file we add the following lines:
 	
 and NTPD will connect to the PDC server to obtain the time. In its turn this domain controller connects to the external NTPD server to obtain its time. Strangely enough Microsoft suggests only connecting the PDC to the external time server. The BDC should get its time from the PDC. Guess it shouldn't be a big problem, unless your PDC goes down for a longer time...
 
-# Deploying the (customized) template 
+### Deploying the (customized) template 
 
 First before you start deploying you should check if you can start the requested machines using your Azure subscription account. The account by default has a core limit of 20. It is important to emphasize that quotas for resources in Azure Resource Groups are per-region accessible by your subscription. If you need to request a quota increase, you need to decide how many cores you want to use and in which region. Then make a specific request for Azure Resource Group core quotas for the amounts and regions that you want. 
 
@@ -325,6 +325,6 @@ Make sure that after you deploy you change the password of the user you just cre
 
 We decided to run the template without using Key Vault, just making sure that the given user isn’t allowed to log in with a password. Because we did not install Cloudera Manager with the template, we did not have to worry about that password.  
 
-# Summary 
+### Summary 
 The Cloudera Template is a great basis to provision a Hadoop cluster on Azure. If you do not have too many exotic requests you can use the template as is. You have the freedom and responsibility to maintain the machines and the cluster. 
 Even if you have are special requirements, the template is a great starting point and its not hard to modify it to your needs. 

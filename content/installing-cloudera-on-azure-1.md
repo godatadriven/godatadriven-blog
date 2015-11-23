@@ -10,18 +10,18 @@ Latex:
 Recently, GoDataDriven experimented with installing a Cloudera cluster on Microsoft Azure. In this article we provide some information about the use case, the design we implemented and some basic information about Microsoft Azure. We discuss how you can install Cloudera on Azure and what best practices we saw when installing a distributed system on Azure.
 </span>
 
-# Introduction
+### Introduction
 Processing large amounts of unstructured data requires serious computing power and also maintenance effort. As load on computing power typically fluctuates due to time and seasonal influences and/or processes running on certain times, a cloud solution like Microsoft Azure is a good option to be able to scale up easily and pay only for what is actually used.
 
-# The use-case: Data Science infrastructure for large European airport 
+### The use-case: Data Science infrastructure for large European airport 
 
 In order to explore and analyze data, one of the largest European airports approached GoDataDriven to set-up a pre-production environment with adequate security measures, robust enough for production load. Cloudera was selected as Hadoop distribution to be installed on MS Azure.
 
 The first use-case to motivate the installation of Cloudera was to be able to leverage the computing mechanisms offered to do predictive maintenance of the airports' assets. By collecting data from all the assets in the Cloudera cluster, the airport was able to develop predictive models for the maintenance based on power usage, visitor flow and sensor data. 
 
-# Requirements & design 
+### Requirements & design 
 
-### Requirements
+#### Requirements
 The general requirements for our use case were: 
 
 - Install Cloudera Enterprise Hadoop on Azure
@@ -35,7 +35,7 @@ And the following technical requirements were added:
 - Connect the Cloudera cluster to the Active Directory to be able to authenticate users who are allowed to use the cluster
 - Install and configure Sentry to be able to assure access control. Set up one gateway machine from which the users would be able to work. On this gateway we would also have RStudio and IPython installed so these can be used for analysis
 
-### Design 
+#### Design 
 
 Our goal was to build a production ready Hadoop cluster, including provisioning machines. Of course there were also some security related requirements which we had to take into account. For example: Users and administrator had to use a  VPN tunnel to be able to access the Azure environment. Single sign-on had to be enable on all machines and Sentry had to be configured. 
 
@@ -60,7 +60,7 @@ By configuring single sign-on using the Active Directory on the Linux level and 
 
 To be able to provide a working environment to the customer, we had to learn a couple of things about Microsoft Azure, the preferred cloud provider of the customer.
 
-# Microsoft Azure basics to start a cluster
+### Microsoft Azure basics to start a cluster
 [Microsoft Azure](https://azure.microsoft.com/nl-nl/) is a cloud service for both infrastructure-as-a-service (IaaS) and platform-as-a-service (PaaS), with data centers spanning the globe. We only needed the IaaS part to be able to set up the network and start machines, so that's what we'll explain further.
  
 For Cloudera Enterprise deployments on Azure, the following service offerings are relevant:
@@ -76,7 +76,7 @@ For Cloudera Enterprise deployments on Azure, the following service offerings ar
 * **Network Security Groups** provide segmentation within a Virtual Network (VNet) as well as full control over traffic that ingresses or egresses a virtual machine in a VNet. It also helps achieve scenarios such as DMZs (demilitarized zones) to allow users to tightly secure backend services such as databases and application servers.
 
 
-# Deployment modes 
+### Deployment modes 
 At the moment Azure has two deployment modes available: 
 
 1. ASM (Azure Service Management)</li>
@@ -102,7 +102,7 @@ When deciding which deployment model to use, you have to watch out, because reso
 
 To understand the differences between ASM and ARM better, read the [Azure Compute, Network, and Storage Providers under the Azure Resource Manager](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-azurerm-versus-azuresm/) article.
 
-# How to install Cloudera on Azure?
+### How to install Cloudera on Azure?
 
 There are multiple way in which you can install Cloudera on Azure. After some considerations we ended up with the following 2 scenarios:
 
@@ -138,7 +138,7 @@ and install Cloudera Manager
 
 In out next blog we will discuss what were these gaps in more detail.
 
-### Best practices for a manual implementation 
+#### Best practices for a manual implementation 
 We also identified a couple of best practices which we would need to keep in mind if we wouldn’t use the template:
 
 - When deploying a Linux image on Azure there is a temporary drive added. When using the DS14 machines the attached disk on /mnt/resource is SSD and actually pretty big (something like 60 GB). This temporary storage must not be used to store data that you are not willing to lose. The temporary storage is present on the physical machine that is hosting your VM. Your VM can move to a different host at any point in time due to various reasons (hardware failure etc.). When this happens your VM will be recreated on the new host using the OS disk from your storage account. Any data saved on the previous temporary drive will not be migrated and you will be assigned a temporary drive on the new host. [Understanding the temporary drive on Windows Azure Virtual Machines](http://blogs.msdn.com/b/mast/archive/2013/12/07/understanding-the-temporary-drive-on-windows-azure-virtual-machines.aspx)
@@ -151,7 +151,7 @@ If you install Cloudera without moving these files to a different disk, you will
 - If running Linux on Azure install the [Linux Integration Services (LIS)](https://www.microsoft.com/en-us/download/details.aspx?id=46842) - a set of drivers that enable synthetic device support in supported Linux virtual machines under Hyper-V.  
 
 
-# Further information
+### Further information
 
 Earlier, on November 3rd 2015, GoDataDriven already presented a webinar about [running Cloudera on MS Azure](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html), which has been recorded and is available for viewing after [registration](https://info.microsoft.com/WE-Azure-WBNR-FY16-11Nov-03-Running-Cloudera-on-Azure.html).
 
