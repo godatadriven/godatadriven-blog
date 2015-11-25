@@ -39,8 +39,7 @@ After analyzing the gaps, we decided to use the template but modify some parts t
 We decided to use the Cloudera-Azure template to provision the network, set up the machines, configure the OS and install Cloudera Manager. Then we used Cloudera Manager (so not the Cloudera-Azure template) to install the CDH cluster.
 We did it like this, because in this way we can get the machines that we want and afterwards add them to the cluster. When additional nodes are required, we would be able to do this using the same template.
 
-We made the following modifications to the original [template]
-(https://github.com/Azure/azure-quickstart-templates/tree/master/cloudera-on-centos): 
+We made the following modifications to the original [template](https://github.com/Azure/azure-quickstart-templates/tree/master/cloudera-on-centos): 
 
 - Creation of the virtual network with a separate template. This allows us to change the number of subnets and make a site2site VPN connection. The Cloudera template was modified to use an existing VNet and subnet
 - Setting-up the DNS component of the Active Directory for the machines to do forward and reverse lookup 
@@ -54,7 +53,7 @@ We made the following modifications to the original [template]
 ### Changing the template
 In order to change the template, first we had to understand how the template works.  
 
-[How the Cloudera template works](/content/images/cloudera-on-azure/how-the-cloudera-template-works.png)
+![How the Cloudera template works](/content/images/cloudera-on-azure/how-the-cloudera-template-works.png)
 
 When you deploy using the marketplace you interact with the azuredeploy.parameters.json through the UI as this is the file where the parameters are specified. This file is read by the main template file azuredeploy.json which defines the dependencies between the elements of the template file.
 
