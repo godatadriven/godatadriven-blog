@@ -53,7 +53,7 @@ We made the following modifications to the original [template](https://github.co
 ### Changing the template
 In order to change the template, first we had to understand how the template works.  
 
-![How the Cloudera template works](/content/images/cloudera-on-azure/how-the-cloudera-template-works.png)
+![How the Cloudera template works](/static/images/cloudera-on-azure/how-the-cloudera-template-works.png)
 
 When you deploy using the marketplace you interact with the azuredeploy.parameters.json through the UI as this is the file where the parameters are specified. This file is read by the main template file azuredeploy.json which defines the dependencies between the elements of the template file.
 
