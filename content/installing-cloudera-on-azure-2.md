@@ -1,5 +1,5 @@
 Title: Installing Cloudera on Azure (part 2 of 2)
-Date: 2015-11-20 15:00
+Date: 2015-12-09 15:00
 Slug: installing-cloudera-on-azure-2
 Author: Tünde Alkemade, Alexander Bij, Walter van der Scheer
 Excerpt: This is part 2 of 2 about the installation of a Cloudera cluster on Microsoft Azure. In this post we  on the gaps we saw between our client requirements and the Cloudera template and we will show how we modified the Cloudera template to fulfill our requirements.
