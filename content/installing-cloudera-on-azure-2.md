@@ -10,9 +10,9 @@ Latex:
 Recently, GoDataDriven experimented with the Cloudera template to install a Cloudera cluster on Microsoft Azure. In this series of 2 articles we share our insights and experiences with installing Cloudera and modifying the template that Cloudera provides for the installation on MS Azure.
 </span>
 
-[In the first post](/installing-cloudera-on-azure-1.html) we discussed some information about the use case, the design and some basic information about Microsoft Azure. We showed some options how you can install Cloudera on Azure and what best practices we saw when installing a distributed system on Azure. This is the second half of this series.
-
 ![Installing Cloudera on Azure](/static/images/cloudera-on-azure/installing-cloudera-on-azure-header.png)
+
+[In the first post](/installing-cloudera-on-azure-1.html) we discussed some information about the use case, the design and some basic information about Microsoft Azure. We showed some options how you can install Cloudera on Azure and what best practices we saw when installing a distributed system on Azure. This is the second half of this series.
 
 ### Cloudera-Azure template intro
 
