@@ -12,7 +12,7 @@ Recently, GoDataDriven experimented with the Cloudera template to install a Clou
 
 [In the first post](/installing-cloudera-on-azure-1.html) we discussed some information about the use case, the design and some basic information about Microsoft Azure. We showed some options how you can install Cloudera on Azure and what best practices we saw when installing a distributed system on Azure. This is the second half of this series.
 
-![Installing Cloudera on Azure](/static/images/installing-cloudera-on-azure-header.png)
+![Installing Cloudera on Azure](/static/images/cloudera-on-azure/installing-cloudera-on-azure-header.png)
 
 ### Cloudera-Azure template intro
 
