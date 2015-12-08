@@ -7,7 +7,7 @@ Template: article
 Latex:
 
 <span class="lead">
-Recently, GoDataDriven experimented with installing a Cloudera cluster on Microsoft Azure. In this article we provide some information about the use case, the design we implemented and some basic information about Microsoft Azure. We discuss how you can install Cloudera on Azure and what best practices we saw when installing a distributed system on Azure.
+Recently, GoDataDriven installed a Cloudera cluster on Microsoft Azure. In this article we provide some information about the use case, the implemented design and some basic information about Microsoft Azure. We discuss how you can install Cloudera on Azure and share best-practices about installing a distributed system on Azure.
 </span>
 
 ### Introduction
