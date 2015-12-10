@@ -30,7 +30,7 @@ Even more interesting than bringing an airport to the cloud, was that this is th
 
 An interesting aspect of the implementation is the blend of open source components on a Microsoft platform. “Microsoft has made extensive engineering investments to make Linux and Open Source software a first class citizen on our Azure Cloud Platform, and with our partners like GoDataDriven we are able to provide customers like the Schiphol Group with the widest choice of technology and deployment options to empower them on their journey to the cloud,” said Mark Hill, Vice President Open Source Sales & Marketing.
 
-Managing director Pascal Greuter of Microsoft Gold Partner [Xpirit](www.xpirit.com) (part of Xebia Group), adds; “What stands out in this project is that nowadays it is not necessary anymore to work with one technology exclusively. Instead we can focus on the right technology for the right purpose, no matter what brand is on the package”.
+Managing director Pascal Greuter of Microsoft Gold Partner [Xpirit](http://www.xpirit.com) (part of Xebia Group), adds; “What stands out in this project is that nowadays it is not necessary anymore to work with one technology exclusively. Instead we can focus on the right technology for the right purpose, no matter what brand is on the package”.
 
 “Cloudera Enterprise is quickly becoming the platform of choice for companies that want to capture and run analytics on IoT data in the cloud,” said Tim Stevens, vice president, Business and Corporate Development, Cloudera. “Our reference architecture for Microsoft Azure allowed GoDataDriven to implement a big data solution for Schiphol that’s tailored to their unique requirements."
 
