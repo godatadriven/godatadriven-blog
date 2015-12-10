@@ -1,6 +1,6 @@
 Title: Schiphol Group implements data science infrastructure based on open source and Microsoft technology
 Date: 2015-12-10 15:00
-Slug: schiphol-implements-datasciencesuite.md
+Slug: schiphol-implements-datasciencesuite
 Author: Walter van der Scheer
 Excerpt: To increase the business value from their data, Schiphol Group, asked GoDataDriven to consolidate all its data in a scalable Big Data infrastructure, using the latest technologies to ensure privacy and security. 
 Template: article
