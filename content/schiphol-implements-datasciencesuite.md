@@ -24,7 +24,7 @@ In the next phase of this project, Schiphol Group and GoDataDriven will work tog
 
 ## The first production implementation of Cloudera’s CDH on Microsoft Azure
 
-Even more interesting than bringing an airport to the cloud, was that this is the first production implementation of Cloudera’s CDH on Microsoft’s Azure in Europe. By working closely together with [Cloudera](www.cloudera.com), [Xpirit](www.xpirit.com), [Microsoft](www.microsoft.com) and [Xebia](www.xebia.com), GoDataDriven was able to implement the proposed solution. 
+Even more interesting than bringing an airport to the cloud, was that this is the first production implementation of Cloudera’s CDH on Microsoft’s Azure in Europe. By working closely together with [Cloudera](http://www.cloudera.com), [Xpirit](http://www.xpirit.com), [Microsoft](http://www.microsoft.com) and [Xebia](http://www.xebia.com), GoDataDriven was able to implement the proposed solution. 
 
 ## Combination of Open Source and Microsoft
 
