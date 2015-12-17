@@ -13,4 +13,4 @@ Latex:
 On the program were many interesting talks, on topics ranging from developements in big data technology to privacy in big data. The talk of Singapore's foreign affairs minister Vivian Balakrishnan was particularly inspiring, showing what is possible using open data in Singapore.
 On the technology side, it was great to see the improvements and additions currently being developed. We from GoDataDriven look forward to using this new technology in the future.
 
-Although the majority of the attendees came from Asia, it was very good to see also Europeans in the crowd, showing that big data is a global endeavour.
+Although the majority of the attendees came from Asia, it was very good to see also Europeans in the crowd, showing that big data is a global endeavour. We are looking forward to the next Strata+Hadoop World conference.
