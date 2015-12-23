@@ -73,7 +73,7 @@ Over 60% of companies claim to have business analysts and data analysts in house
 
 In order to attract data scientists, it is important to be attractive as an employer. Corporate behavior, a management oriented culture, and fixed processes, are not part of this image. As transforming a large corporation is not done over night, this often is the reason for larger, traditional, businesses, to create a new, more agile, organizational structure outside of the existing business.
 
-![Challenges for success with data](/static/images/bigdatasurvey/5-bigdatasurvey-team.png)
+![Challenges for success with data](/static/images/bigdatasurvey/5-bigdatasurvey-datateam.png)
 
 Being attractive as an employer is not all about paying the highest wage. “Data scientists look for challenging and stimulating environments, that provide room to work together with like-minded people, and to experiment with data and technology, so that the data scientist can develop predictive models that truly have an impact on the business", explains Friso van Vollenhoven, Chief Technology at GoDataDriven.
 
