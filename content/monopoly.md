@@ -34,7 +34,7 @@ What streets represent the highest value? First of all we took a look at the tra
 
 Looking at the streets, the colors Orange (Utrecht), Yellow (Den Haag) and Red (Groningen) have the highest probability. Chances to land on the Blue (Amsterdam) and Purple (Ons Dorp) streets are lower, partly because in the game these colors contain only two streets.
 
-![Monopoly: best streets](/static/images/monopoly/3-godatadriven-monopoly-board.png)
+![Monopoly: best streets](/static/images/monopoly/3-godatadriven-monopoly-board.jpg)
 
 Based on the revenues of a deed without houses / hotels we have made a calculation of the expected income from rent, compared to the probability of a player landing on this street, which we visualized in a plot. The larger the circle, the higher the revenue. What stands out is that a number of streets have a low revenue and a low probability.
 
