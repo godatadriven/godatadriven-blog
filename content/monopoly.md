@@ -38,7 +38,7 @@ Looking at the streets, the colors Orange (Utrecht), Yellow (Den Haag) and Red (
 
 Based on the revenues of a deed without houses / hotels we have made a calculation of the expected income from rent, compared to the probability of a player landing on this street, which we visualized in a plot. The larger the circle, the higher the revenue. What stands out is that a number of streets have a low revenue and a low probability.
 
-![Monopoly: probability](/static/images/monopoly/4-godatadriven-monopoly-probability.png)
+![Monopoly: probability](/static/images/monopoly/4-godatadriven-monopoly-revenues-probability.png)
 
 A closer examination points out that especially the streets that are difficult to reach coming from jail, brown (Ons Dorp), light blue (Arnhem) and pink (Haarlem), see lower revenues. Green (Rotterdam) and dark Blue (Amsterdam) have the highest estimated revenues
 
