@@ -34,11 +34,11 @@ What streets represent the highest value? First of all we took a look at the tra
 
 Looking at the streets, the colors Orange (Utrecht), Yellow (Den Haag) and Red (Groningen) have the highest probability. Chances to land on the Blue (Amsterdam) and Purple (Ons Dorp) streets are lower, partly because in the game these colors contain only two streets.
 
-![Monopoly: best streets](/static/images/monopoly/3-godatadriven-monopoly-board.jpg)
+![Monopoly: best streets](/static/images/monopoly/3-godatadriven-monopoly-board.png)
 
 Based on the revenues of a deed without houses / hotels we have made a calculation of the expected income from rent, compared to the probability of a player landing on this street, which we visualized in a plot. The larger the circle, the higher the revenue. What stands out is that a number of streets have a low revenue and a low probability.
 
-![Monopoly: probability](/static/images/monopoly/4-godatadriven-monopoly-probability.jpg)
+![Monopoly: probability](/static/images/monopoly/4-godatadriven-monopoly-probability.png)
 
 A closer examination points out that especially the streets that are difficult to reach coming from jail, brown (Ons Dorp), light blue (Arnhem) and pink (Haarlem), see lower revenues. Green (Rotterdam) and dark Blue (Amsterdam) have the highest estimated revenues
 
@@ -48,11 +48,11 @@ How many turns are needed to get a positive return on investment via rental reve
 
 When we take the probability of landing on a certain street, we see that the investment in Mediterranean Avenue is returned only after 732 turns and Boardwalk already in 196 turns.
 
-![Monopoly: highest number of turns for positive ROI](/static/images/monopoly/5-godatadriven-monopoly-highestnumber.png)
+![Monopoly: highest number of turns for positive ROI](/static/images/monopoly/5-godatadriven-highestnumber.png)
 
 If you are after as much revenue from rent as possible, staying away from the Pink streets (Arnhem) is a wise thing to do, as only Mediterranean Avenue (Dorpsstraat, Ons Dorp) takes longer to earn back your investment. Interestingly you earn back your investment from a hotel relatively quickly with a Pink street (Arnhem). Another interesting observation is that the performance of Park Place (Leidsestraat, Amsterdam) is notably worse than that of its neighboring street Boardwalk. 
 
-![Monopoly: lowest number of turns for positive ROI](/static/images/monopoly/6-godatadriven-monopoly-lowestnumber.png)
+![Monopoly: lowest number of turns for positive ROI](/static/images/monopoly/6-godatadriven-lowestnumber.png)
 
 ## 4: The winning strategy
 
