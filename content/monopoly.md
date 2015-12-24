@@ -1,8 +1,8 @@
-Title: What we can learn about data and marketing from Monopoly
+Title: What Monopoly teaches us about data and marketing
 Date: 2015-12-24 15:00
 Slug: monopoly
 Author: Walter van der Scheer
-Excerpt: Create your own monopoly this holiday season in four simple steps. Benefit from the insights that GoDataDriven got based on a simulation of the Monopoly board game.
+Excerpt: Create your own monopoly in four simple steps. Benefit from the insights that GoDataDriven got based on a simulation of the Monopoly board game.
 Template: article
 Latex:
 
