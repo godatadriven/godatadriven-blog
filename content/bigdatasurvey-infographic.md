@@ -9,6 +9,8 @@ Latex:
 <span class="lead">
 At the end of 2015 GoDataDriven published [the report of Big Data Survey](http://www.bigdatasurvey.nl), the first national research in The Netherlands about the use of data within organizations. The results of the survey have now been combined into one infographic.Fifteen Big Data insights combined into one infographic to help you boost your data driven operation in 2016</span>
 
+![Big Data Survey Infographic - header image](http://www.godatadriven.com/static/images/bigdatasurvey/infographic-bigdatasurvey-header.png
+
 The number of organizations that have included Big Data as a part of their overall strategy greatly outnumbers the organisations that currently see no place for Big Data in their strategy.
 
 GoDataDriven also found that most companies are struggling most with making data available and realizing sufficient time to experiment. Experimentation is crucial, but often organizations lack the structure to allow experimentation and an agile working way. As not many businesses are able to bring their models into production, only 8% of organizations points out the optimization of their predictive model as biggest challenge.
