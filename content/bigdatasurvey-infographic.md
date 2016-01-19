@@ -11,9 +11,13 @@ At the end of 2015 GoDataDriven published [the report of Big Data Survey](http:/
 
 ![Big Data Survey Infographic - header image](http://www.godatadriven.com/static/images/bigdatasurvey/infographic-bigdatasurvey-header.png)
 
-The number of organizations that have included Big Data as a part of their overall strategy greatly outnumbers the organisations that currently see no place for Big Data in their strategy.
+The number of organizations that have included Big Data as a part of their overall strategy greatly outnumbers the organisations that currently see no place for Big Data in their strategy. After making data a strategic focal point, the next step is to get the organization ready to start using data and work in an agile way. What do find organizations most difficult and what is the current knowledge level?
+
+## The struggles of becoming data driven
 
 GoDataDriven also found that most companies are struggling most with making data available and realizing sufficient time to experiment. Experimentation is crucial, but often organizations lack the structure to allow experimentation and an agile working way. As not many businesses are able to bring their models into production, only 8% of organizations points out the optimization of their predictive model as biggest challenge.
+
+## If organizations would go to data school...
 
 If organizations would go to data school, they expect to get a 6 as a grade, enough to pass, but nothing that distinguishes an organization from its competitors. It is time for organizations to receive some tutoring. Data is a key competence and A grades in this field are a good investment that will provide competitive advantage in the years to come.
 
