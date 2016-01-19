@@ -20,4 +20,4 @@ At the end of 2018 40% of organizations expect that they will be using advanced 
 
 View all the key take-aways from Big Data Survey in this comprehensive infographic:
 
-[![Infographic Big Data Survey](/static/images/bigdatasurvey/bigdatasurvey-infographic.png)](http://www.bigdatasurvey.nl)
+[![Infographic Big Data Survey](http://www.godatadriven.com/static/images/bigdatasurvey/bigdatasurvey-infographic-web.png)](http://www.bigdatasurvey.nl)
