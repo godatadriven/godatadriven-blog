@@ -7,7 +7,7 @@ Template: article
 Latex:
 
 <span class="lead">
-At the end of 2015 GoDataDriven published [the report of Big Data Survey](http://www.bigdatasurvey.nl), the first national research in The Netherlands about the use of data within organizations. The results of the survey have now been combined into one infographic.Fifteen Big Data insights combined into one infographic to help you boost your data driven operation in 2016</span>
+At the end of 2015 GoDataDriven published [the report of Big Data Survey](http://www.bigdatasurvey.nl), the first national research in The Netherlands about the use of data within organizations. The results of the survey have now been combined into one infographic to help you boost your data driven operation in 2016.</span>
 
 ![Big Data Survey Infographic - header image](http://www.godatadriven.com/static/images/bigdatasurvey/infographic-bigdatasurvey-header.png
 
