@@ -1,12 +1,12 @@
-Title: Infographic: Fifteen essential Big Data insights combined to help you boost your data driven operation
+Title: Infographic: Fifteen Big Data insights to help you boost your data driven operations in 2016
 Date: 2016-01-19 15:00
 Slug: bigdatasurvey-infographic
 Author: Walter van der Scheer
-Excerpt: Fifteen essential Big Data insights combined into one infographic to help you boost your data driven operation in 2016
+Excerpt: Based on the results of Big Data Survey we have compiled a comprehensive infographic containing fifteen Big Data insights  to help you boost your data driven operation in 2016
 Template: article
 Latex:
 
-<span class="lead">Fifteen essential Big Data insights combined into one infographic to help you boost your data driven operation in 2016</span>
+<span class="lead">Fifteen Big Data insights combined into one infographic to help you boost your data driven operation in 2016</span>
 
 The number of organizations that have included Big Data as a part of their overall strategy greatly outnumbers the organisations that currently see no place for Big Data in their strategy.
 
