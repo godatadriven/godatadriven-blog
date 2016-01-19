@@ -6,7 +6,8 @@ Excerpt: Based on the results of Big Data Survey we have compiled a comprehensiv
 Template: article
 Latex:
 
-<span class="lead">Fifteen Big Data insights combined into one infographic to help you boost your data driven operation in 2016</span>
+<span class="lead">
+At the end of 2015 GoDataDriven published [the report of Big Data Survey](http://www.bigdatasurvey.nl), the first national research in The Netherlands about the use of data within organizations. The results of the survey have now been combined into one infographic.Fifteen Big Data insights combined into one infographic to help you boost your data driven operation in 2016</span>
 
 The number of organizations that have included Big Data as a part of their overall strategy greatly outnumbers the organisations that currently see no place for Big Data in their strategy.
 
@@ -20,8 +21,13 @@ At the end of 2018 40% of organizations expect that they will be using advanced 
 
 View all the key take-aways from Big Data Survey in this comprehensive infographic:
 
-[Share on Twitter](https://twitter.com/home?status=Fifteen%20insights%20from%20%23bigdata%20survey%20in%20one%20%23infographic%3A%20http%3A//blog.godatadriven.com/bigdatasurvey-infographic.html)
+<a href="https://twitter.com/home?status=Fifteen%20insights%20from%20%23bigdata%20survey%20in%20one%20%23infographic%3A%20http%3A//blog.godatadriven.com/bigdatasurvey-infographic.html" target="_blank">Share the infographic on Twitter</a>
 
-[Share on Linkedin](https://www.linkedin.com/shareArticle?mini=true&url=http%3A//blog.godatadriven.com/bigdatasurvey-infographic.html&title=Fifteen%20insights%20from%20Big%20Data%20Survey%20in%20one%20infographic&summary=Use%20these%20insights%20to%20help%20you%20boost%20your%20data%20driven%20operation%20in%202016.&source=GoDataDriven)
+<a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A//blog.godatadriven.com/bigdatasurvey-infographic.html&title=Fifteen%20insights%20from%20Big%20Data%20Survey%20in%20one%20infographic&summary=Use%20these%20insights%20to%20help%20you%20boost%20your%20data%20driven%20operation%20in%202016.&source=GoDataDriven" target="_blank">Share the infographic on Linkedin</a>
 
 [![Infographic Big Data Survey](http://www.godatadriven.com/static/images/bigdatasurvey/bigdatasurvey-infographic-web.png)](http://www.bigdatasurvey.nl)
+
+
+<a href="https://twitter.com/home?status=Fifteen%20insights%20from%20%23bigdata%20survey%20in%20one%20%23infographic%3A%20http%3A//blog.godatadriven.com/bigdatasurvey-infographic.html" target="_blank">Share the infographic on Twitter</a>
+
+<a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A//blog.godatadriven.com/bigdatasurvey-infographic.html&title=Fifteen%20insights%20from%20Big%20Data%20Survey%20in%20one%20infographic&summary=Use%20these%20insights%20to%20help%20you%20boost%20your%20data%20driven%20operation%20in%202016.&source=GoDataDriven" target="_blank">Share the infographic on Linkedin</a>
