@@ -8,4 +8,6 @@ GoDataDriven is proud to announce a silver sponsorship of Data Driven Commerce o
 
 Friso van Vollenhoven will talk about the trends in data science, open source technology from Google and Facebook that anybody can use, and share some examples of successful application of Data Science.
 
+If you are interested in attending the event, make sure to use discount code "DDC16GDD" to receive a 100 EURO discount on the ticket price.
+
 More info on [the website of Data Driven Commerce](http://www.datadrivencommerce.nl)
