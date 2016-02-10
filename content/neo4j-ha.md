@@ -27,17 +27,11 @@ To start building your cluster you will offcourse need some hardware. I've used:
 
 *Looks great right?* 
 
-### Prepare the raspberry
-To install Raspbian you can follow [this guide](https://www.raspberrypi.org/documentation/installation/installing-images/). After this you can boot the raspberry and configure some basic things on the py with the ```sudo raspi-config``` command. Things you proberbly want to configure:
-
-- hostname
-- expand the filesystem (by default only)
-
 ### How to shard a graph
 
-A few years ago the IT industry was in de middle of the NoSql hype. Companies saw that they where storing more and more data. A lot of the NoSql solutions had a focus on solving that problem. Offering a sharding sollution for high volume data. This works great for disconnected data. Key-value stores and document stores like Redis of Mongo db store records in partittions and can easily scale-up horizontaly.
+A few years ago the IT industry was in de middle of the NoSql hype. Companies saw that they where storing more and more data. The current sollutions couldn't cope with these amounts of data or complexity. A lot of the NoSql solutions solved the issue around high volume by offering a sharding sollution for data. This works great for disconnected data. Key-value stores and document stores like Redis or Mongo db store records in partittions and can easily scale-up horizontaly.
 
-In image X you can see what whould hapen with a Graph if you whould shard it in the same way. Neo4j focusses on delivering a solution for fast online graph-database. If you whould query for data that is stored on different machines it is a near-impossible problem to make it perform fast.
+In image X you can see what whould hapen with a Graph if you whould shard it in the same way. Neo4j focusses on delivering a solution for a fast online graph-database. If you whould query for data that is stored on different machines it is a near-impossible problem to make it perform fast.
 
 Thereby the sollution Neo4j HA offers is a full replicated cluster, see image X. Every Neo4j instance in the cluster will contain the complete graph. The HA sollution will make sure all instances will remain in sync. 
 
@@ -52,10 +46,15 @@ Thereby the sollution Neo4j HA offers is a full replicated cluster, see image X.
   </div>
 </div>
 
+### Prepare the Raspberry
+Before we can create a Neo4j cluster on Raspberry Pi's we need to install Raspbian OS. You can follow [this guide](https://www.raspberrypi.org/documentation/installation/installing-images/). After this you can boot the raspberry and configure some basic things on the py with the ```sudo raspi-config``` command. Things you proberbly want to configure are:
+
+- hostname
+- expand the filesystem (by default the partition will only be 2GB)
 
 ### Neo4j setup
 
-Setting up a Neo4j setup is quite easy you only need to change 6 properties in 2 files and your done:
+Setting up Neo4j a Neo4j cluster is quite easy you only need to change 6 properties in 2 files and your done:
 
 The following property files need to be changed on all cluster instances.
 
@@ -101,7 +100,7 @@ neo4j.properties
     
 For a fully instruction take a look at [the Neo4j website](http://neo4j.com/docs/stable/ha-setup-tutorial.html)
 
-If everything is setup correctly and the neo4j instances are started you should be able to excecute the query ```:sysinfo``` in the webconsole: in my case [http://raspberrypi_2:7474/browser/](http://raspberrypi_2:7474/browser/)
+If everything is setup correctly and the neo4j instances are started you should be able to excecute the query ```:sysinfo``` in the webconsole: in our case: [http://raspberrypi_2:7474/browser/](http://raspberrypi_2:7474/browser/)
 <div class="row">
   <div class="span5">
     <img alt="Neo4j master" src="static/images/neo4j-ha/neo4j_master_info.png">
@@ -112,6 +111,7 @@ If everything is setup correctly and the neo4j instances are started you should 
     <p>:sysinfo slave</p>
   </div>
 </div>
+
 
 ### HA Proxy setup
 Now that we have our Neo4j cluster up and running it's time to take a look at the Proxy. 
@@ -129,18 +129,10 @@ Now that we have our Neo4j cluster up and running it's time to take a look at th
 
     frontend http-in
         bind *:8090
-        acl write_hdr hdr_val(X-Write) eq 1
-        use_backend neo4j-master if write_hdr
         default_backend neo4j-all
 
     backend neo4j-all
         option httpchk GET /db/manage/server/ha/available HTTP/1.0\r\nAuthorization:\ Basic\ bmVvNGo6dGVzdA==
-            server s1 192.168.2.8:7474 maxconn 10 check
-            server s2 192.168.2.7:7474 maxconn 10 check
-            server s3 192.168.2.9:7474 maxconn 10 check
-
-    backend neo4j-master
-        option httpchk GET /db/manage/server/ha/master HTTP/1.0\r\nAuthorization:\ Basic\ bmVvNGo6dGVzdA==
             server s1 192.168.2.8:7474 maxconn 10 check
             server s2 192.168.2.7:7474 maxconn 10 check
             server s3 192.168.2.9:7474 maxconn 10 check
@@ -151,19 +143,42 @@ Now that we have our Neo4j cluster up and running it's time to take a look at th
         stats realm   Haproxy\ Statistics
         stats auth    admin:123
 
+With the configuration above we will accept 60 connections to the HA Proxy. The load will be spread round robin to all 3 Neo4j instances.
+
+We can make a lot of optimalisations on the configuration above. But I want to add atleased one. While every Neo4j instance in the Cluster can handle write operations, it is advised [http://neo4j.com/docs/stable/ha-how.html](http://neo4j.com/docs/stable/ha-how.html) to perform write operations to the Master instance. To handle these functionality in HA Proxy we can add the following configuration. If a ```X-Write``` header is added to the request we can redirect this request directly to the master. In this setup the application that is performing the write operation is responsible of adding the header, but the configurations can than be very clean.
+
+    :::python
+    frontend http-in
+        bind *:8090
+        acl write_hdr hdr_val(X-Write) eq 1
+        use_backend neo4j-master if write_hdr
+        default_backend neo4j-all
+
+    backend neo4j-master
+        option httpchk GET /db/manage/server/ha/master HTTP/1.0\r\nAuthorization:\ Basic\ bmVvNGo6dGVzdA==
+            server s1 192.168.2.8:7474 maxconn 10 check
+            server s2 192.168.2.7:7474 maxconn 10 check
+            server s3 192.168.2.9:7474 maxconn 10 check
+
+
 ![HA Proxy](/static/images/neo4j-ha/haproxy.png)
 
 For the full explanation take a look at the [HAProxy Configuration Manual]("http://cbonte.github.io/haproxy-dconv/configuration-1.6.html")
 
+
 ### Lets test (and play)
+
+One important part in the configuration is the ```check``` option. This will constantly check with the ```httpchk``` option if an instance is still available or is still the master. Thereby all request will still be routed correctly in case of a restart of an instance.
+
+In the following two images you can see this in action. On the first image all instances are up and running. On a shutdown of instance 2 you can see that the second line has become red in image two.
 
 <div class="row">
   <div class="span5">
-    <img alt="Neo4j master" src="static/images/neo4j-ha/haproxy_2.png">
+    <img alt="Neo4j master" src="static/images/neo4j-ha/haproxy_3.png">
     <p>:sysinfo master</p>
   </div>
   <div class="span5">
-    <img alt="Neo4j slave" src="static/images/neo4j-ha/haproxy_3.png">
+    <img alt="Neo4j slave" src="static/images/neo4j-ha/haproxy_2.png">
     <p>:sysinfo slave</p>
   </div>
 </div>
