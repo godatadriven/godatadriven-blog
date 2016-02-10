@@ -2,17 +2,20 @@ Title: Neo4j HA on a Raspberry pi cluster
 Date: 2016-02-05 17:00
 Slug: neo4j-ha
 Author: Ron van Weverwijk
-Excerpt: Neo4j is a great graph-database. Most of the times I work with with just a single instance. Most production systems run in a High Available setup though. In this blog we will show how easy it is to create a Neo4j HA cluster including a proxy server infront to get most out of the setup.
+Excerpt: Neo4j is a great graph-database. Most of the times I work with with just a single instance. Most production systems run in a High Available setup though. In this blog we will show how easy it is to create a Neo4j HA cluster including a proxy server in front to get most out of the setup.
 Template: article
 Latex:
 
 <span class="lead">
-Neo4j is a great graph-database. Most of the times I work with with just a single instance. Most production systems run in a High Available setup though. In this blog we will show how easy it is to create a Neo4j HA cluster on a Raspberry pi cluster including a proxy server infront to get most out of the setup. Questions will raise: "Why whould you install a Neo4j cluster on a Raspberry?". Actually: Because it's fun and we can ;)
+Neo4j is a great graph-database. Most of the times I work with with just a single instance. Most production systems run in a High Available setup though. In this blog we will show how easy it is to create a Neo4j HA cluster on a Raspberry pi cluster including a proxy server in front to get most out of the setup. Questions will raise: "Why would you install a Neo4j cluster on a Raspberry?". Actually: Because it's fun and we can ;)
 </span>
 
-To start building your cluster you will offcourse need some hardware. I've used:
+To start building your cluster you will off course need some hardware. I've used:
 
-- 4 Raspberry Pi 2 Model B 1GB- 4 Transcend 16GB Class 10 MicroSDHC- 1 8-Port Gigabit Switch- 1 4-Port USB 3.0 Hub
+- 4 Raspberry Pi 2 Model B 1GB
+- 4 Transcend 16GB Class 10 MicroSDHC
+- 1 8-Port Gigabit Switch
+- 1 4-Port USB 3.0 Hub
 - Some wires and cases
 
 <div class="row">
@@ -29,11 +32,11 @@ To start building your cluster you will offcourse need some hardware. I've used:
 
 ### How to shard a graph
 
-A few years ago the IT industry was in de middle of the NoSql hype. Companies saw that they where storing more and more data. The current sollutions couldn't cope with these amounts of data or complexity. A lot of the NoSql solutions solved the issue around high volume by offering a sharding sollution for data. This works great for disconnected data. Key-value stores and document stores like Redis or Mongo db store records in partittions and can easily scale-up horizontaly.
+A few years ago the IT industry was in de middle of the NoSql hype. Companies saw that they where storing more and more data. The current solutions couldn't cope with these amounts of data or complexity. A lot of the NoSql solutions solved the issue around high volume by offering a sharding solution for data. This works great for disconnected data. Key-value stores and document stores like Redis or Mongo db store records in partitions and can easily scale-up horizontally.
 
-In image X you can see what whould hapen with a Graph if you whould shard it in the same way. Neo4j focusses on delivering a solution for a fast online graph-database. If you whould query for data that is stored on different machines it is a near-impossible problem to make it perform fast.
+In image X you can see what would happen with a Graph if you would shard it in the same way. Neo4j focusses on delivering a solution for a fast online graph-database. If you would query for data that is stored on different machines it is a near-impossible problem to make it perform fast.
 
-Thereby the sollution Neo4j HA offers is a full replicated cluster, see image X. Every Neo4j instance in the cluster will contain the complete graph. The HA sollution will make sure all instances will remain in sync. 
+Thereby the solution Neo4j HA offers is a full replicated cluster, see image X. Every Neo4j instance in the cluster will contain the complete graph. The HA solution will make sure all instances will remain in sync. 
 
 <div class="row">
   <div class="span5">
@@ -47,7 +50,7 @@ Thereby the sollution Neo4j HA offers is a full replicated cluster, see image X.
 </div>
 
 ### Prepare the Raspberry
-Before we can create a Neo4j cluster on Raspberry Pi's we need to install Raspbian OS. You can follow [this guide](https://www.raspberrypi.org/documentation/installation/installing-images/). After this you can boot the raspberry and configure some basic things on the py with the ```sudo raspi-config``` command. Things you proberbly want to configure are:
+Before we can create a Neo4j cluster on Raspberry Pi's we need to install Raspbian OS. You can follow [this guide](https://www.raspberrypi.org/documentation/installation/installing-images/). After this you can boot the raspberry and configure some basic things on the py with the ```sudo raspi-config``` command. Things you probably want to configure are:
 
 - hostname
 - expand the filesystem (by default the partition will only be 2GB)
@@ -145,7 +148,7 @@ Now that we have our Neo4j cluster up and running it's time to take a look at th
 
 With the configuration above we will accept 60 connections to the HA Proxy. The load will be spread round robin to all 3 Neo4j instances.
 
-We can make a lot of optimalisations on the configuration above. But I want to add atleased one. While every Neo4j instance in the Cluster can handle write operations, it is advised [http://neo4j.com/docs/stable/ha-how.html](http://neo4j.com/docs/stable/ha-how.html) to perform write operations to the Master instance. To handle these functionality in HA Proxy we can add the following configuration. If a ```X-Write``` header is added to the request we can redirect this request directly to the master. In this setup the application that is performing the write operation is responsible of adding the header, but the configurations can than be very clean.
+We can make a lot of optimizations on the configuration above. But I want to add at leased one. While every Neo4j instance in the Cluster can handle write operations, it is advised [http://neo4j.com/docs/stable/ha-how.html](http://neo4j.com/docs/stable/ha-how.html) to perform write operations to the Master instance. To handle this functionality in HA Proxy we can add the following configuration. If a ```X-Write``` header is added to the request we can redirect this request directly to the master. In this setup the application that is performing the write operation is responsible of adding the header, but the configurations can than be very clean.
 
     :::python
     frontend http-in
@@ -188,7 +191,7 @@ In the following two images you can see this in action. On the first image all i
 Because I don't like to repeat myself I've used Ansible to provision the raspberry Pi's.
 The complete project can be found on my github repo, but will share some parts here.
 
-With ansible you can make sure that config files are present on a server. You can also ask if the config files where different than the once already on the server. And take an action it config is changed: for example restart to make the config active.
+With ansible you can make sure that config files are present on a server. You can also ask if the config files where different than the once already on the server. And take an action ft the config is changed: for example, restart to make the config active.
 
     :::python
     - name: Copy neo4j config templates
@@ -244,3 +247,4 @@ Will result in:
             server s1 192.168.2.8:7474 maxconn 10 check
             server s2 192.168.2.7:7474 maxconn 10 check
             server s3 192.168.2.9:7474 maxconn 10 check
+
