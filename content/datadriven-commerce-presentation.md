@@ -1,6 +1,6 @@
 Title: Data Science trends in commerce: presentation from DataDriven Commerce (Feb 18)
 Date: 2016-02-23 15:00
-Slug: datadriven-commerce-presentation.md
+Slug: datadriven-commerce-presentation
 Author: Walter van der Scheer
 Excerpt: During DataDriven Commerce, on February 18, Friso van Vollenhoven talked about trends in data science for commerce organizations. Watch his presentation here.
 Template: article
