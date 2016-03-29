@@ -2,13 +2,11 @@ Title: GoDataDriven becomes first Databricks training partner in continental Eur
 Date: 2015-08-25 15:00
 Slug: databricks-training-partner
 Author: Walter van der Scheer
-Excerpt: GoDataDriven is thrilled to announce that Databricks has selected them as a Spark training partner in the Benelux region.
+Excerpt: GoDataDriven is thrilled to announce that Databricks has selected them as exclusive Spark training partner in the Benelux region.
 Template: article
 Latex:
 
-## Exclusive training partner for the Benelux
-
-<span class="lead">GoDataDriven is thrilled to announce that Databricks has selected them as a Spark training partner in the Benelux region.
+<span class="lead">GoDataDriven is thrilled to announce that Databricks has selected them as exclusive Spark training partner in the Benelux region.
 </span>
 
 ### Databricks and Apache Spark
