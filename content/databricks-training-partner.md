@@ -9,7 +9,7 @@ Latex:
 <span class="lead">GoDataDriven is thrilled to announce that Databricks has selected them as exclusive Spark training partner in the Benelux region.
 </span>
 
-![Partnership Databricks and GoDataDriven](/databricks/databricks-godatadriven-header.jpg "Databricks and GoDataDriven partnership")
+![Partnership Databricks and GoDataDriven](images/static/databricks/databricks-godatadriven-header.jpg "Databricks and GoDataDriven partnership")
 
 ### Databricks and Apache Spark
 
