@@ -23,4 +23,4 @@ After an extensive certification process, GoDataDriven has been recognized as an
 
 “GoDataDriven and Databricks are a perfect fit. Their domain knowledge in the big data arena and the strong training expertise their instructors bring to the market, are exactly what we look for in a training partner”, adds Andy Konwinski, vice president of education at Databricks.
 
-The first public Databricks Spark training is scheduled for May 16 – 18 2016 and can be booked via training.xebia.com
+The first public Databricks Spark training is scheduled for May 17 – May 19, 2016. [Book now](https://training.xebia.com/big-data/spark-programming/ "Spark Programming")
