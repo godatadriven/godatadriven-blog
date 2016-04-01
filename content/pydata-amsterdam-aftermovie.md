@@ -10,3 +10,9 @@ Latex:
 </span>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6wYFzPQLsyE" frameborder="0" allowfullscreen></iframe>
+
+Our Data Scientists Vincent Warmerdam and Giovanni Lanzani, as well as our CTO Friso van Vollenhoven, presented during the event. View the recordings below:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BiYTLb-o1Dk" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1NM7iPA-SMY" frameborder="0" allowfullscreen></iframe>
