@@ -2,7 +2,7 @@ Title: Masterclass "Real-world machine learning" at UVA
 Date: 2016-04-11 15:00
 Slug: masterclass-machine-learning
 Author: Walter van der Scheer
-Excerpt: In March 2016, Giovanni Lanzani presented a masterclass at University of Amsterdam about real-world machine learning.
+Excerpt: Watch the recording of the masterclass "real-world machine learning" at University of Amsterdam.
 Template: article
 Latex:
 
