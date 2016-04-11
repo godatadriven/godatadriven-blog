@@ -217,3 +217,51 @@ Brick2: rpi1:/mnt/usb/gv
 Brick3: rpi2:/mnt/usb/gv
 Brick4: rpi3:/mnt/usb/gv
 ```
+
+### Mounting a volume
+
+Now that the volume has been started, mounting it is a piece of cake. First create a mount point (e.g. `/mnt/gluster`), and then mount the volume with:
+
+```
+user@rpi0~$ sudo mount -t glusterfs rpi0:/gv /mnt/gluster/
+```
+
+You can point gluster to any of your nodes that are part of the volume (so `rpi1:/gv` would work just as well) as long 
+as they are up at the time of mounting: the glusterfs client only uses this node to obtain a file describing the volume. 
+In fact, you can connect the client with _any_ node, even one that is not
+part of the volume, as long as it is in the same peer group as the volume.
+
+Once mounted, the volume will show up in the list of filesystems:
+```
+user@rpi0~$ df
+Filesystem          1K-blocks      Used Available Use% Mounted on
+/dev/root            31134100   1459216  28382804   5% /
+devtmpfs               218416         0    218416   0% /dev
+tmpfs                  222688         0    222688   0% /dev/shm
+tmpfs                  222688      4484    218204   3% /run
+tmpfs                    5120         4      5116   1% /run/lock
+tmpfs                  222688         0    222688   0% /sys/fs/cgroup
+/dev/mmcblk0p1          61384     20480     40904  34% /boot
+/dev/sda1             7658104     19208   7226840   1% /mnt/usb
+rpi0:/gv             15316096     35584  14456448   1% /mnt/gluster
+```
+
+Note that its size is almost twice that of the usb drive in `/mnt/usb`, which is what we expect as the volume is distributed over four usb drives, and all data is replicated twice.
+
+If you want the Gluster volume to mount every time you start a server, you can add the mount point to your `/etc/fstab`
+file. In our example we would add a line like this:
+
+```
+rpi0:/gv /mnt/gluster glusterfs defaults,_netdev 0 0
+```
+
+#### Mounting on other machines
+
+In order to mount the volume on another machine you'll have to install the GlusterFS client. On Debian-based distributions
+this can be done by running `sudo apt-get install glusterfs-client`. Additionally you'll have to add (one of) the glusterfs
+server(s) to the `/etc/hosts` file, as described above for the peers.
+
+You may run into problems if the version of GlusterFS that is provided in the `glusterfs-client` package on your client
+machine is not the same as the one that is provided in the `glusterfs-server` package on your servers. In this case you can
+instead install the client from [source](http://www.gluster.org/download/).
+
