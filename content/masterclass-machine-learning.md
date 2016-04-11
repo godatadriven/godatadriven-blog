@@ -8,8 +8,7 @@ Latex:
 
 # Masterclass "Real-world Machine Learning"
 
-<span class="lead">GoDataDriven is proud to announce its
-In March 2016, Giovanni Lanzani presented a masterclass at University of Amsterdam about real-world machine learning.</span>
+<span class="lead">In March 2016, Giovanni Lanzani presented a masterclass at University of Amsterdam about real-world machine learning.</span>
 
 In his masterclass, Giovanni shares four examples and discusses what challenges data scientist face when working in the data science field. Issues like data quality, procedures, what models to use, and how to create useful solutions for abstract problems are all addressed during this 45 minute masterclass.
 
