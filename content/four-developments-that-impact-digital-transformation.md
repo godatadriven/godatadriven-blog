@@ -16,7 +16,7 @@ These developments, of course in a random order, are:
 + Cloud storage
 
 ## The hyper-connected world
-In the past five to seven years the world has become hyper-connected and there’s great opportunity in these developments. At the same time, these shifts pose a threat for traditional organizations, as they need to re-engineer their business for this new interconnected world. The first step is to embrace new sets of ideas and shift your business. 
+In the past five to seven years the world has become hyper-connected. The opportunities of these developments are massive. At the same time, these shifts pose a threat for traditional organizations, as they need to re-engineer their business for this new interconnected world. The first step is to embrace new sets of ideas and make a paradigm shift. 
 
 Tom Reilly gives an example of an auto manufacturer. “If you’re not building a connected car, you are in trouble. So auto manufacturers are quickly becoming data management companies.” Bottom-line is that every enterprise becomes a technology company, no matter what business you are in.
 
