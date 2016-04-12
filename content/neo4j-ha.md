@@ -7,7 +7,7 @@ Template: article
 Latex:
 
 <span class="lead">
-In this blog we will show you how easy it is to create a Neo4j HA cluster on a Raspberry pi cluster including a proxy server in front to get most out of the setup. Questions will raise: "Why would you install a Neo4j cluster on a Raspberry?". Well, to be honest: Because it's fun and because we can ;)
+In this blog we will show you how easy it is to create a Neo4j HA cluster on a Raspberry pi cluster including a proxy server in front to get most out of the setup. You might think: "Why would you install a Neo4j cluster on a Raspberry?" Well, to be honest: Because it's fun and because we can ;).
 </span>
 
 Personally, I am known to be a big fan of Neo4j, simply because it is a great graph-database. Most of the times I work with just a single instance. Most production systems however run in a High Availability setup. In the past period I have experimented with the set-up of such a Raspberry pi cluster. In this article I'll share my learnings during this experiment.
