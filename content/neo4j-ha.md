@@ -7,10 +7,10 @@ Template: article
 Latex:
 
 <span class="lead">
-In this blog we will show how easy it is to create a Neo4j HA cluster on a Raspberry pi cluster including a proxy server in front to get most out of the setup. Questions will raise: "Why would you install a Neo4j cluster on a Raspberry?". Actually: Because it's fun and because we can ;)
+In this blog we will show you how easy it is to create a Neo4j HA cluster on a Raspberry pi cluster including a proxy server in front to get most out of the setup. Questions will raise: "Why would you install a Neo4j cluster on a Raspberry?". Well, to be honest: Because it's fun and because we can ;)
 </span>
 
-Personally, I am known to be a big fan of Neo4j, simply because it is a great graph-database. Most of the times I work with just a single instance. Most production systems however run in a High Availability setup. In the past period I have experimented with the set-up of such a Raspberry pi cluster. In this article I share my learnings during this experiment.
+Personally, I am known to be a big fan of Neo4j, simply because it is a great graph-database. Most of the times I work with just a single instance. Most production systems however run in a High Availability setup. In the past period I have experimented with the set-up of such a Raspberry pi cluster. In this article I'll share my learnings during this experiment.
 
 To start building our cluster, we needed some hardware. I've used:
 
@@ -52,14 +52,14 @@ Thereby the solution Neo4j HA offers is a full replicated cluster, see image 4. 
 </div>
 
 ### Prepare the Raspberry
-Back to the cluster. Before we can create a Neo4j cluster we need to install an OS  on Raspberry Pi's. To install Raspbian OS, you can follow [this guide](https://www.raspberrypi.org/documentation/installation/installing-images/). After this you can boot the raspberry and configure some basic things on the pi with the ```sudo raspi-config``` command. Things you probably want to configure are:
+Back to the cluster. Before we can create a Neo4j cluster we need to install an OS on Raspberry pi's. To install Raspbian OS, you can follow [this guide](https://www.raspberrypi.org/documentation/installation/installing-images/). After this you can boot the Raspberry and configure some basic things on the pi with the ```sudo raspi-config``` command. Things you probably want to configure are:
 
 - hostname
 - expand the filesystem (by default the partition will only be 2GB, but we have 16GB available)
 
 ### Neo4j setup
 
-Setting up a Neo4j cluster is quite easy. You only need to change 6 properties in 2 files and your done:
+Setting up a Neo4j cluster is quite easy. You only need to change 6 properties in 2 files and you're done:
 
 The following property files need to be changed on all cluster instances.
 
@@ -103,9 +103,9 @@ neo4j.properties
     # must be the configured IP address for one of the local interfaces.
     ha.server=192.168.2.8:6001
     
-For a fully instruction take a look at [the Neo4j website](http://neo4j.com/docs/stable/ha-setup-tutorial.html)
+For a full instruction take a look at [the Neo4j website](http://neo4j.com/docs/stable/ha-setup-tutorial.html)
 
-If everything is setup correctly and the neo4j instances are started (```$NEO4J_HOME/bin/neo4j start```)you should be able to excecute the query ```:sysinfo``` in the webconsole: in our case: [http://raspberrypi_2:7474/browser/](http://raspberrypi_2:7474/browser/). The following images shows the result for both the Master and a Slave instance.
+If everything is setup correctly and the neo4j instances are started (```$NEO4J_HOME/bin/neo4j start```) you should be able to excecute the query ```:sysinfo``` in the webconsole. In our case: [http://raspberrypi_2:7474/browser/](http://raspberrypi_2:7474/browser/). The following images show the result for both the Master and a Slave instance.
 <div class="row">
   <div class="span5">
     <img alt="Neo4j master" src="static/images/neo4j-ha/neo4j_master_info.png">
@@ -119,7 +119,7 @@ If everything is setup correctly and the neo4j instances are started (```$NEO4J_
 
 
 ### HA Proxy setup
-Now that we have our Neo4j cluster up and running it's time to take a look at the Proxy. For this setup I've used HA Proxy. The main reason: It was described very well in [the blog of Stefan Armbruster](http://blog.armbruster-it.de/2015/08/neo4j-and-haproxy-some-best-practices-and-tricks/) 
+Now that we have our Neo4j cluster up and running it's time to take a look at the Proxy. For this setup I've used HA Proxy. The main reason is that it has been described very well in [a blog post by Stefan Armbruster](http://blog.armbruster-it.de/2015/08/neo4j-and-haproxy-some-best-practices-and-tricks/) 
 
     :::python
     global
@@ -150,7 +150,7 @@ Now that we have our Neo4j cluster up and running it's time to take a look at th
 
 With the configuration above we will accept 60 connections to the HA Proxy. The load will be spread round robin to all 3 Neo4j instances.
 
-There is a lot that we can improve on the configuration above. But I want to add at leased one improvement. While every Neo4j instance in the Cluster is able to handle write operations, it is advised ([http://neo4j.com/docs/stable/ha-how.html](http://neo4j.com/docs/stable/ha-how.html)) to perform write operations to the Master instance. There are some different ways to detect a write operation. On a REST api, POST, PUT and DELETE operations are a good indication of a write operation. Neo4j requests are always a POST operation, so this doesn't work. We could also inspect the query and search for keywords like: CREATE, MERGE, DELETE, SET, REMOVE. But in my upinion this is not the responsibility of the load balancer. I prefer to handle this functionality in HA Proxy with a HTTP header to indicate the write operation from the client. In this way the configuration of the loadbalancer can than be very clean.
+There is a lot that we can improve on the configuration above. But I want to add at least one improvement. While every Neo4j instance in the Cluster is able to handle write operations, it is advised ([http://neo4j.com/docs/stable/ha-how.html](http://neo4j.com/docs/stable/ha-how.html)) to perform write operations to the Master instance. There are some different ways to detect a write operation. On a REST api, POST, PUT and DELETE operations are a good indication of a write operation. Neo4j requests are always a POST operation, so this doesn't work. We could also inspect the query and search for keywords like: CREATE, MERGE, DELETE, SET, REMOVE. But in my opinion this is not the responsibility of the load balancer. I prefer to handle this functionality in HA Proxy with a HTTP header to indicate the write operation from the client. In this way the configuration of the loadbalancer can be very clean.
 
     :::python
     frontend http-in
@@ -165,7 +165,7 @@ There is a lot that we can improve on the configuration above. But I want to add
             server s2 192.168.2.7:7474 maxconn 10 check
             server s3 192.168.2.9:7474 maxconn 10 check
 
-The acl will check for the X-Write header to be present. If that header is present we ```use_backend``` neo4j-master. Else we will follow the fallback to the ```default_backend```.
+The acl will check for the X-Write header to be present. If that header is present we ```use_backend``` neo4j-master. In all other cases we will follow the fallback to the ```default_backend```.
 
 To identify the Master instance we can use the Neo4j endpoint: ```/db/manage/server/ha/master```. This endpoint will return a HTTP 200 response if this machine is the master and a 404 in case of a slave instance.
 
@@ -176,9 +176,9 @@ In the image below you can see the HA Proxy statistics page.
 For the full explanation of HA Proxy take a look at the [HAProxy Configuration Manual]("http://cbonte.github.io/haproxy-dconv/configuration-1.6.html")
 
 
-### Lets test (and play)
+### Let's test (and play)
 
-Now that we have a Neo4j cluster and a loadbalancer in place we can start playing with setup. One important part in the HA Proxy configuration is the ```check``` option. This will constantly check with the ```httpchk``` option if an instance is available or is still the master. Thereby all request will be routed correctly in case of a restart of an instance.
+Now that we have a Neo4j cluster and a loadbalancer in place we can start playing with setup. One important part in the HA Proxy configuration is the ```check``` option. This will constantly check with the ```httpchk``` option if an instance is available or is still the master, making sure that all requests will be routed correctly in case of the restart of an instance.
 
 In the following two images you can see this in action. The first image shows that all instances are up and running. On a shutdown of instance 2 you can see that the second line has become red in image two.
 
@@ -193,12 +193,11 @@ In the following two images you can see this in action. The first image shows th
   </div>
 </div>
 
-
 ### Ansible
-Because I don't like to repeat myself I've used Ansible to provision the raspberry Pi's.
+Because I don't like to repeat myself I've used Ansible to provision the Raspberry pi's.
 The complete project can be found on [my github repo](https://github.com/rweverwijk/neo4j-cluster-ansible), but I will share some parts here.
 
-With ansible you can make sure that config files are present on a server. You can also check if the config files are different than the once already on the server. And take an action when the config is changed: for example restart to make the config active.
+With ansible you can make sure that config files are present on a server. You can also check if the config files are different than the ones already on the server. And take an action when the config is changed: for example restart to make the config active.
 
     :::python
     - name: Copy neo4j config templates
