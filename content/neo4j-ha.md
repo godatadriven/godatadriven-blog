@@ -1,14 +1,16 @@
 Title: Neo4j HA on a Raspberry pi cluster
 Date: 2016-02-05 17:00
-Slug: neo4j-ha
+Slug: neo4j-ha-on-a-raspberry-pi
 Author: Ron van Weverwijk
-Excerpt: Neo4j is a great graph-database. Most of the times I work with with just a single instance. Most production systems run in a High Available setup though. In this blog we will show how easy it is to create a Neo4j HA cluster including a proxy server in front to get most out of the setup.
+Excerpt: How to create a Neo4j HA cluster including a proxy server on a Raspberry pi cluster
 Template: article
 Latex:
 
 <span class="lead">
-Neo4j is a great graph-database. Most of the times I work with with just a single instance. Most production systems run in a High Available setup though. In this blog we will show how easy it is to create a Neo4j HA cluster on a Raspberry pi cluster including a proxy server in front to get most out of the setup. Questions will raise: "Why would you install a Neo4j cluster on a Raspberry?". Actually: Because it's fun and because we can ;)
+In this blog we will show how easy it is to create a Neo4j HA cluster on a Raspberry pi cluster including a proxy server in front to get most out of the setup. Questions will raise: "Why would you install a Neo4j cluster on a Raspberry?". Actually: Because it's fun and because we can ;)
 </span>
+
+Personally, I am known to be a big fan of Neo4j, simply because it is a great graph-database. Most of the times I work with just a single instance. Most production systems however run in a High Availability setup. In the past period I have experimented with the set-up of such a Raspberry pi cluster. In this article I share my learnings during this experiment.
 
 To start building our cluster, we needed some hardware. I've used:
 
@@ -32,9 +34,9 @@ To start building our cluster, we needed some hardware. I've used:
 
 ### How to shard a graph
 
-A few years ago the IT industry was in de middle of the NoSql hype. Companies saw that they where storing more and more data. The current solutions couldn't cope with these amounts of data or complexity. A lot of the NoSql solutions solved the issue around high volume by offering a sharding solution for data. This works great for disconnected data. Key-value stores and document stores like Redis or Mongo db store records in partitions and can easily scale-up horizontally.
+A few years ago, the NoSql / [Hadoop](/http://www.godatadriven.com/hadoop "Hadoop") hype was at its peak. Companies saw a drastic increase in the amount of data they stored. The then available solutions couldn't cope with these amounts of data or complexity. A lot of the NoSql solutions solved the issue around high volume by offering a sharding solution for data. This works great for disconnected data. Key-value stores and document stores like Redis or Mongo db store records in partitions and can easily scale-up horizontally.
 
-In image 3 you can see what would happen with a Graph if you would shard it in the same way. Neo4j focusses on delivering a solution for a fast online graph-database. If you would query for data that is stored on different machines it is a near-impossible problem to make it perform fast.
+In image 3 you can see what would happen with a graph if you would shard it in the same way. Neo4j focusses on delivering a solution for a fast online graph-database. If you would query data that is stored on different machines it is a near-impossible problem to make it perform fast.
 
 Thereby the solution Neo4j HA offers is a full replicated cluster, see image 4. Every Neo4j instance in the cluster will contain the complete graph. The HA solution will make sure all instances will remain in sync. 
 
