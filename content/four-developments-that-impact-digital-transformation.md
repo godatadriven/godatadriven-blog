@@ -20,10 +20,10 @@ In the past five to seven years the world has become hyper-connected. The opport
 
 Tom Reilly gives an example of an auto manufacturer. “If you’re not building a connected car, you are in trouble. So auto manufacturers are quickly becoming data management companies.” Bottom-line is that every enterprise becomes a technology company, no matter what business you are in.
 
-In this new era of computing, both large enterprises and startups are adopting Hadoop. Bu implementing and supporting Hadoop, large organizations validate this technology, leading to an expansion of the market.
+In this new era of computing, both large enterprises and startups are adopting [Hadoop](http://www.godatadriven.com/hadoop "Hadoop"). By implementing and supporting Hadoop, large organizations validate this technology, leading to an expansion of the market.
  
 ## Shifting from technology to use cases
-In 2014 everyone talked about technology, and this conversation shifted to the combination of technologies to create a data hub. Some call the central data platform a data lake, to illustrate to CIO’s where data fits in the data landscape.
+In 2014 everyone talked about technology, and this conversation shifted to the combination of technologies to create a data hub. Some call the central data platform a data lake, to illustrate CIO’s where the data platform fits in with the data landscape.
 
 Now in 2016, Cloudera, much like us, sees boardroom use cases emerging. These use cases often come down to customer insight, Internet of Things data-driven products and services, and lowering business risk.
 
@@ -32,7 +32,9 @@ According to the Cloudera chief executive, the worst thing an enterprise could d
 ## Data Science as competitive advantage
 The typical evolution of software products involves the development of features that replace custom services, like Data Science. Tom Reilly however, does not think that packaged applications will be developed on top of Cloudera. 
 
-The following is an example that Tom Reilly gives during the interview: “Algorithms that determine what your product will be when you say “pay when you drive” will be the competitive advantage. Buying packaged algorithms doesn’t make sense, you want to have you own data scientists to create algorithms and use that as a competitive advantage”.
+The following is an example of usage-based insurance that Tom Reilly gave during the interview: “Algorithms that determine what your product will be when you say “pay when you drive” will be the competitive advantage. Buying packaged algorithms doesn’t make sense, you want to have you own data scientists to create algorithms and use that as a competitive advantage”.
+
+This is in line with our experience that enterprises can exchange technology, but should protect their algorithms, as it is the latter that provides the real competitive advantage. Just like in this [use case of a Dutch e-retailer](http://www.godatadriven.com/casestudy-e-retail "Case study e-retail").
 
 Cloudera aims at packaging as much of the building blocks as they can and then provide data scientists with the tools to determine their specific offerings. Partners like GoDataDriven are essential to provide the specific expertise needed to develop successful use cases for each vertical industry, like financial services, retail, healthcare etc. 
 
