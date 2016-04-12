@@ -6,11 +6,9 @@ Excerpt: Four subjects that immediately impact the digital transformation, taken
 Template: article
 Latex:
 
-# Interview with Cloudera CEO: Four developments that impact digital transformation
+<span class="lead">At the end of March, [Strata + Hadoop World](http://conferences.oreilly.com/strata/hadoop-big-data-ca "Strata + Hadoop World, San Jose") took place in San Jose. Forbes had an [interesting interview with Tom Reilly](http://www.forbes.com/sites/roberthof/2016/04/06/ceo-tom-reilly-makes-the-case-for-cloudera-and-its-ipo/ "Forbes interview with Tom Reilly, CEO of Cloudera"), chief executive of [Cloudera](http://www.cloudera.com "Cloudera"). In this post we highlighted four developments that have a direct impact on digital transformation. </span>
 
-<span class="lead">Four developments that have a direct impact on digital transformation, taken from an interview with Tom Reilly, CEO of [Cloudera](http://www.cloudera.com "Cloudera").</span>
-
-At the end of March, [Strata + Hadoop World](http://conferences.oreilly.com/strata/hadoop-big-data-ca "Strata + Hadoop World, San Jose") took place in San Jose. Forbes had an [interesting interview with Tom Reilly](http://www.forbes.com/sites/roberthof/2016/04/06/ceo-tom-reilly-makes-the-case-for-cloudera-and-its-ipo/ "Forbes interview with Tom Reilly, CEO of Cloudera"), chief executive of Cloudera. In this post we highlighted four developments that have a direct impact on digital transformation. 
+These developments, of course in a random order, are:
 
 + The hyper connected world
 + Shifting from technology to use cases
