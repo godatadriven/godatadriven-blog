@@ -1,5 +1,5 @@
 Title: Neo4j HA on a Raspberry pi cluster
-Date: 2016-02-05 17:00
+Date: 2016-04-18 20:48
 Slug: neo4j-ha-on-a-raspberry-pi
 Author: Ron van Weverwijk
 Excerpt: How to create a Neo4j HA cluster including a proxy server on a Raspberry pi cluster
