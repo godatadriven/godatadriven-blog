@@ -22,10 +22,12 @@ To start building our cluster, we needed some hardware. I've used:
 
 <div class="row">
   <div class="span5">
-    <img alt="Bunch of raspberry stuff" src="static/images/neo4j-ha/IMG_0392.JPG">
+    <img alt="Bunch of raspberry stuff" src="static/images/neo4j-ha/raspberry_stuff.JPG">
+    <p>Bunch of raspberry stuff</p>
   </div>
   <div class="span5">
-    <img alt="Raspberry pi cluster" src="static/images/neo4j-ha/IMG_0389.JPG">
+    <img alt="Raspberry pi cluster" src="static/images/neo4j-ha/raspberry_pi_cluster.JPG">
+    <p>Raspberry pi cluster</p>
   </div>
 </div>
 
