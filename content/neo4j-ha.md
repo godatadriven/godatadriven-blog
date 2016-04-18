@@ -31,9 +31,6 @@ To start building our cluster, we needed some hardware. I've used:
   </div>
 </div>
 
-
-*Looks great right?* 
-
 ### How to shard a graph
 
 A few years ago, the NoSql / [Hadoop](/http://www.godatadriven.com/hadoop "Hadoop") hype was at its peak. Companies saw a drastic increase in the amount of data they stored. The then available solutions couldn't cope with these amounts of data or complexity. A lot of the NoSql solutions solved the issue around high volume by offering a sharding solution for data. This works great for disconnected data. Key-value stores and document stores like Redis or Mongo db store records in partitions and can easily scale-up horizontally.
@@ -259,3 +256,7 @@ Will result in:
             server s2 192.168.2.7:7474 maxconn 10 check
             server s3 192.168.2.9:7474 maxconn 10 check
 
+### Summary
+As you could see, we only needed to change 6 properties in the Neo4j configuration. Add a load balancer with around 30 lines to have build a Neo4j cluster. I think it’s quite amazing!
+
+It will cost me more time to explain how to build a Neo4j cluster than actually implement one.
