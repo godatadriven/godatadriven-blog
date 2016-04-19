@@ -8,7 +8,7 @@ Latex:
 
 ## First training in our new Amsterdam office
 
-<span class="lead">Recently we moved into our new office in Amsterdamm including modern training facilities. The first training is already in progress.</span>
+<span class="lead">Recently we moved into our new office in Amsterdam including modern training facilities. The first training is already in progress.</span>
 
 ![first training in Amsterdam](static/images/training-office/first-training-amsterdam-office-1.jpg "first training in our Amsterdam office")
 
