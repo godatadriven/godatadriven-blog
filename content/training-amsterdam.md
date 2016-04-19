@@ -12,7 +12,7 @@ Latex:
 
 ![first training in Amsterdam](static/images/training-office/first-training-amsterdam-office-1.jpg "first training in our Amsterdam office")
 
-We believe that training is an essential element for organizations to become DataDriven. That is why GoDataDriven offers an extensive curriculum of Big Data and Data Science training, ranging from in-house developed training to official Cloudera, Databricks, Confluent, and Neo4J training. 
+We believe that training is an essential element for organizations to become DataDriven. That is why GoDataDriven offers an extensive curriculum of [Big Data](http://www.godatadriven.com/bigdata-training "Big Data Training") and [Data Science](http://www.godatadriven.com/datascience-training "Data Science training") training, ranging from in-house developed training to official Cloudera, Databricks, Confluent, and Neo4J training. 
 
 Expanding your set of skills can be an intensive, but rewarding process. Should this be a dull and flat experience? We don't think so. That is why we invested in state-of-art training facilities, in an inspiring environment. What this includes? Coffee that tastes so fresh, you feel like you are on a coffee plantation. Lunch so tasty, that you only stop eating because your rationality has already told you twice that your full. Thankfully, the climbing wall is ready for use throughout the day to bring the mind in balance with your body.
 
