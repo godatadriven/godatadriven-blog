@@ -1,5 +1,5 @@
 Title: First training in Amsterdam office
-Date: 2015-08-25 15:00
+Date: 2016-04-19 15:00
 Slug: training-amsterdam
 Author: Walter van der Scheer
 Excerpt: Woohoo, our new training facilities are up and running. First training already in progress.
