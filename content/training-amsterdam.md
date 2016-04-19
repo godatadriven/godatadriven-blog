@@ -10,7 +10,7 @@ Latex:
 
 <span class="lead">Recently we moved into our new office in Amsterdamm including modern training facilities. The first training is already in progress.</span>
 
-![first training in Amsterdam](static/images/training-office/first-training-amsterdam-office-1.jpg)
+![first training in Amsterdam](static/images/training-office/first-training-amsterdam-office-1.jpg "first training in our Amsterdam office")
 
 We believe that training is an essential element for organizations to become DataDriven. That is why GoDataDriven offers an extensive curriculum of Big Data and Data Science training, ranging from in-house developed training to official Cloudera, Databricks, Confluent, and Neo4J training. 
 
