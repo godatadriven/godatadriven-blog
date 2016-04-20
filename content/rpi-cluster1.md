@@ -1,5 +1,5 @@
 Title: Building a Raspberry Pi computing cluster
-Date: 2016-04-05 10:00
+Date: 2016-04-21 10:00
 Slug: rpi-cluster1
 Author: Rogier van der Geer
 Excerpt: <hier moet nog iets komen>
@@ -8,12 +8,9 @@ Latex:
 
 <span class="lead">The datasets that data scientists work with usually are so large that they require very powerful machines or large computing clusters. Such infrastructure does not come cheap, which makes it difficult to play around with the tools that are typically used on these computing clusters for those not actively involved in a project where the infrastructure is available. In many cases, however, computing clusters need not be powerful to run these tools.</span>
 
-Since the introduction of the  anyone can build their own 
-computing cluster. A setup of 
-
-## Setting up your own cluster
-
-In order to set up your own cluster, you'll need a set of [Raspberry Pi](https://en.wikipedia.org/wiki/Raspberry_Pi)'s. 
+As Ron shows in his recent [post](/neo4j-ha-on-a-raspberry-pi.html), building your own cluster isn't an unattainable dream
+anymore since the introduction of the [Raspberry Pi](https://en.wikipedia.org/wiki/Raspberry_Pi). With a few of these
+little machines, anyone can build their own cluster.
 Any version of the Raspberry Pi should work, as long as it has a network socket. Of course the newer Pi's pack more 
 computing power and memory, but if you want speed then setting up a Raspberry Pi cluster probably is a bad idea anyway. 
 
@@ -264,4 +261,6 @@ server(s) to the `/etc/hosts` file, as described above for the peers.
 You may run into problems if the version of GlusterFS that is provided in the `glusterfs-client` package on your client
 machine is not the same as the one that is provided in the `glusterfs-server` package on your servers. In this case you can
 instead install the client from [source](http://www.gluster.org/download/).
+
+### Performance
 
