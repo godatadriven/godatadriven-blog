@@ -1,4 +1,4 @@
-Title: Building a Raspberry Pi computing cluster
+Title: Building a Raspberry Pi storage cluster
 Date: 2016-05-03 8:00
 Slug: rpi-gluster
 Author: Rogier van der Geer
