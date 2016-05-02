@@ -1,8 +1,8 @@
 Title: Building a Raspberry Pi computing cluster
-Date: 2016-04-21 10:00
+Date: 2016-05-03 8:00
 Slug: rpi-gluster
 Author: Rogier van der Geer
-Excerpt: <hier moet nog iets komen>
+Excerpt: Installing GlusterFS on a cluster of Raspberry Pis.
 Template: article
 Latex:
 
@@ -53,7 +53,9 @@ PING rpi1 (10.0.1.1) 56(84) bytes of data.
 
 The installation of the GlusterFS package is very simple: running
 
-`user@rpi0~$ sudo apt-get install glusterfs-server`
+```bash
+user@rpi0~$ sudo apt-get install glusterfs-server
+```
 
 will install all required packages on a node. Repeat this on each node.
 
@@ -183,7 +185,7 @@ gluster volume create <volume_name> replica 2 transport tcp server1:/exp1 server
 the first two bricks will form a replica set, as will the last two bricks. In this case, that means that the replicas will
 live on the same server, which is generally a bad idea. Instead one can order the bricks such that files are replicated on
 both servers:
-```
+```bash
 gluster volume create <volume_name> replica 2 transport tcp server1:/exp1 server2:/exp3 server1:/exp2 server2:/exp4
 ```
 
@@ -201,7 +203,7 @@ user@rpi0~$ sudo gluster volume start gv
 volume start: gv: success
 ```
 after which we can check that it is in fact started:
-```
+```bash
 user@rpi0~$ sudo gluster volume info
 
 Volume Name: gv
@@ -310,7 +312,7 @@ user@client~$ dd if=/mnt/gluster/file2.rnd of=/dev/null bs=131072
 
 Once read, the file remains cached, as you can see when you read it again:
 
-```
+```bash
 user@client~$ dd if=/mnt/gluster/file2.rnd of=/dev/null bs=131072
 512+0 records in
 512+0 records out
@@ -362,7 +364,7 @@ rm: cannot remove ‘file4.rnd’: Invalid argument
 
 Some of these errors you may be able to fix by re-mounting the volume on the client or perhaps by restarting all servers. If that does not the problem, try rebalancing the volume. On one of the servers, run:
 
-```
+```bash
 user@rpi0~$ sudo gluster volume rebalance gv fix-layout start
 ```
 
