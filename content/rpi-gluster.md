@@ -268,7 +268,7 @@ instead install the client from [source](http://www.gluster.org/download/).
 
 ### Performance
 
-To test the performance of the newly created filesystem we will use a fifth Raspberry Pi, on which I mounted the volume as described above. Keep in mind that since this also a Raspberry Pi, all performance measures below could be due to limited computing power on the client side.
+To test the performance of the newly created filesystem we will use a fifth Raspberry Pi, on which I mounted the volume as described above. Keep in mind that since this also a Raspberry Pi all performance measures below could be (are) also limited by the computing power on the client side.
 
 #### Writing performance
 
@@ -281,7 +281,7 @@ user@client~$ dd if=/dev/urandom of=/mnt/gluster/file1.rnd count=65536 bs=1024
 67108864 bytes (67 MB) copied, 239.101 s, 281 kB/s
 ```
 
-The achieved speed, `281 kB/s`, is far from impressive. Increasing the block size to 128 kB increases this speed significantly:
+The achieved speed, 281 kB/s, is far from impressive. Increasing the block size to 128 kB increases this speed significantly:
 
 ```bash
 user@client~$ dd if=/dev/urandom of=/mnt/gluster/file2.rnd bs=131072 count=512
@@ -301,7 +301,7 @@ user@client~$ dd if=/dev/urandom of=/dev/null count=65536 bs=1024
 
 #### Reading performance
 
-Reading a file is much faster than writing, as you might have expected:
+Reading a file is much faster than writing, as you may have expected:
 
 ```bash
 user@client~$ dd if=/mnt/gluster/file2.rnd of=/dev/null bs=131072
@@ -321,7 +321,7 @@ user@client~$ dd if=/mnt/gluster/file2.rnd of=/dev/null bs=131072
 
 #### Small files
 
-It is when performing operations on many small files that the performance really drops. For example, if we create a folder containing 1024 files of 4 kB each:
+It is when performing operations on many small files that the performance really drops. For example, if we create a folder containing 1024 files, each of 4 kB:
 
 ```bash
 user@client~$ mkdir /mnt/gluster/dir1/
@@ -370,4 +370,4 @@ user@rpi0~$ sudo gluster volume rebalance gv fix-layout start
 
 ### Conclusion
 
-Although the Raspberry Pis are clearly not made to run this kind of filesystem (and of course GlusterFS was not made to run on a Raspberry Pi) it is perfectly possible to create your own ~~high performance and~~ highly available filesystem. Even if one of your Raspberry Pis crashes (mine do once in a while) you will still be able to access all your files.
+Although the Raspberry Pis are clearly not made to run this kind of filesystem (and of course GlusterFS was not made to run on a Raspberry Pi) it is perfectly possible to create your own <s>high performance and</s> highly available filesystem. Even if one of your Raspberry Pis crashes (mine do once in a while) you will still be able to access all your files.
