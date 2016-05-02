@@ -20,6 +20,8 @@ For this post, I'm using a cluster of four Raspberry Pi B+ nodes, each with a si
 They all run the latest [Raspbian](https://www.raspbian.org) and have SD-cards of at least 16GB.
 Their hostnames are `rpi0` through `rpi3`, and they have ip addresses `10.0.1.0` through `10.0.1.3`.
 
+![A GoDataDriven Raspberry Pi storage cluster](/static/images/rpi-gluster/rpi-gluster.png)
+
 ## GlusterFS
 
 In this post we focus on [GlusterFS](https://en.wikipedia.org/wiki/GlusterFS "GlusterFS on Wikipedia"), 
