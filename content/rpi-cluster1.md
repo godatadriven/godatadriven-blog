@@ -183,7 +183,7 @@ gluster volume create <volume_name> replica 2 transport tcp server1:/exp1 server
 the first two bricks will form a replica set, as will the last two bricks. In this case, that means that the replicas will
 live on the same server, which is generally a bad idea. Instead one can order the bricks such that files are replicated on
 both servers:
-```bash
+```
 gluster volume create <volume_name> replica 2 transport tcp server1:/exp1 server2:/exp3 server1:/exp2 server2:/exp4
 ```
 
@@ -201,7 +201,7 @@ user@rpi0~$ sudo gluster volume start gv
 volume start: gv: success
 ```
 after which we can check that it is in fact started:
-```bash
+```
 user@rpi0~$ sudo gluster volume info
 
 Volume Name: gv
@@ -310,13 +310,62 @@ user@client~$ dd if=/mnt/gluster/file2.rnd of=/dev/null bs=131072
 
 Once read, the file remains cached, as you can see when you read it again:
 
-```bash
+```
 user@client~$ dd if=/mnt/gluster/file2.rnd of=/dev/null bs=131072
 512+0 records in
 512+0 records out
 67108864 bytes (67 MB) copied, 0.252037 s, 266 MB/s
 ```
 
+#### Small files
 
+It is when performing operations on many small files that the performance really drops. For example, if we create a folder containing 1024 files of 4 kB each:
 
+```bash
+user@client~$ mkdir /mnt/gluster/dir1/
+user@client~$ for i in {1..1024}; do dd if=/dev/urandom of=/mnt/gluster/dir1/file${i}.rnd bs=4096 count=1; done
+```
 
+and then recursively copy this folder into another folder:
+
+```bash
+user@client~$ time cp -r /mnt/gluster/dir1 /mnt/gluster/dir2
+
+real	3m15.665s
+user	0m0.120s
+sys	0m1.900s
+```
+
+it takes over three __minutes__ to copy some 4 MB! By comparison, on the Raspberry Pi's SD card (which is fairly slow), this takes about half a second:
+
+```bash
+user@client~$ time cp -r ~/dir1 ~/dir2
+
+real	0m0.612s
+user	0m0.020s
+sys	0m0.590s
+```
+
+#### Availability
+
+One of the main promises of GlusterFS is redundancy. We can easily test this by shutting down one of the servers, after which the filesystem will respond like nothing happened. You can even shut down two of the servers, as long as you do not shut down two servers in the same replica set (in our example, `rpi0` and `rpi2` or `rpi1` and `rpi3`). 
+
+Even if you temporarily shut down two servers that are in the same replica set after each other (e.g. reboot `rpi0`, wait a few minutes, then reboot `rpi2`), things will carry on like nothing happened, as GlusterFS automatically distributes the changes when the brick comes back up. However, if you do not give it enough time to resync things go wrong, resulting in errors like:
+
+```bash
+user@client/mnt/gluster$ rm -r *
+rm: cannot remove ‘dir1’: Transport endpoint is not connected
+rm: cannot remove ‘dir2’: Transport endpoint is not connected
+rm: cannot remove ‘file3.rnd’: Invalid argument
+rm: cannot remove ‘file4.rnd’: Invalid argument
+```
+
+Some of these errors you may be able to fix by re-mounting the volume on the client or perhaps by restarting all servers. If that does not the problem, try rebalancing the volume. On one of the servers, run:
+
+```
+user@rpi0~$ sudo gluster volume rebalance gv fix-layout start
+```
+
+### Conclusion
+
+Although the Raspberry Pis are clearly not made to run this kind of filesystem (and of course GlusterFS was not made to run on a Raspberry Pi) it is perfectly possible to create your own ~~high performance and~~ highly available filesystem. Even if one of your Raspberry Pis crashes (mine do once in a while) you will still be able to access all your files.
