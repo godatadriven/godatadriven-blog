@@ -1,6 +1,6 @@
 Title: Building a Raspberry Pi computing cluster
 Date: 2016-04-21 10:00
-Slug: rpi-cluster1
+Slug: rpi-gluster
 Author: Rogier van der Geer
 Excerpt: <hier moet nog iets komen>
 Template: article
