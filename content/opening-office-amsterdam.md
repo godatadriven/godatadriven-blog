@@ -7,6 +7,7 @@ Template: article
 Latex:
 
 ![Opening GoDataDriven Amsterdam](/static/images/office-opening/godatadriven-singers-2.jpg "Opening GoDataDriven Amsterdam")
+
 <span class="lead">
 On April 29th 2016 GoDataDriven officially opened its new offices in Amsterdam. </span>
 
