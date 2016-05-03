@@ -6,10 +6,10 @@ Excerpt: View the movie of the official opening on April 29th 2016 of the GoData
 Template: article
 Latex:
 
-![Opening GoDataDriven Amsterdam](/static/images/officeopening/godatadriven-singers-2.jpg "Opening GoDataDriven Amsterdam")
-
 <span class="lead">
 On April 29th 2016 GoDataDriven officially opened its new offices in Amsterdam. </span>
+
+![Opening GoDataDriven Amsterdam](/static/images/officeopening/godatadriven-singers-2.jpg "Opening GoDataDriven Amsterdam")
 
 ![Reverse graffiti](/static/images/officeopening/godatadriven-nowopen.jpg "GoDataDriven now open in Amsterdam")
 
