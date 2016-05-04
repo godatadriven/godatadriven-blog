@@ -2,7 +2,7 @@ Title: Opening office Amsterdam
 Date: 2016-05-03 15:00
 Slug: opening-office-amsterdam
 Author: Walter van der Scheer
-Excerpt: View the movie of the official opening on April 29th 2016 of the GoDataDriven offices in Amsterdam.
+Excerpt: Official opening on April 29th 2016 of the GoDataDriven offices in Amsterdam.
 Template: article
 Latex:
 
