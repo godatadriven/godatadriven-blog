@@ -23,6 +23,4 @@ Of course, the office was opened with a big celebration, including singers, danc
 
 ![Opening party GoDataDriven](/static/images/officeopening/godatadriven-party.jpg "Opening party GoDataDriven")
 
-Check out the after movie:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tcMy2Ac2yGE?rel=0" frameborder="0" allowfullscreen></iframe>
