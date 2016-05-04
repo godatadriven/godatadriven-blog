@@ -54,10 +54,10 @@ DELETE_OUTPUT_DIRECTORY = True
 
 OFFICE_PHONE = "+31 (0)35 672 9069"
 OFFICE_EMAIL = "signal@godatadriven.com"
-OFFICE_STREET = "Utrechtseweg 49"
-OFFICE_CITY = "Hilversum" 
+OFFICE_STREET = "Wibautstraat 202"
+OFFICE_CITY = "Amsterdam" 
 OFFICE_COUNTRY = "Netherlands"
-OFFICE_ADDRESS = OFFICE_STREET + ',' + OFFICE_CITY + ',' + OFFICE_COUNTRY
+OFFICE_ADDRESS = OFFICE_STREET + ', ' + OFFICE_CITY + ', ' + OFFICE_COUNTRY
 COMPANY_DESCRIPTION = "We are GoDataDriven. A team of passionate data science and software engineering practicioners. By combining these disciplines with large-scale, open source information platforms, we create data driven solutions that add to our clients' bottom line. <br/> GoDataDriven was founded in 2013 as a spin off from Xebia Netherlands BV."
 
 GA_UA = 'UA-40578233-4'
