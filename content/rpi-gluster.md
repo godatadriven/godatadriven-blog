@@ -6,21 +6,21 @@ Excerpt: Installing GlusterFS on a cluster of Raspberry Pis.
 Template: article
 Latex:
 
-<span class="lead">The datasets that data scientists work with are usually so large that they require very powerful machines or large computing clusters. Such infrastructure does not come cheap, which makes it difficult to play around with the tools that are typically used on these computing clusters for those not actively involved in a project where the infrastructure is available. In many cases, however, computing clusters need not be powerful to run these tools.</span>
+<span class="lead">Due to the volume of data sets, Data Science projects are typically executed on large computing clusters or very powerful machines. And because of the cost of such infrastructure you only get access to Data Science tools when you are actively involved in a project. But is that really true or is there a way to play around with Data Science tools without having to dig deep in your pockets? I decided to start my own side-project building my own storage cluster. On a few Raspberyy Pi's...</span>
 
-As Ron shows in his recent [post](/neo4j-ha-on-a-raspberry-pi.html), building your own cluster isn't an unattainable dream
-anymore since the introduction of the [Raspberry Pi](https://en.wikipedia.org/wiki/Raspberry_Pi). With a few of these
-little machines, anyone can build their own cluster.
+As Ron shows in his recent [post](/neo4j-ha-on-a-raspberry-pi.html "Neo4J on a Raspberry Pi), building your own cluster isn't an unattainable dream
+anymore since the introduction of the [Raspberry Pi](https://en.wikipedia.org/wiki/Raspberry_Pi "Raspberry Pi"). With just a few of these little machines, anyone can build their own cluster.
+
 Any version of the Raspberry Pi should work, as long as it has a network socket. Of course the newer Pi's pack more 
 computing power and memory, but if you want speed then setting up a Raspberry Pi cluster probably is a bad idea anyway. 
 
 For each node you'll need an SD or microSD card (depending on the version) of at least 4GB, but it is probably wise to get a bit more space. Additionally, each node will need a micro-USB power supply. If you have a little experience with electronics you can save some money (and space) by getting a 5V power brick and connecting that to all Pi's. Finally you'll need to connect all of the nodes to the same network (and the internet), so you may need to get a switch and some ethernet cables.
 
 For this post, I'm using a cluster of four Raspberry Pi B+ nodes, each with a single-core BCM2708 cpu and 512MB ram. 
-They all run the latest [Raspbian](https://www.raspbian.org) and have SD-cards of at least 16GB.
+They all run the latest [Raspbian](https://www.raspbian.org "Raspbian") and have SD-cards of at least 16GB.
 Their hostnames are `rpi0` through `rpi3`, and they have ip addresses `10.0.1.0` through `10.0.1.3`.
 
-![A GoDataDriven Raspberry Pi storage cluster](/static/images/rpi-gluster/rpi-gluster.png)
+![A GoDataDriven Raspberry Pi storage cluster](/static/images/rpi-gluster/rpi-gluster.png "A GoDataDriven Raspberry Pi storage cluster")
 
 ## GlusterFS
 
