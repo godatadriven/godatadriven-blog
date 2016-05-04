@@ -1,5 +1,5 @@
 Title: Building a Raspberry Pi storage cluster
-Date: 2016-05-03 8:00
+Date: 2016-05-04 8:00
 Slug: rpi-gluster
 Author: Rogier van der Geer
 Excerpt: Installing GlusterFS on a cluster of Raspberry Pis.
