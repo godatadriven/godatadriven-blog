@@ -10,16 +10,14 @@ Latex:
 
 ![Neo4j Graph Databases Meetup](static/images/neo4j-meetup/godatadriven-neo4j-1.jpg "Neo4j Graph Databases Meetup")
 
-During this session, Rik van Bruggen introduced the attendees to the fundamentals of graph databases. Also, he took some time to explore some interesting publicly available datasets, and import them into Neo4j and ask some interesting questions of the datasets. 
-
-There was ample room to play around with various data sets including Dutch KvK data, NS GTFS datafeed, and Global Terrorism Database. 
+During this session, Rik van Bruggen introduced the attendees to the fundamentals of graph databases. Also, he took some time to explore a interesting publicly available dataset, and import it into Neo4j and ask some interesting questions of the dataset.
 
 Attendees were enthusiastic about the location and the presentations:
 
-"I hadn't attended the neo4j meetup for a while, but I noticed the product has matured a lot. It's always nice to meetup with the friendly Rick and Ron"
+"I hadn't attended the Neo4j meetup for a while, but I noticed the product has matured a lot. It's always nice to meetup with the friendly Rik and Ron"
 
 "Great content, awesome location."
 
-The next Neo4j is scheduled for May 8th: [GraphDays in Pakhuis de Zwijger on June 8](http://neo4j.com/graphdays/ "Graph Days Amsterdam").
+The next Neo4j is scheduled for June 14th: [Open Cypher - The graph query language on June 14th](http://www.meetup.com/graphdb-netherlands/events/230867860/ "Graph Days Amsterdam").
 
 ![Neo4j Graph Databases Meetup](static/images/neo4j-meetup/godatadriven-neo4j-2.jpg "Neo4j Graph Databases Meetup")
