@@ -8,7 +8,7 @@ Latex:
 
 <span class="lead">Tuesday May 3rd 2016 GoDataDriven hosted the Graph Databases Meetup, organized by Neo4j and GoDataDriven's own [Ron van Weverwijk](http://www.godatadriven.com/ronvanweverwijk "Ron van Weverwijk").</span>
 
-![Neo4j Graph Databases Meetup](images/neo4j-meetup/godatadriven-neo4j-1.jpg "Neo4j Graph Databases Meetup")
+![Neo4j Graph Databases Meetup](static/images/neo4j-meetup/godatadriven-neo4j-1.jpg "Neo4j Graph Databases Meetup")
 
 During this session, Rik van Bruggen introduced the attendees to the fundamentals of graph databases. Also, he took some time to explore some interesting publicly available datasets, and import them into Neo4j and ask some interesting questions of the datasets. 
 
@@ -22,4 +22,4 @@ Attendees were enthusiastic about the location and the presentations:
 
 The next Neo4j is scheduled for May 8th: [GraphDays in Pakhuis de Zwijger on June 8](http://neo4j.com/graphdays/ "Graph Days Amsterdam").
 
-![Neo4j Graph Databases Meetup](images/neo4j-meetup/godatadriven-neo4j-2.jpg "Neo4j Graph Databases Meetup")
+![Neo4j Graph Databases Meetup](static/images/neo4j-meetup/godatadriven-neo4j-2.jpg "Neo4j Graph Databases Meetup")
