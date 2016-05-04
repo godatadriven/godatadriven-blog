@@ -1,8 +1,8 @@
-Title: Building a Raspberry Pi storage cluster
+Title: Building a Raspberry Pi storage cluster to run Big Data tools at home
 Date: 2016-05-04 8:00
 Slug: rpi-gluster
 Author: Rogier van der Geer
-Excerpt: Building a Raspberry Pi cluster to see if it is possible to run Big Data tools at home.
+Excerpt: In order to make Big Data tools available for home use, Rogier van der Geer decided to build a Raspberry Pi cluster.
 Template: article
 Latex:
 
