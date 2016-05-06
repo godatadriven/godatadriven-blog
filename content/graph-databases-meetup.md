@@ -18,6 +18,6 @@ Attendees were enthusiastic about the location and the presentations:
 
 "Great content, awesome location."
 
-The next Neo4j is scheduled for June 14th: [Open Cypher - The graph query language on June 14th](http://www.meetup.com/graphdb-netherlands/events/230867860/ "Graph Days Amsterdam").
+The next Neo4j is scheduled for June 14: [Open Cypher - The graph query language](http://www.meetup.com/graphdb-netherlands/events/230867860/ "Graph Days Amsterdam").
 
 ![Neo4j Graph Databases Meetup](static/images/neo4j-meetup/godatadriven-neo4j-2.jpg "Neo4j Graph Databases Meetup")
