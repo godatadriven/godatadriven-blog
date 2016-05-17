@@ -10,10 +10,9 @@ Latex:
 On May 16, 2016, GoDataDriven hosted the second PyData Amsterdam Meetup. Speakers included Niels Zeilemaker and Wendell Kuling.
 </span>
 
-![PyData Amsterdam Meetup](/static/images/pydata-meetup/pydata-amsterdam-meetup.jpg "Full room at PyData Amsterdam Meetup")
+<iframe width="853" height="480" src="https://www.youtube.com/embed/Z4-8zJSUqmo?rel=0" frameborder="0" allowfullscreen></iframe>
 
 ## Second PyData Amsterdam Meetup
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Z4-8zJSUqmo?rel=0" frameborder="0" allowfullscreen></iframe>
 
 For this second [PyData Amsterdam Meetup](http://www.meetup.com/PyData-NL "PyData Amsterdam") over 110 people turned up to watch presentations by GoDataDriven's [Niels Zeilemaker](http://godatadriven.com/niels-zeilemaker "Niels Zeilemaker, Data Hacker") and ING Wholesale Banking's data scientist Wendell Kuling. The Meetup was sponsored by a consortium of Schiphol Group, Microsoft, and GoDataDriven, to introduce the [Schiphol Data Science Hackathon](https://www.eventbrite.nl/e/tickets-data-science-hackathon-schiphol-airport-25190579702 "Schiphol Data Science Hackathon") that will take place on Friday October 28.
 
