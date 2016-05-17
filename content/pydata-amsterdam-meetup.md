@@ -1,5 +1,5 @@
 Title: PyData Amsterdam Meetup May 2016
-Date: 2016-02-23 15:00
+Date: 2016-05-17 15:00
 Slug: pydata-amsterdam-meetup
 Author: Walter van der Scheer
 Excerpt: On May 16, 2016, GoDataDriven hosted the second PyData Amsterdam Meetup. Speakers included Niels Zeilemaker and Wendell Kuling.
