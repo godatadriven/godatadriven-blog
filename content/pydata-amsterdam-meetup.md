@@ -1,0 +1,36 @@
+Title: PyData Amsterdam Meetup May 2016
+Date: 2016-02-23 15:00
+Slug: pydata-amsterdam-meetup
+Author: Walter van der Scheer
+Excerpt: On May 16, 2016, GoDataDriven hosted the second PyData Amsterdam Meetup. Speakers included Niels Zeilemaker and Wendell Kuling.
+Template: article
+Latex:
+
+<span class="lead">
+On May 16, 2016, GoDataDriven hosted the second PyData Amsterdam Meetup. Speakers included Niels Zeilemaker and Wendell Kuling.
+</span>
+
+## Second PyData Amsterdam Meetup
+
+For this second [PyData Amsterdam Meetup](www.meetup.com/PyData-NL "PyData Amsterdam") over 110 people turned up to watch presentations by GoDataDriven's Niels Zeilemaker and ING Wholesale Banking's data scientist Wendell Kuling. The Meetup was sponsored by a consortium of Schiphol Group, Microsoft, and GoDataDriven, to introduce the [Schiphol Data Science Hackathon](https://www.eventbrite.nl/e/tickets-data-science-hackathon-schiphol-airport-25190579702 "Schiphol Data Science Hackathon") that will take place on Friday October 28.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z4-8zJSUqmo?rel=0" frameborder="0" allowfullscreen></iframe>
+
+### Niels Zeilemaker: Yes you can play Monopoly with a genetic algorithm
+
+The first speaker was [Niels Zeilemaker](godatadriven.com/niels-zeilemaker "Niels Zeilemaker, Data Hacker") with Yes you can play Monopoly with a genetic algorithm.
+
+[Niels Zeilemaker](www.godatadriven.com/niels-zeilemaker "Niels Zeilemaker, Data Hacker") is a Data Hacker at GoDataDriven, where he works for a wide range of companies where he spends his time doing feature engineering and building models. Before joining GoDataDriven, he finished his PhD thesis at the Technical University of Delft.
+
+In this talk Niels explained how to 'solve' Monopoly with a genetic algorithm. First he reminded us of the official rules of Monopoly, as nobody seems to actually play according to the rules. Niels then explained how he optimized the general buying rule by using a genetic algorithm, and finally how to optimize the number of houses to buy.  
+
+Next up was Wendell Kuling with "Name matching at scale: CPU, GPU or Spark?"
+
+### Wendell Kuling "Name matching at scale: CPU, GPU or Spark?"
+
+Wendell works as a Data Scientist at ING in the Wholesale Banking Advanced Analytics team. By applying Data Science Wendell's team provides better services to ING's corporate customers. Wendell covered several valuable learnings and experiences from projects where ING matches large datasets based on names. This talk included the key algorithms and packages used for name matching, and a best-practice approach in applying these algorithms at scale. Would you bet on a Cruncher (48-CPU/512 MB RAM machine), a Tesla (Cuda Tesla K80 with 4992 cores, 24GB memory) or a Spark cluster (80 cores/2,5 TB memory)?
+
+## About PyData Amsterdam
+PyData Amsterdam is a group for users and developers of data analysis tools in Python. The goals are to provide Python enthusiasts a place to share ideas and learn from each other about how best to apply the language and tools to ever-evolving challenges in the vast realm of data management, processing, analytics, and visualization. A goal of PyData groups, events and conferences is to provide a venue for users across all the various domains of data analysis to share their experiences and their techniques, as well as highlight the triumphs and potential pitfalls of using Python for certain kinds of problems. PyData is organized by [NumFOCUS.org](www.numfocus.org "NumFOCUS").
+
+Interested in joining the next PyData Amsterdam Meetup? [Join the group!](http://www.meetup.com/PyData-NL/ "PyData Amsterdam")
