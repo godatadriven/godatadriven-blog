@@ -14,7 +14,7 @@ On May 16, 2016, GoDataDriven hosted the second PyData Amsterdam Meetup. Speaker
 
 For this second [PyData Amsterdam Meetup](www.meetup.com/PyData-NL "PyData Amsterdam") over 110 people turned up to watch presentations by GoDataDriven's Niels Zeilemaker and ING Wholesale Banking's data scientist Wendell Kuling. The Meetup was sponsored by a consortium of Schiphol Group, Microsoft, and GoDataDriven, to introduce the [Schiphol Data Science Hackathon](https://www.eventbrite.nl/e/tickets-data-science-hackathon-schiphol-airport-25190579702 "Schiphol Data Science Hackathon") that will take place on Friday October 28.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Z4-8zJSUqmo?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z4-8zJSUqmo?rel=0" frameborder="0" allowfullscreen="true"></iframe>
 
 ### Niels Zeilemaker: Yes you can play Monopoly with a genetic algorithm
 
