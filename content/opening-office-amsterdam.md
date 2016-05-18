@@ -23,4 +23,4 @@ Of course, the office was opened with a big celebration, including singers, danc
 
 ![Opening party GoDataDriven](/static/images/officeopening/godatadriven-party.jpg "Opening party GoDataDriven")
 
-
+[Back to GoDataDriven website](http://www.godatadriven.com "GoDataDriven homepage")
