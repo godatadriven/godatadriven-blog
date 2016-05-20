@@ -27,6 +27,10 @@ The first speaker was [Niels Zeilemaker](http://godatadriven.com/niels-zeilemake
 
 In this talk Niels explained how to 'solve' Monopoly with a genetic algorithm. First he reminded us of the official rules of Monopoly, as nobody seems to actually play according to the rules. Niels then explained how he optimized the general buying rule by using a genetic algorithm, and finally how to optimize the number of houses to buy.  
 
+<iframe width="640" height="480" src="https://www.youtube.com/embed/5rDBA4nhoeU?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/dXZwc4oPM1yeLm" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/godatadriven/yes-you-can-play-monopoly-with-a-genetic-algorithm-niels-zeilemaker" title="Yes you can play Monopoly with a Genetic Algorithm - Niels Zeilemaker" target="_blank">Yes you can play Monopoly with a Genetic Algorithm - Niels Zeilemaker</a> </strong> from <strong><a href="//www.slideshare.net/godatadriven" target="_blank">GoDataDriven</a></strong> </div>
+
 Next up was Wendell Kuling with "Name matching at scale: CPU, GPU or Spark?"
 
 ### Wendell Kuling "Name matching at scale: CPU, GPU or Spark?"
