@@ -13,6 +13,7 @@ DataStax brings the most experienced DataStax Enterprise Apache Cassandra practi
 Tickets are free of charge, [register now](https://www.eventbrite.nl/e/datastax-day-tickets-25700325365 "Register for DataStax Day")
 
 ### Programme
+
 12:45- 13:00  Welcome speech Steve van den Berg, Regional VP Western Europe DataStax, Rob Dielemans, Managing Director GoDataDriven, Jan Depping, Partner Technology Strategist Microsoft
 13:00 - 14:00 Introduction to Cloud Applications, Robin Schumacher, VP Product DataStax 
 14:00 - 15:00 Introduction to Cassandra, Data structure, Replication capabilities, Jonathan Ellis, Chief Technology Officer & Co-Founder, DataStax 
