@@ -6,6 +6,8 @@ Excerpt: On June 16, DataStax Day NL will take place, including presentations fr
 Template: article
 Latex:
 
+![DataStax Day 2016](/static/images/datastax-day/datastax-day-2016.jpg "DataStax Day 2016")
+
 ## DataStax Day 2016
 On June 16, DataStax Day NL will take place at the Microsoft Offices in Schiphol. . We have put together an inspiring in-depth program. We are proud to announce that Jonathan Ellis, CTO and co-founder of DataStax, will be presenting at DataStax Day this year.
 DataStax brings the most experienced DataStax Enterprise Apache Cassandra practitioners, including Robin Schumacher, VP Product DataStax, DuyHai Doan and Vincent Poncet.
