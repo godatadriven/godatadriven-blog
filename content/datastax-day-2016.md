@@ -12,6 +12,18 @@ DataStax brings the most experienced DataStax Enterprise Apache Cassandra practi
 
 Tickets are free of charge, [register now](https://www.eventbrite.nl/e/datastax-day-tickets-25700325365 "Register for DataStax Day")
 
+### Why join DataStax Day 2016?
+
+1: One day full of the latest Cassandra and DataStax developments and best-practices.
+
+2: Learn how enterprises like Constant Contact, CERN, Comcast, eBay, GitHub, GoDaddy, Hulu, Instagram, Intuit, Netflix, Reddit, The Weather Channel, and over 1500 more companies that have large, active data sets, benefit from Cassandra.
+
+3: Have the unique opportunity to meet Jonathan Ellis, CTO and co-founder of DataStax
+
+4: Attend in-depth masterclasses by the most experienced Cassandra and DataStax practitioners, including Robin Schumacher, VP Product DataStax, DuyHai Doan and Vincent Poncet.
+
+5: Wehkamp, Dutch top-3 e-retailer, demonstrates how they leverage DataStax to improve their website performance.
+
 ### Programme
 
 12:45- 13:00  Welcome speech Steve van den Berg, Regional VP Western Europe DataStax, Rob Dielemans, Managing Director GoDataDriven, Jan Depping, Partner Technology Strategist Microsoft
