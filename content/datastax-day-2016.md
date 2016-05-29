@@ -15,16 +15,27 @@ Tickets are free of charge, [register now](https://www.eventbrite.nl/e/datastax-
 ### Programme
 
 12:45- 13:00  Welcome speech Steve van den Berg, Regional VP Western Europe DataStax, Rob Dielemans, Managing Director GoDataDriven, Jan Depping, Partner Technology Strategist Microsoft
+
 13:00 - 14:00 Introduction to Cloud Applications, Robin Schumacher, VP Product DataStax 
+
 14:00 - 15:00 Introduction to Cassandra, Data structure, Replication capabilities, Jonathan Ellis, Chief Technology Officer & Co-Founder, DataStax 
+
 15:00 - 15:45 Workshop : Data Modeling with DataStax Enterprise and Apache Cassandra - DuyHai Doan, Technical Advocate and Apache Cassandra Evangelist, DataStax 
+
 15:45 - 16:15 Coffee break
+
 16:15 - 17:00 Customer/Partner experience : Wehkamp usage of DataStax Enterprise - Niek Rosink, Systems and Applications Engineer CI/CD, Wehkamp
+
 17:00 - 17:45 Microsoft Azure with DSE Microsoft speaker
+
 17:45 - 18:30 Workshop : Live data Indexing with DataStax Enterprise with Apache Solr  - Vincent Poncet, Solutions Engineer, DataStax 
+
 18:30 - 19:00 Sandwich buffet
+
 19:00 - 19:45 Workshop : DataStax Enterprise Analytics with Spark - Vincent Poncet, Solutions Engineer, DataStax
+
 19:45 - 20:15 DataStax Enterprise Graph - Jean Villedieu, Co-founder, Linkurious
+
 20:15 – 21:00 Conclusion and Cocktail
 
 ### Registration
