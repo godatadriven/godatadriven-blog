@@ -48,7 +48,7 @@ Tickets are free of charge, [register now](https://www.eventbrite.nl/e/datastax-
 
 19:00 - 19:45 Workshop : DataStax Enterprise Analytics with Spark - Vincent Poncet, Solutions Engineer, DataStax
 
-19:45 - 20:15 DataStax Enterprise Graph - Jean Villedieu, Co-founder, Linkurious
+19:45 - 20:15 DataStax Enterprise Graph
 
 20:15 – 21:00 Conclusion and Cocktail
 
