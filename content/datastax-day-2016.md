@@ -6,7 +6,7 @@ Excerpt: On June 16, DataStax Day NL will take place, including presentations fr
 Template: article
 Latex:
 
-![DataStax Day 2016](/static/images/datastax-day/datastax-day-2016.jpg "DataStax Day 2016")
+[![DataStax Day 2016](/static/images/datastax-day/datastax-day-2016.jpg "DataStax Day 2016")](https://www.eventbrite.nl/e/datastax-day-tickets-25700325365 "Register for DataStax Day")
 
 ## DataStax Day 2016
 On June 16, DataStax Day NL will take place at the Microsoft Offices in Schiphol. . We have put together an inspiring in-depth program. We are proud to announce that Jonathan Ellis, CTO and co-founder of DataStax, will be presenting at DataStax Day this year.
