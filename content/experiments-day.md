@@ -8,7 +8,7 @@ Latex:
 
 ## I love experiments
 
-GoDataDriven is excited to invite you for I love Experiments, August 30, one day full of experiments. This day is organizd together with [Arjan Haring](https://medium.com/i-love-experiments "Arjan Haring"), Social Entrepreneur at The Control Group.
+GoDataDriven and [Arjan Haring](https://medium.com/i-love-experiments "Arjan Haring"), Social Entrepreneur at The Control Group, are excited to invite you for I love Experiments, August 30, one day full of experiments.
 
 You have the unique opportunity to work with Sinan Aral, the David Austin Professor of Management and Professor of Information Technology and Marketing at the MIT Sloan School of Management.
 
@@ -23,7 +23,7 @@ Are you interested in experimentation within your organization, or already runni
 
 For who is this? **Seasoned lean startup experts, more advanced data scientists, product managers or senior engineers**, senior designers. Required is experience working in a data-driven organisation.
 
-Seats are limited. Register here
+Seats are limited. [Register here](mailto:response@godatadriven.com)
 
 ### Early evening
 
@@ -31,7 +31,7 @@ Seats are limited. Register here
 
 For who is this? **Anyone interested in experimentation, or already running experiments**. This presentation is open to the whole community of experimenters.
 
-Register for Sinan Aral's presentation
+[Register for Sinan Aral's presentation](https://www.eventbrite.nl/e/tickets-i-love-experiments-25813693452 "I love Experiments")
 
 ### Evening
 
@@ -39,7 +39,7 @@ Register for Sinan Aral's presentation
 
 For who? **Executives who are already running a portfolio of innovation experiments or very interested to learn more**. This is an exclusive dinner in Amsterdam where you will and get an intimate and strategic update on the field of business experimentation.
 
-Get in touch with us directly to book your seat
+[Get in touch with us](mailto:response@godatadriven.com) directly to book your seat
 
 ### Registration
 
