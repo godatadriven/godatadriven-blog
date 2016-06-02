@@ -6,15 +6,13 @@ Excerpt: Join Sinan Aral, one of the world’s best experimenters, and learn how
 Template: article
 Latex:
 
-## I love experiments
-
 GoDataDriven and [Arjan Haring](https://medium.com/i-love-experiments "Arjan Haring"), Social Entrepreneur at The Control Group, are excited to invite you for I love Experiments, August 30, one day full of experiments.
 
 You have the unique opportunity to work with Sinan Aral, the David Austin Professor of Management and Professor of Information Technology and Marketing at the MIT Sloan School of Management.
 
 Sinan Aral's research focuses on social contagion, product virality and measuring, and managing how information diffusion in massive social networks such as Twitter and Facebook affects information worker productivity, consumer demand, and viral marketing.
 
-## Programm
+## Program
 Are you interested in experimentation within your organization, or already running your own experiments? Join the workshop, the presentation or the executive dinner. Read more about the three ways in which you can attend this day:
 
 ### Afternoon 
