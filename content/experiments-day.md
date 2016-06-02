@@ -1,6 +1,6 @@
 Title: I love Experiments - August 30
 Date: 2016-05-29 15:00
-Slug: I Love Experiments
+Slug: i-love-experiments
 Author: Walter van der Scheer
 Excerpt: Join world’s best experimenters and be part of a smart community that is helping organisations to innovate faster
 Template: article
