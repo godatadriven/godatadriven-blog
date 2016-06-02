@@ -41,7 +41,7 @@ For who? **Executives who are already running a portfolio of innovation experime
 
 ### Registration
 
-[Register now](https://www.eventbrite.nl/e/datastax-day-tickets-25700325365 "Register for DataStax Day")
+[Register now](https://www.eventbrite.nl/e/tickets-i-love-experiments-25813693452 "Register for I love experiments")
 
 ### Location
 
