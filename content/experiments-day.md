@@ -22,7 +22,7 @@ Are you interested in experimentation within your organization, or already runni
 
 ### Afternoon 
 
-13:00 — Work in small teams on a real case with Sinan
+13:00 — Work in small teams on a real case with Sinan (limited availability)
 
 For who is this? **Seasoned lean startup experts, more advanced data scientists, product managers or senior engineers**, senior designers. Required is experience working in a data-driven organisation.
 
@@ -30,7 +30,7 @@ Seats are limited. [Register here](mailto:response@godatadriven.com)
 
 ### Early evening
 
-18:00 — Listen to Sinan talk (limited availability)
+18:00 — Listen to Sinan talk
 
 For who is this? **Anyone interested in experimentation, or already running experiments**. This presentation is open to the whole community of experimenters.
 
