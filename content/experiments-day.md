@@ -10,7 +10,10 @@ GoDataDriven and [Arjan Haring](https://medium.com/i-love-experiments "Arjan Har
 
 You have the unique opportunity to work with [Sinan Aral](http://mitsloan.mit.edu/faculty-and-research/faculty-directory/detail/?id=19289 "Sinan Aral"), the David Austin Professor of Management and Professor of Information Technology and Marketing at the MIT Sloan School of Management.
 
+## About Sinan Aral
 Sinan Aral's research focuses on social contagion, product virality and measuring, and managing how information diffusion in massive social networks such as Twitter and Facebook affects information worker productivity, consumer demand, and viral marketing.
+
+He is a frequent speaker at such thought leading events as TEDxSiliconValley, TEDxColumbia Engineering, TEDxNYU, Wired’s “Nextwork,” and PopTech. His work has been published in leading journals such as the American Journal of Sociology, Information Systems Research, Management Science, Marketing Science, Nature, the Proceedings of the National Academy of Sciences (PNAS), Science, Organization Science, the Harvard Business Review, and the Sloan Management Review.
 
 ## Program
 Are you interested in experimentation within your organization, or already running your own experiments? Join the workshop, the presentation or the executive dinner. Read more about the three ways in which you can attend this day:
