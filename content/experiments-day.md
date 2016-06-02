@@ -38,7 +38,7 @@ For who is this? **Anyone interested in experimentation, or already running expe
 
 ### Evening
 
-20:00 — Have dinner with Sinan (invite only)
+20:00 — Executive dinner with Sinan
 
 For who? **Executives who are already running a portfolio of innovation experiments or very interested to learn more**. This is an exclusive dinner in Amsterdam where you will and get an intimate and strategic update on the field of business experimentation.
 
