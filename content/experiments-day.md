@@ -24,15 +24,23 @@ Are you interested in experimentation within your organization, or already runni
 
 For who is this? **Seasoned lean startup experts, more advanced data scientists, product managers, senior designers**. Required is experience working in a data-driven organisation.
 
-Participation is free of charge but seats are limited. [Register here](mailto:response@godatadriven.com)
+Participation is free of charge but seats are limited.
+
+<table align=center>
+    <tr>
+        <td style="background-color: #e38f23;border-color: #4c5764; solid #e38f23;border-radius: 10px; padding: 10px;text-align: center;">
+            <a style="display: block;color: #ffffff;font-size: 12px;text-decoration: none;text-transform: uppercase;" href="mailto:response@godatadriven.com?subject=Registration to work on a real case with Sinan&body=Hi, I would like to join the afternoon program on August 30" target="_blank">
+                Register for the afternoon: Work with Sinan on a real use case
+            </a>
+        </td>
+    </tr>
+</table>
 
 ### Early evening
 
 18:00 — Listen to Sinan talk
 
 For who is this? **Anyone interested in experimentation, or already running experiments**. This presentation is open to the whole community of experimenters and free of charge.
-
-[Register for Sinan Aral's presentation](https://www.eventbrite.nl/e/tickets-i-love-experiments-25813693452 "I love Experiments")
 
 <table align=center>
     <tr>
@@ -50,12 +58,18 @@ For who is this? **Anyone interested in experimentation, or already running expe
 
 For who? **Executives who are already running a portfolio of innovation experiments or very interested to learn more**. This is an exclusive dinner in Amsterdam where you will and get an intimate and strategic update on the field of business experimentation.  
 
-The cost per person for this exclusive dinner is €250,- ex VAT per person. [Get in touch with us](mailto:response@godatadriven.com) directly to book your seat
+The cost per person for this exclusive dinner is €250,- ex VAT per person.
 
-### Registration
-
-[Register now](https://www.eventbrite.nl/e/tickets-i-love-experiments-25813693452 "Register for I love experiments")
+<table align=center>
+    <tr>
+        <td style="background-color: #e38f23;border-color: #4c5764; solid #e38f23;border-radius: 10px; padding: 10px;text-align: center;">
+            <a style="display: block;color: #ffffff;font-size: 12px;text-decoration: none;text-transform: uppercase;" href="mailto:response@godatadriven.com?subject=Registration to work on a real case with Sinan&body=I would like to join the executive dinner on August 30" target="_blank">
+               Join the exclusive exeuctive dinner at 20 o'clock
+            </a>
+        </td>
+    </tr>
+</table>
 
 ### Location
 
-I love Experiments takes place at the GoDataDriven Amsterdam office, Wibautstraat 202, Amsterdam.
+I love Experiments takes place at the [GoDataDriven Amsterdam office](https://www.godatadriven.com/contact "GoDataDriven Amsterdam Office"), Wibautstraat 202, Amsterdam.
