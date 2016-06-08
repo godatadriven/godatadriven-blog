@@ -8,7 +8,7 @@ Latex:
 
 <span class="lead">"If you go back in time 10 years you would see that a lot of CIO’s believed there was something bad about open source. In general, we now see a diminishing fear of open source in the market. I use that word intentionally. Executives would bring up that open source wasn’t professionally developed, that it was not developed for companies. That is flatly no longer true. Nowadays, open source software is regulation compliant, and allows CIO’s to fully take advantage of the pace of innovation". In this article we share four reasons why open source software will rule the enterprise software market.</span>
 
-[Mike Olson - Cloudera](/static/images/mike-olson/cloudera-mike-olson-header.jpg)
+![Mike Olson - Cloudera](/static/images/mike-olson/cloudera-mike-olson-header.jpg)
 
 Recently, Mike Olson, the co-founder of Cloudera, took some time for an interview about the developments within the Hadoop ecosystem. In 2008, Cloudera was the first commercial distribution of Hadoop. Lots has happened since then, for Mike, there is no doubt about the future of open source.
 
