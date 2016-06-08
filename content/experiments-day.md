@@ -36,7 +36,7 @@ For who is this? **Anyone interested in experimentation, or already running expe
 
 <table align=center>
     <tr>
-        <td style="background-color: #e38f23;border-color: #4c5764;border: 2px solid #e38f23;border-radius: 10px; padding: 10px;text-align: center;">
+        <td style="background-color: #e38f23;border-color: #4c5764; solid #e38f23;border-radius: 10px; padding: 10px;text-align: center;">
             <a style="display: block;color: #ffffff;font-size: 12px;text-decoration: none;text-transform: uppercase;" href="https://www.eventbrite.nl/e/tickets-i-love-experiments-25813693452" target="_blank">
                 Register for Sinan Aral's presentation at 18 o'clock
             </a>
