@@ -1,8 +1,8 @@
-Title: I love Experiments with Sinan Aral - August 30
+Title: I love Experiments with MIT Sloan professor Sinan Aral - August 30
 Date: 2016-06-01 15:00
 Slug: i-love-experiments
 Author: Walter van der Scheer
-Excerpt: Join Sinan Aral, one of the world’s best experimenters, and learn how to innovate faster.
+Excerpt: Join Sinan Aral, one of the world’s best experimenters and professor at MIT Sloan, and learn how to innovate faster.
 Template: article
 Latex:
 
@@ -24,7 +24,7 @@ Are you interested in experimentation within your organization, or already runni
 
 13:00 — Work in small teams on a real case with Sinan (limited availability)
 
-For who is this? **Seasoned lean startup experts, more advanced data scientists, product managers or senior engineers**, senior designers. Required is experience working in a data-driven organisation.
+For who is this? **Seasoned lean startup experts, more advanced data scientists, product managers, senior designers**. Required is experience working in a data-driven organisation.
 
 Seats are limited. [Register here](mailto:response@godatadriven.com)
 
