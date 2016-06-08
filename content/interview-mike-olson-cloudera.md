@@ -39,3 +39,7 @@ At the moment, Cloudera sees equivalent innovation at the storage layer, and thi
 
 Another important thing is the innovation from applications on top of Hadoop. For Cloudera it is very important to encourage partners to provide services, applications, and hardware, that makes it easier for customers to consume the platform. "We see partners building solutions ranging from mobile telephony systems to cybersecurity or new analytics and reporting solutions. Cloudera and Hadoop themselves don’t offer these kind of solutions. The role of Cloudera is to offer supplies a stable and highly scalable platform to run these applications on top of".
 Our partners educate customers, help them identify use cases that are best suited to the big data platform, and really roll out successful deployments. 
+
+___
+
+[Read more about our experience with Hadoop](https://www.godatadriven.com/ "GoDataDriven - Big Data Data Science")
