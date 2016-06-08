@@ -1,4 +1,4 @@
-Title: Interview Mike Olson - Cloudera: Four Reasons why Open Source will Rule the Enterprise Software Market
+Title: Interview Mike Olson - Cloudera: Four Reasons why Open Source is Ready for the Enterprise
 Date: 2016-06-08 15:00
 Slug: interview-mike-olson-cloudera
 Author: Walter van der Scheer
