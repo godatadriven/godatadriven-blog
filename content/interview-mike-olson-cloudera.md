@@ -1,8 +1,8 @@
-Title: Four Reasons why Open Source will Rule the Enterprise Software Market
+Title: Interview Mike Olson - Cloudera: Four Reasons why Open Source will Rule the Enterprise Software Market
 Date: 2016-06-08 15:00
 Slug: interview-mike-olson-cloudera
 Author: Walter van der Scheer
-Excerpt: Mike Olson, co-founder of Cloudera, shares four reasons why open dource will rule the enterprise software market.
+Excerpt: Recently we had a talk with Mike Olson, co-founder of Cloudera, about the rise of open source software in the enterprise software market.
 Template: article
 Latex:
 
