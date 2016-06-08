@@ -13,7 +13,7 @@ Latex:
 Recently, Mike Olson, the co-founder of Cloudera, took some time for an interview about the developments within the Hadoop ecosystem. In 2008, Cloudera was the first commercial distribution of Hadoop. Lots has happened since then, for Mike, there is no doubt about the future of open source.
 
 ## 1. Compliancy
-Enterprise will bring in that open source software is not regulatory compliant, not secure, and therefore not save to use. Mike Olson: "We can point to very large scale, very secure implementations, compliant with rigorous regulatory regime requirements, of the open source platform in mission critical applications. Cloudera is the only Hadoop platform that passed PCI Data Security Standard certification to store personally identifiable data worldwide compliant with regulatory requirements".
+Enterprise will bring in that open source software is not regulatory compliant, not secure, and therefore not safe to use. Mike Olson: "We can point to very large scale, very secure implementations, compliant with rigorous regulatory regime requirements, of the open source platform in mission critical applications. Cloudera is the only Hadoop platform that passed PCI Data Security Standard certification to store personally identifiable data worldwide compliant with regulatory requirements".
 Mike emphasized that there is no reason at all for CIO's to be concerned with security and compliance. They are not so much concerned with open source and the development, they are more concerned with enterprise requirements that they put on data management platforms.
 
 ## 2. Avoiding Single Vendor Proprietary Lock-in
