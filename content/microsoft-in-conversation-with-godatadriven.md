@@ -19,4 +19,3 @@ Besides the [GoDataDriven story](https://www.godatadriven.com/our-story "The GoD
 - use cases from organizations like [Schiphol Group](https://www.godatadriven.com/casestudy-schipholgroup "Case study Schiphol Group") and [Bakkersland](https://www.godatadriven.com/casestudy-bakkersland "Case study Bakkersland")
 - [Data Driven Tech Radar](http://www.datadriventechradar.com "Data Driven Tech Radar")
 
-<iframe src="https://channel9.msdn.com/Series/In-gesprek-met-Open-Source-community/Microsoft-Nederland-in-gesprek-met-GoDataDriven/player#autoplay" width="960" height="540" allowFullScreen="yes" frameBorder="0"></iframe>
