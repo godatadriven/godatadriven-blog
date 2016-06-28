@@ -1,12 +1,12 @@
-Title: Microsoft Nederland in conversation with GoDataDriven
+Title: Microsoft Netherlands in conversation with GoDataDriven
 Date: 2016-06-28 15:00
 Slug: microsoft-in-conversation-with-godatadriven
 Author: Walter van der Scheer
-Excerpt: Microsoft NL had a conversation with Walter van der Scheer about open source technology
+Excerpt: [VIDEO] Microsoft NL in conversation with Walter van der Scheer about open source technology.
 Template: article
 Latex:
 
-<span class="lead"Recently, Robert Bakker from Microsoft NL had a conversation with GoDataDriven's Walter van der Scheer about open source technology.</span>
+<span class="lead">Recently, Robert Bakker from Microsoft NL had a conversation with GoDataDriven's Walter van der Scheer about open source technology.</span>
 
 Besides the [GoDataDriven story](https://www.godatadriven.com/our-story "The GoDataDriven story"), Walter discusses 
 - the importance of data quality
