@@ -58,8 +58,6 @@ For who is this? **Anyone interested in experimentation, or already running expe
 
 For who? **Executives who are already running a portfolio of innovation experiments or very interested to learn more**. This is an exclusive dinner in Amsterdam where you will and get an intimate and strategic update on the field of business experimentation.  
 
-The cost per person for this exclusive dinner is €250,- ex VAT per person.
-
 <table align=center>
     <tr>
         <td style="background-color: #e38f23;border-color: #4c5764; solid #e38f23;border-radius: 10px; padding: 10px;text-align: center;">
