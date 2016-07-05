@@ -1,5 +1,5 @@
 Title: GoDataDriven recognized as Microsoft Open Source on Azure finalist
-Date: 2015-12-22 15:00
+Date: 2016-07-05 15:00
 Slug: open-source-on-azure-finalist
 Author: Walter van der Scheer
 Excerpt: GoDataDriven has been recognized for its outstanding work on Microsoft Azure
@@ -14,7 +14,7 @@ Out of 2,500 entries from 119 countries, GoDataDriven has been recognized as fin
 
 GoDataDriven receives praise for the implementation of the first Cloudera production cluster on Azure at Amsterdam Airport Schiphol. In this project, GoDataDriven collaborated with Xpirit (Also part of Xebia Group), who also received a nomination. 
 
-Rob Dielemans, managing director of GoDataDriven, says: “We are proud to receive recognition for our work at Schiphol Group. WIth this project we demonstrate that it is no longer necessary to exclusively use technology from one supplier. By combining technology, no matter what brand is on the box, we are able to create the best possible customer solution.”
+Rob Dielemans, managing director of GoDataDriven, says: “We are proud to receive recognition for our work at Schiphol Group. With this project we demonstrate that it is no longer necessary to exclusively use technology from one supplier. By combining technology, no matter what brand is on the box, we are able to create the best possible customer solution.”
 
 “Our partner ecosystem is the cornerstone to providing innovative solutions that contribute to the digital transformation of organizations” Gavriella Schuster, general manager, Worldwide Partner Group, Microsoft Corp. adds. “We are pleased to select GoDataDriven and Xpirit as 2016 Microsoft Open Source on Azure award finalists.”
 
