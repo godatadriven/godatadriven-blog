@@ -14,7 +14,7 @@ Out of 2,500 entries from 119 countries, GoDataDriven has been recognized as fin
 
 GoDataDriven receives praise for the implementation of the first Cloudera production cluster on Azure at Amsterdam Airport Schiphol. In this project, GoDataDriven collaborated with Xpirit (also part of Xebia Group), who also received a nomination. 
 
-Rob Dielemans, managing director of GoDataDriven, says: “We are proud to receive recognition for our work at Schiphol Group. With this project we demonstrate that it is no longer necessary to exclusively use technology from one supplier. By combining technology, no matter what brand is on the box, we are able to create the best possible customer solution.”
+Rob Dielemans, managing director of GoDataDriven, says: “We are proud to receive recognition for our work at [Schiphol Group](https://www.godatadriven.com/casestudy-schipholgroup "Casestudy Schiphol Group"). With this project we demonstrated that it is no longer necessary to exclusively use technology from one supplier. By combining technology, no matter what brand is on the box, we are able to create the best possible customer solution.”
 
 “Our partner ecosystem is the cornerstone to providing innovative solutions that contribute to the digital transformation of organizations”, Gavriella Schuster, general manager, Worldwide Partner Group, Microsoft Corp. adds. “We are pleased to select GoDataDriven and Xpirit as 2016 Microsoft Open Source on Azure award finalists.”
 
