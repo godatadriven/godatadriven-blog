@@ -26,3 +26,13 @@ Here we have six pairs of words:
 - `('banana', 'kiwi')` is _concordant_.
 
 So we have two concordant pairs and four discordant pairs. This means that in the end, $\tau = \frac{2-4}{15} = -\frac{1}{3}$.
+
+## Comparing recommendations
+
+A problem arises when one tries to compare recommendations. A recommender often comes up with a _very_ long list of all possible items, while we are only interested in a few items at the top. 
+
+For example, a recommender of a webshop will rank all products that are available in the shop, and then show the best (let's say top-5) as suggestions. If we want to compare the output of two recommenders we are not interested in the correlation of the _entire_ ranks, since only the 5 best results are shown.
+
+One would want to compare only the top-5 results of each recommender. The problem here lies in the fact that the Kendall tau is undefined if the two ranks do not contain the same elements. And if we are comparing two recommenders which each pick 5 items from a very large set, then it is likely that there are some items that do not occur is both lists, if not all.
+
+## 
