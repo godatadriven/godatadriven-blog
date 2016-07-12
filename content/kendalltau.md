@@ -18,8 +18,8 @@ where:
 
 $$
 \begin{align}
-    n &= \text{the length of the lists},
-    n_c &= \text{the number of concordant pairs},
+    n &= \text{the length of the lists},\\
+    n_c &= \text{the number of concordant pairs},\\
     n_d &= \text{the number of discordant pairs}.
 \end{align}
 $$
