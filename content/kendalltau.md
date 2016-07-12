@@ -39,43 +39,38 @@ Let's have a look at these two ranks:
     <tr>
       <th>apple</th>
       <td>1</td>
-      <td>4</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>banana</th>
       <td>3</td>
-      <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>pear</th>
       <td>2</td>
-      <td>2</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>kiwi</th>
       <td>4</td>
-      <td>3</td>
+      <td>4</td>
     </tr>
   </tbody>
 </table>
 </div>
 
+Here $a_\text{apple} < a_\text{pear}$, while $b_\text{apple} > b_\text{pear}$, so this pair is _discordant_. 
+Also, $a_\text{pear} < a_\text{banana}$ and $b_\text{pear} < b_\text{banana}$, so that pair is _condordant_.
+In total, this example contains four concordant pairs and two discordant pairs. Since $n=4$, this means that
+$$\tau = \frac{4-2}{6} = \frac{1}{3},$$
+which means the two ranks are slightly correlated.
 
-Let's have a look at an example:
+Please note that since there are no ties in the above example we can directly translate it to two lists:
 ```python
 a = ['apple', 'pear', 'banana', 'kiwi']
-b = ['banana', 'pear', 'kiwi', 'apple']
+b = ['pear', 'banana', 'apple', 'kiwi']
 ```
-Here we have six pairs of words:
-
-- `('apple', 'pear')` is _discordant_ (swapped),
-- `('apple', 'banana')` is _discordant_,
-- `('apple', 'kiwi')` is _discordant_, 
-- `('pear', 'banana')` is _discordant_,
-- `('pear', 'kiwi')` is _concordant_ (in the same order),
-- `('banana', 'kiwi')` is _concordant_.
-
-So we have two concordant pairs and four discordant pairs. This means that in the end, $\tau = \frac{2-4}{6} = -\frac{1}{3}$.
 
 ## Comparing recommendations
 
