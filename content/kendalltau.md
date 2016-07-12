@@ -80,11 +80,11 @@ In list-form, a concordant pair has the same order in both lists, while the orde
 
 ### Comparing top items
 
-I often encounter situations where I want to compare two ranks, but where I am mostly (if not only) interested in the top end of the rank. An example of this are recommenders: a recommender of a webshop will rank all products that the webshop has to offer and then display the most relevant (let's say top-10) products on a page. So if I want to compare the results of two recommenders I might be interested in the top-10 or top-20, but I'm definitely not interested at what happens at the bottom of the lists.
+I often encounter situations where I want to compare two ranks, but where I am mostly (if not only) interested in the top end of the rank. An example of this are recommenders: a recommender of a webshop will rank all products that the webshop has to offer and then display the most relevant (let's say top-5) products on a page. So if I want to compare the results of two recommenders I might be interested in the top-5 or top-10, but I'm definitely not interested at what happens at the bottom of the lists.
 
-Of course I can compare the top-10 results from recommender A with the top-10 results from recommender B. 
+Of course I can compare the top-10 results from recommender A with the top-5 results from recommender B. 
 But the problem here is that the Kendall tau is not defined if the lists do not contain the same elements. And of course
-the top-10 of two (very) long ranks will most likely contain some mismatched elements (if not all!).
+the top-5 of two (very) long ranks will most likely contain some mismatched elements (if not all!).
 
 ### Ignoring mismatches
 
@@ -112,4 +112,67 @@ equal. In the extreme case that there is only one match,
 a = ['pineapple', 'lemon', 'apple', 'kiwi', 'grape']
 b = ['apple', 'pear', 'banana', 'plum', 'orange']
 ```
-the Kendall tau is undefined, as the denominator $n(n-1)/2 = 0$. So clearly, ignoring mismatches is not the solution to our problem.
+the Kendall tau is undefined, as the denominator $n(n-1)/2 = 0$ for $n=1$. So clearly, ignoring mismatches is not the solution to our problem.
+
+### Appending mismatches
+
+Instead of ignoring the mismatches, we can also append them to the bottom of the other list. In the end this makes sense, since all results _are_ in both lists, but not necessarily in the top-5. Since we do not have any information on _where_
+the results are in the list (below the top-5) we should treat all results below the top-5 as equal. For example:
+```python
+a = ['pineapple', 'apple', 'pear', 'kiwi', 'grape']
+b = ['apple', 'pear', 'banana', 'kiwi', 'orange']
+```
+would then become
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rank_a</th>
+      <th>rank_b</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>apple</th>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>banana</th>
+      <td>6</td>
+      <td>3</td>
+    </tr>    
+    <tr>
+      <th>grape</th>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>orange</th>
+      <td>6</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>pear</th>
+      <td>3</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>pineapple</th>
+      <td>1</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>kiwi</th>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<br>
+where `banana` and `orange` end up in a tied 6th place in rank `a`, and `pineapple` and `grape` share a tied 6th place
+in rank `b`. This yields $\tau = 0.15$, which is close to what I would expect.
+
