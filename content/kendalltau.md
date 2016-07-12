@@ -10,7 +10,7 @@ Latex:
 
 ## Intro
 
-The [Kendall Tau](https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient) is a metric that can be used to compare the order of two ranks. It compares every _pair_ of items between the ranks
+The [Kendall Tau](https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient) is a metric that can be used to compare the order of two ranks. It takes two ranks _that contain the same elements_ and calculates the correlation between them. A correlation of $+1$ means the ranks are equal, while a correlation of $-1$ means the ranks are exactly eachother's reverse. If two ranks are independent or randomly shuffled the correlation will be zero on average.
 
 ## Definition
 
@@ -20,7 +20,11 @@ $$\tau \equiv \frac{n_c - n_d}{n(n-1)/2},$$
 
 where $n$ is the length of the ranks, $n_c$ is the number of _concordant_ pairs, and $n_d$ is the number of _discordant_ pairs.
 
-A pair of items $i$ and $j$ is _concordant_ between two ranks $a$ and $b$ if $a_i > a_j$ and $b_i > b_j$, or $a_i < a_j$ and $b_i < b_j$. If $a_i > a_j$ and $b_i < b_j$ or vice versa, the pair is _discordant_. In the case of ties, if $a_i = a_j$ or $b_i = b_j$, the pair is neither _concordant_ nor _discordant_.
+Between two ranks $a$ and $b$, a pair of items $i$ and $j$ is
+
+- _concordant_ if $a_i > a_j$ and $b_i > b_j$, or $a_i < a_j$ and $b_i < b_j$,
+- _discordant_ If $a_i > a_j$ and $b_i < b_j$ or vice versa.
+- neither _concordant_ nor _discordant_ in the case of ties, if $a_i = a_j$ or $b_i = b_j$.
 
 ## An example
 
@@ -59,6 +63,7 @@ Let's have a look at these two ranks:
   </tbody>
 </table>
 </div>
+<br>
 
 Here $a_\text{apple} < a_\text{pear}$, while $b_\text{apple} > b_\text{pear}$, so this pair is _discordant_. 
 Also, $a_\text{pear} < a_\text{banana}$ and $b_\text{pear} < b_\text{banana}$, so that pair is _condordant_.
@@ -66,18 +71,19 @@ In total, this example contains four concordant pairs and two discordant pairs. 
 $$\tau = \frac{4-2}{6} = \frac{1}{3},$$
 which means the two ranks are slightly correlated.
 
-Please note that since there are no ties in the above example we can directly translate it to two lists:
+Please note that since there are no ties in the above example, we can directly translate it to two lists:
 ```python
 a = ['apple', 'pear', 'banana', 'kiwi']
 b = ['pear', 'banana', 'apple', 'kiwi']
 ```
+In list-form, a concordant pair has the same order in both lists, while the order of a discordant pair is swapped. Two elements cannot occupy the same spot, so we can not have ties.
 
-## Comparing recommendations
+## Comparing top items
 
-A problem arises when one tries to compare recommendations. A recommender often comes up with a _very_ long list of all possible items, while we are only interested in a few items at the top. 
+I often encounter situations where I want to compare two ranks, but where I am mostly (if not only) interested in the top end of the rank. An example of this are recommenders: a recommender of a webshop will rank all products that the webshop has to offer and then display the most relevant (let's say top-10) products on a page. So if I want to compare the results of two recommenders I might be interested in the top-10 or top-20, but I'm definitely not interested at what happens at the bottom of the lists.
 
-For example, a recommender of a webshop will rank all products that are available in the shop, and then show the best (let's say top-5) as suggestions. If we want to compare the output of two recommenders we are not interested in the correlation of the _entire_ ranks, since only the 5 best results are shown.
-
-One would want to compare only the top-5 results of each recommender. The problem here lies in the fact that the Kendall tau is undefined if the two ranks do not contain the same elements. And if we are comparing two recommenders which each pick 5 items from a very large set, then it is likely that there are some items that do not occur is both lists, if not all.
+Of course I can compare the top-10 results from recommender A with the top-10 results from recommender B. 
+But the problem here is that the Kendall tau is not defined if the lists do not contain the same elements. And of course
+the top-10 of two (very) long ranks will most likely contain some different elements (if not all!).
 
 ## 
