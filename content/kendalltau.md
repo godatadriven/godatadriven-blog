@@ -10,19 +10,56 @@ Latex:
 
 ## Intro
 
-The [Kendall Tau](https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient) is a metric that can be used to compare the order of two ranks. It is defined as
+The [Kendall Tau](https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient) is a metric that can be used to compare the order of two ranks. It compares every _pair_ of items between the ranks
+
+## Definition
+
+The Kendall tau is defined as
 
 $$\tau \equiv \frac{n_c - n_d}{n(n-1)/2},$$
 
-where:
+where $n$ is the length of the ranks, $n_c$ is the number of _concordant_ pairs, and $n_d$ is the number of _discordant_ pairs.
 
-$$
-\begin{align}
-    n &= \text{the length of the lists},\\
-    n_c &= \text{the number of concordant pairs},\\
-    n_d &= \text{the number of discordant pairs}.
-\end{align}
-$$
+A pair of items $i$ and $j$ is _concordant_ between two ranks $a$ and $b$ if $a_i > a_j$ and $b_i > b_j$, or $a_i < a_j$ and $b_i < b_j$. If $a_i > a_j$ and $b_i < b_j$ or vice versa, the pair is _discordant_. In the case of ties, if $a_i = a_j$ or $b_i = b_j$, the pair is neither _concordant_ nor _discordant_.
+
+## An example
+
+Let's have a look at these two ranks:
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rank_a</th>
+      <th>rank_b</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>apple</th>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>banana</th>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>pear</th>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>kiwi</th>
+      <td>4</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 
 Let's have a look at an example:
 ```python
