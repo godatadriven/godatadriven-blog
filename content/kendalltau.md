@@ -10,7 +10,19 @@ Latex:
 
 ## Intro
 
-The [Kendall Tau](https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient) is a metric that can be used to compare the order of two ranks.
+The [Kendall Tau](https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient) is a metric that can be used to compare the order of two ranks. It is defined as
+
+$$\tau \equiv \frac{n_c - n_d}{n(n-1)/2},$$
+
+where:
+
+$$
+\begin{align}
+    n &= \text{the length of the lists},
+    n_c &= \text{the number of concordant pairs},
+    n_d &= \text{the number of discordant pairs}.
+\end{align}
+$$
 
 Let's have a look at an example:
 ```python
@@ -18,6 +30,7 @@ a = ['apple', 'pear', 'banana', 'kiwi']
 b = ['banana', 'pear', 'kiwi', 'apple']
 ```
 Here we have six pairs of words:
+
 - `('apple', 'pear')` is _discordant_ (swapped),
 - `('apple', 'banana')` is _discordant_,
 - `('apple', 'kiwi')` is _discordant_, 
@@ -25,7 +38,7 @@ Here we have six pairs of words:
 - `('pear', 'kiwi')` is _concordant_ (in the same order),
 - `('banana', 'kiwi')` is _concordant_.
 
-So we have two concordant pairs and four discordant pairs. This means that in the end, $\tau = \frac{2-4}{15} = -\frac{1}{3}$.
+So we have two concordant pairs and four discordant pairs. This means that in the end, $\tau = \frac{2-4}{6} = -\frac{1}{3}$.
 
 ## Comparing recommendations
 
