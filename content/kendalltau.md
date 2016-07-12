@@ -8,11 +8,11 @@ Latex:
 
 <span class="lead">Kendall's tau is a rank correlation metric, used to compare the order of two lists.</span>
 
-## Intro
+### Intro
 
 The [Kendall Tau](https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient) is a metric that can be used to compare the order of two ranks. It takes two ranks _that contain the same elements_ and calculates the correlation between them. A correlation of $+1$ means the ranks are equal, while a correlation of $-1$ means the ranks are exactly eachother's reverse. If two ranks are independent or randomly shuffled the correlation will be zero on average.
 
-## Definition
+### Definition
 
 The Kendall tau is defined as
 
@@ -26,7 +26,7 @@ Between two ranks $a$ and $b$, a pair of items $i$ and $j$ is
 - _discordant_ If $a_i > a_j$ and $b_i < b_j$ or vice versa.
 - neither _concordant_ nor _discordant_ in the case of ties, if $a_i = a_j$ or $b_i = b_j$.
 
-## An example
+### An example
 
 Let's have a look at these two ranks:
 
@@ -78,12 +78,38 @@ b = ['pear', 'banana', 'apple', 'kiwi']
 ```
 In list-form, a concordant pair has the same order in both lists, while the order of a discordant pair is swapped. Two elements cannot occupy the same spot, so we can not have ties.
 
-## Comparing top items
+### Comparing top items
 
 I often encounter situations where I want to compare two ranks, but where I am mostly (if not only) interested in the top end of the rank. An example of this are recommenders: a recommender of a webshop will rank all products that the webshop has to offer and then display the most relevant (let's say top-10) products on a page. So if I want to compare the results of two recommenders I might be interested in the top-10 or top-20, but I'm definitely not interested at what happens at the bottom of the lists.
 
 Of course I can compare the top-10 results from recommender A with the top-10 results from recommender B. 
 But the problem here is that the Kendall tau is not defined if the lists do not contain the same elements. And of course
-the top-10 of two (very) long ranks will most likely contain some different elements (if not all!).
+the top-10 of two (very) long ranks will most likely contain some mismatched elements (if not all!).
 
-## 
+### Ignoring mismatches
+
+The easiest way to deal with mismatches is to ignore them. By simply removing all elements that do not occur in both
+lists we reduce the problem to one that we _can_ solve. For example,
+```python
+a = ['apple', 'pear', 'banana', 'kiwi', 'pineapple']
+b = ['pear', 'orange', 'banana', 'apple', 'kiwi']
+```
+would be reduced to the example above, where $\tau = \frac{1}{3}$. At first glance, that seems acceptable. However, in here:
+```python
+a = ['apple', 'pear', 'banana', 'kiwi', 'pineapple']
+b = ['apple', 'pear', 'banana', 'kiwi', 'orange']
+```
+lists `a` and `b` would be reduced to identical lists, yielding $\tau = 1$ even though the original lists are not the same.
+
+The problems become worse when there are more mismatches in the list:
+```python
+a = ['pineapple', 'lemon', 'apple', 'kiwi', 'grape']
+b = ['apple', 'pear', 'banana', 'kiwi', 'orange']
+```
+would _also_ evaluate to $\tau = 1$ (since `apple` and `kiwi` are concordant), while I would argue the lists are far from
+equal. In the extreme case that there is only one match,
+```python
+a = ['pineapple', 'lemon', 'apple', 'kiwi', 'grape']
+b = ['apple', 'pear', 'banana', 'plum', 'orange']
+```
+the Kendall tau is undefined, as the denominator $n(n-1)/2 = 0$. So clearly, ignoring mismatches is not the solution to our problem.
