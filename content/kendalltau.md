@@ -115,7 +115,10 @@ we find $\tau = -0.20$ which is much lower, as we expect. Also, if we replace an
 a = ['apple', 'pear', 'banana', 'kiwi', 'grape']
 b = ['orange', 'pear', 'pineapple', 'kiwi', 'grape']
 ```
-we again find a lower correlation: $\tau = -0.45$. If we replace _all_ elements, 
+we again find a lower correlation: $\tau = -0.45$. 
+
+#### The problem
+If we replace _all_ elements, 
 ```python
 a = ['apple', 'pear', 'banana', 'kiwi', 'grape']
 b = ['orange', 'tomato', 'pineapple', 'lemon', 'plum']
@@ -137,4 +140,7 @@ rank_a = {'apple': 0, 'banana': 2, 'grape': 4, 'kiwi': 3, 'lemon': 5,
 rank_b = {'apple': 5, 'banana': 5, 'grape': 5, 'kiwi': 5, 'lemon': 3, 
           'orange': 0, 'pear': 5, 'pineapple': 2, 'plum': 4, 'tomato': 1}        
 ```
-we see that also here there are no concordant pairs. Not all pairs are discordant, however, as all pairs of which both items occur in the same list are tied in the other. For example `apple` and `banana` are tied in rank `b`, and are therefore not discordant.
+we see that also here there are no concordant pairs. Not all pairs are discordant, however, as all pairs of which both items occur in the same list are tied in the other. For example `apple` and `banana` are tied in rank `b`, and are therefore not discordant. So the difference between the two correlations comes from the difference in number of ties, or the difference in length of the ranks.
+
+### Extending the ranks
+
