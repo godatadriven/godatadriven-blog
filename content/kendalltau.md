@@ -29,41 +29,11 @@ Between two ranks $a$ and $b$, a pair of items $i$ and $j$ is
 ### An example
 
 Let's have a look at these two ranks:
+```python
+rank_a = {'apple': 0, 'banana': 2, 'kiwi': 3, 'pear': 1}
+rank_b = {'apple': 2, 'banana': 1, 'kiwi': 3, 'pear': 0}
+```
 
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>rank_a</th>
-      <th>rank_b</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>apple</th>
-      <td>1</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>banana</th>
-      <td>3</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>pear</th>
-      <td>2</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>kiwi</th>
-      <td>4</td>
-      <td>4</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-<br>
 
 Here $a_\text{apple} < a_\text{pear}$, while $b_\text{apple} > b_\text{pear}$, so this pair is _discordant_. 
 Also, $a_\text{pear} < a_\text{banana}$ and $b_\text{pear} < b_\text{banana}$, so that pair is _condordant_.
@@ -123,57 +93,11 @@ a = ['pineapple', 'apple', 'pear', 'kiwi', 'grape']
 b = ['apple', 'pear', 'banana', 'kiwi', 'orange']
 ```
 would then become
-
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>rank_a</th>
-      <th>rank_b</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>apple</th>
-      <td>2</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>banana</th>
-      <td>6</td>
-      <td>3</td>
-    </tr>    
-    <tr>
-      <th>grape</th>
-      <td>5</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th>orange</th>
-      <td>6</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>pear</th>
-      <td>3</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>pineapple</th>
-      <td>1</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th>kiwi</th>
-      <td>4</td>
-      <td>4</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-<br>
-where `banana` and `orange` end up in a tied 6th place in rank `a`, and `pineapple` and `grape` share a tied 6th place
+```python
+rank_a = {'apple': 1, 'banana': 5, 'grape': 4, 'orange': 5, 'pear': 2, 'pineapple': 0, 'kiwi': 3}
+rank_b = {'apple': 0, 'banana': 2, 'grape': 5, 'orange': 4, 'pear': 1, 'pineapple': 5, 'kiwi': 3}
+```
+where `banana` and `orange` end up in a tied 5th place in rank `a`, and `pineapple` and `grape` share a tied 5th place
 in rank `b`. This yields $\tau = 0.15$, which is close to what I would expect.
 
 If we do this for other examples we get some nice results. For example if only the _last_ element of list `b` is replaced by one not in `a`,
@@ -206,53 +130,11 @@ which have a correlation of $\tau = -1$, I would say this is _not_ what we expec
 is closer to the original than one that is completely different.
 
 So why is the correlation of `a` and `b` larger than that of `a` and `c`? It is clear that between `a` and `c` all
-pairs of words are discordant. Also, if we look at all pairs of  
-
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>apple</th>
-      <th>banana</th>
-      <th>grape</th>
-      <th>kiwi</th>
-      <th>lemon</th>
-      <th>orange</th>
-      <th>pear</th>
-      <th>pineapple</th>
-      <th>plum</th>
-      <th>tomato</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>rank_a</th>
-      <td>1</td>
-      <td>3</td>      
-      <td>5</td>
-      <td>4</td>
-      <td>6</td>
-      <td>6</td>
-      <td>2</td>
-      <td>6</td>
-      <td>6</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th>rank_b</th>
-      <td>6</td>
-      <td>6</td>      
-      <td>6</td>
-      <td>6</td>
-      <td>4</td>
-      <td>1</td>
-      <td>6</td>
-      <td>3</td>
-      <td>5</td>
-      <td>2</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-<br>
+pairs of words are discordant. If we have a closer look at the resulting ranks when we compare `a` and `b`:
+```python
+rank_a = {'apple': 0, 'banana': 2, 'grape': 4, 'kiwi': 3, 'lemon': 5, 
+          'orange': 5, 'pear': 1, 'pineapple': 5, 'plum': 5, 'tomato': 5}
+rank_b = {'apple': 5, 'banana': 5, 'grape': 5, 'kiwi': 5, 'lemon': 3, 
+          'orange': 0, 'pear': 5, 'pineapple': 2, 'plum': 4, 'tomato': 1}        
+```
+we see that also here there are no concordant pairs. Not all pairs are discordant, however, as all pairs of which both items occur in the same list are tied in the other. For example `apple` and `banana` are tied in rank `b`, and are therefore not discordant.
