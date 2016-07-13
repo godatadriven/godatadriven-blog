@@ -116,7 +116,7 @@ the Kendall tau is undefined, as the denominator $n(n-1)/2 = 0$ for $n=1$. So cl
 
 ### Appending mismatches
 
-Instead of ignoring the mismatches, we can also append them to the bottom of the other list. In the end this makes sense, since all results _are_ in both lists, but not necessarily in the top-5. Since we do not have any information on _where_
+Instead of ignoring the mismatches, we can also append them to the bottom of the other list. In a way this makes sense, since all results _are_ in both lists, but not necessarily in the top-5. Since we do not have any information on _where_
 the results are in the list (below the top-5) we should treat all results below the top-5 as equal. For example:
 ```python
 a = ['pineapple', 'apple', 'pear', 'kiwi', 'grape']
@@ -176,3 +176,24 @@ would then become
 where `banana` and `orange` end up in a tied 6th place in rank `a`, and `pineapple` and `grape` share a tied 6th place
 in rank `b`. This yields $\tau = 0.15$, which is close to what I would expect.
 
+If we do this for other examples we get some nice results. For example if only the _last_ element is replaced by one not in the first list,
+```python
+a = ['apple', 'pear', 'banana', 'kiwi', 'grape']
+b = ['apple', 'pear', 'banana', 'kiwi', 'orange']
+```
+we find $\tau = 0.87$. If instead we replace the _first_ element,
+```python
+a = ['apple', 'pear', 'banana', 'kiwi', 'grape']
+b = ['orange', 'pear', 'banana', 'kiwi', 'grape']
+```
+we find $\tau = -0.20$, which is much lower, as we expect. Also, if we replace an additional element,
+```python
+a = ['apple', 'pear', 'banana', 'kiwi', 'grape']
+b = ['orange', 'pear', 'pineapple', 'kiwi', 'grape']
+```
+we find a lower correlation: $\tau = -0.45$. If we replace _all_ elements, 
+```python
+a = ['apple', 'pear', 'banana', 'kiwi', 'grape']
+b = ['orange', 'tomato', 'pineapple', 'lemon', 'plum']
+```
+we find a largely negative correlation: $\tau = -0.71$.
