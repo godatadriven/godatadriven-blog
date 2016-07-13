@@ -176,24 +176,83 @@ would then become
 where `banana` and `orange` end up in a tied 6th place in rank `a`, and `pineapple` and `grape` share a tied 6th place
 in rank `b`. This yields $\tau = 0.15$, which is close to what I would expect.
 
-If we do this for other examples we get some nice results. For example if only the _last_ element is replaced by one not in the first list,
+If we do this for other examples we get some nice results. For example if only the _last_ element of list `b` is replaced by one not in `a`,
 ```python
 a = ['apple', 'pear', 'banana', 'kiwi', 'grape']
 b = ['apple', 'pear', 'banana', 'kiwi', 'orange']
 ```
-we find $\tau = 0.87$. If instead we replace the _first_ element,
+we find $\tau = 0.87$. If instead we change the _first_ element,
 ```python
 a = ['apple', 'pear', 'banana', 'kiwi', 'grape']
 b = ['orange', 'pear', 'banana', 'kiwi', 'grape']
 ```
-we find $\tau = -0.20$, which is much lower, as we expect. Also, if we replace an additional element,
+we find $\tau = -0.20$ which is much lower, as we expect. Also, if we replace an additional element,
 ```python
 a = ['apple', 'pear', 'banana', 'kiwi', 'grape']
 b = ['orange', 'pear', 'pineapple', 'kiwi', 'grape']
 ```
-we find a lower correlation: $\tau = -0.45$. If we replace _all_ elements, 
+we again find a lower correlation: $\tau = -0.45$. If we replace _all_ elements, 
 ```python
 a = ['apple', 'pear', 'banana', 'kiwi', 'grape']
 b = ['orange', 'tomato', 'pineapple', 'lemon', 'plum']
 ```
-we find a largely negative correlation: $\tau = -0.71$.
+we find a largely negative correlation: $\tau = -0.71$. In principle a strongly negative correlation is what we expect 
+here. However, if we compare this with
+```python
+a = ['apple', 'pear', 'banana', 'kiwi', 'grape']
+c = ['grape', 'kiwi', 'banana', 'pear', 'apple']
+```
+which have a correlation of $\tau = -1$, I would say this is _not_ what we expect: I would say an inverted top-5 
+is closer to the original than one that is completely different.
+
+So why is the correlation of `a` and `b` larger than that of `a` and `c`? It is clear that between `a` and `c` all
+pairs of words are discordant. Also, if we look at all pairs of  
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>apple</th>
+      <th>banana</th>
+      <th>grape</th>
+      <th>kiwi</th>
+      <th>lemon</th>
+      <th>orange</th>
+      <th>pear</th>
+      <th>pineapple</th>
+      <th>plum</th>
+      <th>tomato</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>rank_a</th>
+      <td>1</td>
+      <td>3</td>      
+      <td>5</td>
+      <td>4</td>
+      <td>6</td>
+      <td>6</td>
+      <td>2</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>rank_b</th>
+      <td>6</td>
+      <td>6</td>      
+      <td>6</td>
+      <td>6</td>
+      <td>4</td>
+      <td>1</td>
+      <td>6</td>
+      <td>3</td>
+      <td>5</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<br>
