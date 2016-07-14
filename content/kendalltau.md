@@ -36,7 +36,7 @@ n_a &\equiv \sum_i \frac{t^a_i (t^a_i-1)}{2},\\
 n_b &\equiv \sum_j \frac{t^b_j (t^b_j-1)}{2},
 \end{align}$$
 where $t^a_i$ and $t^b_j$ are the number of ties items in the $i^\text{th}$ group of ties in rank $a$, 
- and the number of ties items in the $ij\text{th}$ group of ties in rank $b$ respectively. 
+ and the number of ties items in the $j\text{th}$ group of ties in rank $b$ respectively. 
 
 Between the ranks $a$ and $b$, a pair of items $x$ and $y$ is
 
