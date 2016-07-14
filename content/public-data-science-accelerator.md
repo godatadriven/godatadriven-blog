@@ -14,7 +14,7 @@ Exactly beacuse of this reason, one year ago we were approached by a leading fin
 
 We developed a unique program consisting of twelve lectures and twelve hands-on sessions that provide a full overview of modern day Data Science and called it the Data Science Accelerator Program. What makes this Data Science Accelerator Program so unique is the combination of in-depth and hands-on lectures in combination with workshops that put theory into practice.
 
-# Launch of the public Data Science Accelerator Program
+## Launch of the public Data Science Accelerator Program
 
 Today, we are proud to announce that the Data Science Accelerator Program is available for individual Data Scientists to participate. The first public Data Science Accelerator Program is scheduled to start on *September 14, 2016*. 
 
@@ -29,11 +29,11 @@ Today, we are proud to announce that the Data Science Accelerator Program is ava
 </table>
 
 ## Curriculum
-The Data Science Accelerator Program’s curriculum emerged from extensive, hands-¬on experience with the implementation of Data Science applications for organizations across many industries. The curriculum focuses on sharing Data Science knowledge and development best-practices. 
+The Data Science Accelerator Program’s curriculum emerged from extensive, hands-on experience with the implementation of Data Science applications for organizations across many industries. The curriculum focuses on sharing Data Science knowledge and development best-practices. 
 
 The public program consists of five lectures and five workshops (10 days total) spread over a period of 5 months, covering all the major components.
 
-
+<p>
 | Lecture           | Hackathon                          |
 |-------------------|------------------------------------|
 | Probability stack | Solve multiarmed bandit problems |
@@ -42,7 +42,7 @@ The public program consists of five lectures and five workshops (10 days total) 
 | Non-traditional data and features | Build image processing models |
 | Time series       | Predict an optimal portfolio for the stock market |
 
-
+</p>
 [More information](https://training.xebia.com/data-science/data-science-accelerator-program/ "Details of Data Science Accelerator Program")
 
 <iframe width="853" height="480" src="https://www.youtube.com/embed/rHhXilXE-2o?rel=0" frameborder="0" allowfullscreen></iframe>
