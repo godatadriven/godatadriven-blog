@@ -14,7 +14,9 @@ Exactly beacuse of this reason, one year ago we were approached by a leading fin
 
 We developed a unique program consisting of twelve lectures and twelve hands-on sessions that provide a full overview of modern day Data Science and called it the Data Science Accelerator Program. What makes this Data Science Accelerator Program so unique is the combination of in-depth and hands-on lectures in combination with workshops that put theory into practice.
 
-Today, we are proud to announce that the Data Science Accelerator Program is available for individual Data Scientists to participate. The first public Data Science Accelerator Program is scheduled to start on September 14, 2016. 
+# Launch of the public Data Science Accelerator Program
+
+Today, we are proud to announce that the Data Science Accelerator Program is available for individual Data Scientists to participate. The first public Data Science Accelerator Program is scheduled to start on *September 14, 2016*. 
 
 <table align=center>
     <tr>
