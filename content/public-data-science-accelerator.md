@@ -2,7 +2,7 @@ Title: Data Science Accelerator Program now available for individual participant
 Date: 2016-07-14 15:00
 Slug: public-data-science-accelerator
 Author: Walter van der Scheer
-Excerpt: 
+Excerpt: We are proud to announce that the Data Science Accelerator Program is now available for individual participants. The Data Science Accelerator Program combines in-depth and hands-on lectures with practical workshops to take the skills and knowledge of data scientists to the next level.
 Template: article
 Latex:
 
