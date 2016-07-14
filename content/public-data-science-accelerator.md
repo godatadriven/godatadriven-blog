@@ -12,7 +12,7 @@ Data scientists are no longer a nice-to-have; they are a must. Businesses of all
 
 Exactly beacuse of this reason, one year ago we were approached by a leading financial institution who asked us if it was possible to create a training program to escalate the data science skills of their teams to the highest level.
 
-We developed a unique program that consists of twelve lectures and twelve hands-on sessions that provide a full overview of modern day Data Science. What makes this Data Science Accelerator Program so unique is the combination of in-depth and hands-on lectures in combination with workshops that put theory into practice.
+We developed a unique program consisting of twelve lectures and twelve hands-on sessions that provide a full overview of modern day Data Science and called it the Data Science Accelerator Program. What makes this Data Science Accelerator Program so unique is the combination of in-depth and hands-on lectures in combination with workshops that put theory into practice.
 
 Today, we are proud to announce that the Data Science Accelerator Program is available for individual Data Scientists to participate. The first public Data Science Accelerator Program is scheduled to start on September 14, 2016. [More information about the program and dates](https://training.xebia.com/data-science/data-science-accelerator-program/ "Details of Data Science Accelerator Program").
 
