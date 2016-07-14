@@ -1,5 +1,5 @@
 Title: Using Kendall's tau to compare recommendations
-Date: 2016-07-12 15:00
+Date: 2016-07-14 15:00
 Slug: kendall-tau-recommendations
 Author: Rogier van der Geer
 Excerpt: How to use Kendall's tau to compare recommendations.
@@ -10,7 +10,16 @@ Latex:
 
 ### Intro
 
-The [Kendall Tau](https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient) is a metric that can be used to compare the order of two ranks. It takes two ranks _that contain the same elements_ and calculates the correlation between them. A correlation of $+1$ means the ranks are equal, while a correlation of $-1$ means the ranks are exactly eachother's reverse. If two ranks are independent or randomly shuffled the correlation will be zero on average.
+The [Kendall tau](https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient) is a metric that can be used to compare the order of two ranks. It takes two ranks _that contain the same elements_ and calculates the correlation between them. A correlation of $+1$ means the ranks are equal, while a correlation of $-1$ means the ranks are exactly eachother's reverse. If two ranks are independent or randomly shuffled the correlation will be zero on average.
+
+The Kendall tau is undefined when the two ranks do not contain exactly the same elements. So when one wants to compare
+ranks which do not necessarily contain the same elements one needs to look elsewhere. The same goes for comparing only
+parts (for example 10 highest entries) of ranks, as these will not likely contain the same elements. An example of this
+is when comparing algorithms that provide recommendations: the pool of items is the same for each algorithm, but
+we are usually only interested in the best few (let's say top-5) recommendations.
+
+Below I'll explain how you can use a few tricks to make Kendall's tau fit for comparing ranks which do not necessarily
+contain the same items. But first let's have a look at the Kendall tau itself.
 
 ### Definition
 
