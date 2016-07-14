@@ -30,17 +30,20 @@ The public program consists of five lectures and five workshops (10 days total) 
 | Non-traditional data and features | Build image processing models |
 | Time series       | Predict an optimal portfolio for the stock market |
 
+
 [More information](https://training.xebia.com/data-science/data-science-accelerator-program/ "Details of Data Science Accelerator Program")
+
+<iframe width="853" height="480" src="https://www.youtube.com/embed/rHhXilXE-2o?rel=0" frameborder="0" allowfullscreen></iframe>
 
 ## Reasons to join
 
 Here’s six reasons to attend the Data Science Accelerator Program:
-•	In-depth: Our experienced trainers make the content come alive and make sure that you dive deep into every single topic
-•	Applicable: No theoretical or abstract approach. We took the effort to create the content based on our real-life experience with data science. You can be certain that the content is fit to be used in any organization. 
-•	Dynamic: Because we have developed the content in-house, we are able to adapt the pace of the program to every participant and allow as much time for questions and interaction as required. 
-•	Certificate: After the program you receive an official certificate of participation.
-•	More value: The unique curriculum provides you with all the necessary tools and state-of-art techniques to develop models that are more valuable for your organization.
-•	Access to a unique network: Tap into the knowledge and expertise of the most seasoned practitioners, share experiences with data scientists from enterprise organizations, and gain direct insight into the roadmap of leading technology providers.
+*	In-depth: Our experienced trainers make the content come alive and make sure that you dive deep into every single topic
+*	Applicable: No theoretical or abstract approach. We took the effort to create the content based on our real-life experience with data science. You can be certain that the content is fit to be used in any organization. 
+*	Dynamic: Because we have developed the content in-house, we are able to adapt the pace of the program to every participant and allow as much time for questions and interaction as required. 
+*	Certificate: After the program you receive an official certificate of participation.
+*	More value: The unique curriculum provides you with all the necessary tools and state-of-art techniques to develop models that are more valuable for your organization.
+*	Access to a unique network: Tap into the knowledge and expertise of the most seasoned practitioners, share experiences with data scientists from enterprise organizations, and gain direct insight into the roadmap of leading technology providers.
 
 ## Prerequisites
 The Data Science Accelerator Program was developed to take the skills of data scientists with some experience to the next level.
@@ -50,5 +53,3 @@ A background in math, statistics, or other quantitative disciplines, combined wi
 Participants who can also apply the program’s content in their daily, professional work will obtain the most benefit.
 
 If you are interested in the program but not sure if you have the right experience, we are happy to get you in touch with one of the trainers to discuss your current skills. [Just send us an email](mailto:signal@godatadriven.com).
-
-
