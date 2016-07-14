@@ -33,6 +33,7 @@ $$n_0 \equiv \frac{n(n-1)}{2},$$
 where $n$ is the length of the ranks, and $n_a$ and $n_b$ account for ties in the ranks, and are defined as
 $$\begin{align}
 n_a &\equiv \sum_i \frac{t^a_i (t^a_i-1)}{2},\\
+
 n_b &\equiv \sum_j \frac{t^b_j (t^b_j-1)}{2},
 \end{align}$$
 where $t^a_i$ and $t^b_j$ are the number of ties items in the $i^\text{th}$ group of ties in rank $a$, 
