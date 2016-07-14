@@ -12,7 +12,7 @@ Data scientists are no longer a nice-to-have; they are a must. Businesses of all
 
 Exactly beacuse of this reason, one year ago we were approached by a leading financial institution who asked us if it was possible to create a training program to escalate the data science skills of their teams to the highest level.
 
-We developed a unique program consisting of twelve lectures and twelve hands-on sessions that provide a full overview of modern day Data Science and called it the Data Science Accelerator Program. What makes this Data Science Accelerator Program so unique is the combination of in-depth and hands-on lectures in combination with workshops that put theory into practice.
+We developed a unique program thats provide a full overview of modern day Data Science and called it the Data Science Accelerator Program. What makes this Data Science Accelerator Program so unique is the combination of in-depth and hands-on lectures in combination with workshops that put theory into practice.
 
 ## Launch of the public Data Science Accelerator Program
 
