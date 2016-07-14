@@ -33,7 +33,7 @@ The Data Science Accelerator Program’s curriculum emerged from extensive, hand
 
 The public program consists of five lectures and five workshops (10 days total) spread over a period of 5 months, covering all the major components.
 
-<p>
+
 | Lecture           | Hackathon                          |
 |-------------------|------------------------------------|
 | Probability stack | Solve multiarmed bandit problems |
@@ -42,7 +42,7 @@ The public program consists of five lectures and five workshops (10 days total) 
 | Non-traditional data and features | Build image processing models |
 | Time series       | Predict an optimal portfolio for the stock market |
 
-</p>
+
 [More information](https://training.xebia.com/data-science/data-science-accelerator-program/ "Details of Data Science Accelerator Program")
 
 <iframe width="853" height="480" src="https://www.youtube.com/embed/rHhXilXE-2o?rel=0" frameborder="0" allowfullscreen></iframe>
