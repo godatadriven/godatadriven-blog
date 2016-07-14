@@ -154,9 +154,17 @@ Therefore we will not add any dummy items, and the correlation will remain $\tau
 however, all items are common, and therefore the ranks have the same length as the lists. We will thus extend the ranks
 with dummy items (let's take grains): 
 ```python
+a = ['apple', 'pear', 'banana', 'kiwi', 'grape']
+c = ['grape', 'kiwi', 'banana', 'pear', 'apple']
+
 rank_a = {'apple': 0, 'banana': 2, 'grape': 4, 'kiwi': 3,  'pear': 1,
           'wheat': 5, 'barley': 5, 'rice': 5, 'corn': 5, 'rye': 5}
 rank_c = {'apple': 4, 'banana': 2, 'grape': 0, 'kiwi': 1,  'pear': 3,
           'wheat': 5, 'barley': 5, 'rice': 5, 'corn': 5, 'rye': 5}     
 ```
-which yields a correlation of $\tau = 0.45$.
+which yields a correlation of $\tau = 0.45$. 
+
+Now isn't that a rather high correlation between a list and its inverse? For just these lists that is a 
+rather high correlation indeed, but remember that we are comparing the top-5 highest ranked items of (much) longer
+lists. The fact that the lists have the same items in their five highest entries makes them fairly similar in my
+opinion.
