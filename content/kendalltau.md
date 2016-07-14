@@ -144,3 +144,19 @@ we see that also here there are no concordant pairs. Not all pairs are discordan
 
 ### Extending the ranks
 
+We can fix the inbalance in number of ties by adding a number of dummy items to the ranks, such that all ranks have the
+same length. The ranks we obtain when we compare two lists can never be longer than twice the length of a list,
+which is the case then the lists have no common elements. Therefore, if we extend all ranks to twice the length of a list,
+every rank will have the same length. 
+
+In the example of `a` and `b` above the lists share no common items and the ranks are twice the length of the lists. 
+Therefore we will not add any dummy items, and the correlation will remain $\tau = -0.71$. In the case of `a` and `c`,
+however, all items are common, and therefore the ranks have the same length as the lists. We will thus extend the ranks
+with dummy items (let's take grains): 
+```python
+rank_a = {'apple': 0, 'banana': 2, 'grape': 4, 'kiwi': 3,  'pear': 1,
+          'wheat': 5, 'barley': 5, 'rice': 5, 'corn': 5, 'rye': 5}
+rank_c = {'apple': 4, 'banana': 2, 'grape': 0, 'kiwi': 1,  'pear': 3,
+          'wheat': 5, 'barley': 5, 'rice': 5, 'corn': 5, 'rye': 5}     
+```
+which yields a correlation of $\tau = 0.45$.
