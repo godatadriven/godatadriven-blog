@@ -185,6 +185,31 @@ opinion.
 Now let's have a look at a few examples:
 ```python
 a = ['apple', 'pear', 'banana', 'kiwi', 'grape']
-b = ['apple', 'pear', 'banana', 'kiwi', 'grape']
-extended_tau(a, b) -> 1
+extended_tau(a, a) -> 1
+
+# replace the last element
+b = ['apple', 'pear', 'banana', 'kiwi', 'lemon']
+extended_tau(a, b) -> 0.83
+
+# invert
+c = ['grape', 'kiwi', 'banana', 'pear', 'apple']
+extended_tau(a, c) -> 0.43
+
+# replace the first element
+d = ['tomato', 'pear', 'banana', 'kiwi', 'grape']
+extended_tau(a, d) -> 0.37
+
+# replace three elements and add three new
+e = ['lemon', 'tomato', 'apple', 'pineapple', 'grape']
+extended_tau(a, e) -> -0.23
+
+# replace all elements
+f = ['orange', 'tomato', 'pineapple', 'lemon', 'plum']
+extended_tau(a, f) -> -0.71
 ```
+These results look right: every move to scramble the list even more results in a lower correlation. Replacing the first
+element has more impact than replacing the last, and inverting the list results in a far greater correlation than
+replacing all elements. The only problem now is the scale: we expect the correlation to scale in the range $[-1, +1]$, but
+in this case the minimum value lies around $-0.71$. This minimum value depends on the length of the lists we compare.
+
+#### Scaling the result
