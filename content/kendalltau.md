@@ -23,7 +23,7 @@ contain the same items. But first let's have a look at the Kendall tau itself.
 
 ### Definition
 
-The Kendall tau is defined as
+The most basic definition of the Kendall tau is:
 
 $$\tau \equiv \frac{n_c - n_d}{n(n-1)/2},$$
 
@@ -57,6 +57,17 @@ b = ['pear', 'banana', 'apple', 'kiwi']
 ```
 In list-form, a concordant pair has the same order in both lists, while the order of a discordant pair is swapped between
 the lists. Two elements cannot occupy the same spot, so we can not have ties.
+
+#### Tau-b
+
+In most software that implements the Kendall tau (such as `scipy`) the slightly
+enhanced [Tau-b](https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient#Tau-b) version of the
+Kendall tau is used. This differs from the definition above in that it scales the denominator in case of ties.
+Specifically, if we define $n_0$ to be the original denominator ($n_0 = n(n-1)/2$), the Tau-b definition is
+$$\tau \equiv \frac{n_c - n_d}{\sqrt{(n_0-n_a)(n_0-n_b)}},$$
+where 
+$$n_a & = \sum_i t^a_i (t^a_i-1)/2,$$
+where $t^a_i$ is the number of tied values in the $i^\text{th}$ group of ties in rank $a$, and $n_b$ has a similar definition for rank $b$.
 
 ### Dealing with mismatches
 
