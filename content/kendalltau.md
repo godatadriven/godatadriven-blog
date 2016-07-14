@@ -23,17 +23,26 @@ contain the same items. But first let's have a look at the Kendall tau itself.
 
 ### Definition
 
-The most basic definition of the Kendall tau is:
+The most used definition of the Kendall tau between two ranks $a$ and $b$ is:
 
-$$\tau \equiv \frac{n_c - n_d}{n(n-1)/2},$$
+$$\tau \equiv \frac{n_c - n_d}{\sqrt{(n_0-n_a)(n_0-n_b)}},$$
 
-where $n$ is the length of the ranks, $n_c$ is the number of _concordant_ pairs, and $n_d$ is the number of _discordant_ pairs.
+where $n_c$ and $n_d$ are the number of _concordant_ pairs and the number of _discordant_ pairs respectively,
+$n_0$ is defined as
+$$n_0 \equiv \frac{n(n-1)}{2},$$
+where $n$ is the length of the ranks, and $n_a$ and $n_b$ account for ties in the ranks, and are defined as
+$$\begin{align}
+n_a &= \sum_i \frac{t^a_i (t^a_i-1)}{2},
+n_b &= \sum_j \frac{t^b_j (t^b_j-1)}{2},
+\end{align}$$
+where $t^a_i$ and $t^b_j$ are the number of ties items in the $i^\text{th}$ group of ties in rank $a$, 
+ and the number of ties items in the $ij\text{th}$ group of ties in rank $b$ respectively. 
 
-Between two ranks $a$ and $b$, a pair of items $i$ and $j$ is
+Between the ranks $a$ and $b$, a pair of items $x$ and $y$ is
 
-- _concordant_ if $a_i > a_j$ and $b_i > b_j$, or $a_i < a_j$ and $b_i < b_j$,
-- _discordant_ If $a_i > a_j$ and $b_i < b_j$ or vice versa.
-- neither _concordant_ nor _discordant_ in the case of ties, if $a_i = a_j$ or $b_i = b_j$.
+- _concordant_ if $a_x > a_y$ and $b_x > b_y$, or $a_x < a_y$ and $b_x < b_y$,
+- _discordant_ If $a_x > a_y$ and $b_x < b_y$ or vice versa.
+- neither _concordant_ nor _discordant_ in the case of ties, if $a_x = a_y$ or $b_x = b_y$.
 
 #### An example
 
@@ -57,17 +66,6 @@ b = ['pear', 'banana', 'apple', 'kiwi']
 ```
 In list-form, a concordant pair has the same order in both lists, while the order of a discordant pair is swapped between
 the lists. Two elements cannot occupy the same spot, so we can not have ties.
-
-#### Tau-b
-
-In most software that implements the Kendall tau (such as `scipy`) the slightly
-enhanced [Tau-b](https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient#Tau-b) version of the
-Kendall tau is used. This differs from the definition above in that it scales the denominator in case of ties.
-Specifically, if we define $n_0$ to be the original denominator ($n_0 = n(n-1)/2$), the Tau-b definition is
-$$\tau \equiv \frac{n_c - n_d}{\sqrt{(n_0-n_a)(n_0-n_b)}},$$
-where 
-$$n_a & = \sum_i t^a_i (t^a_i-1)/2,$$
-where $t^a_i$ is the number of tied values in the $i^\text{th}$ group of ties in rank $a$, and $n_b$ has a similar definition for rank $b$.
 
 ### Dealing with mismatches
 
@@ -224,3 +222,5 @@ replacing all elements. The only problem now is the scale: we expect the correla
 in this case the minimum value lies around $-0.71$. This minimum value depends on the length of the lists we compare.
 
 #### Scaling the result
+
+We can calculate the minimum value as a function of the length of our lists. Going back to the definition
