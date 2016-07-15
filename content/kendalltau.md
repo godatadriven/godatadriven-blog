@@ -39,7 +39,7 @@ n_a &\equiv \sum_i \frac{t^a_i (t^a_i-1)}{2},\\\\
 n_b &\equiv \sum_j \frac{t^b_j (t^b_j-1)}{2},
 \end{align}$$
 where $t^a_i$ and $t^b_j$ are the number of ties items in the $i^\text{th}$ group of ties in rank $a$, 
- and the number of ties items in the $j\text{th}$ group of ties in rank $b$ respectively. 
+ and the number of ties items in the $j^\text{th}$ group of ties in rank $b$ respectively. 
 
 Between the ranks $a$ and $b$, a pair of items $x$ and $y$ is
 
@@ -124,7 +124,7 @@ rank_a = {'apple': 1, 'banana': 5, 'grape': 4, 'orange': 5, 'pear': 2, 'pineappl
 rank_b = {'apple': 0, 'banana': 2, 'grape': 5, 'orange': 4, 'pear': 1, 'pineapple': 5, 'kiwi': 3}
 ```
 where `banana` and `orange` end up in a tied 5th place in rank `a`, and `pineapple` and `grape` share a tied 5th place
-in rank `b`. This yields $\tau = 0.15$, which is close to what I would expect.
+in rank `b`. This yields $\tau \approx 0.15$, which is close to what I would expect.
 
 If we do this for other examples we get some nice results:
 ```python
@@ -143,7 +143,7 @@ appended_tau(a, c) -> -0.20
 d = ['orange', 'pear', 'pineapple', 'kiwi', 'grape']
 appended_tau(a, d) -> -0.45
 
-# replace add elements
+# replace all elements
 e = ['orange', 'tomato', 'pineapple', 'lemon', 'plum']
 appended_tau(a, e) -> -0.71
 
@@ -176,7 +176,7 @@ which is the case then the lists have no common elements. Therefore, if we exten
 every rank will have the same length. 
 
 In the example of `a` and `e` above the lists share no common items and the ranks are twice the length of the lists. 
-Therefore we will not add any dummy items, and the correlation will remain $\tau = -0.71$. In the case of `a` and `f`,
+This means we will not add any dummy items, and the correlation will remain $\tau = -0.71$. In the case of `a` and `f`,
 however, all items are common, and therefore the ranks have the same length as the lists. We will thus extend the ranks
 with dummy items (let's take grains): 
 ```python
