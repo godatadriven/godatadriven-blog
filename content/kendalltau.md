@@ -188,7 +188,7 @@ rank_a = {'apple': 0, 'banana': 2, 'grape': 4, 'kiwi': 3,  'pear': 1,
 rank_c = {'apple': 4, 'banana': 2, 'grape': 0, 'kiwi': 1,  'pear': 3,
           'wheat': 5, 'barley': 5, 'rice': 5, 'corn': 5, 'rye': 5}     
 ```
-which yields a correlation of $\tau = 0.45$. 
+which yields a correlation of $\tau \approx 0.45$. 
 
 Now isn't that a rather high correlation between a list and its inverse? For just these lists that is a 
 rather high correlation indeed, but remember that we are comparing the top-5 highest ranked items of (much) longer
@@ -222,7 +222,7 @@ extended_tau(a, f) -> -0.71
 ```
 These results look right: every move to scramble the list even more results in a lower correlation. Replacing the first
 element has more impact than replacing the last, and inverting the list results in a far greater correlation than
-replacing all elements. The only problem now is the scale: we expect the correlation to scale in the range $[-1, +1]$, but
+replacing all elements. The only problem left is the scale: we expect the correlation to scale in the range $[-1, +1]$, but
 in this case the minimum value lies around $-0.71$. This minimum value depends on the length of the lists we compare.
 
 #### Scaling the result
@@ -236,6 +236,61 @@ this means that that $n_c = 0$, and $n = 2l$, where $l$ is the length of the lis
 $l$ elements that are tied in the last position, and there will be no other ties. This means that $n_a = n_b = l(l-1)/2$.
 Also, $n_d = n_0 - n_a - n_b$, as all pairs, except those that are tied, are discordant. Thus,
 
-$$\tau_{\min} = -\frac{n_0 - 2n_a}{n_0 - n_b} = -\frac{n(n-1) - 2l(l-1)}{n(n-1) - l(l-1)} = -\frac{4l(l-1) - 2l(l-1)}{4n(n-1) - l(l-1)}.$$
+$$\begin{align*}
+\tau_{\min}(l) &= -\frac{n_0 - 2n_a}{n_0 - n_b}\\\\
+            &= -\frac{n(n-1) - 2l(l-1)}{n(n-1) - l(l-1)}\\\\
+            &= -\frac{2l(2l-1) - 2l(l-1)}{2l(2l-1) - l(l-1)}.
+\end{align*}$$
 
 When $l=5$, this results in $\tau_{\min} \approx -0.71$.
+
+Using the result above, we can scale the extended tau such that it covers an interval of $[-1, +1]$:
+$$\tau_s \equiv 2\frac{\tau-\tau_{\min}(l)}{1-\tau_{\min}(l)} - 1.$$
+
+### Summary
+
+The Kendall tau is undefined for lists that do not contain the same elements, which prevents us from using it
+to compare results of recommenders.
+We can circumvent this limitation by appending all missing elements to the rank of either list in a tied last 
+position, behind all elements present in the list. A variable number of tied elements skews the resulting correlations,
+which we can prevent by adding tied dummy items to both ranks. In the end we have to scale the result to ensure
+it falls in the interval $[-1, +1]$.
+
+It is important to note that the resulting 'correlation', although a measure of the similarity between two ranks,
+does not have all properties anymore you would expect of a Kendall tau, or any correlation in general. Obviously, the
+result of comparing a list with its inverse is no longer $-1$, and the expected result between randomly scrambled lists
+is no longer $0$. Nevertheless the measure can be useful when comparing the top elements of ranks.
+
+A python implementation is shown below.
+
+```python
+import pandas as pd
+import scipy.stats as stats
+
+def extended_tau(list_a, list_b):
+    """ Calculate the extended Kendall tau from two lists. """
+    ranks = join_ranks(create_rank(list_a), create_rank(list_b)).fillna(len(list_a))
+    dummy_df = pd.DataFrame([{'rank_a': len(list_a), 'rank_b': len(list_b)} for i in range(len(list_a)*2-len(ranks))])
+    total_df = ranks.append(dummy_df)
+    return scale_tau(len(list_a), stats.kendalltau(total_df['rank_a'], total_df['rank_b'])[0])
+
+def scale_tau(value, length):
+    """ Scale an extended tau correlation such that it falls in [-1, +1]. """
+    n_0 = 2*length*(2*length-1)
+    n_a = length*(length-1)
+    n_d = n_0 - n_a
+    min_tau = (2*n_a - n_0) / (n_0 - n_a)
+    return 2*(value-min_tau)/(1-min_tau) - 1
+
+def create_rank(a):
+    """ Convert an ordered list to a DataFrame with ranks. """
+    return pd.DataFrame(
+                  zip(a, range(len(a))), 
+                  columns=['key', 'rank'])\
+             .set_index('key')
+
+def join_ranks(rank_a, rank_b):
+    """ Join two rank DataFrames. """
+    return rank_a.join(rank_b, lsuffix='_a', rsuffix='_b', how='outer')
+
+```
