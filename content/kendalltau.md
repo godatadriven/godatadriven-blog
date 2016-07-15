@@ -44,8 +44,8 @@ Between the ranks $a$ and $b$, a pair of items $x$ and $y$ is
 - _discordant_ If $a_x > a_y$ and $b_x < b_y$ or vice versa.
 - neither _concordant_ nor _discordant_ in the case of ties, if $a_x = a_y$ or $b_x = b_y$.
 
-When there are no ties, this reduces to 
-$$\tau \equiv \frac{n_c - n_d}{n_0}},$$
+When there are no ties, this reduces to the simpler form
+$$\tau \equiv \frac{n_c - n_d}{n_0},$$
 as both $n_a$ and $n_b$ will be zero.
 
 #### An example
@@ -227,4 +227,15 @@ in this case the minimum value lies around $-0.71$. This minimum value depends o
 
 #### Scaling the result
 
-We can calculate the minimum value as a function of the length of our lists. Going back to the definition
+We can calculate the minimum value as a function of the length of our lists. The minimum correlation
+is achieved when the two lists have no overlapping elements. Going back to the definition, 
+
+$$\tau \equiv \frac{n_c - n_d}{\sqrt{(n_0-n_a)(n_0-n_b)}},$$
+
+this means that that $n_c = 0$, and $n = 2l$, where $l$ is the length of the lists. In each of the ranks there will be
+$l$ elements that are tied in the last position, and there will be no other ties. This means that $n_a = n_b = l(l-1)/2$.
+Also, $n_d = n_0 - n_a - n_b$, as all pairs, except those that are tied, are discordant. Thus,
+
+$$\tau_{\min} = -\frac{n_0 - 2n_a}{n_0 - n_b} = -\frac{n(n-1) - 2l(l-1)}{n(n-1) - l(l-1)} = -\frac{4l(l-1) - 2l(l-1)}{4n(n-1) - l(l-1)}.$$
+
+When $l=5$, this results in $\tau_{\min} \approx -0.71$.
