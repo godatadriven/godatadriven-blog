@@ -44,6 +44,10 @@ Between the ranks $a$ and $b$, a pair of items $x$ and $y$ is
 - _discordant_ If $a_x > a_y$ and $b_x < b_y$ or vice versa.
 - neither _concordant_ nor _discordant_ in the case of ties, if $a_x = a_y$ or $b_x = b_y$.
 
+When there are no ties, this reduces to 
+$$\tau \equiv \frac{n_c - n_d}{n_0}},$$
+as both $n_a$ and $n_b$ will be zero.
+
 #### An example
 
 Let's have a look at these two ranks:
