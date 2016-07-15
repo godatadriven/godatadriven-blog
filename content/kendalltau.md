@@ -236,11 +236,11 @@ this means that that $n_c = 0$, and $n = 2l$, where $l$ is the length of the lis
 $l$ elements that are tied in the last position, and there will be no other ties. This means that $n_a = n_b = l(l-1)/2$.
 Also, $n_d = n_0 - n_a - n_b$, as all pairs, except those that are tied, are discordant. Thus,
 
-$$\begin{align*}
+$$\begin{align}
 \tau_{\min}(l) &= -\frac{n_0 - 2n_a}{n_0 - n_b}\\\\
             &= -\frac{n(n-1) - 2l(l-1)}{n(n-1) - l(l-1)}\\\\
             &= -\frac{2l(2l-1) - 2l(l-1)}{2l(2l-1) - l(l-1)}.
-\end{align*}$$
+\end{align}$$
 
 When $l=5$, this results in $\tau_{\min} \approx -0.71$.
 
