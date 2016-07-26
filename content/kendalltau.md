@@ -1,5 +1,5 @@
 Title: Using Kendall's tau to compare recommendations
-Date: 2016-07-15 17:00
+Date: 2016-07-26 11:34
 Slug: kendall-tau-recommendations
 Author: Rogier van der Geer
 Excerpt: How to use Kendall's tau to compare recommendations.
@@ -22,7 +22,9 @@ is when comparing algorithms that provide recommendations: the pool of items is 
 we are usually only interested in the best few (let's say top-5) recommendations.
 
 Below I'll explain how you can use a few tricks to make Kendall's tau fit for comparing ranks which do not necessarily
-contain the same items. But first let's have a look at the Kendall tau itself.
+contain the same items. This will provide us with a measure for the similarity or correlation of two lists, even if they
+do not contain the same elements. At the end I've provided with a python implementation that should get anyone up and 
+running in minutes. But first let's have a look at the Kendall tau itself.
 
 ### Definition
 
