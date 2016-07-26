@@ -17,14 +17,33 @@ The [Kendall tau](https://en.wikipedia.org/wiki/Kendall_rank_correlation_coeffic
 
 The Kendall tau is undefined when the two ranks do not contain exactly the same elements. So when one wants to compare
 ranks which do not necessarily contain the same elements one needs to look elsewhere. The same goes for comparing only
-parts (for example 10 highest entries) of ranks, as these will not likely contain the same elements. An example of this
-is when comparing algorithms that provide recommendations: the pool of items is the same for each algorithm, but
-we are usually only interested in the best few (let's say top-5) recommendations.
+parts (for example 10 highest entries) of ranks, as these will not likely contain the same elements. 
 
 Below I'll explain how you can use a few tricks to make Kendall's tau fit for comparing ranks which do not necessarily
-contain the same items. This will provide us with a measure for the similarity or correlation of two lists, even if they
-do not contain the same elements. At the end I've provided with a python implementation that should get anyone up and 
-running in minutes. But first let's have a look at the Kendall tau itself.
+contain the same items. At the end I've provided with a python implementation that should get anyone up and 
+running in minutes. 
+
+### Use case
+
+So why would you want to compare two ranks that do not contain the same elements? 
+
+You may be interested in a part of a rank, for example the top-10 items. An example of such a case is
+the output of a recommender: the recommender will provide you with a ranked list of all items it can possibly recommend,
+but you will only show the best few to the user. 
+
+When comparing the output of two recommenders it does not make sense to compare items that will not be displayed. If 
+recommenders $A$ and $B$ return the same top-10 items they are essentially equal, regardless of whether the item
+in position 100 of $A$ is also in position 100 of $B$. However, we can not use Kendall's 
+tau to directly compare the first 10 items of $A$ with the first 10 items of $B$, as they are likely to not contain exactly
+the same elements. 
+
+Obviously, the best way to compare two recommenders is an A/B test. But performing an A/B test requires time and resources
+you may not always have. In that case you can also directly compare the output of the recommenders.
+
+For example, I have used this method to evaluate a change in a recommender which traded a performance gain for a 
+reduction in accuracy. A direct comparison of the results can provide you with valuable information on the effect of
+the reduced accuracy. If the results are similar you can push the change to production, if not you may want
+to stop wasting your time and forget about the change.
 
 ### Definition
 
@@ -252,7 +271,7 @@ $$\tau_s \equiv 2\frac{\tau-\tau_{\min}(l)}{1-\tau_{\min}(l)} - 1.$$
 ### Summary
 
 The Kendall tau is undefined for lists that do not contain the same elements, which prevents us from using it
-to compare results of recommenders.
+to compare parts of ranks.
 We can circumvent this limitation by appending all missing elements to the rank of either list in a tied last 
 position, behind all elements present in the list. A variable number of tied elements skews the resulting correlations,
 which we can prevent by adding tied dummy items to both ranks. In the end we have to scale the result to ensure
