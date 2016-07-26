@@ -59,8 +59,8 @@ $$\begin{align}
 n_a &\equiv \sum_i \frac{t^a_i (t^a_i-1)}{2},\\\\
 n_b &\equiv \sum_j \frac{t^b_j (t^b_j-1)}{2},
 \end{align}$$
-where $t^a_i$ and $t^b_j$ are the number of (tied) items that share the $i^\text{th}$ rank in rank $a$, 
- and the number of (tied) items that share the $j^\text{th}$ rank in rank $b$ respectively. 
+where $t^a_i$ and $t^b_j$ are the number of (tied) items that share the $i^\text{th}$ place in rank $a$, 
+ and the number of (tied) items that share the $j^\text{th}$ place in rank $b$ respectively. 
 
 Between the ranks $a$ and $b$, a pair of items $x$ and $y$ is
 
