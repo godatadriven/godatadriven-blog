@@ -39,6 +39,10 @@ Next up was Wendell Kuling with "Name matching at scale: CPU, GPU or Spark?"
 
 Wendell works as a Data Scientist at ING in the Wholesale Banking Advanced Analytics team. By applying Data Science Wendell's team provides better services to ING's corporate customers. Wendell covered several valuable learnings and experiences from projects where ING matches large datasets based on names. This talk included the key algorithms and packages used for name matching, and a best-practice approach in applying these algorithms at scale. Would you bet on a Cruncher (48-CPU/512 MB RAM machine), a Tesla (Cuda Tesla K80 with 4992 cores, 24GB memory) or a Spark cluster (80 cores/2,5 TB memory)?
 
+<iframe width="853" height="480" src="https://www.youtube.com/embed/4ohTsblxOJs?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/zCmBwSp2Ebq54j" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/godatadriven/pydata-amsterdam-name-matching-at-scale" title="PyData Amsterdam - Name Matching at Scale" target="_blank">PyData Amsterdam - Name Matching at Scale</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/godatadriven">GoDataDriven</a></strong> </div>
+
 ## About PyData Amsterdam
 PyData Amsterdam is a group for users and developers of data analysis tools in Python. The goals are to provide Python enthusiasts a place to share ideas and learn from each other about how best to apply the language and tools to ever-evolving challenges in the vast realm of data management, processing, analytics, and visualization. A goal of PyData groups, events and conferences is to provide a venue for users across all the various domains of data analysis to share their experiences and their techniques, as well as highlight the triumphs and potential pitfalls of using Python for certain kinds of problems. PyData is organized by [NumFOCUS.org](http://www.numfocus.org "NumFOCUS").
 
