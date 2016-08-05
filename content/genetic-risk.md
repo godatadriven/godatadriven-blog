@@ -1,4 +1,4 @@
-Title: Genetic algorithms and the game of Risk.
+Title: Genetic algorithms and the game of Risk
 Date: 2016-08-05 11:34
 Slug: genetic-risk
 Author: Rogier van der Geer
