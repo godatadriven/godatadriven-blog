@@ -6,15 +6,17 @@ Excerpt: Six common pitfalls that organizations experience on their journey towa
 Template: article
 Latex:
 
-[![Big Data Survey](/static/images/bigdatasurvey2016/bigdatasurvey-logo.png)](http://www.bigdatasurvey.nl)
+![Six Pitfalls to Avoid when Becoming a DataDriven Enterprise](/static/images/bigdatasurvey2016/bigdatasurvey-pitfallstoavoid.jpg "Six Pitfalls to Avoid when Becoming a DataDriven Enterprise")
 
 Now that Big Data Survey, the research on the application of data is midway through, it is time for an interim analysis of the score on the door. In this article we share six common pitfalls that organizations experience on their journey towards becoming a DataDriven enterprise. 
+
+[![Big Data Survey](/static/images/bigdatasurvey2016/bigdatasurvey-logo.png)](http://www.bigdatasurvey.nl)
 
 ## 1: Lack of Vision
 
 To answer the first question from the introduction directly: Data is definitely still a large theme for organizations. No less then 88 per cent of respondents indicate that the opportunities of data for their organizations are substantial. Remarkably, respondents still think of a strong vision (87%) and support from management (60%) as most crucial for success with data.
 
-![Success factors for a successful implementation of a Big Data strategy](/static/images/bigdatasurvey2016/bigdatasurvey-successfactos.jpg "Success factors for a successfull implementation of a Big Data strategy")
+![Success factors for a successful implementation of a Big Data strategy](/static/images/bigdatasurvey2016/bigdatasurvey-successfactors.jpg "Success factors for a successfull implementation of a Big Data strategy")
 
 ## 2: Lack of Data or Poor Data Quality
 
