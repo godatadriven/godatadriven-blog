@@ -2,7 +2,7 @@ Title: Installing Cloudera on Azure (part 1 of 2)
 Date: 2015-12-02 15:00
 Slug: installing-cloudera-on-azure-1
 Author: Tünde Alkemade, Alexander Bij, Walter van der Scheer
-Excerpt: Recently, GoDataDriven experimented with installing a Cloudera cluster on Microsoft Azure. In this article we provide some information about the use case, the design we implemented and some basic information about Microsoft Azure. We discuss how you can install Cloudera on Azure and what best practices we saw when installing a distributed system on Azure.
+Excerpt: In this article we provide some information about the use case, best-practices, the design we implemented and some basic information about Microsoft Azure.
 Template: article
 Latex:
 
