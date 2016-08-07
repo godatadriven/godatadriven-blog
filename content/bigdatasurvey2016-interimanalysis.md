@@ -8,9 +8,11 @@ Latex:
 
 ![Six Pitfalls to Avoid when Becoming a DataDriven Enterprise](/static/images/bigdatasurvey2016/bigdatasurvey-pitfallstoavoid.jpg "Six Pitfalls to Avoid when Becoming a DataDriven Enterprise")
 
-Now that Big Data Survey, the research on the application of data is midway through, it is time for an interim analysis of the score on the door. In this article we share six common pitfalls that organizations experience on their journey towards becoming a DataDriven enterprise. 
+<span class="lead">
+Now that Big Data Survey, the research on the application of data is midway through, it is time for an interim analysis of the score on the door. In this article we share six common pitfalls that organizations experience on their journey towards becoming a DataDriven enterprise.
 
 [![Big Data Survey](/static/images/bigdatasurvey2016/bigdatasurvey-logo.png)](http://www.bigdatasurvey.nl)
+</span>
 
 ## 1: Lack of Vision
 
