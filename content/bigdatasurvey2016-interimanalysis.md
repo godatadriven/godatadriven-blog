@@ -32,9 +32,9 @@ Do organizations have a central data storage available? With 55% of participants
 
 Take me to the cloud! With more and more applications finding their way to the cloud, we were interested to learn what professionals think of the security of cloud storage. Remarkably, 1 in every 5 (22%) participants do not feel that data in the cloud is as secure as data stored locally. Also, 30% of the participants indicate that data within the organization today is not stored completely secure. If on-premises is really a safer place for your valuable data or not is not the question, as it's the perception of the users that determines the adoption. 
 
-## 4: No room for experimentation
+## 4: No room for experimenting
 
-Being a DataDriven organization is not only about data and technology. If that was the case, becoming DataDriven would be easy. The supporting systems and processes are crucial as well, according to 46% of the participants. Room for experimentation and an agile approach are vital ingredients for a DataDriven process. Multi-disciplinary teams are composed of members of different backgrounds, for example technical know-how and specific domain knowledge. Are organizations able to align their business and IT departments?
+Being a DataDriven organization is not only about data and technology. If that was the case, becoming DataDriven would be easy. The supporting systems and processes are crucial as well, according to 46% of the participants. Room for experiments and an agile approach are vital ingredients for a successful DataDriven process. Multi-disciplinary teams are composed of members of different backgrounds, for example technical know-how and specific domain knowledge. Are organizations able to align their business and IT departments?
 
 In [Big Data Survey](https://nl.surveymonkey.com/r/bigdatasurvey-english "Participate in Big Data Survey"), we asked if IT & Business should work together to facilitate successful product innovation. Definitely, was the clear answer. 67% of the respondents agree totally with this statement, while an additional 22% partially agree.
 
