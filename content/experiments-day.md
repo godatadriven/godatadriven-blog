@@ -24,6 +24,8 @@ Are you interested in experimentation within your organization, or already runni
 
 For who is this? **Seasoned lean startup experts, more advanced data scientists, product managers, senior designers**. Required is experience working in a data-driven organisation.
 
+We will work on a case by a world leading food retailer. The case will work from strategy to new concepts that need to be tested by business experiments. The experiments are the outcome of the afternoon session. In the tradition of fact-based marketing we will combine data and creativity to come up with powerful new but especially testable ideas.
+
 Participation is free of charge but seats are limited.
 
 <table align=center>
