@@ -94,6 +94,10 @@ hundreds words for nothing!  We can train your data scientists to write code of 
 we can review the code they wrote. And we're very good at it and have fun while doing it!
 [Get in touch.](mailto:signal@godatadriven.com)
 
+_I wrote this post after a lot of brainstorming with the team. A big thank you goes in particular
+to Gabriele for reading everything and giving me precious feedback, together his experience at some
+of the largest Dutch enterprises._
+
 [^1]: A lack of vision is a much broader issue than 1-4 as it can bring even the largest and most
   flourishing corporations to the ground (a great read about this is
   [Good to Great](https://en.wikipedia.org/wiki/Good_to_Great)). I included it nonetheless as it
