@@ -31,7 +31,7 @@ View all the key take-aways from Big Data Survey in this comprehensive infograph
 
 <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A//blog.godatadriven.com/bigdatasurvey-infographic.html&title=Fifteen%20insights%20from%20Big%20Data%20Survey%20in%20one%20infographic&summary=Use%20these%20insights%20to%20help%20you%20boost%20your%20data%20driven%20operation%20in%202016.&source=GoDataDriven" target="_blank">Share the infographic on Linkedin</a>
 
-[![Infographic Big Data Survey](http://www.godatadriven.com/static/images/bigdatasurvey/bigdatasurvey-infographic-web.png)](http://www.bigdatasurvey.nl)
+[![Infographic Big Data Survey](http://blog.godatadriven.com/static/images/bigdatasurvey/bigdatasurvey-infographic-web.png)](http://www.bigdatasurvey.nl)
 
 
 <a href="https://twitter.com/home?status=Fifteen%20insights%20from%20%23bigdata%20survey%20in%20one%20%23infographic%3A%20http%3A//blog.godatadriven.com/bigdatasurvey-infographic.html" target="_blank">Share the infographic on Twitter</a>
