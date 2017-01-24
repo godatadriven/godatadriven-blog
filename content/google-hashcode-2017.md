@@ -6,7 +6,7 @@ Excerpt: Fun algorithms/optimization competition where you can solve real Google
 
 On February 23rd the annual Google Hash Code competition will take place, a unique event where smart industry professionals can team up to solve a real-life engineering problem from Google.
 
-It's a fun algorithms/optimization competition. Our colleague Jelte Hoekstra competed last year: "Google Hashcode is a lot of fun, in 2016 I had a blast. Now that GoDataDriven has its own hangout, I figured this year we should make our office available as a hub."
+It's a fun algorithms/optimization competition. Our colleague [Jelte Hoekstra](https://godatadriven.com/players/jelte-hoekstra "Jelte Hoekstra") competed last year: "Google Hashcode is a lot of fun, in 2016 I had a blast. Now that GoDataDriven has its own hangout, I figured this year we should make our office available as a hub."
 
 ## Google Hashcode
 Think you could come up with a way to optimize Internet coverage for Project Loon balloons? Or how about routing Google Street View cars through Paris?
