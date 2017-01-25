@@ -3,6 +3,8 @@ Date: 2017-01-23 14:00
 Slug: google-hashcode-2017
 Author: Walter van der Scheer 
 Excerpt: Fun algorithms/optimization competition where you can solve real Google problems
+Template: article
+Latex:
 
 On February 23rd the annual Google Hash Code competition will take place, a unique event where smart industry professionals can team up to solve a real-life engineering problem from Google.
 
