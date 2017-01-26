@@ -17,11 +17,11 @@ Step into the shoes of a Google engineer and tackle these types of challenges du
 
 The competition is divided into two stages:
 
-*an Online Qualification Round on 23rd February at 18:30 CET *
+### an Online Qualification Round on 23rd February at 18:30 CET *
 
 For this round, your team can participate from wherever you’d like, including one of our Hash Code hubs. Hubs allow for teams in the same location (eg. city or university) to compete side-by-side in a more fun and exciting environment.
 
-*a Final Round on 1st April *
+### a Final Round on 1st April *
 
 Top scoring teams from the Online Qualification Round will be invited to Google Paris to compete in the Final Round of the competition.
 
